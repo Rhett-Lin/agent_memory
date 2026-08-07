@@ -1,4 +1,15 @@
-# NEXT_ACTION — Round 1 in flight（2026-08-07）
+# NEXT_ACTION — §11 审查之后的下一步（2026-08-08）
+
+**当前状态**：pilot/GateA/GateB GO；H-C NO_GO；H3 formal NO_GO + clarification（完整 transcript 兑现 replay、方向非 script>transcript、覆盖解释 supported-but-unresolved）；§11 审查完成（PAPER_POTENTIAL_REVIEW.md）：贡献计 2/3，Findings/Workshop 档现在可写，main 档唯一缺口 = Gate C 三条件。
+
+**下一步（唯一）**：执行 Gate C 精简模块——不追求 cond3 的系统层逆序（H-C/H3 已显示系统形式间没有显著反转，硬追只会变成 power chasing）：
+
+1. **cond1**：在同一 harness 实测复刻 Memory Transplants 的 architecture×content 2×2（冻结注入版），证明 P×S 与其回答互补问题（不可只在 Related Work 口头区分）。
+2. **cond2**：测 Proced-Mem 的 structural 信号与 STITCH 的 intent 信号能否预测 pilot 的 P、τ_trap、harmful flip（若能，F-MED 增量价值降级写入论文）。
+
+两项结果回齐后由 §11 裁定：(a) 通过 → 论文以 measurement+identification 为核心、把覆盖完备性写为关键部署含义，投 main；(b) 任一关键失败 → GPT-5.6 路径，写 Findings 档并结题。
+
+**纪律**：不重跑已否定实验；TRU-Mem 不启动；每个负结果仍走"自分析 → GPT-5.6 讨论 → 落档"三件套。
 
 唯一下一步动作：
 
