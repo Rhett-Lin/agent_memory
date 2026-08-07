@@ -64,3 +64,45 @@ Gate A 结果写入 `GATE_FINDINGS.md` 与 `DECISION.md`；NO_GO 与 GO 同等�
 ## 7. 不做清单（本轮）
 
 Stage B（E 嵌套）、Stage C（P×D/I/V）、Stage D（retrieval）、TRU-Mem、外部 benchmark、240–320 families。
+
+---
+
+# Part II — H-C Minimal Gate 预注册（2026-08-08 冻结，启动前登记）
+
+## 8. 选定假设与 estimand
+
+假设全文见 `SELECTED_HYPOTHESIS.md`。定义每个表示系统 \(h\) 的 profile（沿用 §2 估计程序）：\(\mathcal P_h=(\tau_{context},\tau_{struct},\tau_{trap},\tau_{replaylike},\mathrm{HFR}_{A01})\)。主对比：
+
+- **H-C-1（主 estimand）**：\(\Delta\tau_{struct}(h_i,h_j)=\tau_{struct}^{h_i}-\tau_{struct}^{h_j}\)，对 (raw, procedural) 与 (summary, procedural) 与 (raw, summary) 三对，模型=qwen7b；
+- **H-C-2（主 estimand）**：\(\Delta\tau_{trap}\) 与 \(\Delta\mathrm{HFR}\) 同上三对；
+- **H-C-3（GO 判据）**：至少一对系统满足 |\(\Delta\tau_{struct}\)|≥8pp 且 cluster bootstrap 95% CI 不含 0，或两个 aggregate gain 差 <3pp 的系统的 τ_trap 排序方向相反且各自 CI 支持。
+
+## 9. 实验设计（冻结）
+
+- 系统（write-path 表示层，忠实映射表另写 `pilot/systems/MAPPING.md`）：
+  - `procedural`：pilot 现有表示，**rollouts 直接复用**（不重跑）；
+  - `raw`：先在相同 source tasks 上用 qwen7b 各跑一次成功 rollout（仅保留成功 trajectory；失败重试 ≤2，仍失败则该 source 用 oracle 轨迹替代并打标 `oracle_fallback=True`，数量与清单登记）→ 截取到同 token 预算截窗；
+  - `summary`：对 `raw` 的同一 trajectory 用 Qwen2.5-7B 摘要（prompt 冻结，温度 0）。
+- 网格：3 系统 × 40 fam × 4 sib × 6 cells × 4 seeds × qwen7b；procedural 复用 pilot 已有 3840 条；raw/summary 各新跑 3840 条；source 轨迹采集 800 条。
+- token 预算对齐：memory 注入窗口 200–300 tokens（同 pilot）；各系统卡长分布报告 SMD。
+- Harness/解析/终态判定/budgets 与 pilot 完全一致（同 commit 的 harness.py，同 config hash 记录）；raw/summary 注入模板与 pilot 相同，仅 [MEMORY] 内容更换。
+- 随机化：cell 分配沿用 pilot 的 family 内分层 + Latin square（同一 (fam,sib,seed) 的六 cells 用同一 DB 初始态）。
+
+## 10. 推断（冻结）
+
+- 每系统每 cell 成功率：family-cluster bootstrap 2000 reps；
+- Δ profile：两系统 paired（同 family 单元）差异的 cluster bootstrap CI；
+- 多重性：主对比 6 个（3 系统对 × {τ_struct, τ_trap}）Holm 校正；HFR 差异与 archetype 分解标 exploratory；
+- aggregate-equivalent 定义（预注册）：两系统 A-cells 平均成功率差 <3pp。
+
+## 11. GO / NO_GO（冻结）
+
+- **GO**：满足 H-C-3 → 升级 5 系统 × 3B/14B 并进入 Gate C；
+- **NO_GO**：三系统 profile 全对比 CI 覆盖 0，且没出现任何排序反转迹象 → 归档负面结果，回 Loop Step 1，按 §12 Direction D 评估转向（不得继续扩系统数）。
+
+## 12. 防自欺清单（冻结）
+
+- raw/summary 的记忆同样通过 signed sealed 管线生成，注入前跑 `FORBIDDEN_RE_CS` 隔离 grep；
+- summary 由 7B 生成时**禁止**接触 sealed 标签（prompt 只含 task instruction + trajectory）；
+- 报告 summary 质量抽查：人工（我）抽 10 份，登记"是否复述了错误步骤/丢关键步骤"，失败率 >30% 即触发 kill condition（SELECTED_HYPOTHESIS 已登记）；
+- 所有 rollout 记录 commit、config hash、模型版本、GPU、seed；失败 rollout 原样入库，不得补造。

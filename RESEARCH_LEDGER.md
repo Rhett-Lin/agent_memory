@@ -83,7 +83,8 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - [x] mini-pilot 正式网格执行完毕（7680 rollouts，~1h on 10×A5000；7B 首跑 0.6 显存失败 → `configs/pilot_7b.yaml` 0.85 重启，全程日志在 `/work1/zixuan/logs/agent_memory/`）
 - [x] 四张核心图 + BOTTLENECK_PROFILE.md 填数（Holm m=8 校正后：7B τ_struct SIG+、3B τ_P×S SIG+、τ_replaylike 两模型 SIG+、τ_context ≈ 0）
 - [x] **Gate A = GO**（2026-08-07）：关键发现——7B 增益主要来自 surface-matched replay（A11 0.733 vs N 0.547），clean structural transfer 仅 +9.2pp；3B/7B τ_struct 方向相反；A01 harmful flip 3B 18.8% / 7B 9.2%；反直觉现象 τ_trap(7B) 方向为正。风险：7B difficulty TOST 未过（−0.077 vs margin −0.070）转 Gate B 处置
-- [~] Gate B 审计执行中（强 probe + 难度稳健性 + 连续-S + 合规补强），不得先扩展规模再补审计
+- [x] **Gate B = GO（2026-08-08）**：六项审计全通过（详见 CAUSAL_STRUCTURE_AUDIT.md §6）。关键沉淀：τ_struct 平面 probe 干净（AUC 0.35–0.38）；7B 难度修剪后 TOST 通过且 τ_struct 增至 +0.105；harmful flip 集中在程序语义真正分歧的 branch；LLM judge program-equivalence 判错率 100%（工具失效 → 等价标注后续转人工；同时为"模型读不懂跨表面程序等价"的独立证据）；机制叙事修正为"操作模板迁移"而非"程序识别"
+- [~] git 98498e9 | Loop Step 4：生成恰好三个假设并评分
 - [ ] 四张核心图 + BOTTLENECK_PROFILE.md 填数
 - [ ] Gate A 判定
 - [ ]（Gate A 若过）强 leakage probe 审计 → Gate B 前置

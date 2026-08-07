@@ -2,7 +2,14 @@
 
 唯一下一步动作：
 
-Gate A 已 GO（2026-08-07，详见 GATE_FINDINGS.md）。按 loop §16-8 正在执行 Gate B 强审计（agent-5，pilot/audit/：强 leakage probe、7B 难度稳健性、连续-S 敏感性、program-equivalence 标注复核）。审计结果回来前**不做** Stage B/C/D、不做 TRU-Mem、不扩展 family。审计完成后：填 CAUSAL_STRUCTURE_AUDIT.md 数值 → Gate B 判定 → 若 GO，产出 HYPOTHESIS_CANDIDATES.md（Loop Step 4，恰好三个假设）并按 §14 格式做 Round 1 汇报。
+Gate A=GO、Gate B=GO（2026-08-08）。Loop Step 4/5 完成：选定 H-C（published write-path systems 的 F-MED profile 逆序，评分 3.95），GATE_PROTOCOL Part II 已预注册冻结。当前 agent-6 正在实现 minimal gate：
+
+1. `pilot/systems/build_raw_cards.py`（800 源任务真实轨迹采集，含 oracle_fallback 标注）；
+2. `pilot/systems/build_summary_cards.py`（7B 温度 0 摘要，禁 sealed 标签）；
+3. raw + summary 各 3840 rollouts 网格（10 GPU）；
+4. `analyze_hc.py` 产出 6 个预注册对比（3 系统对 × {τ_struct, τ_trap}，Holm）。
+
+回来后我做 GO/NO_GO 判定（H-C-3：任一对 |Δτ_struct|≥8pp 且 CI 分离，或 aggregate-equivalent 系统 τ_trap 排序反转）。同步按 loop §14 产出 Round 1 正式汇报（在结果齐后）。
 
 Gate A 通过前**不做**：Stage B/C/D、TRU-Mem 任何实现、240–320 families 扩展。
 
