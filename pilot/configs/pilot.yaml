@@ -1,0 +1,72 @@
+# CausalMemBench mini-pilot configuration (SPEC.md Round 1)
+# All paths absolute; nothing under /tmp or /home.
+
+paths:
+  project_root: /work1/zixuan/projects/agent_memory
+  pilot_dir:    /work1/zixuan/projects/agent_memory/pilot
+  data_root:    /work1/zixuan/data/agent_memory
+  public_view:  /work1/zixuan/data/agent_memory/public_view
+  sealed:       /work1/zixuan/data/agent_memory/sealed
+  output_root:  /work1/zixuan/outputs/agent_memory/pilot
+  log_root:     /work1/zixuan/logs/agent_memory
+  hf_home:      /work1/zixuan/cache/huggingface
+
+generation:
+  n_families: 40            # SPEC: 30-50, target 40
+  siblings_per_family: 4    # program-preserving siblings >= 4
+  near_miss_per_family: 1   # >= 1 near-miss version per family
+  generator_seed: 20260807  # sealed generator seed
+  state_seeds: [0, 1, 2, 3] # per (family, sibling, seed) initial-state seeds
+  distractor_rows_min: 8    # distractor records per table (difficulty knob)
+  distractor_rows_max: 20
+  # Similarity calibration (S operationalisation, tech report 6.5/6.9-5)
+  # Buckets are verified by the generator on (memory, target instruction) pairs.
+  sim_token_overlap_high: 0.29   # TF cosine on content tokens (procedural
+  sim_token_overlap_low:  0.20   # stopwords + digits removed): high >= 0.29
+                                 # low <= 0.20. Calibrated to measured clusters
+                                 # S=1 [0.315, 0.795], S=0 [0.000, 0.127].
+  sim_embed_high: 0.80           # bge-small-en-v1.5 cosine on card content-core
+  sim_embed_low:  0.78           # vs instruction; distribution anchors (medians).
+                                 # Measured bge clusters: S=1 med 0.849-0.851
+                                 # [min 0.732], S=0 med 0.618-0.691 [max 0.751],
+                                 # Q med 0.481. Lexical metric defines buckets;
+                                 # this anchors the second (continuous) view.
+  embed_model: "BAAI/bge-small-en-v1.5"   # pinned in SPEC.md; already cached in HF_HOME and CPU-verified (parent agent, 2026-08-07)
+  embed_fallback_model: "thenlper/gte-small"
+  embed_device: "cpu"
+
+memories:
+  tokenizer: "Qwen/Qwen2.5-1.5B-Instruct"   # tokenizer for length measurement
+  tokens_target: 240
+  tokens_min: 200
+  tokens_max: 300
+  n_style_templates: 6      # Latin-square counterbalanced card styles
+
+harness:
+  max_steps: 12
+  max_tokens_per_step: 512
+  temperature: 0.7
+  top_p: 0.9
+  gpu_memory_utilization: 0.6
+  retry_max: 2
+  selfcheck_n_tasks: 5            # instruction-following self-check (N condition)
+  selfcheck_min_parseable: 0.90   # parseable-action rate gate
+
+models:
+  # name -> HF repo id (resolved through HF_HOME cache)
+  qwen1.5b: "Qwen/Qwen2.5-1.5B-Instruct"
+  qwen3b:   "Qwen/Qwen2.5-3B-Instruct"
+  qwen7b:   "Qwen/Qwen2.5-7B-Instruct"
+
+grid:
+  # full Stage A grid: families x 4 target siblings x 6 cells x 4 seeds x 2 models
+  cells: ["A00", "A01", "A10", "A11", "N", "Q"]
+  seeds: [0, 1, 2, 3]
+  models_main: ["qwen3b", "qwen7b"]
+  n_target_siblings: 4
+
+analysis:
+  bootstrap_reps: 10000       # GATE_PROTOCOL.md §3 (pre-registered); do not lower
+  bootstrap_seed: 1234
+  tost_margin: 0.07          # difficulty equivalence margin (+-7pp)
+  ci_level: 0.95
