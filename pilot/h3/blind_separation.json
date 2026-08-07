@@ -1,0 +1,29 @@
+{
+ "test": "mannwhitneyu two-sided, 2x2 arms pooled",
+ "n_transcript": 1024,
+ "n_script": 1024,
+ "features": {
+  "imperative_density": {
+   "U": 0.0,
+   "p": 0.0,
+   "transcript_mean": 0.03690859374999995,
+   "script_mean": 0.43201679687499867,
+   "pass_0.01": true
+  },
+  "ordered_steps": {
+   "U": 524288.0,
+   "p": 1.0,
+   "transcript_mean": 4.08203125,
+   "script_mean": 4.08203125,
+   "pass_0.01": false
+  },
+  "explicit_postcondition": {
+   "U": 262144.0,
+   "p": 2.0800457762684022e-150,
+   "transcript_mean": 0.0,
+   "script_mean": 0.5,
+   "pass_0.01": true
+  }
+ },
+ "sec15_5_pass": true
+}

@@ -1,0 +1,6 @@
+arm	n	imperative_density	ordered_steps	postcondition_frac	write_decision_frac	finish_frac	token_mean
+transcript_complete	512	0.0216	6.55	0.0000	1.0000	1.0000	712.7
+transcript_prefix	512	0.0522	1.62	0.0000	0.0000	0.0000	268.4
+script_complete	512	0.5069	6.55	1.0000	1.0000	1.0000	465.2
+script_prefix	512	0.3571	1.62	0.0000	0.0000	0.0000	144.2
+eco	512	0.0460	2.45	0.0000	0.6172	0.0000	300.0

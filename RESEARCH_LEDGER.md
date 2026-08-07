@@ -67,7 +67,18 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 
 ## 外部讨论记录
 
-### 2026-08-08 — H-C Minimal Gate 负结果（Codex thread 019fdba5-1a9c-79c3-a691-f026e9801544）
+### 2026-08-08 第二轮 — H3 析因实验判定（Codex thread 019fde39-8a4a-76a1-9357-1428d4dcec15）
+
+**自分析**：`analysis/H3_RESULT_MEMO.md`。
+
+**GPT-5.6 裁决要点**：
+
+1. H3 判为"**formal NO_GO 但 informative clarification**"：射杀了"大 script-over-transcript 解释"（方向相反且区间不含 H-C 的 15.8pp），但未确认"coverage 驱动"（冻结多重校正下覆盖对比不显著）；eco 臂把缺失内容、token 预算、截断位置混为一体，不能归因为单一成分；
+2. 我的 Holm 实现存在**选择感知错误**：先取大号对比再算边际 p 是反保守的；他给出两条合法路径——(a) 每次 bootstrap 复制内重算 max 的 max-statistic 检验，(b) 两个覆盖对比分别做 → 8 个 Holm test。已按 (b) 重算并存档（`pilot/h3/h3_inference_8tests.json`；max-stat 路线亦跑过并标注反保守禁用）；
+3. 资源裁决：**停实验，写论文**。不许再为 ~8pp 效应追加算力（"push effects across a significance threshold"是明显的 post-result power chasing）；H3 定位为"工具诊断"，覆盖结论按"supported but unresolved"措辞；
+4. H3 计为正式 NO_GO——计入六次连续 NO_GO 停止规则的账本。当前账本：H-C(1) + H3(2)。
+
+### 2026-08-08 第一轮 — H-C Minimal Gate 负结果（Codex thread 019fdba5-1a9c-79c3-a691-f026e9801544）
 
 **自分析**：`analysis/HC_NEGATIVE_RESULT_MEMO.md`。
 

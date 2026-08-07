@@ -1,0 +1,62 @@
+{
+ "frozen": {
+  "effect_epsilon_form": 0.08,
+  "power_target": 0.8,
+  "units_per_cell": 12,
+  "family_lever": [
+   24,
+   32
+  ],
+  "lever_rule": "add families (24->32), never seeds (GPT-5.6 clause, sec.16)"
+ },
+ "sim": {
+  "n_sims": 500,
+  "boot_reps": 500,
+  "seed": 20260809,
+  "anchor_primary": "pilot_A11_family_rates",
+  "anchor_sensitivity": "pilot_N_family_rates",
+  "note": "N reference cancels in epsilon_form; simulated contrast = rate(sc)-rate(tc)"
+ },
+ "pilot_family_covariance": {
+  "n_families": 40,
+  "a11_rate_mean": 0.7328125,
+  "a11_rate_sd": 0.2958674704933847,
+  "n_rate_mean": 0.546875,
+  "n_rate_sd": 0.3752002670369724
+ },
+ "results": {
+  "A11_anchor_F24": {
+   "power": 0.64,
+   "n_sims": 500,
+   "mean_est": 0.06694444444444446,
+   "mean_ci_halfwidth": 0.0549103298611111
+  },
+  "A11_anchor_F32": {
+   "power": 0.756,
+   "n_sims": 500,
+   "mean_est": 0.06608333333333334,
+   "mean_ci_halfwidth": 0.04706888020833332
+  },
+  "N_anchor_F24": {
+   "power": 0.678,
+   "n_sims": 500,
+   "mean_est": 0.07182638888888888,
+   "mean_ci_halfwidth": 0.05604062499999999
+  },
+  "N_anchor_F32": {
+   "power": 0.798,
+   "n_sims": 500,
+   "mean_est": 0.07191666666666666,
+   "mean_ci_halfwidth": 0.04965384114583333
+  }
+ },
+ "decision": {
+  "n_families": 32,
+  "rule": "power(24, A11 anchor) >= 0.8 -> 24 else 32",
+  "power_24_primary": 0.64,
+  "power_32_primary": 0.756,
+  "recorded": "2026-08-07 11:19:35 GMT",
+  "action": "set configs/h3.yaml n_families=32 and re-run gen_fresh_families.py --generate BEFORE building cards"
+ },
+ "elapsed_sec": 9.7
+}

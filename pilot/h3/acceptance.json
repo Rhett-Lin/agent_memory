@@ -1,0 +1,176 @@
+{
+ "mandatory_pass": true,
+ "gates": {
+  "1_oracle": {
+   "pass": true,
+   "detail": {
+    "sealed_oracle": {
+     "checked": 640,
+     "ok": 640,
+     "failures": []
+    },
+    "canonical_source_reexecution": {
+     "sources": 64,
+     "ok": 64,
+     "errors": []
+    }
+   }
+  },
+  "2_n_condition_band": {
+   "pass": true,
+   "detail": {
+    "n_success_rate": 0.5572916666666666,
+    "band": [
+     0.3,
+     0.7
+    ],
+    "parseable_action_rate": 0.9980321416857986
+   }
+  },
+  "3_canonical_align": {
+   "pass": true,
+   "detail": {
+    "sa_verdict": "PASS",
+    "transcript_complete": {
+     "n": 512,
+     "write_decision_present": "512/512",
+     "finish_present": "512/512"
+    },
+    "script_complete": {
+     "n": 512,
+     "write_decision_present": "512/512",
+     "finish_present": "512/512"
+    },
+    "transcript_prefix": {
+     "n": 512,
+     "write_decision_absent": "512/512",
+     "finish_absent": "512/512"
+    },
+    "script_prefix": {
+     "n": 512,
+     "write_decision_absent": "512/512",
+     "finish_absent": "512/512"
+    }
+   }
+  },
+  "4_isolation": {
+   "pass": true,
+   "detail": {
+    "n_cards_scanned": 2560,
+    "cs_hits": 0,
+    "ci_hits": 0,
+    "examples": []
+   }
+  },
+  "6_blind_features": {
+   "pass": true,
+   "detail": {
+    "test": "mannwhitneyu two-sided, 2x2 arms pooled",
+    "n_transcript": 1024,
+    "n_script": 1024,
+    "features": {
+     "imperative_density": {
+      "U": 0.0,
+      "p": 0.0,
+      "transcript_mean": 0.03690859374999995,
+      "script_mean": 0.43201679687499867,
+      "pass_0.01": true
+     },
+     "ordered_steps": {
+      "U": 524288.0,
+      "p": 1.0,
+      "transcript_mean": 4.08203125,
+      "script_mean": 4.08203125,
+      "pass_0.01": false
+     },
+     "explicit_postcondition": {
+      "U": 262144.0,
+      "p": 2.0800457762684022e-150,
+      "transcript_mean": 0.0,
+      "script_mean": 0.5,
+      "pass_0.01": true
+     }
+    },
+    "sec15_5_pass": true
+   }
+  },
+  "5_token_balance": {
+   "pass": "documentation_only",
+   "detail": {
+    "pairwise_smd": [
+     {
+      "arms": [
+       "transcript_complete",
+       "transcript_prefix"
+      ],
+      "smd": 4.408
+     },
+     {
+      "arms": [
+       "transcript_complete",
+       "script_complete"
+      ],
+      "smd": 2.281
+     },
+     {
+      "arms": [
+       "transcript_complete",
+       "script_prefix"
+      ],
+      "smd": 6.002
+     },
+     {
+      "arms": [
+       "transcript_complete",
+       "eco"
+      ],
+      "smd": 4.451
+     },
+     {
+      "arms": [
+       "transcript_prefix",
+       "script_complete"
+      ],
+      "smd": -2.862
+     },
+     {
+      "arms": [
+       "transcript_prefix",
+       "script_prefix"
+      ],
+      "smd": 2.821
+     },
+     {
+      "arms": [
+       "transcript_prefix",
+       "eco"
+      ],
+      "smd": -0.801
+     },
+     {
+      "arms": [
+       "script_complete",
+       "script_prefix"
+      ],
+      "smd": 5.393
+     },
+     {
+      "arms": [
+       "script_complete",
+       "eco"
+      ],
+      "smd": 2.935
+     },
+     {
+      "arms": [
+       "script_prefix",
+       "eco"
+      ],
+      "smd": -8.054
+     }
+    ],
+    "ruling": "sec.15.4 SMD<0.2 NOT enforceable in this design; accepted + covariate-robustness plan per CONSTRUCTION_RULINGS.md R2/R3 (documentation only, never a fail)"
+   }
+  }
+ }
+}

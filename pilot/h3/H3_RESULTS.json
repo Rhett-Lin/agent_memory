@@ -1,0 +1,408 @@
+{
+ "frozen_note": "Part III sec.13/16, rep count and Holm family size frozen 2026-08-08; analysis code written after grid completion but estimand definitions unmodified.",
+ "n_rollouts": 9216,
+ "models": {
+  "qwen7b": {
+   "parseable_rate": 0.9976961762144242,
+   "cell_rates": {
+    "script_complete|A10": {
+     "mean": 0.6614583333333334,
+     "n_families": 32
+    },
+    "script_complete|A11": {
+     "mean": 0.7317708333333334,
+     "n_families": 32
+    },
+    "script_prefix|A10": {
+     "mean": 0.5260416666666667,
+     "n_families": 32
+    },
+    "script_prefix|A11": {
+     "mean": 0.5442708333333334,
+     "n_families": 32
+    },
+    "transcript_complete|A10": {
+     "mean": 0.7291666666666667,
+     "n_families": 32
+    },
+    "transcript_complete|A11": {
+     "mean": 0.8333333333333334,
+     "n_families": 32
+    },
+    "transcript_prefix|A10": {
+     "mean": 0.5677083333333333,
+     "n_families": 32
+    },
+    "transcript_prefix|A11": {
+     "mean": 0.5911458333333333,
+     "n_families": 32
+    },
+    "eco|A10": {
+     "mean": 0.640625,
+     "n_families": 32
+    },
+    "eco|A11": {
+     "mean": 0.6380208333333334,
+     "n_families": 32
+    },
+    "N": {
+     "mean": 0.5572916666666667,
+     "n_families": 32
+    },
+    "Q": {
+     "mean": 0.5416666666666666,
+     "n_families": 32
+    }
+   },
+   "tau_replaylike": {
+    "script_complete": {
+     "point": 0.0703125,
+     "ci": [
+      -0.004166666666666541,
+      0.14585813492063482
+     ]
+    },
+    "script_prefix": {
+     "point": 0.01822916666666663,
+     "ci": [
+      -0.04166666666666663,
+      0.0789473684210526
+     ]
+    },
+    "transcript_complete": {
+     "point": 0.10416666666666663,
+     "ci": [
+      0.04161706349206346,
+      0.17129629629629628
+     ]
+    },
+    "transcript_prefix": {
+     "point": 0.0234375,
+     "ci": [
+      -0.05092592592592604,
+      0.10507723112128146
+     ]
+    },
+    "eco": {
+     "point": -0.0026041666666666297,
+     "ci": [
+      -0.08333333333333337,
+      0.08333333333333337
+     ]
+    }
+   },
+   "estimands": {
+    "epsilon_form": {
+     "point": -0.03385416666666663,
+     "ci": [
+      -0.1064814814814814,
+      0.03947368421052644
+     ]
+    },
+    "epsilon_int": {
+     "point": -0.02864583333333326,
+     "ci": [
+      -0.13494674185463645,
+      0.07200378787878753
+     ]
+    },
+    "epsilon_cov": {
+     "script": {
+      "point": 0.05208333333333337,
+      "ci": [
+       -0.03508771929824561,
+       0.13749999999999984
+      ]
+     },
+     "transcript": {
+      "point": 0.08072916666666663,
+      "ci": [
+       -0.018551587301587482,
+       0.17754227053140084
+      ]
+     }
+    },
+    "eco_vs_tp": {
+     "point": -0.02604166666666663,
+     "ci": [
+      -0.09166666666666667,
+      0.03973214285714266
+     ]
+    }
+   },
+   "tost_transcript_complete": {
+    "est": 0.10416666666666667,
+    "ci90": [
+     0.03645833333333333,
+     0.17447916666666669
+    ],
+    "margin": 0.03,
+    "equivalent": false
+   },
+   "token_covariate_sensitivity": {
+    "epsilon_form": {
+     "est": -0.10156249973551434,
+     "ci": [
+      -0.1770833328721788,
+      -0.03385416657850479
+     ]
+    }
+   }
+  },
+  "qwen3b": {
+   "parseable_rate": 0.9659836170158471,
+   "cell_rates": {
+    "script_complete|A10": {
+     "mean": 0.29947916666666663,
+     "n_families": 32
+    },
+    "script_complete|A11": {
+     "mean": 0.42447916666666663,
+     "n_families": 32
+    },
+    "script_prefix|A10": {
+     "mean": 0.2421875,
+     "n_families": 32
+    },
+    "script_prefix|A11": {
+     "mean": 0.2734375,
+     "n_families": 32
+    },
+    "transcript_complete|A10": {
+     "mean": 0.3125,
+     "n_families": 32
+    },
+    "transcript_complete|A11": {
+     "mean": 0.5026041666666666,
+     "n_families": 32
+    },
+    "transcript_prefix|A10": {
+     "mean": 0.22395833333333331,
+     "n_families": 32
+    },
+    "transcript_prefix|A11": {
+     "mean": 0.3125,
+     "n_families": 32
+    },
+    "eco|A10": {
+     "mean": 0.24479166666666669,
+     "n_families": 32
+    },
+    "eco|A11": {
+     "mean": 0.296875,
+     "n_families": 32
+    },
+    "N": {
+     "mean": 0.3880208333333333,
+     "n_families": 32
+    },
+    "Q": {
+     "mean": 0.37239583333333337,
+     "n_families": 32
+    }
+   },
+   "tau_replaylike": {
+    "script_complete": {
+     "point": 0.125,
+     "ci": [
+      0.053020334928229676,
+      0.20078249601275913
+     ]
+    },
+    "script_prefix": {
+     "point": 0.03125,
+     "ci": [
+      -0.030701754385964897,
+      0.0964912280701754
+     ]
+    },
+    "transcript_complete": {
+     "point": 0.19010416666666663,
+     "ci": [
+      0.12250612745098034,
+      0.2587841130604289
+     ]
+    },
+    "transcript_prefix": {
+     "point": 0.08854166666666669,
+     "ci": [
+      0.015873015873015872,
+      0.15909090909090912
+     ]
+    },
+    "eco": {
+     "point": 0.052083333333333315,
+     "ci": [
+      -0.01984126984126977,
+      0.12719298245614036
+     ]
+    }
+   },
+   "estimands": {
+    "epsilon_form": {
+     "point": -0.06510416666666663,
+     "ci": [
+      -0.1316038676236046,
+      -5.551115123125783e-17
+     ]
+    },
+    "epsilon_int": {
+     "point": -0.0078124999999999445,
+     "ci": [
+      -0.12499999999999994,
+      0.11252840909090912
+     ]
+    },
+    "epsilon_cov": {
+     "script": {
+      "point": 0.09375,
+      "ci": [
+       0.011904761904761944,
+       0.17592592592592593
+      ]
+     },
+     "transcript": {
+      "point": 0.10156249999999994,
+      "ci": [
+       0.01892887205387188,
+       0.18984885620915035
+      ]
+     }
+    },
+    "eco_vs_tp": {
+     "point": -0.03645833333333337,
+     "ci": [
+      -0.08712121212121213,
+      0.012499999999999848
+     ]
+    }
+   },
+   "tost_transcript_complete": {
+    "est": 0.19010416666666669,
+    "ci90": [
+     0.11979166666666666,
+     0.2682291666666667
+    ],
+    "margin": 0.03,
+    "equivalent": false
+   },
+   "token_covariate_sensitivity": {
+    "epsilon_form": {
+     "est": -0.07812499979654948,
+     "ci": [
+      -0.14843749961344407,
+      0.002604166659884972
+     ]
+    }
+   }
+  }
+ },
+ "arms": [
+  "script_complete",
+  "script_prefix",
+  "transcript_complete",
+  "transcript_prefix",
+  "eco"
+ ],
+ "holm_tests_registered": [
+  {
+   "model": "qwen7b",
+   "estimand": "epsilon_form",
+   "point": -0.03385416666666663,
+   "ci": [
+    -0.1064814814814814,
+    0.03947368421052644
+   ]
+  },
+  {
+   "model": "qwen7b",
+   "estimand": "epsilon_int",
+   "point": -0.02864583333333326,
+   "ci": [
+    -0.13494674185463645,
+    0.07200378787878753
+   ]
+  },
+  {
+   "model": "qwen7b",
+   "estimand": "epsilon_cov_larger(transcript)",
+   "point": 0.08072916666666663,
+   "ci": [
+    -0.018551587301587482,
+    0.17754227053140084
+   ]
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "epsilon_form",
+   "point": -0.06510416666666663,
+   "ci": [
+    -0.1316038676236046,
+    -5.551115123125783e-17
+   ]
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "epsilon_int",
+   "point": -0.0078124999999999445,
+   "ci": [
+    -0.12499999999999994,
+    0.11252840909090912
+   ]
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "epsilon_cov_larger(transcript)",
+   "point": 0.10156249999999994,
+   "ci": [
+    0.01892887205387188,
+    0.18984885620915035
+   ]
+  }
+ ],
+ "holm_note": "p-values computed by re-running the same cluster bootstrap and 2*min(P>=0,P<=0); Holm m=6 applied below.",
+ "holm": [
+  {
+   "model": "qwen7b",
+   "estimand": "epsilon_form",
+   "p_boot": 0.373,
+   "p_holm": 1.0,
+   "sig_005": false
+  },
+  {
+   "model": "qwen7b",
+   "estimand": "epsilon_int",
+   "p_boot": 0.62,
+   "p_holm": 1.0,
+   "sig_005": false
+  },
+  {
+   "model": "qwen7b",
+   "estimand": "epsilon_cov_larger(transcript)",
+   "p_boot": 0.115,
+   "p_holm": 0.46,
+   "sig_005": false
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "epsilon_form",
+   "p_boot": 0.054,
+   "p_holm": 0.27,
+   "sig_005": false
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "epsilon_int",
+   "p_boot": 0.959,
+   "p_holm": 0.959,
+   "sig_005": false
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "epsilon_cov_larger(transcript)",
+   "p_boot": 0.018,
+   "p_holm": 0.10799999999999998,
+   "sig_005": false
+  }
+ ]
+}

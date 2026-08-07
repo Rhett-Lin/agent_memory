@@ -1,0 +1,171 @@
+{
+ "note": "marginal contrast route per GPT-5.6 (both coverage contrasts tested separately; Holm m=8). The earlier max-statistic attempt (h3_maxaware_inference.json cov_max p=0.0004) is ANTI-CONSERVATIVE: max-stat null is not centered at 0; do not cite it. Methods note in GPT-5.6 thread 019fde39.",
+ "per_model": {
+  "qwen7b": {
+   "epsilon_form": {
+    "point": -0.0339,
+    "ci": [
+     -0.1078,
+     0.0397
+    ],
+    "p": 0.3756
+   },
+   "epsilon_int": {
+    "point": -0.0286,
+    "ci": [
+     -0.1326,
+     0.075
+    ],
+    "p": 0.6058
+   },
+   "cov_script": {
+    "point": 0.0521,
+    "ci": [
+     -0.0333,
+     0.1375
+    ],
+    "p": 0.231
+   },
+   "cov_transcript": {
+    "point": 0.0807,
+    "ci": [
+     -0.0227,
+     0.1806
+    ],
+    "p": 0.1278
+   }
+  },
+  "qwen3b": {
+   "epsilon_form": {
+    "point": -0.0651,
+    "ci": [
+     -0.1333,
+     0.0
+    ],
+    "p": 0.0468
+   },
+   "epsilon_int": {
+    "point": -0.0078,
+    "ci": [
+     -0.123,
+     0.1072
+    ],
+    "p": 0.8974
+   },
+   "cov_script": {
+    "point": 0.0937,
+    "ci": [
+     0.0125,
+     0.1742
+    ],
+    "p": 0.0246
+   },
+   "cov_transcript": {
+    "point": 0.1016,
+    "ci": [
+     0.0167,
+     0.1917
+    ],
+    "p": 0.0184
+   }
+  }
+ },
+ "holm_m8": [
+  {
+   "model": "qwen3b",
+   "estimand": "cov_transcript",
+   "point": 0.1016,
+   "ci": [
+    0.0167,
+    0.1917
+   ],
+   "p": 0.0184,
+   "holm": 0.1472,
+   "sig": false
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "cov_script",
+   "point": 0.0937,
+   "ci": [
+    0.0125,
+    0.1742
+   ],
+   "p": 0.0246,
+   "holm": 0.1722,
+   "sig": false
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "epsilon_form",
+   "point": -0.0651,
+   "ci": [
+    -0.1333,
+    0.0
+   ],
+   "p": 0.0468,
+   "holm": 0.2808,
+   "sig": false
+  },
+  {
+   "model": "qwen7b",
+   "estimand": "cov_transcript",
+   "point": 0.0807,
+   "ci": [
+    -0.0227,
+    0.1806
+   ],
+   "p": 0.1278,
+   "holm": 0.639,
+   "sig": false
+  },
+  {
+   "model": "qwen7b",
+   "estimand": "cov_script",
+   "point": 0.0521,
+   "ci": [
+    -0.0333,
+    0.1375
+   ],
+   "p": 0.231,
+   "holm": 0.924,
+   "sig": false
+  },
+  {
+   "model": "qwen7b",
+   "estimand": "epsilon_form",
+   "point": -0.0339,
+   "ci": [
+    -0.1078,
+    0.0397
+   ],
+   "p": 0.3756,
+   "holm": 1.0,
+   "sig": false
+  },
+  {
+   "model": "qwen7b",
+   "estimand": "epsilon_int",
+   "point": -0.0286,
+   "ci": [
+    -0.1326,
+    0.075
+   ],
+   "p": 0.6058,
+   "holm": 1.0,
+   "sig": false
+  },
+  {
+   "model": "qwen3b",
+   "estimand": "epsilon_int",
+   "point": -0.0078,
+   "ci": [
+    -0.123,
+    0.1072
+   ],
+   "p": 0.8974,
+   "holm": 0.8974,
+   "sig": false
+  }
+ ]
+}

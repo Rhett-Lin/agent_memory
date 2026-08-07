@@ -1,0 +1,12 @@
+{
+ "checked_pairs": {
+  "complete": 512,
+  "prefix": 512
+ },
+ "ok_pairs": {
+  "complete": 512,
+  "prefix": 512
+ },
+ "verdict": "PASS",
+ "mismatches": []
+}

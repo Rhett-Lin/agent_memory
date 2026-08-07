@@ -1,0 +1,55 @@
+{
+ "n_h3_families": 32,
+ "n_pilot_families": 40,
+ "shared_family_instances": 0,
+ "shared_instruction_strings_all_tasks": 0,
+ "param_only_collisions_expected": [
+  [
+   "cal_move_headcount",
+   "{\"amount\": 10, \"min_keep\": 5}"
+  ],
+  [
+   "crm_purge_lead",
+   "{\"arch_date\": \"2026-09-17\", \"source_bias\": \"webinar\"}"
+  ],
+  [
+   "inv_transfer",
+   "{\"amount\": 11, \"cap\": 400, \"min_keep\": 5}"
+  ],
+  [
+   "ticket_gate_close",
+   "{\"prefix\": \"INC\", \"topic\": \"billing mismatch\"}"
+  ],
+  [
+   "ticket_purge_spam",
+   "{\"prefix\": \"APP\"}"
+  ],
+  [
+   "ticket_purge_spam",
+   "{\"prefix\": \"DBA\"}"
+  ]
+ ],
+ "param_collision_note": "small parameter spaces make (schema,params) collisions expected under any seed; they are NOT shared family instances (entities/states differ by seed-keyed draws)",
+ "shared_instance_examples": [],
+ "shared_instruction_examples": [],
+ "disjoint": true,
+ "config": "/work1/zixuan/projects/agent_memory/pilot/h3/configs/h3.yaml",
+ "config_hash": "8b791270b54c",
+ "git_commit": "9064f97",
+ "generator_seed": 20260809,
+ "pilot_generator_seed": 20260807,
+ "n_families": 32,
+ "siblings_per_family": 4,
+ "state_seeds": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "distractor_rows": [
+  8,
+  20
+ ],
+ "created": "2026-08-07 11:36:27 GMT",
+ "elapsed_sec": 30.6
+}

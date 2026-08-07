@@ -1,0 +1,76 @@
+# CausalMemAgent H3 configuration (GATE_PROTOCOL.md Part III, 2026-08-08 frozen)
+#
+# H3 = representation (form) x semantic-coverage 2x2 factorial on the
+# replaylike effect, FRESH data. This config mirrors configs/pilot_7b.yaml
+# except: fresh output paths, n_families=24 (3 per schema, may be bumped to
+# 32 by the pre-registered power lever in Part III section 16), and a NEW
+# sealed generator seed (disjoint from pilot's 20260807).
+# All paths absolute; nothing under /tmp or /home.
+
+paths:
+  project_root: /work1/zixuan/projects/agent_memory
+  pilot_dir:    /work1/zixuan/projects/agent_memory/pilot
+  data_root:    /work1/zixuan/data/agent_memory/h3
+  public_view:  /work1/zixuan/data/agent_memory/h3/public_view
+  sealed:       /work1/zixuan/data/agent_memory/h3/sealed
+  output_root:  /work1/zixuan/outputs/agent_memory/pilot/h3
+  log_root:     /work1/zixuan/logs/agent_memory/h3
+  hf_home:      /work1/zixuan/cache/huggingface
+
+generation:
+  # Part III sec.16 power lever: pre-grid power_sim.py gave power(24)=0.640
+  # (<0.8 target) for epsilon_form=8pp -> bumped to the frozen maximum of 32
+  # (4 per schema). Power(32)=0.756 primary / 0.798 sensitivity; the residual
+  # shortfall vs 0.8 is recorded in power_sim.json (no further lever allowed).
+  n_families: 32
+  siblings_per_family: 4    # 4 target siblings per family
+  near_miss_per_family: 1
+  generator_seed: 20260809  # H3 seed, DISJOINT from pilot's 20260807 (recorded)
+  state_seeds: [0, 1, 2, 3] # grid decodes on seeds 0-2; same initial DB per (sib,seed)
+  distractor_rows_min: 8    # difficulty knobs (allowed-adjust bounds = pilot
+  distractor_rows_max: 20   # window, record any change in gen_report.json)
+  # Similarity calibration -- identical frozen thresholds as pilot config.
+  sim_token_overlap_high: 0.29
+  sim_token_overlap_low:  0.20
+  sim_embed_high: 0.80
+  sim_embed_low:  0.78
+  embed_model: "BAAI/bge-small-en-v1.5"
+  embed_fallback_model: "thenlper/gte-small"
+  embed_device: "cpu"
+
+memories:
+  tokenizer: "Qwen/Qwen2.5-1.5B-Instruct"   # token measurement (frozen, sec.14.4)
+  tokens_target: 240
+  tokens_min: 200
+  tokens_max: 300
+  n_style_templates: 6
+
+harness:
+  max_steps: 12
+  max_tokens_per_step: 512
+  temperature: 0.7
+  top_p: 0.9
+  gpu_memory_utilization: 0.85   # as configs/pilot_7b.yaml (frozen by parent)
+  retry_max: 2
+  selfcheck_n_tasks: 5
+  selfcheck_min_parseable: 0.90
+
+models:
+  qwen1.5b: "Qwen/Qwen2.5-1.5B-Instruct"    # blind feature annotator (sec.14.6)
+  qwen3b:   "Qwen/Qwen2.5-3B-Instruct"
+  qwen7b:   "Qwen/Qwen2.5-7B-Instruct"
+
+grid:
+  # H3 grid (sec.16): 32 fam x 4 sib x 5 arms x 3 seeds = 1920 rollouts per
+  # model; plus N/Q reference cells (same conventions as pilot, 2x384 per
+  # model). cells N/Q are shared references for all arms of the family.
+  cells: ["N", "Q"]
+  seeds: [0, 1, 2]
+  models_main: ["qwen7b", "qwen3b"]
+  n_target_siblings: 4
+
+analysis:
+  bootstrap_reps: 2000        # Part III sec.13/16 (frozen): 2000 reps
+  bootstrap_seed: 1234
+  tost_margin: 0.03           # Part III sec.13 (frozen): +-3pp equivalence
+  ci_level: 0.95

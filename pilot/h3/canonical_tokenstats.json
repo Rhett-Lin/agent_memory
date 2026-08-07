@@ -1,0 +1,56 @@
+{
+ "_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+ "eco": {
+  "below_200": 0,
+  "equals_transcript_prefix": 0,
+  "has_finish": 0,
+  "has_write_decision": 316,
+  "max": 300,
+  "mean": 300.0,
+  "min": 300,
+  "n": 512,
+  "over_300": 0,
+  "p10": 300.0,
+  "p90": 300.0
+ },
+ "script_complete": {
+  "below_200": 0,
+  "max": 611,
+  "mean": 465.25,
+  "min": 301,
+  "n": 512,
+  "over_300": 512,
+  "p10": 353.0,
+  "p90": 564.0999999999998
+ },
+ "script_prefix": {
+  "below_200": 504,
+  "max": 212,
+  "mean": 144.1796875,
+  "min": 99,
+  "n": 512,
+  "over_300": 0,
+  "p10": 114.0,
+  "p90": 188.0
+ },
+ "transcript_complete": {
+  "below_200": 0,
+  "max": 867,
+  "mean": 712.734375,
+  "min": 458,
+  "n": 512,
+  "over_300": 512,
+  "p10": 495.0,
+  "p90": 848.0
+ },
+ "transcript_prefix": {
+  "below_200": 80,
+  "max": 353,
+  "mean": 268.3515625,
+  "min": 169,
+  "n": 512,
+  "over_300": 188,
+  "p10": 192.0,
+  "p90": 340.0
+ }
+}
