@@ -75,8 +75,15 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - [x] LITERATURE_COLLISIONS.md（Round 1 完结）
 - [x] 基础设施：conda env `causalmemagent`（vllm 0.6.6.post1，CUDA 冒烟通过）、Qwen2.5-3B/7B 权重、bge-small 嵌入模型全部就绪（2026-08-07）
 - [x] 预注册冻结：GATE_PROTOCOL.md（Gate A 阈值）、CAUSAL_STRUCTURE_AUDIT.md（Gate B 审计项）、BOTTLENECK_PROFILE.md / GATE_FINDINGS.md / DECISION.md 框架（填数区留白）
-- [ ] mini-pilot 代码实现 + smoke — agent-3 运行中
-- [ ] mini-pilot 正式网格执行（RelationalOps、40 families、2 模型规模）
+- [x] mini-pilot 代码实现 + smoke（agent-3 完成，2h 超时前已交付全部产物）：
+  - 8 archetype（4 程序原型 × 2 领域渲染）、800 任务/800 memory、oracle 800/800 合法终态
+  - 隔离 grep 零命中；embed 校准 PASS（BAAI/bge-small pinned；分布锚点校准 + 边界重叠如实记录于 manifest）
+  - smoke：parseable 95%、自洽检查 100%、N 条件成功率 25%（20–80% 区间）、六 cells token 均衡、四图产出
+  - 我独立复核：A10 成功 rollout 动作序列与注入 memory 结构一致（真实遵循）；git 基线 6f6f8e5
+- [x] mini-pilot 正式网格执行完毕（7680 rollouts，~1h on 10×A5000；7B 首跑 0.6 显存失败 → `configs/pilot_7b.yaml` 0.85 重启，全程日志在 `/work1/zixuan/logs/agent_memory/`）
+- [x] 四张核心图 + BOTTLENECK_PROFILE.md 填数（Holm m=8 校正后：7B τ_struct SIG+、3B τ_P×S SIG+、τ_replaylike 两模型 SIG+、τ_context ≈ 0）
+- [x] **Gate A = GO**（2026-08-07）：关键发现——7B 增益主要来自 surface-matched replay（A11 0.733 vs N 0.547），clean structural transfer 仅 +9.2pp；3B/7B τ_struct 方向相反；A01 harmful flip 3B 18.8% / 7B 9.2%；反直觉现象 τ_trap(7B) 方向为正。风险：7B difficulty TOST 未过（−0.077 vs margin −0.070）转 Gate B 处置
+- [~] Gate B 审计执行中（强 probe + 难度稳健性 + 连续-S + 合规补强），不得先扩展规模再补审计
 - [ ] 四张核心图 + BOTTLENECK_PROFILE.md 填数
 - [ ] Gate A 判定
 - [ ]（Gate A 若过）强 leakage probe 审计 → Gate B 前置

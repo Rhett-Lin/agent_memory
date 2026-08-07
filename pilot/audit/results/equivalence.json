@@ -1,0 +1,637 @@
+{
+ "env": {
+  "python": "3.11.15",
+  "audit_seed": 20260808,
+  "bootstrap": {
+   "reps": 2000,
+   "level": 0.95,
+   "cluster": "family"
+  },
+  "cwd": "/work1/zixuan/projects/agent_memory/pilot/audit",
+  "numpy": "1.26.4",
+  "sklearn": "1.9.0",
+  "torch": "2.5.1+cu124",
+  "gpu": "NVIDIA RTX A5000",
+  "vllm": "0.6.6.post1",
+  "judge_model": "Qwen/Qwen2.5-7B-Instruct",
+  "sample_seed": 20260849
+ },
+ "sampled_families": {
+  "cal_finalize": 29,
+  "cal_move_headcount": 35,
+  "crm_escalate": 24,
+  "crm_purge_lead": 38,
+  "inv_overstock": 33,
+  "inv_transfer": 34,
+  "ticket_gate_close": 20,
+  "ticket_purge_spam": 39
+ },
+ "signature_check": [
+  {
+   "schema_key": "cal_finalize",
+   "family_idx": 29,
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY",
+   "a10_partner": 28,
+   "partner_signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY",
+   "signatures_equal": true,
+   "nm_kind": "wrong_child_set"
+  },
+  {
+   "schema_key": "cal_move_headcount",
+   "family_idx": 35,
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY",
+   "a10_partner": 34,
+   "partner_signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY",
+   "signatures_equal": true,
+   "nm_kind": "reverse_direction"
+  },
+  {
+   "schema_key": "crm_escalate",
+   "family_idx": 24,
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "a10_partner": 17,
+   "partner_signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "signatures_equal": true,
+   "nm_kind": "flip_polarity"
+  },
+  {
+   "schema_key": "crm_purge_lead",
+   "family_idx": 38,
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+   "a10_partner": 39,
+   "partner_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+   "signatures_equal": true,
+   "nm_kind": "skip_archive"
+  },
+  {
+   "schema_key": "inv_overstock",
+   "family_idx": 33,
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "a10_partner": 24,
+   "partner_signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "signatures_equal": true,
+   "nm_kind": "flip_polarity"
+  },
+  {
+   "schema_key": "inv_transfer",
+   "family_idx": 34,
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY",
+   "a10_partner": 35,
+   "partner_signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY",
+   "signatures_equal": true,
+   "nm_kind": "reverse_direction"
+  },
+  {
+   "schema_key": "ticket_gate_close",
+   "family_idx": 20,
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY",
+   "a10_partner": 21,
+   "partner_signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY",
+   "signatures_equal": true,
+   "nm_kind": "wrong_child_set"
+  },
+  {
+   "schema_key": "ticket_purge_spam",
+   "family_idx": 39,
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+   "a10_partner": 38,
+   "partner_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+   "signatures_equal": true,
+   "nm_kind": "skip_archive"
+  }
+ ],
+ "n_pairs": 16,
+ "wordings": {
+  "A_same": "TASK:\n{instruction}\n\nCANDIDATE PROCEDURE (from a memory card):\n{memory}\n\nQuestion: setting aside irrelevant surface details (entity names, domain nouns, exact phrasing), do these two procedures require the SAME sequence of operations -- the same steps, in the same dependency order, with the same decision conditions, comparison directions and write targets?\nAnswer with exactly one word: yes or no.",
+  "B_different": "Here is a task an agent must perform:\n{instruction}\n\nHere is a procedure described in a retrieved memory card:\n{memory}\n\nIgnoring mere surface variation (names, nouns, style): do these two require DIFFERENT underlying programs -- i.e., would following the memory card execute a structurally different sequence of operations, checks or writes than the task demands?\nAnswer with exactly one word: yes or no."
+ },
+ "oracle_recheck": {
+  "n_checked": 160,
+  "n_ok": 160,
+  "pass": true,
+  "failures": []
+ },
+ "judge": {
+  "verdicts": [
+   {
+    "wording": "A_same",
+    "schema_key": "cal_finalize",
+    "family_idx": 29,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 1.707453931628772e-09
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "cal_finalize",
+    "family_idx": 29,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.9999962080961132
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "cal_move_headcount",
+    "family_idx": 35,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 8.071369551866997e-09
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "cal_move_headcount",
+    "family_idx": 35,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.9999753333207163
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "crm_escalate",
+    "family_idx": 24,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 2.0571808711397925e-09
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "crm_escalate",
+    "family_idx": 24,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.9998177042639239
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "crm_purge_lead",
+    "family_idx": 38,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 4.558212543897048e-09
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "crm_purge_lead",
+    "family_idx": 38,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "p_yes": 0.0005454410326974655
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "inv_overstock",
+    "family_idx": 33,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 0.0
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "inv_overstock",
+    "family_idx": 33,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.9768783067297696
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "inv_transfer",
+    "family_idx": 34,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 6.67868714295255e-10
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "inv_transfer",
+    "family_idx": 34,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.999648238118862
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "ticket_gate_close",
+    "family_idx": 20,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 6.295109866829607e-07
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "ticket_gate_close",
+    "family_idx": 20,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.9999782163201354
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "ticket_purge_spam",
+    "family_idx": 39,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 7.772907904398644e-10
+   },
+   {
+    "wording": "A_same",
+    "schema_key": "ticket_purge_spam",
+    "family_idx": 39,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.9520484896761843
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "cal_finalize",
+    "family_idx": 29,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 0.9968270921518002
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "cal_finalize",
+    "family_idx": 29,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "p_yes": 0.8175795836122173
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "cal_move_headcount",
+    "family_idx": 35,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 0.9999869911678122
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "cal_move_headcount",
+    "family_idx": 35,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "p_yes": 0.9398911556116272
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "crm_escalate",
+    "family_idx": 24,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 0.9992903051701236
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "crm_escalate",
+    "family_idx": 24,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "p_yes": 0.5624957969505713
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "crm_purge_lead",
+    "family_idx": 38,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 0.9999898686184758
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "crm_purge_lead",
+    "family_idx": 38,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "p_yes": 0.9988300651725088
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "inv_overstock",
+    "family_idx": 33,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "same",
+    "agree": true,
+    "p_yes": 0.22271030402527967
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "inv_overstock",
+    "family_idx": 33,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.18250302257237394
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "inv_transfer",
+    "family_idx": 34,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 0.9933064689963489
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "inv_transfer",
+    "family_idx": 34,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "p_yes": 0.817643208210621
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "ticket_gate_close",
+    "family_idx": 20,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 0.9999251408631925
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "ticket_gate_close",
+    "family_idx": 20,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "p_yes": 0.1821805335108431
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "ticket_purge_spam",
+    "family_idx": 39,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "p_yes": 0.9984986799509016
+   },
+   {
+    "wording": "B_different",
+    "schema_key": "ticket_purge_spam",
+    "family_idx": 39,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "p_yes": 0.9968259806968248
+   }
+  ],
+  "cot_verdicts": [
+   {
+    "wording": "C_cot",
+    "schema_key": "cal_finalize",
+    "family_idx": 29,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card procedure is focused on closing out a ticket based on the completion of subtasks, while the task at hand is to finalize an event status based on RSVP counts. The memory card procedure does not involve counting RSVPs, does not set event statuses, and does not send notifications. The memory card procedure also does not have a gating condition based on the number of declined RSVPs. Instead, it aggregates subtasks and updates a ticket's status based on the completion of those subtasks. The write-target roles in the memory card procedure are related to tickets and subtasks, whereas the task involves writing to event and notification tables.\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "cal_finalize",
+    "family_idx": 29,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card procedure starts by reading the event row and then aggregating over the linked attendees to count the number of accepted RSVPs. It then sets the event status and sends a notification based on the count. The procedure correctly sets the event status to 'confirmed' if any attendee has accepted and to 'needs_review' otherwise. It also correctly writes the status update and the notification. The procedure ensures that the writes are done in a way that respects the current stored values and uses the exact column names. The only difference is in the exact wording and the order of the writes, but the underlying logic and structure are the same.\n\n**ANSWER: yes**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "cal_move_headcount",
+    "family_idx": 35,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card's procedure involves rebalancing stock between two warehouse rows, while the task is about moving attendees between two sessions. The steps in the memory card involve reading both rows, checking a guard condition, updating the rows, and verifying the results. However, the task involves moving attendees from one event session to another, and the guard conditions are about session capacities rather than stock levels. The memory card procedure does not involve entities related to attendees or sessions, and the guard conditions are about maintaining minimum levels and capacities, which are different from the task's conditions on session capacities.\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "cal_move_headcount",
+    "family_idx": 35,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card's procedure starts by reading both rows, then checks the guard conditions, and finally updates the rows if the guard passes. The procedure ensures that the 'afternoon' session does not fall below its minimum floor and the 'morning' session does not exceed its capacity. The procedure also reads both rows again after the update to verify the new values. The steps and order of operations, the gating conditions, and the safety writes are consistent with the task requirements. The only difference is in the phrasing and the specific details of the entities involved, such as the exact wording of the guard conditions and the specific session names.\n\n**ANSWER: yes**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "crm_escalate",
+    "family_idx": 24,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card procedure focuses on inventory management and overstock policies, while the task at hand is about updating customer records based on complaint counts. The steps in the memory card do not align with the task's requirements. The memory card procedure does not involve reading the customers table, checking complaint counts, or updating the status and priority_flag based on the escalation threshold. Instead, it involves reading the stock table, comparing on-hand quantities with overstock limits, and setting flags accordingly. The gating condition, step sets, and write-target roles are all different.\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "crm_escalate",
+    "family_idx": 24,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "rationale": "**ANALYSIS:** The memory card's procedure correctly identifies the customer's email address and reads the relevant row from the customers table. It then finds the applicable escalation threshold from the sla_policies table and compares the complaint count with this threshold. Based on the comparison, it updates the status and priority_flag accordingly. The procedure also reads the row back to confirm the new values, which is a good practice. However, the procedure does not explicitly state that the update should be performed with a WHERE clause to select the exact row, which is a critical safety measure. Additionally, the procedure does not mention the exact structure of the update statement, such as the role of the write target (i.e., whether it is a table or a specific column).\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "crm_purge_lead",
+    "family_idx": 38,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card procedure is focused on archiving and deleting a spam ticket, while the task is about archiving and deleting a lead with a specific status. The memory card procedure involves reading, confirming the tag, archiving, and deleting related subtasks and the ticket itself. The task involves checking the status, archiving the lead, and deleting related notes and the lead itself. The gating condition and the order of operations differ significantly. The memory card procedure does not match the task in terms of the entities involved, the conditions, and the operations.\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "crm_purge_lead",
+    "family_idx": 38,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "rationale": "**ANALYSIS:** The memory card procedure starts by reading the leads row and checking the status, which aligns with the task. However, it does not archive the lead into `archived_leads` as required. Instead, it directly deletes the lead and its notes without creating an archive copy. The procedure also does not verify the status before proceeding with deletions, which is a critical safety measure. The memory card procedure also does not confirm the deletion by reading the leads table afterward.\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "inv_overstock",
+    "family_idx": 33,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "rationale": "ANALYSIS: The memory card's procedure is focused on customer service escalation policies, whereas the task is about inventory management for SKU NC-2421. The steps in the memory card do not match the task's requirements at all. The memory card procedure involves reading a customer's row, comparing complaint counts, and updating status and priority flags. In contrast, the task requires reading the on-hand quantity of SKU NC-2421, comparing it to the overstock limit, and updating the flag and review status. There is no overlap in the operations, gating conditions, or write-target roles.\n\nANSWER: no"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "inv_overstock",
+    "family_idx": 33,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "rationale": "ANALYSIS: The memory card's procedure correctly identifies the steps and order needed to apply the overstock policy. The steps include reading the stock row, finding the overstock limit, comparing quantities, and updating the flag and review fields. The procedure ensures a safety write by reading the row back to confirm the changes. The gating condition and its polarity are correct, and the procedure does not invent the SKU, which is a safety measure. However, the procedure incorrectly sets the flag to 'markdown' and review to 1 when the quantity is at or below the limit, which is the opposite of the policy requirement. The write-target roles are correct, as the procedure updates the flag and review fields.\n\nANSWER: no"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "inv_transfer",
+    "family_idx": 34,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card's procedure is designed for rebalancing session headcounts, while the task is about moving units of a specific SKU between warehouses. The steps in the procedure do not match the task's requirements. The memory card procedure reads and updates rows in a table related to sessions, whereas the task involves updating stock levels in a warehouse table. The gating conditions and the entities involved are also different. The memory card procedure does not include any checks for the specific SKU or the warehouse locations, and it does not involve any stock table updates.\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "inv_transfer",
+    "family_idx": 34,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card's procedure closely aligns with the task requirements. Both involve checking the guard conditions before performing the move, and both ensure that the rows are updated with the correct values. The steps are in the correct order, the guard conditions are properly set, and the safety writes are included. The only difference is in the phrasing and the specific details of the guard conditions, which are correctly specified in the task.\n\n**ANSWER: yes**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "ticket_gate_close",
+    "family_idx": 20,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card procedure focuses on event management, specifically confirming or reviewing an event based on attendee status. It involves counting declined attendees and updating the event status and notifications accordingly. In contrast, the task at hand involves marking a ticket as 'resolved' or 'in_progress' based on the status of its subtasks. The memory card procedure does not involve counting subtasks or updating ticket statuses; instead, it deals with event statuses and notifications. The gating condition and the actions taken are fundamentally different.\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "ticket_gate_close",
+    "family_idx": 20,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "same",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card's procedure starts by reading the ticket row and then aggregating over the subtasks to count how many are complete. It then decides the ticket's status based on this count and logs the appropriate entry. The procedure then writes the status update and logs the event. This matches the task's requirement to aggregate first, then write both the status and the log entry. The gating condition and the way it counts subtasks are the same. The procedure also includes the necessary safety writes and uses the correct write-target roles. The only difference is in the phrasing and the order of some steps, which are surface details.\n\n**ANSWER: yes**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "ticket_purge_spam",
+    "family_idx": 39,
+    "pair_type": "A10",
+    "generator_label": "same",
+    "judged": "different",
+    "agree": false,
+    "rationale": "**ANALYSIS:** The memory card procedure is focused on archiving and purging a cold lead, while the task at hand is about handling an abuse desk request for a ticket tagged 'spam'. The memory card procedure involves reading, confirming, archiving, and deleting specific rows in the leads and lead_notes tables, whereas the task involves reading, confirming, and archiving specific fields in the tickets table, followed by deleting subtasks and the ticket itself. The gating condition and the order of operations are different, and the write-target roles are also distinct. The memory card procedure does not involve any operations related to tickets or subtasks.\n\n**ANSWER: no**"
+   },
+   {
+    "wording": "C_cot",
+    "schema_key": "ticket_purge_spam",
+    "family_idx": 39,
+    "pair_type": "A01",
+    "generator_label": "different",
+    "judged": "different",
+    "agree": true,
+    "rationale": "**ANALYSIS:** The memory card's procedure starts by reading the ticket row and confirming its tag is 'spam'. It then proceeds to delete the subtasks and the ticket itself, without first inserting an audit entry as required by the task. The procedure also does not explicitly state that it should stop without writing if the tag is not 'spam'. The write-target roles are also different; the task requires an 'audit' entry in `ticket_events`, while the memory card does not mention this step.\n\n**ANSWER: no**"
+   }
+  ],
+  "agreement": {
+   "A_same": {
+    "agreement": 0.0625,
+    "n": 16,
+    "per_pair_type": {
+     "A10": 0.0,
+     "A01": 0.125
+    },
+    "n_unparsed": 0
+   },
+   "B_different": {
+    "agreement": 0.4375,
+    "n": 16,
+    "per_pair_type": {
+     "A10": 0.125,
+     "A01": 0.75
+    },
+    "n_unparsed": 0
+   },
+   "overall": {
+    "agreement": 0.25,
+    "n": 32
+   },
+   "C_cot": {
+    "agreement": 0.25,
+    "n": 16,
+    "per_pair_type": {
+     "A10": 0.0,
+     "A01": 0.5
+    },
+    "n_unparsed": 0
+   }
+  },
+  "mismatch_fraction": 0.75,
+  "target": 0.85,
+  "target_met": false,
+  "disagreements_file": "/work1/zixuan/projects/agent_memory/pilot/audit/eq_disagreements.md"
+ }
+}
