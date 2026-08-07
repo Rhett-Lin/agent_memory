@@ -117,3 +117,53 @@ pilot 已证明：(a) 同一表示内两模型方向相反（profile 对表示/�
 淘汰触发检查：三者均无 N<3 / I<3 / H<3、无未解决直接碰撞、均可在 A5000 frozen backbone 完成、均非"仅更多 nested factors"。
 
 **选择：HC**（Gate C 的 profile-divergence 是硬条件，只有 HC 直接攻击它；HA/HB 留存为 paper 次级发现，不占单独方向开发资源）。
+
+---
+
+# Round 2 追加评分（2026-08-08，H-C NO_GO 之后）
+
+新候选来自已归档 H-C 的次级信号（**hypothesis-generating evidence，不得用同数据确认**）+ GPT-5.6 指定的最高杠杆设计。与 HA/HB 并排重新评分（HA/HB 分数沿用 Round 1）。
+
+## Hypothesis ID: H3（新）— representation × semantic-coverage 2×2 factorial on τ_replaylike
+
+#### 问题
+H-C 中 raw-prefix 的 replay 溢价显著低于 procedural（−15.8pp）。这是**表示形式**（transcript vs script）、**语义覆盖**（决策步骤是否保留）、还是二者交互造成的？该混杂是 H-C 无法给出机制结论的根因，也是"原始轨迹 vs 蒸馏程序在部署中的真实差异"的干净化版本。
+
+#### 因果设计
+新鲜 2×2：factor A surface form（transcript/dialogue vs imperative/script）；factor B semantic coverage（complete decision steps vs matched-prefix 缺失）。所有卡片从同一 canonical proposition set 组装：相同事实集、相同顺序、同 write-decision 与 finish 存在性、同来源、同 token 量（尽可能等长）、同 harness/位置。生态第 5 臂：原 300-token 硬截 transcript（对应 H-C 的 raw）。网格：新确认集（utilize pilot 的 held-out archetype/新 family seed 的 20–40 families，不重评分旧观测）× 2 覆盖 × 2 形式 + 生态臂，主 estimand τ_replaylike，n per cell 按 pilot family-level covariance 功效分析定（优先加 family）。两 estimand 分别预注册：deployed-policy effect、pure-form effect。
+
+#### 经验依据
+H-C：Δτ_replaylike(raw−procedural) −0.158 [−0.239,−0.080]；raw 卡仅 48–59% 含写步骤、8/640 含 finish（候选混杂）；summary 居中。
+
+#### 核心机制
+若纯形式效应在完整覆盖下存在 → 表示本身影响回放兑现（部署应强制 script 化）；若仅在截断覆盖下出现 → H-C 差异主要是覆盖假象；若只在预算帽下 → 系统级预算结论。三者任一都有明确论文落点。
+
+#### 识别必要性
+单臂修复（如只加预算）混合多个维度；只有同内容-异形式-异覆盖的完全析因能分离。现有工作（Memp/AWM/raw-replay 对比）没有做过同内容析因；Rocchi 的 bank×agent、Memory Transplants 的 arch×content 都不含语义覆盖维。
+
+#### 与已知碰撞论文的比较
+- Rocchi：bank×agent，无形式/覆盖维；
+- Memory Transplants：arch×content，不含 coverage；
+- Proced-Mem/Memp 等：表示比较但没有同 canonical content 的 confound 控制；
+- 无直接 Collision；Partial = H-C 已归档数据仅作 motivation。
+
+#### 最小 Gate
+8 families（每 archetype 1 个）× 5 arms（2×2+生态）× 4 sib × 3 seeds × 7B ≈ 480 rollouts 的构造有效性试验：验证四臂内容一致性（same proposition coverage）与长度均衡 <5% SMD；不过此检不进入主实验。
+
+#### Kill condition
+构造无法满足"同 canonical content"（transcript 自然语言不可避免引入内容漂移）→ 放弃 pure-form 改只报 deployed-policy；或主实验中四臂 τ_replaylike 两两 CI 全部重叠。
+
+## Round 2 评分
+
+| 维度 | HA 3.70（沿用） | HB 3.60（沿用） | H3 |
+|---|---|---|---|
+| N (0.25) | 3 | 3 | 4 |
+| I (0.20) | 4 | 4 | 5 |
+| H (0.20) | 4 | 3 | 4 |
+| F (0.15) | 5 | 5 | 4 |
+| B (0.10) | 2 | 3 | 4 |
+| S (0.10) | 4 | 4 | 4 |
+| **总分** | **3.70** | **3.60** | **4.20** |
+
+淘汰触发检查：H3 无 N<3/I<3/H<3，无未解决直接碰撞（已复核），A5000 可行，非"仅更多 nested factors"（混杂分离是唯一目标）。
+**Round 2 选择：H3。**
