@@ -2,6 +2,10 @@
 
 > 本台账按 `loop_file/loop.markdown` §13/§15 维护。每轮更新；NO_GO 与识别失败与 GO 同等详细记录。
 
+## 治理规则（用户在循环中追加，优先级高于默认流程）
+
+1. **负结果处置规则（2026-08-08，用户指令）**：出现负结果（NO_GO、识别失败、与预期相悖的稳定结果）时，**先自行仔细分析成因，然后必须与 GPT-5.6（Codex MCP）讨论之后，才能进行下一步动作**。在讨论完成前冻结：不启动新实验、不修改 hypothesis、不写判定结论。讨论要点与结论须记录在本台账 `外部讨论记录` 一节。
+
 ## Gate 0：Novelty Check 结论（2026-08-07，不可回退）
 
 来源：原技术报告 30 篇引用 + Codex/gpt-5.6-sol xhigh 交叉评审 + 独立二次核验。后续轮次不得重新包装或假装未见以下结论。
@@ -58,6 +62,12 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - 只报告 aggregate accuracy 提升 / "发现 negative transfer" / "证明 P>0 且 S=1 有害" 不构成顶会贡献。
 - 若发现一个月内新论文覆盖核心机制：立即停止实现，回到 Loop Step 1，更新本台账。
 - Headroom 测试失败（确认 compliance/oracle/难度正常后 P、S、P×S 仍接近零且 CI 窄）→ NO_GO，不得扩展到 240–320 families 或 TRU-Mem。
+
+---
+
+## 外部讨论记录
+
+> 负结果与 GPT-5.6（Codex MCP）的讨论归档于此。当前无负结果，暂无记录。
 
 ---
 
