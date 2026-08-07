@@ -67,7 +67,19 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 
 ## 外部讨论记录
 
-> 负结果与 GPT-5.6（Codex MCP）的讨论归档于此。当前无负结果，暂无记录。
+### 2026-08-08 — H-C Minimal Gate 负结果（Codex thread 019fdba5-1a9c-79c3-a691-f026e9801544）
+
+**自分析**：`analysis/HC_NEGATIVE_RESULT_MEMO.md`。
+
+**GPT-5.6 裁决要点**：
+
+1. H-C 维持 **NO_GO**，不得因次级对比大而重标；
+2. Δτ_replaylike=−0.158 只是"截断前缀构建 vs 完整压缩构建"的差异，最简解释是缺失决策步骤而非表示机制；机制（script-form）当前未识别；
+3. 我的分析三处错误：(a) "语义相同保真相近"被构建审计直接反驳（写步骤 48–59%、finish 8/640、fallback 29.4%）；(b) "script 论"是解释非已测中介；(c) 判据 B 应表述为"点估计反转+修正推断不显著"，不得称 underpowered；
+4. 合法性排序：⑴ 注册 repair 析因实验（**representation × semantic-coverage 2×2**，新鲜 family、更多簇而非更多 seed、τ_replaylike 主 estimand，区分 deployed-policy vs pure-form 两个 estimand）＞⑵ 记 NO_GO 并写因果测量论文（风险调整后最强发表路线）＞⑶ 转向 near-miss retriever ＞⑷ 同数据重评分（不合法）；
+5. 主会路径仍在，但当前形态是**因果测量论文**，不是 script-form 机制论文；主要风险：单模型族两档规模、合成环境外部效度、次级对比过度解读。
+
+**一致化补遗**：GPT-5.6 另指出我两处统计语言错误——aggregate <3pp 的描述匹配≠统计等价（除非 CI 全落 ±3pp 或预注册描述性匹配）；"underpowered" 在没有 a priori MDE 分析前禁用。
 
 ---
 
@@ -102,7 +114,7 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 ### 连续 NO_GO 计数
 
 - Gate A/B 连续 NO_GO：0
-- 总连续 NO_GO：0
+- 假设层连续 NO_GO（总计）：1（H-C minimal gate，2026-08-08）
 
 ## 资源预算跟踪
 

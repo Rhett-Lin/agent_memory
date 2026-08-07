@@ -1,5 +1,7 @@
 # SELECTED_HYPOTHESIS — Round 1 选定（2026-08-08）
 
+> **状态更新（2026-08-08 深夜）：HC minimal gate = NO_GO，本假设已归档。** 归档全文（判据/实测/GPT-5.6 复审）见 `analysis/HC_NEGATIVE_RESULT_MEMO.md` 与 `DECISION.md` 决策链第 6 行。以下为原始选定记录，保留不改。
+
 **选定：HC — Published write-path systems 的 F-MED profile 逆序**（评分 3.95 / 5；另两候选 HA=3.70、HB=3.60 存档为次级发现）。
 
 ## 一句话形式

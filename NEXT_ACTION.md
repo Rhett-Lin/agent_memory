@@ -11,6 +11,21 @@ Gate A=GO、Gate B=GO（2026-08-08）。Loop Step 4/5 完成：选定 H-C（publ
 
 回来后我做 GO/NO_GO 判定（H-C-3：任一对 |Δτ_struct|≥8pp 且 CI 分离，或 aggregate-equivalent 系统 τ_trap 排序反转）。同步按 loop §14 产出 Round 1 正式汇报（在结果齐后）。
 
+## 状态：H-C minimal gate = NO_GO（2026-08-08 落档）
+
+按冻结判据 NO_GO；GPT-5.6 复审确认。唯一注册新假设（重回 Loop Step 4 评分，不可同数据确认）：
+
+**H3: representation × semantic-coverage 2×2 factorial on τ_replaylike**（GPT-5.6 指定的最高杠杆实验）
+- factor 1：surface form（transcript/dialogue vs imperative/script）
+- factor 2：semantic coverage（完整决策步骤 vs matched-prefix 缺失）
+- 同 canonical proposition set、同来源、同 token 量、同 harness；plus 生态臂 = 原 300-token 截断 transcript
+- 两 estimand 分离：deployed-policy effect（300-token cap 下的自然行为）vs pure-form effect（内容固定、语法互换）
+- 功效按 family-level covariance 设计；优先加 family 数而非 seed；如可行加一个非 Qwen 模型重复
+- 判定树：完整卡下效应仍在→表示机制成立；仅在截断卡下出现→覆盖/截断解释；只在预算帽下→有意义的系统级结论；全灭→归档并进入测量论文写作
+
+执行顺序（冰冻中）：
+1. ✅ 完成自分析 → 2. ✅ GPT-5.6 讨论 → 3. ✅ 归档 NO_GO（本文件）→ 4. **下一步：把 H3 作为 Loop Step 4 的新候选与 HA/HB 一起重新评分**（不得直接跳实现）；评中后再启动 3B 补臂或测量论文骨架。
+
 Gate A 通过前**不做**：Stage B/C/D、TRU-Mem 任何实现、240–320 families 扩展。
 
 ## 轮次文件状态
