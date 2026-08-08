@@ -14,6 +14,7 @@ square and DB initial states are pilot-identical:
        procedural -> public_view/memories/<mid>.json              (pilot asset)
        raw        -> public_view/systems/raw/<mid>.json           (build_raw_cards.py)
        summary    -> public_view/systems/summary/<mid>.json       (build_summary_cards.py)
+       dslice     -> public_view/systems/dslice/<mid>.json        (dslice/build_dslice_cards.py, H-DC Part IV)
 
 The `procedural` system's rollouts are the EXISTING pilot files
 (rollouts_qwen7b_shard*-of-*.jsonl, 3840 rows) and are NOT re-run
@@ -53,7 +54,7 @@ from run_pilot import (load_sealed, build_grid, existing_units,  # noqa: E402
 
 DEFAULT_CONFIG = os.path.join(_PILOT, "configs", "pilot_7b.yaml")
 MEM_CELLS = ["A00", "A01", "A10", "A11", "Q"]
-SYSTEMS = ["procedural", "raw", "summary"]
+SYSTEMS = ["procedural", "raw", "summary", "dslice"]
 
 
 def system_memory_text(cfg, system, cell, mem_id):
