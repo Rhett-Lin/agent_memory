@@ -5,7 +5,7 @@ All artifacts at \texttt{github.com/anonymous/CausalMemBench} upon de-anonymizat
 \begin{itemize}[leftmargin=1.4em]
   \item generator \texttt{pilot/generate\_families.py} (pilot seed 20260807, H3 seed 20260809); sealed-vs-public split; oracle walker execution logs confirming 800/800 and 640/640 legal terminals;
   \item environment \texttt{pilot/env\_relationalops.py}, DSL \texttt{pilot/program\_dsl.py}, harness \texttt{pilot/harness.py} (vLLM 0.6.6.post1 / torch 2.5.1+cu124 on RTX A5000 24GB, fp16, temperature 0.7, top-p 0.9, max 12 steps $\times$ 512 tokens);
-  \item rollouts JSONL: 24{,}576 rows with per-row commit, config-hash, model, versions, GPU;
+  \item rollouts JSONL: 28{,}416 rows (7{,}680 pilot + 7{,}680 H-C + 9{,}216 H3 + 3{,}840 Llama-8B replication; pending ALFWorld check) with per-row commit, config-hash, model, versions, GPU;
   \item pre-registered protocols: GATE\_PROTOCOL Parts I--III dated 2026-08-07/08 before any analysis run;
   \item audit suite \texttt{pilot/audit/\{probes,difficulty\_robust,continuous\_s,equivalence\_audit\}.py}, blind annotations, judge outputs verbatim;
   \item analysis: family-cluster bootstrap utilities, Holm/TOST routines, and the exact \texttt{analyze.py/json} dumps reported here;
@@ -17,12 +17,12 @@ All artifacts at \texttt{github.com/anonymous/CausalMemBench} upon de-anonymizat
 
 40 pilot families = 4 archetypes $\times$ 2 domains (crm/inv/ticket/cal) $\times$ 5 instances; 32 H3 families = 4/archetype $\times$ 8 schemas with disjoint parameters. For each family: 4 program-preserving siblings + 1 near-miss + a10 cross-domain partner + a00 unrelated partner, style counterbalanced by a 6-template Latin square, memories 200--300 Qwen-1.5B tokens measured by tokenizer, similarity buckets frozen against pilot distribution anchors.
 
-\section{Deferred results (in-flight)}
-\label{app:inflight}
+\section{Second-family replication (completed)}
+\label{app:llama}
 
-Two replications were queued at submission time and are listed with their status for transparency:
-\begin{itemize}[leftmargin=1.4em]
-  \item \textbf{Llama-3.1-8B family-swap} on the identical 40-family grid (3840 rollouts): tests family-dependence of the structural-transfer sign flip (pending at commit time; analyze identically and report in camera-ready).
-  \item \textbf{ALFWorld coarse external check} (3 families $\times$ 4 siblings $\times$ 4 cells $\times$ 3 seeds, Qwen2.5-7B): effect-ordering sanity in a non-synthetic environment (pending).
-\end{itemize}
-Neither is needed for the headline claims, which come only from the completed in-id data above.
+Llama-3.1-8B (\texttt{NousResearch/Meta-Llama-3.1-8B-Instruct}) replicates the identical grid (3840 rollouts, same config/harness). Success rates N=.373, Q=.408, A00=.364, A01=.452, A10=.411, A11=.544. Estimates: $\taustruct=+0.047$ [$+0.020,+0.073$] (7B-like, opposite 3B); $\tautrap=+0.087$ [$+0.043,+0.134$]; $\taureplay=+0.133$ [$+0.069,+0.193$]; HFR $=0.100$ [$0.075,0.125$]; $\tauctx=+0.034$ [$+0.010,+0.058$] (family-specific: Qwen has $\approx0$). Replay-heavy decomposition: the A11 leg carries 79\% of the matched effect, mirroring the 7B 72\% share. See \texttt{pilot/llama8b/LLAMA8B\_RESULTS.json}.
+
+\section{External validity check (ALFWorld)}
+\label{app:alfworld}
+
+A coarse effect-ordering check in ALFWorld \citep{alfworld2020} (Qwen2.5-7B, 3 task families $\times$ 4 siblings $\times$ 4 cells $\times$ 3 seeds; memory cards frozen from expert trajectories; \S\ref{app:repro} for scripts) is queued under \texttt{pilot/external/}. Reported only if it meets the same audit conventions; worse-than-N near-miss harm and replay-over-structure ordering would support external robustness of \S\ref{sec:findings}.

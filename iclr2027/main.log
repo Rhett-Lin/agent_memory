@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.19)  8 AUG 2026 13:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.19)  8 AUG 2026 14:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -384,7 +384,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 16.
 
-) (./sections/setup.tex [4]) (./sections/findings.tex [5] [6]) (./sections/realization.tex) (./sections/boundaries.tex [7]
+) (./sections/setup.tex [4]) (./sections/findings.tex [5] [6]) (./sections/realization.tex) (./sections/boundaries.tex
+Underfull \vbox (badness 1502) has occurred while \output is active []
+
+ [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 6.
@@ -486,28 +489,31 @@ Underfull \hbox (badness 3514) in paragraph at lines 19--20
 \OT1/ptm/m/n/10 The 512-judgment blind alarm on (task, mem-ory) pairs fires on A00/A01/A10/A11 at
  []
 
-) (./sections/figures.tex
-<figs/fig1_cells_success.png, id=373, 867.24pt x 325.215pt>
+[8]) (./sections/figures.tex
+<figs/fig1_cells_success.png, id=386, 867.24pt x 325.215pt>
 File: figs/fig1_cells_success.png Graphic file (type png)
 <use figs/fig1_cells_success.png>
 Package pdftex.def Info: figs/fig1_cells_success.png  used on input line 6.
 (pdftex.def)             Requested size: 397.48499pt x 149.05981pt.
-<figs/fig2_uplift.png, id=377, 867.24pt x 325.215pt>
+<figs/fig2_uplift.png, id=390, 867.24pt x 325.215pt>
 File: figs/fig2_uplift.png Graphic file (type png)
 <use figs/fig2_uplift.png>
 Package pdftex.def Info: figs/fig2_uplift.png  used on input line 13.
 (pdftex.def)             Requested size: 397.48499pt x 149.05981pt.
-<figs/fig4_harmful_flip.png, id=378, 794.97pt x 325.215pt>
+<figs/fig4_harmful_flip.png, id=391, 794.97pt x 325.215pt>
 File: figs/fig4_harmful_flip.png Graphic file (type png)
 <use figs/fig4_harmful_flip.png>
 Package pdftex.def Info: figs/fig4_harmful_flip.png  used on input line 20.
 (pdftex.def)             Requested size: 397.48499pt x 162.61206pt.
-<figs/hc_profiles.png, id=379, 650.43pt x 325.215pt>
+<figs/hc_profiles.png, id=392, 650.43pt x 325.215pt>
 File: figs/hc_profiles.png Graphic file (type png)
 <use figs/hc_profiles.png>
 Package pdftex.def Info: figs/hc_profiles.png  used on input line 27.
 (pdftex.def)             Requested size: 397.48499pt x 198.74808pt.
-) (./sections/discussion.tex [8] [9 <./figs/fig1_cells_success.png> <./figs/fig2_uplift.png>] [10 <./figs/fig4_harmful_flip.png> <./figs/hc_profiles.png>]) (./main.bbl
+) (./sections/discussion.tex
+Underfull \vbox (badness 1509) has occurred while \output is active []
+
+ [9 <./figs/fig1_cells_success.png> <./figs/fig2_uplift.png>] [10 <./figs/fig4_harmful_flip.png> <./figs/hc_profiles.png>]) (./main.bbl
 Underfull \hbox (badness 1635) in paragraph at lines 24--27
 []\OT1/ptm/m/n/10 Anonymous.  Eval-u-at-ing mem-ory in LLM agents via in-cre-men-tal multi-turn in-ter-ac-tions.
  []
@@ -522,12 +528,12 @@ Underfull \hbox (badness 4479) in paragraph at lines 54--57
 []\OT1/ptm/m/n/10 Anonymous.  Use-ful mem-o-ries be-come faulty when con-tin-u-ously up-dated by LLMs.
  []
 
-
+[11]
 Underfull \hbox (badness 1708) in paragraph at lines 64--67
 []\OT1/ptm/m/n/10 Anonymous.  Mem2ActBench: Eval-u-at-ing memory-to-action con-sis-tency in LLM agents.
  []
 
-[11]) (./sections/appendix.tex [12]
+[12]) (./sections/appendix.tex
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 10.
  (/work1/zixuan/tex/.TinyTeX/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
@@ -550,21 +556,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-04-28>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7F985634D664A5E4F62D6FFA1DD2F7AD;7829.
+(rerunfilecheck)             Checksum: CA4D5DCD27E2234ED0FB8C8FA8D4C59A;8103.
  ) 
 Here is how much of TeX's memory you used:
- 12065 strings out of 469331
- 179581 string characters out of 5466160
- 611186 words of memory out of 5000000
- 40568 multiletter control sequences out of 15000+600000
+ 12074 strings out of 469331
+ 179705 string characters out of 5466160
+ 611347 words of memory out of 5000000
+ 40575 multiletter control sequences out of 15000+600000
  656050 words of font info for 100 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,11n,90p,2093b,624s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,90p,2093b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></work1/zixuan/tex/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (13 pages, 466823 bytes).
+Output written on main.pdf (13 pages, 470350 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 482 compressed objects within 5 object streams
- 120 named destinations out of 1000 (max. 500000)
- 301 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 559 PDF objects out of 1000 (max. 8388607)
+ 492 compressed objects within 5 object streams
+ 122 named destinations out of 1000 (max. 500000)
+ 309 words of extra memory for PDF output out of 10000 (max. 10000000)
 
