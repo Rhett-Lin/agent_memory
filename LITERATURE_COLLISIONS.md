@@ -91,12 +91,13 @@ Memory Transplants；Which Memory Operation Drives Recovery (OMAC)；Proced-Mem�
 | T-Mem (2606.15405) | 2026-06 | 描述/联想双通道召回 | 用了 surface-vs-latent 词汇但非识别设计 | Safe |
 | Nous 信仰条件记忆 (2606.22030) 等治理簇（2608.01679/2606.24535/2606.04628/2605.06527/2603.14597/2607.08716） | 2026 各月 | 写侧/治理/有效性机制 | 无因果 utility 或风险校准准入 | Safe |
 
-### C.2 监控项（下轮必查）
+### C.2 监控项（Round 2 复核：2026-08-08 完成）
 
-1. **Rocchi SSRN（§A.1.5）**：若在 arXiv/正式版把因子扩到 P×S 或加程序等价 oracle → 立即升级为 Collision 并重进 Loop Step 1。
-2. **"Benchmarking Reference-Free LLM Agent Robustness Under Schema, Policy, and Toolset Drift"**（STITCH 引用者）：**UNVERIFIED**——arXiv/S2 均无法定位。若其真实存在且用了 hidden equivalence labels + observable transformations，是两条 claim 最近威胁；下轮继续追踪。
-3. SafeCommit（2608.04289）：NeurIPS 版若扩展到 memory admission 对象，需重新评估。
+1. **Rocchi SSRN（§A.1.5）→ 维持 Partial（VERIFIED 升级）**：现正式存档 SSRN DOI 10.2139/ssrn.7160321，Crossref 完整摘要已核验（2026-07-27）：六格 factorial 仍为 bank × model-decoder agent（ALFWorld，576 episodes）；oracle 仍为 "outcome-hidden regret" 协议，非程序等价标签；无 P×S 因子，无 CVaR/conformal。升级触发条件未满足，0 被引。Related Work 区分锚点：P×S + hidden-equivalence oracle + risk-based admission。
+2. **drift 论文 → VERIFIED 为 Safe，移出威胁监控**：真实存在但正交——Assidiqi et al., *Benchmarking Reference-Free LLM Agent Robustness Under Schema, Policy, and Toolset Drift*, **IEEE Access 14:79662–79672 (2026), DOI 10.1109/ACCESS.2026.3696096**（Crossref + DBLP + S2 三方核验）。tau2-bench 扰动鲁棒性，无 memory credit 分解、无 P×S、无 admission、无等价 oracle。从此列表删除；可作 Related Work 的普通引用。
+3. **SafeCommit（2608.04289）→ Safe**：仍仅 v1（2026-08-04），未到 memory admission。
 4. FARS/analemma 类自动论文流水线产物一律要求 arXiv/OpenReview/出版社页面才采信（§A.2 规则重申）。
+5. **近三周 sweep（2026-07-18→08-08）两条 claim 均 SAFE**。新增 Safe 引用候选：EA-Graph（2608.04278，artifact-anchored verification memory）、MERIT（2608.05906，oracle-verified causal episodic memory Text-to-SQL）、Ground Truth First（2607.21962）、MemTX v2（2607.23929）。ConsistencyGate（2607.22962）为最近 admission 邻域，已在 §C.1 登记。
 
 ### C.3 扫描明确未覆盖/受限声明
 

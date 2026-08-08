@@ -1,0 +1,657 @@
+{
+ "module": "gatec_cond1_transplants_2x2",
+ "registered_context": "NEXT_ACTION.md Gate C-lite cond1; analysis of existing rollouts only; bootstrap convention follows GATE_PROTOCOL Part II sec.10 (family-cluster, 2000 reps)",
+ "bootstrap": {
+  "reps": 2000,
+  "seed": 1234,
+  "cluster": "family",
+  "aligned_across_groups": true
+ },
+ "factors": {
+  "arch": {
+   "procedural": "pilot procedural cards (Memp/AWM-style write-path representation)",
+   "raw": "H-C raw transcript cards (Reflexion/ExpeL-style full-trajectory representation), qwen7b only"
+  },
+  "content": {
+   "matched_correct_A11uA10": "program-matched content; A10 source_kind=cross_domain_pair (a10_partner in another domain rendering = code->math analogue), A11 source_kind=sibling_same_family",
+   "near_miss_A01": "near-miss content (P=0,S=1)",
+   "unrelated_A00": "unrelated content (P=0,S=0)"
+  },
+  "note_qwen3b": "raw arch unavailable at qwen3b (H-C grid was qwen7b-only); qwen3b contributes the procedural content axis + P x S split only. No data fabricated."
+ },
+ "env": {
+  "python": "3.11.15",
+  "numpy": "1.26.4",
+  "platform": "Linux-5.4.0-99-generic-x86_64-with-glibc2.31"
+ },
+ "inputs": {
+  "files": {
+   "qwen7b|procedural": [
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen7b_shard000-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen7b_shard001-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen7b_shard002-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen7b_shard003-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen7b_shard004-of-005.jsonl"
+   ],
+   "qwen3b|procedural": [
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen3b_shard000-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen3b_shard001-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen3b_shard002-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen3b_shard003-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_qwen3b_shard004-of-005.jsonl"
+   ],
+   "qwen7b|raw": [
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_hc_raw_qwen7b_shard000-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_hc_raw_qwen7b_shard001-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_hc_raw_qwen7b_shard002-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_hc_raw_qwen7b_shard003-of-005.jsonl",
+    "/work1/zixuan/outputs/agent_memory/pilot/rollouts_hc_raw_qwen7b_shard004-of-005.jsonl"
+   ]
+  },
+  "n_rollouts": {
+   "qwen7b|procedural": 3840,
+   "qwen3b|procedural": 3840,
+   "qwen7b|raw": 3840
+  },
+  "families": 40
+ },
+ "group_estimates": {
+  "qwen7b|procedural": {
+   "rate_A00": {
+    "est": 0.496875,
+    "ci": [
+     0.390625,
+     0.6015625
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A01": {
+    "est": 0.578125,
+    "ci": [
+     0.4687109375,
+     0.6890625
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A10": {
+    "est": 0.5890625,
+    "ci": [
+     0.4859375,
+     0.6875390624999997
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A11": {
+    "est": 0.7328125,
+    "ci": [
+     0.6421875,
+     0.8203515624999997
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_N": {
+    "est": 0.546875,
+    "ci": [
+     0.4328125,
+     0.6546875
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_Q": {
+    "est": 0.5734375,
+    "ci": [
+     0.4578125,
+     0.6796875
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "matched": {
+    "est": 0.6609375,
+    "ci": [
+     0.56796875,
+     0.74921875
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "eff_match": {
+    "est": 0.16406249999999994,
+    "ci": [
+     0.10703125000000013,
+     0.22423828124999998
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "eff_trap": {
+    "est": 0.08124999999999999,
+    "ci": [
+     -0.0015624999999999125,
+     0.17191406249999983
+    ],
+    "p_boot": 0.057,
+    "ci_excludes_zero": false
+   },
+   "split": {
+    "est": 0.14374999999999993,
+    "ci": [
+     0.08906250000000004,
+     0.19843750000000004
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "leg11": {
+    "est": 0.23593749999999997,
+    "ci": [
+     0.16718750000000004,
+     0.30625
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "leg10": {
+    "est": 0.09218750000000003,
+    "ci": [
+     0.03281250000000002,
+     0.153125
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "uplift_A00": {
+    "est": -0.04999999999999999,
+    "ci": [
+     -0.12968749999999996,
+     0.023476562499999784
+    ],
+    "p_boot": 0.208,
+    "ci_excludes_zero": false
+   },
+   "uplift_A01": {
+    "est": 0.03125,
+    "ci": [
+     -0.0390625,
+     0.10312500000000002
+    ],
+    "p_boot": 0.421,
+    "ci_excludes_zero": false
+   },
+   "uplift_A10": {
+    "est": 0.042187500000000044,
+    "ci": [
+     -0.020312500000000067,
+     0.109375
+    ],
+    "p_boot": 0.211,
+    "ci_excludes_zero": false
+   },
+   "uplift_A11": {
+    "est": 0.18593749999999998,
+    "ci": [
+     0.11406249999999996,
+     0.259375
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   }
+  },
+  "qwen3b|procedural": {
+   "rate_A00": {
+    "est": 0.3734375,
+    "ci": [
+     0.284375,
+     0.4609375
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A01": {
+    "est": 0.3625,
+    "ci": [
+     0.2828125,
+     0.4453125
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A10": {
+    "est": 0.3078125,
+    "ci": [
+     0.2265625,
+     0.396875
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A11": {
+    "est": 0.409375,
+    "ci": [
+     0.321875,
+     0.4984375
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_N": {
+    "est": 0.4203125,
+    "ci": [
+     0.3296875,
+     0.50625
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_Q": {
+    "est": 0.4015625,
+    "ci": [
+     0.3109375,
+     0.5
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "matched": {
+    "est": 0.35859375,
+    "ci": [
+     0.27890625,
+     0.44376953124999985
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "eff_match": {
+    "est": -0.014843749999999989,
+    "ci": [
+     -0.06798828125000002,
+     0.0390625
+    ],
+    "p_boot": 0.622,
+    "ci_excludes_zero": false
+   },
+   "eff_trap": {
+    "est": -0.010937499999999989,
+    "ci": [
+     -0.07500000000000001,
+     0.04999999999999999
+    ],
+    "p_boot": 0.743,
+    "ci_excludes_zero": false
+   },
+   "split": {
+    "est": 0.1015625,
+    "ci": [
+     0.042187500000000044,
+     0.1609375
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "leg11": {
+    "est": 0.03593750000000001,
+    "ci": [
+     -0.0234375,
+     0.09687499999999999
+    ],
+    "p_boot": 0.254,
+    "ci_excludes_zero": false
+   },
+   "leg10": {
+    "est": -0.06562499999999999,
+    "ci": [
+     -0.129765625,
+     -0.0031250000000000444
+    ],
+    "p_boot": 0.036,
+    "ci_excludes_zero": true
+   },
+   "uplift_A00": {
+    "est": -0.046875,
+    "ci": [
+     -0.09999999999999998,
+     0.004687500000000011
+    ],
+    "p_boot": 0.084,
+    "ci_excludes_zero": false
+   },
+   "uplift_A01": {
+    "est": -0.05781249999999999,
+    "ci": [
+     -0.10781249999999998,
+     -0.006249999999999978
+    ],
+    "p_boot": 0.027,
+    "ci_excludes_zero": true
+   },
+   "uplift_A10": {
+    "est": -0.11249999999999999,
+    "ci": [
+     -0.17656249999999998,
+     -0.04999999999999999
+    ],
+    "p_boot": 0.001,
+    "ci_excludes_zero": true
+   },
+   "uplift_A11": {
+    "est": -0.010937499999999989,
+    "ci": [
+     -0.05625000000000002,
+     0.0390625
+    ],
+    "p_boot": 0.67,
+    "ci_excludes_zero": false
+   }
+  },
+  "qwen7b|raw": {
+   "rate_A00": {
+    "est": 0.55625,
+    "ci": [
+     0.45,
+     0.6609375
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A01": {
+    "est": 0.540625,
+    "ci": [
+     0.4234375,
+     0.659375
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A10": {
+    "est": 0.5984375,
+    "ci": [
+     0.490625,
+     0.7046875
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_A11": {
+    "est": 0.584375,
+    "ci": [
+     0.484375,
+     0.6812890624999998
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_N": {
+    "est": 0.5484375,
+    "ci": [
+     0.4343359375,
+     0.6578125
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "rate_Q": {
+    "est": 0.5703125,
+    "ci": [
+     0.4578125,
+     0.6765625
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "matched": {
+    "est": 0.5914062499999999,
+    "ci": [
+     0.49919921875000006,
+     0.68595703125
+    ],
+    "p_boot": 0.0,
+    "ci_excludes_zero": true
+   },
+   "eff_match": {
+    "est": 0.03515624999999989,
+    "ci": [
+     -0.024218749999999956,
+     0.09531250000000002
+    ],
+    "p_boot": 0.274,
+    "ci_excludes_zero": false
+   },
+   "eff_trap": {
+    "est": -0.015625,
+    "ci": [
+     -0.10937499999999994,
+     0.07656250000000003
+    ],
+    "p_boot": 0.778,
+    "ci_excludes_zero": false
+   },
+   "split": {
+    "est": -0.014062499999999978,
+    "ci": [
+     -0.09218749999999998,
+     0.06093749999999998
+    ],
+    "p_boot": 0.736,
+    "ci_excludes_zero": false
+   },
+   "leg11": {
+    "est": 0.028124999999999956,
+    "ci": [
+     -0.051562499999999956,
+     0.10312500000000002
+    ],
+    "p_boot": 0.503,
+    "ci_excludes_zero": false
+   },
+   "leg10": {
+    "est": 0.04218749999999993,
+    "ci": [
+     -0.015664062499999996,
+     0.11093749999999991
+    ],
+    "p_boot": 0.181,
+    "ci_excludes_zero": false
+   },
+   "uplift_A00": {
+    "est": 0.0078125,
+    "ci": [
+     -0.06874999999999998,
+     0.078125
+    ],
+    "p_boot": 0.835,
+    "ci_excludes_zero": false
+   },
+   "uplift_A01": {
+    "est": -0.0078125,
+    "ci": [
+     -0.09375,
+     0.08749999999999997
+    ],
+    "p_boot": 0.862,
+    "ci_excludes_zero": false
+   },
+   "uplift_A10": {
+    "est": 0.04999999999999993,
+    "ci": [
+     0.0,
+     0.10312499999999991
+    ],
+    "p_boot": 0.054,
+    "ci_excludes_zero": false
+   },
+   "uplift_A11": {
+    "est": 0.035937499999999956,
+    "ci": [
+     -0.048476562500000014,
+     0.12347656249999982
+    ],
+    "p_boot": 0.429,
+    "ci_excludes_zero": false
+   }
+  }
+ },
+ "cross_group_estimates": {
+  "arch_A00": {
+   "est": 0.05937500000000001,
+   "ci": [
+    -3.906249999999556e-05,
+    0.11566406249999982
+   ],
+   "p_boot": 0.056,
+   "ci_excludes_zero": false
+  },
+  "arch_A01": {
+   "est": -0.03749999999999998,
+   "ci": [
+    -0.12191406250000006,
+    0.051562499999999956
+   ],
+   "p_boot": 0.421,
+   "ci_excludes_zero": false
+  },
+  "arch_A10": {
+   "est": 0.009374999999999911,
+   "ci": [
+    -0.05625000000000002,
+    0.07499999999999996
+   ],
+   "p_boot": 0.783,
+   "ci_excludes_zero": false
+  },
+  "arch_A11": {
+   "est": -0.1484375,
+   "ci": [
+    -0.23906249999999996,
+    -0.0625
+   ],
+   "p_boot": 0.001,
+   "ci_excludes_zero": true
+  },
+  "arch_N": {
+   "est": 0.0015625000000000222,
+   "ci": [
+    -0.0031250000000000444,
+    0.0078125
+   ],
+   "p_boot": 0.764,
+   "ci_excludes_zero": false
+  },
+  "arch_Q": {
+   "est": -0.0031250000000000444,
+   "ci": [
+    -0.009375000000000022,
+    0.0
+   ],
+   "p_boot": 0.716,
+   "ci_excludes_zero": false
+  },
+  "arch_matched": {
+   "est": -0.06953125000000004,
+   "ci": [
+    -0.13984374999999982,
+    -0.00390625
+   ],
+   "p_boot": 0.039,
+   "ci_excludes_zero": true
+  },
+  "I_match": {
+   "est": -0.12890625000000006,
+   "ci": [
+    -0.19611328125000008,
+    -0.05857421875000005
+   ],
+   "p_boot": 0.0,
+   "ci_excludes_zero": true
+  },
+  "I_trap": {
+   "est": -0.09687499999999999,
+   "ci": [
+    -0.20624999999999993,
+    0.010937499999999933
+   ],
+   "p_boot": 0.076,
+   "ci_excludes_zero": false
+  },
+  "D_A11": {
+   "est": -0.2078125,
+   "ci": [
+    -0.29374999999999996,
+    -0.12031250000000004
+   ],
+   "p_boot": 0.0,
+   "ci_excludes_zero": true
+  },
+  "D_A10": {
+   "est": -0.0500000000000001,
+   "ci": [
+    -0.12031249999999999,
+    0.02812499999999996
+   ],
+   "p_boot": 0.193,
+   "ci_excludes_zero": false
+  },
+  "delta_split_raw_proc": {
+   "est": -0.1578124999999999,
+   "ci": [
+    -0.2390624999999999,
+    -0.07968750000000002
+   ],
+   "p_boot": 0.0,
+   "ci_excludes_zero": true
+  },
+  "delta_split_7b_3b": {
+   "est": 0.04218749999999993,
+   "ci": [
+    -0.03285156250000007,
+    0.12195312499999952
+   ],
+   "p_boot": 0.303,
+   "ci_excludes_zero": false
+  }
+ },
+ "holm_family_m3": {
+  "split@qwen7b": {
+   "p_raw": 0.0,
+   "p_holm": 0.0,
+   "reject_0.05": true
+  },
+  "split@qwen3b": {
+   "p_raw": 0.0,
+   "p_holm": 0.0,
+   "reject_0.05": true
+  },
+  "I_match": {
+   "p_raw": 0.0,
+   "p_holm": 0.0,
+   "reject_0.05": true
+  }
+ },
+ "replay_share_of_matched_effect": {
+  "qwen7b|procedural": {
+   "eff_match_pooled": 0.16406249999999994,
+   "leg11_A11_minus_A00": 0.23593749999999997,
+   "leg10_A10_minus_A00": 0.09218750000000003,
+   "frac_from_A11_leg": 0.7190476190476192,
+   "frac_from_A10_leg": 0.2809523809523812
+  },
+  "qwen3b|procedural": {
+   "eff_match_pooled": -0.014843749999999989,
+   "leg11_A11_minus_A00": 0.03593750000000001,
+   "leg10_A10_minus_A00": -0.06562499999999999,
+   "frac_from_A11_leg": -1.210526315789475,
+   "frac_from_A10_leg": 2.210526315789475
+  },
+  "qwen7b|raw": {
+   "eff_match_pooled": 0.03515624999999989,
+   "leg11_A11_minus_A00": 0.028124999999999956,
+   "leg10_A10_minus_A00": 0.04218749999999993,
+   "frac_from_A11_leg": 0.40000000000000063,
+   "frac_from_A10_leg": 0.600000000000001
+  }
+ }
+}
