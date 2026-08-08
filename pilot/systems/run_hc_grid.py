@@ -54,7 +54,7 @@ from run_pilot import (load_sealed, build_grid, existing_units,  # noqa: E402
 
 DEFAULT_CONFIG = os.path.join(_PILOT, "configs", "pilot_7b.yaml")
 MEM_CELLS = ["A00", "A01", "A10", "A11", "Q"]
-SYSTEMS = ["procedural", "raw", "summary", "dslice"]
+SYSTEMS = ["procedural", "raw", "summary", "dslice", "raw_matched"]
 
 
 def system_memory_text(cfg, system, cell, mem_id):
