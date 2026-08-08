@@ -1,0 +1,46 @@
+\section{Identification: what the decomposition needs}
+\label{sec:design}
+
+\subsection{Why aggregate effects are not identified}
+
+Let $Y(x,W)$ be the success indicator of an agent at task $x$ with memory bank $W$, and let $m$ be one stored episode. An aggregate contrast
+$\Delta_{\mathrm{agg}} = \mathbb{E}\big[ Y(x,\{m\}) - Y(x,\varnothing) \big]$
+is compatible with at least two distinct data-generating processes: (i) an \emph{exact-replay} SCM where $Y$ improves only when $x$ literally reproduces $m$'s instance; (ii) a \emph{structural-transfer} SCM where $Y$ improves whenever $x$ shares $m$'s program, however re-surfaced. Any estimator based on aggregate differences alone cannot distinguish them; we need interventions on the relationship between $m$ and $x$ itself (\S\ref{ssec:defs}).
+
+\subsection{Latent program equivalence}\label{ssec:defs}
+
+A latent program $z = (G_{\mathrm{prec}}, C_{\mathrm{safety}}, C_{\mathrm{terminal}}, B_{\mathrm{recovery}})$ specifies partial-order dependencies $G$ over abstract steps (\texttt{READ}, \texttt{CHECK}, \texttt{WRITE}), safety rules (writes gated on conditions), legal terminal predicates over the environment state, and minimal recovery requirements. The equivalence class
+$\Pi(z) = \{ \pi : \pi \models z \}$
+collects all action sequences satisfying these constraints \emph{irrespective of} which of several valid linear orders is taken, which entities appear, or which business domain renders the task. Two tasks are program-matched ($P{=}1$) iff they belong to the same class---independent of vocabulary, entity names, narrative style, and surface tool names. Near-miss $z'$ is a deliberate single mutation: flipped comparison polarity, reversed transfer direction, wrong child-set aggregation, or a missing archival step; it is executable and reaches its own legal terminal state.
+
+\subsection{The $P\times S$ Stage-A factorial}\label{ssec:stagea}
+
+For every target sibling $x$ and its source episode, we generate five memory conditions (length-matched cards):
+
+\begin{center}
+\begin{tabular}{ccl}
+\toprule
+Cell & $(P,S)$ & Content \\
+\midrule
+A00 & $(0,0)$ & correct procedure for an unrelated program/domain (control) \\
+A01 & $(0,1)$ & near-miss: surface-similar, program-different (trap) \\
+A10 & $(1,0)$ & same program, different entities/vocabulary (clean structural) \\
+A11 & $(1,1)$ & same program, similar surface (replay-like) \\
+Q & --- & sham: format/length/success-tag matched, task-irrelevant content \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+plus \textbf{N} (no memory). $P$ is randomized by latent family; $S$ buckets are calibrated by two frozen similarity views (token-overlap TF-cosine on content tokens; bge-small embedding cosine), and $P,S$ are statistically independent within family so their marginal and interaction effects are factorially identified under consistency, positivity (all cells populated per family), and no cross-family interference (fresh deep-copied environment state per rollout).
+
+Denote by $Y(p,s)$ the success rate with memory of type $(p,s)$, by $Y_N$, $Y_Q$ the no-memory and sham rates. Pre-registered estimands, all in risk-difference scale: context/format effect $\tauctx = \mathbb{E}[Y_Q - Y_N]$; program main effect $\tau_P=\tfrac12\sum_s \mathbb{E}[Y(1,s)-Y(0,s)]$; \textbf{clean structural transfer} $\taustruct = \mathbb{E}[Y(1,0)-Y(0,0)]$; \textbf{surface-trap} $\tautrap=\mathbb{E}[Y(0,1)-Y(0,0)]$; replay-like premium $\taureplay = \mathbb{E}[Y(1,1)-Y(1,0)]$; interaction $\taupxs = \big(\mathbb{E}[Y(1,1)-Y(0,1)]\big) - \big(\mathbb{E}[Y(1,0)-Y(0,0)]\big)$; paired harmful-flip rate $\hfr = \Pr[Y_N{=}1 \,\wedge\, Y_{A01}{=}0]$ on matched seeds.
+
+Estimation uses family-cluster bootstrap (10{,}000 / 20{,}000 resamples; percentile 95\% CIs) with Holm multiplicity control across the four primary estimands per model (Section~\ref{sec:setup}).
+
+\subsection{Evaluator-only oracle}\label{ssec:oracle}
+
+The oracle holds: family index, abstract signature (the canonical equivalence key), program parameters, near-miss label, cell assignments, generator seed. Only the evaluator reads it; the agent sees task text, tool schema, and current state. This blocks four leakage paths: (i) cards contain no family/cell IDs (grep-enforced); (ii) generators and rollouts are seed-logged; (iii) style templates are Latin-square balanced across cells; (iv) evaluation utilities never read sealed fields---leading to a sealed-evaluator architecture of benchmark release (Section~\ref{sec:setup}, audit).
+
+\subsection{From pilot to form-coverage factorial (H3)}\label{ssec:h3}
+
+A minimal-gate experiment on three write-path representation forms (verbatim transcript, summary, procedural card, \S\ref{sec:realization}) produced a pre-registered outcome we must account for: a large replay-premium difference ($\Delta\tau_{\mathrm{replay}}=-0.158$), but the raw cards were systematically truncated at the 300-token budget, confounding \emph{form} with \emph{coverage}. We therefore pre-registered H3 on 32 \emph{fresh, disjoint} families: a $2\times2$ factorial of \textbf{form} (dialogue-transcript vs.\ imperative script) $\times$ \textbf{coverage} (complete incl.\ decision+finish vs.\ matched prefix without them), constructed from one canonical proposition set per episode (100\% programmatic content alignment across forms), plus one ecological arm---the verbatim H-C 300-token hard cut. H3's frozen criteria are the form contrast $\varepsilon_{\mathrm{form}}$, per-form coverage contrasts $\varepsilon_{\mathrm{cov}}$, and their interaction, with TOST on transcript-complete $\taureplay$ at margin $\pm3$pp.

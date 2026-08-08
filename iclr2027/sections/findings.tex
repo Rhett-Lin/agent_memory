@@ -1,0 +1,56 @@
+\section{Findings}
+\label{sec:findings}
+
+\subsection{Aggregate gains are replay-dominated}
+\label{ssec:replay}
+
+Table~\ref{tab:rates} lists Stage-A cell success rates (n=640 per cell per model). For Qwen2.5-7B, no-memory solves 54.7\%; replay-like A11 reaches 73.3\% (+18.6pp over N, CI $[11.4, 26.1]$), while structural A10 reaches 58.9\% and context Q is statistically indistinguishable from N ($\tauctx\approx0$, CI spans 0). For 3B, A11 ($=+0.102$ replay premium, significant) is the only cell reliably above N at all; everything else is at or below it.
+
+\begin{table}[t]
+\centering\small
+\caption{Stage-A success rates with 95\% family-cluster CIs (n=640/cell/model). Bold marks the replay-dominated leg.}
+\label{tab:rates}
+\begin{tabular}{lcccccc}
+\toprule
+Model & N & Q & A00 $(0,0)$ & A01 $(0,1)$ & A10 $(1,0)$ & A11 $(1,1)$ \\
+\midrule
+Qwen2.5-3B     & .420 & .402 & .373 & .362 & .308 & \textbf{.409} \\
+Qwen2.5-7B     & .547 & .573 & .497 & .578 & .589 & \textbf{.733} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Decomposing the pooled \emph{matched-content} effect (A11$\cup$A10 minus A00) yields $72\%$ attributable to the A11 (replay-like) leg for 7B; the pooled $\tau_P$ is therefore a poor summary---the decomposition is the object of interest.
+
+\subsection{Structural transfer flips sign with model scale}
+\label{ssec:scale}
+
+\begin{table}[t]
+\centering\small
+\caption{Pre-registered Stage-A estimands (risk differences; Holm over 4 primary estimands per model). Starred = Holm-significant.}
+\label{tab:estimands}
+\begin{tabular}{lcc}
+\toprule
+Estimand & Qwen2.5-3B & Qwen2.5-7B \\
+\midrule
+$\tauctx = Q-N$                 & $-0.019\,[-0.067,0.031]$ & $+0.027\,[-0.023,0.080]$ \\
+$\taustruct = A10-A00$          & $-0.066\,[-0.131,-0.002]$       & $+0.092\,[+0.036,+0.152]^*$ \\
+$\tautrap = A01-A00$            & $-0.011\,[-0.072,+0.047]$      & $+0.081\,[-0.006,+0.173]$ \\
+$\taureplay = A11-A10$          & $+0.102\,[+0.039,+0.161]^*$    & $+0.144\,[+0.087,+0.200]^*$ \\
+$\taupxs$                       & $+0.113\,[+0.041,+0.189]^*$    & $+0.063\,[-0.031,+0.156]$ \\
+$\hfr_{A01}$                    & $18.8\%\,[15.1,22.5]$          & $9.2\%\,[6.3,12.0]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The structural channel is real for 7B ($\taustruct$ Holm-significant; $+0.105$ after difficulty-adjusted trimming, still significant) and inverts at 3B: the interaction $\taupxs$ tells us the 3B's aggregate advantage is driven by surface match alone ($S{=}1$, $P$ only helps then). A transplant-style aggregate read of the same data \citep{feng2026transplants} reports the mixture ``memory helps less at larger scale''---but the decomposition says: \emph{it is structural transfer that scales, not helpfulness}. Weak models \emph{profit from replay} (3B $\taureplay$ significant) and are unprofitably steered by structurally-correct-but-foreign-surface guidance. This is our first revision to a published aggregate conclusion (\S\ref{sec:gatec} checks baselines cannot substitute this inference).
+
+\subsection{Near-miss harm is structured, noxious---and model-specific}
+\label{ssec:hf}
+
+Paired harmful flips (so that $Y_N{=}1$ while $Y_{A01}{=}0$ on matched seeds) are large: 18.8\% for 3B [15.1, 22.5] and 9.2\% for 7B [6.3, 12.0]. The marginal $\tautrap$ is deceptively small because helpful and harmful flips partially cancel; the flip metric exposes what the mean hides. Crucially, the harm is not a mist: on a per-archetype-by-branch decomposition it concentrates exactly where the near-miss and correct programs \emph{semantically diverge}. For example on our P3 archetype (gate-checking over the wrong child set) harmful flips are 17.5--32.5\% on the branch where the two programs disagree, vs $[0,12.5]\%$ where they coincide. The trap is carrying information, and the model is failing to discount it where the implicit program is wrong (Section~\ref{ssec:judge} for why models cannot self-gate this harm).
+
+\subsection{Models cannot even recognize program equivalence}
+\label{ssec:judge}
+
+An independent 7B judge asked to verify, for the same (task, memory) pair, whether the procedures are program-equivalent---with explicit mention to ignore domain nouns---agrees with generator labels at only 0.250 (CoT) over 32 blind judgments. It calls every cross-domain program-equivalent pair (A10) ``different'' (100\% error on A10) and misses all direction-reversal and child-set near-misses (0/4 each). An intent-mismatch judge in the style of \citet{stitch2026camebench} fires an alarm on $>90\%$ of cells of all kinds (detector AUC=0.508 vs.\ chance). The practical implication: the system that consumes a memory cannot verify the memory by text-at-scale, which is exactly why evaluator-side randomization is needed to diagnose it in the first place (\S\ref{sec:design}).

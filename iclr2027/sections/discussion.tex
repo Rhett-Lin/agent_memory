@@ -1,0 +1,30 @@
+\section{Discussion}
+
+\subsection{What changes in the aggregate narrative}
+
+Our three main numbers are uncomfortable reading for several widely-quoted results. The pooled matched-content effect that aggregate benchmarks report is replay-dominated here ($72\%$ from the A11 leg), but the same pooled statistic would have survived two very different decompositions---a trap (A01) moving 18.8\% of solvable tasks to failure for 3B, or a clean 9.2pp structural transfer for 7B. ``Memory helps'' is an aggregate claim that the community has been shipping where it wasn't measurable. System-level transplant experiments could not have caught this difference (\S\ref{sec:gatec}): their factors change systems, not the semantic relation between a candidate memory and a target task.
+
+\subsection{Deployment reading}
+
+Concrete, directly-usable implications:
+\begin{enumerate}[leftmargin=1.8em]
+  \item \textbf{Stop consulting aggregate accuracy} when comparing memory systems. Report the four numbers: context, clean structural, replay, and flip rate.
+  \item \textbf{Preserve the decision+finish of an episode} in any stored form. Our truncation results show that a 300-token cap that silently eats the decision step turns useful experience into effectively zero-signal text ($\taureplay \approx 0$), even with perfect surface match.
+  \item \textbf{Do not trust an LLM's own equivalence check} for memory admission. We tested retrieval-grade judgment plus intent-mismatch alarms; neither recovers the label at usable strength in our environment. Program-equivalence estimation is an inference problem, not a lookup.
+  \item \textbf{Treat near-miss content as a fault channel}, not as style noise: paired harmful flips are model-scale-dependent (18.8\% at 3B, 9.2\% at 7B) and branch-conditional on program divergence.
+  \item \textbf{Expect structural transfer to be capability-gated}, not universal: the structural term changed sign between 3B and 7B under identical content and budget. If your fleet includes small models, measure whether structural memory \emph{hurts} it before shipping.
+\end{enumerate}
+
+\subsection{Limitations}
+
+\begin{enumerate}[leftmargin=1.8em]
+  \item \textbf{Synthetic environment.} All identification is by construction in one SQLite world with programmatic predicates; transport to rich real tasks is checked only coarsely (a small ALFWorld external check; we do not claim AppWorld-scale external validity). The Tas test is whether aggregate directions repeat, not magnitudes.
+  \item \textbf{Narrow model coverage.} Two frozen Qwen2.5 scales for inference; one family. A Llama-3.1-8B replication is in flight; sign conclusions could be family-specific and we will qualify them accordingly (Section~\ref{app:families}).
+  \item \textbf{Equivalence-class ontologys.} Our partial-order classes are stricter than unconstrained "task similarity"; alternative operationalizations (e.g., embedding-based clustering of hidden workflows) are not evaluated and could reshuffle A10 vs A01 at the boundary.
+  \item \textbf{Trap-plane surface readability.} Chip-level near-miss detection from text was possible at family hold-out (AUC 0.996); we register it as a semantics of benchmark traps rather than leakage, but it limits what "unreadable label" claims can be made on that axis.
+  \item \textbf{Analysis breadth.} worry: power is limited by 40/32 family clusters; decompositions at archetype level, though reported, have wide intervals and are exploratory only.
+\end{enumerate}
+
+\subsection{What should come next}
+
+The applied sequel is a transportable-memory admission rule validated the same way---we did not run it because it would be governed against standards we cannot yet meet (Section~\ref{sec:boundaries}). The theory sequel is a distributional-robustness treatment of transformation-shifted memory utility \citep{angelopoulos2024crc,wu2016conservative,jalaldoust2024transport}. And the measurement sequel asks how far these estimates agree with the observational estimators people can only compute without our oracle.

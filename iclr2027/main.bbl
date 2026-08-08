@@ -1,0 +1,180 @@
+\begin{thebibliography}{34}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Akewar \& Ranjan(2026)Akewar and Ranjan]{safecommit2026}
+Mayur Akewar and Ravi Ranjan.
+\newblock {SafeCommit}: Certifying when memory-grounded agents may safely act.
+\newblock arXiv:2608.04289, 2026.
+
+\bibitem[Angelopoulos et~al.(2024)Angelopoulos, Bates, et~al.]{angelopoulos2024crc}
+Anastasios Angelopoulos, Stephen Bates, et~al.
+\newblock Conformal risk control.
+\newblock In \emph{ICLR}, 2024.
+
+\bibitem[Anonymous(2025{\natexlab{a}})]{lifelong2025}
+Anonymous.
+\newblock {LifelongAgentBench}: Evaluating {LLM} agents as lifelong learners.
+\newblock arXiv:2505.11942, 2025{\natexlab{a}}.
+
+\bibitem[Anonymous(2025{\natexlab{b}})]{memagentbench2025}
+Anonymous.
+\newblock Evaluating memory in {LLM} agents via incremental multi-turn interactions.
+\newblock arXiv:2507.05257, 2025{\natexlab{b}}.
+
+\bibitem[Anonymous(2025{\natexlab{c}})]{procedmem2025}
+Anonymous.
+\newblock A benchmark for procedural memory retrieval in language agents.
+\newblock arXiv:2511.21730, 2025{\natexlab{c}}.
+
+\bibitem[Anonymous(2026{\natexlab{a}})]{after2026}
+Anonymous.
+\newblock Managing procedural memory in {LLM} agents.
+\newblock arXiv:2606.23127, 2026{\natexlab{a}}.
+
+\bibitem[Anonymous(2026{\natexlab{b}})]{attrimem2026}
+Anonymous.
+\newblock {AttriMem}: Attribution-guided process feedback for agent memory learning.
+\newblock arXiv:2607.21106, 2026{\natexlab{b}}.
+
+\bibitem[Anonymous(2026{\natexlab{c}})]{bridge2026}
+Anonymous.
+\newblock Bridge evidence: Static retrieval utility does not predict causal utility in multi-step agentic search.
+\newblock arXiv:2607.15253, 2026{\natexlab{c}}.
+
+\bibitem[Anonymous(2026{\natexlab{d}})]{damc2026}
+Anonymous.
+\newblock Decision-aware memory cards.
+\newblock arXiv:2606.08151, 2026{\natexlab{d}}.
+
+\bibitem[Anonymous(2026{\natexlab{e}})]{faultymem2026}
+Anonymous.
+\newblock Useful memories become faulty when continuously updated by {LLMs}.
+\newblock arXiv:2605.12978, 2026{\natexlab{e}}.
+
+\bibitem[Anonymous(2026{\natexlab{f}})]{himpo2026}
+Anonymous.
+\newblock {HiMPO}: Hindsight-informed memory policy optimization.
+\newblock arXiv:2606.16285, 2026{\natexlab{f}}.
+
+\bibitem[Anonymous(2026{\natexlab{g}})]{mem2act2026}
+Anonymous.
+\newblock {Mem2ActBench}: Evaluating memory-to-action consistency in {LLM} agents.
+\newblock arXiv:2601.19935, 2026{\natexlab{g}}.
+
+\bibitem[Anonymous(2026{\natexlab{h}})]{memaudit2026}
+Anonymous.
+\newblock {MemAudit}: Post-hoc auditing of poisoned agent memory via causal attribution.
+\newblock arXiv:2605.23723, 2026{\natexlab{h}}.
+
+\bibitem[Anonymous(2026{\natexlab{i}})]{memdelta2026}
+Anonymous.
+\newblock {MemDelta}: Controlled baselines and hidden confounds in agent memory evaluation.
+\newblock arXiv:2606.29914, 2026{\natexlab{i}}.
+
+\bibitem[Anonymous(2026{\natexlab{j}})]{memtransfer2026}
+Anonymous.
+\newblock Memory transfer learning: How memories are transferred across domains in coding agents.
+\newblock arXiv:2604.14004, 2026{\natexlab{j}}.
+
+\bibitem[Anonymous(2026{\natexlab{k}})]{memtx2026}
+Anonymous.
+\newblock {MemTX}: Transactional belief commit for agent memory.
+\newblock arXiv:2607.23929, 2026{\natexlab{k}}.
+
+\bibitem[Anonymous(2026{\natexlab{l}})]{moreskills2026}
+Anonymous.
+\newblock More skills, worse agents? when more skills are dangerous for {LLM} agents.
+\newblock arXiv:2605.24050, 2026{\natexlab{l}}.
+
+\bibitem[Anonymous(2026{\natexlab{m}})]{rscbmc2026}
+Anonymous.
+\newblock Learning when to remember: Risk-sensitive abstention for agent memory retrieval.
+\newblock arXiv:2604.27283, 2026{\natexlab{m}}.
+
+\bibitem[Anonymous(2026{\natexlab{n}})]{stitch2026camebench}
+Anonymous.
+\newblock Grounding agent memory in contextual intent.
+\newblock arXiv:2601.10702, 2026{\natexlab{n}}.
+\newblock ACL 2026 Findings.
+
+\bibitem[Cao et~al.(2026)]{reme2026}
+Chenao Cao et~al.
+\newblock Remember me, refine me: A dynamic procedural memory framework for experience-driven agent evolution.
+\newblock In \emph{ACL 2026 Findings}, 2026.
+
+\bibitem[Fang et~al.(2025)]{fang2025memp}
+Runsen Fang et~al.
+\newblock Memp: Exploring agent procedural memory.
+\newblock arXiv:2508.06433, 2025.
+
+\bibitem[Feng et~al.(2026{\natexlab{a}})Feng, Yao, and Lewis]{aim2026collide}
+Zhaoxiang Feng, Mingyang Yao, and David~Scott Lewis.
+\newblock When memories collide: Associative interference dynamics in lifelong agent memory.
+\newblock ICLR 2026 Workshop NFAM, 2026{\natexlab{a}}.
+
+\bibitem[Feng et~al.(2026{\natexlab{b}})Feng, Yao, and Lewis]{feng2026transplants}
+Zhaoxiang Feng, Mingyang Yao, and David~Scott Lewis.
+\newblock Memory transplants for {LLM} agents: Disentangling architecture and content transfer under a code-to-math shift.
+\newblock ICLR 2026 Workshop on Memory Agents (MemAgents), 2026{\natexlab{b}}.
+
+\bibitem[Feng et~al.(2026{\natexlab{c}})Feng, Yao, Sun, and Lewis]{feng2026operations}
+Zhaoxiang Feng, Mingyang Yao, Charlie Sun, and David~Scott Lewis.
+\newblock Which memory operation drives recovery? a factorial study of retrieve, write, and manage adaptation under domain shift.
+\newblock ICLR 2026 Workshop on Lifelong Agents (LLA), 2026{\natexlab{c}}.
+
+\bibitem[Jalaldoust \& Bareinboim(2024)Jalaldoust and Bareinboim]{jalaldoust2024transport}
+Anonymous Jalaldoust and Elias Bareinboim.
+\newblock Transportable representations for domain generalization.
+\newblock In \emph{AAAI}, 2024.
+
+\bibitem[Liang et~al.(2026)]{mcma2026}
+Ming Liang et~al.
+\newblock Learning how to remember: A meta-cognitive management method for structured and transferable agent memory.
+\newblock In \emph{ACL 2026 Findings}, 2026.
+
+\bibitem[Rocchi(2026)]{rocchi2026credit}
+Alessio Rocchi.
+\newblock Does memory credit travel? paired factorial audits of {LLM}-agent memory.
+\newblock SSRN 7160321, 2026.
+\newblock doi:10.2139/ssrn.7160321.
+
+\bibitem[Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and Yao]{shinn2023reflexion}
+Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao.
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem[Team(2024)]{qwen2025}
+Qwen Team.
+\newblock Qwen2.5 technical report.
+\newblock arXiv:2412.15115, 2024.
+
+\bibitem[Wang et~al.(2025)]{wang2025awm}
+Ziqi Wang et~al.
+\newblock Agent workflow memory.
+\newblock In \emph{ICML}, 2025.
+
+\bibitem[Wu et~al.(2016)Wu, Shariff, Lattimore, and Szepesv{\'a}ri]{wu2016conservative}
+Yifan Wu, Roshan Shariff, Tor Lattimore, and Csaba Szepesv{\'a}ri.
+\newblock Conservative bandits.
+\newblock In \emph{ICML}, 2016.
+
+\bibitem[Zhang et~al.(2026)]{amac2026}
+Guilin Zhang et~al.
+\newblock Adaptive memory admission control.
+\newblock arXiv:2603.04549, 2026.
+
+\bibitem[Zhang \& Li(2026)Zhang and Li]{consistencygate2026}
+Yan Zhang and Shibo Li.
+\newblock {ConsistencyGate}: Pruning {LLM} memories through self-consistency.
+\newblock arXiv:2607.22962, 2026.
+
+\bibitem[Zhao et~al.(2024)Zhao, Huang, Xu, Lin, Liu, and Huang]{zhao2024expel}
+Andrew Zhao, Daniel Huang, Quentin Xu, Matthieu Lin, Yong{-}Jin Liu, and Gao Huang.
+\newblock {ExpeL}: {LLM} agents are experiential learners.
+\newblock In \emph{AAAI}, 2024.
+
+\end{thebibliography}

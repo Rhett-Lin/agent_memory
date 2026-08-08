@@ -1,0 +1,28 @@
+\section{Benchmark, harness, and validity audit}
+\label{sec:setup}
+
+\subsection{Environment and task families}
+
+RelationalOps is a SQLite-backed tool environment with four business templates (CRM, inventory, ticket, calendar) and a six-tool protocol (\texttt{list\_tables}, \texttt{read}, \texttt{aggregate}, \texttt{insert}, \texttt{update}, \texttt{delete}, \texttt{finish}). Success is judged by \emph{programmatic terminal predicates} over the resulting database state---no LLM judge anywhere. We instantiate four partial-order archetypes: (P1) conditional write (\texttt{READ; CHECK; BRANCHWRITE; VERIFY}), (P2) two-row transfer with conservation guard, (P3) aggregate gate with audit log, (P4) delete-after-capture (archive then delete), each rendered in two domains, producing 40 pilot latent-program families and 32 fresh H3 families (disjoint generator seeds; 800 and 640 tasks respectively).
+
+\subsection{Harness}
+
+Agent episodes use frozen backbones (Qwen2.5-3B, Qwen2.5-7B; \citealp{qwen2025}) under vLLM temperature $0.7$, top-$p$ $0.9$, up to 12 steps of 512 tokens each. For every (sibling, seed) pair, all six cells reuse a byte-identical initial DB and the same decoding seed; only the injected memory differs. Cards are 200–300 Qwen2.5-1.5B tokens, n-style-templated, Latin-square balanced. Parseable-action rates: 98.9\% (3B), 99.6\% (7B); compliance (memory actually consulted) verified on three layers (step-level coverage, action-sequence deltas vs.\ N, and trace-level echo).
+
+\subsection{The validity audit that actually gates the claims}
+\label{ssec:audit}
+
+All claims below passed, in advance of analysis:
+
+\begin{enumerate}[leftmargin=1.8em]
+  \item \textbf{Oracle executability.} 800/800 siblings walk to legal terminal states; 160/160 re-executed in audit.
+  \item \textbf{Structural alignment.} The two-domain renderings of each family share byte-identical abstract signatures (8/8 exact), and every near-miss differs by exactly one designed mutation.
+  \item \textbf{Leakage probes at high strength.} In the structural plane (A00 vs.\ A10), char n-gram TF-IDF AUC $=0.378$ [0.150, 0.624], length/style AUC $=0.346$, embedding AUC $=0.380$, LLM probe AUC=$0.724$---none able to recover treatment from public text at held-out families; family-index 40-way classification accuracy $=0.087$ (chance 0.025).
+  \item \textbf{Difficulty equivalence.} No-memory sibling-difficulty equivalence by TOST at $\pm7$pp: 3B passes directly; 7B passes after trimming four worst-matched pairs (estimands recomputed post-trim get \emph{stronger}: $\taustruct=+0.105$).
+  \item \textbf{Continuous-similarity sensitivity.} Binary-$S$ conclusions reproduce as bucket-boundary shifts on continuous sim (tf/embedding); slopes within matched strata are flat where bins were defined.
+  \item \textbf{Identification advantage.} Saturating on continuous sim measures, the structural coefficient still holds at $+0.165$ (7B)---architecture/content dummies of the transplant 2$\times$2 cannot absorb it.
+\end{enumerate}
+
+\subsection{Data records}
+
+16{,}896 rollouts across all reported experiments with per-row git commit, config hash, seeds, GPU model, and vLLM/torch versions; all failures logged as-is; no rollout fabricated or fabricable (Section~\ref{app:repro}).

@@ -1,0 +1,30 @@
+\section{Baselines cannot recover the decomposition}
+\label{sec:gatec}
+
+We ask whether existing evaluation signals substitute for URN oracle-randomized decomposition, by embedding three strongest neighbors \emph{inside our own harness} with identical models and budgets.
+
+\subsection{The transplant 2$\times$2 \citep{feng2026transplants} cannot tell replay from structure}
+\label{ssec:transplants}
+
+We reproduce their architecture$\times$content factorial structure: two write-path architectures (procedural card; raw transcript) $\times$ three content conditions (matched correct (A11\,$\cup$\,A10); near-miss; unrelated) on identical families (N=3840+3840 rollouts, model = Qwen2.5-7B). It reports matched-content effects ($+0.164$, $+0.035$ n.s.) but \emph{by construction} cannot decompose the A11-vs-A10 legs of what counts as ``matched''. Our P$\times$S split is Holm-significant in both procedural models ($+0.144$, $+0.102$), is zero on raw ($-0.014$), and the arch$\times$content interaction $I_{\mathrm{matched}}=-0.129$ is also Holm-significant---which shows: (i) representation changes the replay share, not only the total; (ii) nothing in the arch$\times$content frame tells one that in this experiment $72\%$ of the pooled matched gain is replay. Pair-level $P\times S$ is not a higher-resolution version of transplant factorial; it asks a question the 2 by 2 cannot define.
+
+\subsection{Embedding-based structural signal \citep{procedmem2025}: only partially predictive}
+\label{ssec:procedmem}
+
+Memory--task embedding similarity (frozen bge-small, our calibration view) reaches AUC $0.60$ at predicting $P$ within the trap plane and $0.35--0.38$ in the structural plane (chance), plus a positive sim$\to$uplift slope significant only for 7B after Holm correction ($p_{\mathrm{Holm}}=0.032$). Critically it does not predict harmful flips ($p>0.1$, odds ratios). Distilling F-MED to an embedding index thus erases both the trap direction and the clean structural estimate itself.
+
+\subsection{LLM intent-mismatch judges \citep{stitch2026camebench}: miscalibrated at scale}
+\label{ssec:stitch}
+
+The 512-judgment blind alarm on (task, memory) pairs fires on A00/A01/A10/A11 at $100\%/93.8\%/100\%/90.6\%$ (AUC=0.508, i.e., no usable discrimination), consistent with the program-equivalence failure in Section~\ref{ssec:judge}. Family-level alarm does not predict per-family harmful-flip either (n.s.).
+
+\section{What we deliberately did not claim}
+\label{sec:boundaries}
+
+\begin{enumerate}[leftmargin=1.8em]
+  \item \textbf{H-C was a formal NO-GO.} The three-form write-path minimal gate failed its frozen criterion. We did not reframe it as a positive script-form effect; we diagnosed its truncation artefact with H3 and report both.
+  \item \textbf{H3 was a formal NO-GO on its primary estimand.} The frozen form criterion did not reach significance; coverage is supported (directionally consistent, two models, robust simple effects) but \emph{not confirmed} under the frozen multiplicity family. We write it as ``supported-but-unresolved''.
+  \item \textbf{TRU-Mem removed.} A transportable-utility admission learned against this oracle at minimal risk is the obvious applied sequel, but the method-side delta over \citet{amac2026,rscbmc2026,damc2026,reme2026} did not meet our own pre-registered differentiation standards. It is not submitted for review.
+  \item \textbf{No universal invisible-leakage assertion.} We report calibrated probe AUCs and observed strength limits, not ``zero leakage proofs''.
+  \item \textbf{Published-system profile reversal not pursued.} Two pre-registered attempts (H-C, H3) did not find significant divergence between representation forms; we do not mount a post-hoc third hunt with increased power (which would be power-chasing).
+\end{enumerate}

@@ -1,0 +1,36 @@
+\section{Replay realization is bounded by coverage, not form}
+\label{sec:realization}
+
+\subsection{An anomaly we had to explain}
+\label{ssec:hc}
+
+A pre-registered H-C minimal gate compared three write-path forms of the same source episodes under token-parity (raw transcript truncated to $\le$300 tokens; LLM summary; procedural card) \S\ref{ssec:h3}. The celebrated ``script-over-raw'' gap that at first read suggested form effects was large ($\Delta\tau_{\mathrm{replay}}=-0.158$ [$-0.239, -0.080]$)---but every raw card had been hard-truncated and systematically omitted the decision step (only 48--59\% contained a write step; 8 of 640 contained the finish step). The ``form'' claim was unidentified.
+
+\subsection{Separating form from coverage}
+\label{ssec:h3main}
+
+With one canonical set of propositions per episode (100\% programmatically content-aligned across forms), the fresh 32-family slice renders clean cells: transcript-vs-script complete/prefix, plus the verbatim H-C-style 300-token hard cut as an ecological arm. Success rates (4320 arm rollouts/model):
+
+\begin{table}[t]
+\centering\small
+\caption{Replay-related cell rates and contrasts on fresh families (n=384/arm-cell/model). Arms: S/T=script/transcript; C/P=complete/prefix; eco = verbatim 300-token hard cut.}
+\label{tab:h3}
+\begin{tabular}{lcc|cc}
+\toprule
+& \multicolumn{2}{c}{Qwen2.5-7B} & \multicolumn{2}{c}{Qwen2.5-3B} \\
+\cmidrule(r){2-3}\cmidrule(l){4-5}
+arm & A10 & A11 & A10 & A11 \\
+\midrule
+T-complete & .729 & \textbf{.833} & .312 & \textbf{.503} \\
+S-complete & .661 & .732 & .299 & .424 \\
+T-prefix   & .568 & .591 & .224 & .312 \\
+S-prefix   & .526 & .544 & .242 & .273 \\
+eco        & .641 & .638 & .245 & .297 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Cell-level replay terms $\taureplay=A11-A10$: transcript-complete $+0.104$ ($[+0.042,+0.171]$, 7B) and $+0.190$ ($[+0.123,+0.259]$, 3B); script-complete $+0.070$ and $+0.125$; the form contrast $\varepsilon_{\mathrm{form}}=\taureplay^{\mathrm{(script)}}-\taureplay^{\mathrm{(transcript)}}$ is negative in both models (Holm over 8 contrast tests: all null). Coverage contrasts are directionally positive in both forms and models (raw 3B transcript $p=.018$) but do not survive the frozen family-wise correction. TOST on transcript-complete $\taureplay$ at margin $\pm 3$pp is rejected in both models: \emph{full transcripts realize replay materially}. The eco arm, forced to the same 300-token brutality as H-C, collapses to $\approx 0$ in 7B ($-0.003$ [$-0.083, +0.083$]), mirroring H-C's earlier $-0.014$.
+
+\subsection{Resolution}
+Our earlier H-C anomaly is thus identified as \emph{sensitive to coverage/truncation}, not to representation. We deliberately state its strength precisely: the result shows transcripts \emph{can} realize replay when their decision content is preserved; it does not isolate a clean mechanism status for coverage (multiplicity-corrected coverage contrasts are not significant). See Section~\ref{sec:boundaries} for the mapping to the overall strength of evidence.
