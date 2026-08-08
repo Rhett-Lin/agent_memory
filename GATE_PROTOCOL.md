@@ -169,3 +169,97 @@ Stage B（E 嵌套）、Stage C（P×D/I/V）、Stage D（retrieval）、TRU-Mem
 - 结果若为 null：**同样详细报告**（治理规则 §1：先自分析 → 与 GPT-5.6 讨论 → 再行动）；
 - 所有 fresh family 的 sealed/public 切分与 pilot 相同；生态臂的结论措辞必须用"在 300-token 截断构建下"限定（GPT-5.6 措辞条款）；
 - 摘要/摘要类工具不得参与卡片构造（§14.5 条款）；transcript 素材若混有 oracle fallback，整批作废重采。
+
+---
+
+# Part IV — Decision-aware Compression 预注册（2026-08-08 冻结，实现前登记）
+
+> 目的：把 H3 的"覆盖>形式"发现从构造性 arm 上升到可部署的 compression policy 实证。所有判据、kills、对照与口径冻结于本部分；写作中不得事后放宽。负结果处置按治理规则 §1：自分析 → GPT-5.6（Codex MCP）→ 再行动。
+
+## 18. 假设与主 estimand（冻结）
+
+**H-DC**：在 token budget 完全等同（≤300 Qwen-1.5B tokens）、内容同源（同一真实 rollout trajectory）、harness/budget/seed 全部一致的前提下，decision-aware compression（dslice）显著优于 naive top-truncation（H-C raw），因为它保留了决策相关 token。
+
+**对照臂（全部已存在，不重跑）**：`H-C raw`（300-token 幼稚截断的真实 transcript，§Part II）；`pilot procedural`；`N`（no memory）；H3 eco/TC（引用视角，不注入新侧）。新增唯一臂：**`dslice`**。
+
+**构造约束（预注册）**：dslice 从 H-C raw 的**未截断原始 harvest trajectory**（`outputs/agent_memory/pilot/raw_harvest/hc_raw_source_shard*-of-010.jsonl`）生成；只使用公开文本（step、tool action、tool_result），**禁止**使用 sealed 字段（family/cell/task_id、P/S、oracle plan）。策略规则在 §20 写死；文本中间产物可在 `pilot/dslice/` 留痕。
+
+**网格**：40 pilot fam × 4 sib × {A00,A01,A10,A11} × 4 seeds × 2 models（qwen3b、qwen7b）= 640 任务(cell) ×4 seeds ×2 = 5,120 rollouts 新增。N 条件从 pilot 复用，不重复。
+
+**主 estimand（3 contrasts × 2 models，Holm m=6）**：
+1. **E1 = τ_replaylike(dslice) − τ_replaylike(raw)**：dslice 相对幼稚截断的回款；
+2. **E2 = τ_replaylike(dslice)**：dslice 的独立回放溢价（τ_replaylike = A11−A10，family-cluster bootstrap 2000 reps）；
+3. **E3 = trap 回归检查**：τ_trap(dslice) − τ_trap(raw) 与 HFR(dslice) − HFR(raw)，secondary，防止压缩放大 harmful flip。
+
+## 19. GO / NO_GO（冻结）
+
+- **GO**：E1 Holm SIG+ 且 ≥ +5pp（至少一个 model），且 E3 不与 raw 恶化 > +5pp（Holm n.s. 以内）。
+- **NO_GO**：E1 两模型 Holm n.s.，或 dslice 显著放大 trap（E3 Holm SIG+ 且 > +5pp）。
+- **等价确认（不是同义反复）**：若 E1 SIG+，还须事后补报 dslice 卡长度分布与 token 均值，确保"超预算混入"非借口（dslice ≤300 tokens 实测）。
+
+## 20. dslice 压缩规则（全文冻结，实现按字面执行）
+
+输入 harvest trajectory 的逐步 record：每步有 `completion`（模型的 JSON action）和 `tool_result`（环境的执行结果文本）。规则 D1–D5：
+
+1. **保留全部 action JSON（`completion`）拷本**（read/aggregate/insert/update/delete/finish 及 list_tables，全量保留）；
+2. **保留 read/aggregate 的 tool_result，但压缩为单行摘要**：对每行 result，若含多行 row dump，只保留 (table, filter-used, matched-row-count, matched-row-1st 的检索键列）四元组；其余列整体舍弃；
+3. **整体舍弃 list_tables 的 tool_result**（表列表），其 action 保留；
+4. **整体舍弃 Q-only 动作结果**：delete/insert/update 的 tool_result 一律舍弃（成功标志在 finish_answer 里），action 保留；
+5. **finish action 与 finish 的 tool_result 整体保留**。
+
+格式：card text = 以上保留项按原顺序拼接；不引入任何新自然语言；不走 LLM；不做 paraphrase。寻找 200–300 tokens,超限的按 D1→D2→D4→D3 顺序逐步扩大到工具结果删掉。卡片生成时记录 token_count、覆盖 flags（has_decision_args, has_finish）到 `pilot/dslice/cards_map.jsonl`，且抽样宣称 100% 保留决策条件所需 aggregate 数与 finish（由对比 assert 检查）。
+
+## 21. 审计纪律（冻结）
+
+- 隔离 grep：`family_idx|cell|A00|A01|A10|A11` 在 dslice 卡片内零命中；
+- Token budget：所有 dslice 与 raw 卡的 token-count 实测均值差 < 15 tokens（同 tokenizer）;
+- **禁止自动伪影**：压制 1 个不想看到的压缩器"偷塞合并多个结果"行为——任何 card 若引入 harvest 中没有的实体/数值（grep diff），拒绝并记录为 QA-fail（上限 0）。
+- Rollout JSONL 与原 raw 网格字段同构（commit/hash/versions/GPU/seed）。
+
+# Part IV-A — H-DC 分析前修正案（2026-08-08 17:05 +0900 登记，先于任何 outcome 检视）
+
+触发：实现期发现 3 处协议缺口；经外部方法学评审（Codex MCP gpt-5.6-sol，thread `019fe063-f1c1-7be2-9875-eee0be7ab7e9`）裁决，全部在**分析开始前**登记。治理链：负结果/缺口 → 自分析 → GPT-5.6 → 再行动，符合 §1。
+
+## A1. 补齐 raw-qwen3b 对照臂（注册前提更正）
+
+注册文本"对照臂（全部已存在，不重跑）"对 qwen3b 不成立（H-C 只跑了 qwen7b），E1(qwen3b) 在既有数据上不可估。更正：新增 raw caps 在 qwen3b 上的网格 = 40 fam × 4 sib × {A00..A11} × 4 seeds = 2,560 rollouts。卡文本/harness/seeds/Latin square 与 dslice-3b 完全一致，仅 rollout JSONL 为新增；这不是"重跑"（该数据从未存在）。E1 由此在两模型上均可估，冻结的 m=6 设计得以保全。
+
+## A2. token 平衡缺口 ↔ 新增主对照 `raw_matched`（§21极简释义被拒绝）
+
+实测：dslice 卡均值 237.5 tok（min 102, max 299），raw 全部 300 → 均值差 62.5 > 15，§21 gate **形式上失败**。"更短=保守"的抗辩不成立（长度/干扰混杂：仅缩短 prompt 本身可能涨分，E1>0 无法干净归因于"决策相关保留"）。修正（外部评审认可的唯一 no-new-text 办法）：
+
+- 新增系统 **`raw_matched`**：每个 memory_id 取其 raw 卡未截断全文，top-truncate 到**配对 dslice 卡的精确 token 数**（同 tokenizer；逐卡配对，实测 |Δtok| 分布报告）。预算按构造精确同额，无 padding、无新文本。
+- **E1/E3 的主口径改为对比 `raw_matched`**；对比 raw(300) 的口径降级为 secondary（"实际部署"视角：300 预算上限下的朴素截断基线）。
+- 新增网格：raw_matched × {qwen3b, qwen7b} = 5,120 rollouts。
+
+## A3. D1–D5 执行披露（偏差全报，声明措辞收窄）
+
+- **action 拷贝 = parsed 对象的 canonical dump**（修掉 harness parse 残留的孤儿尾段）。验证：4,510 step 中 junk tail 18 例、首对象解析不一致 4 例、尾段含可恢复 tool dict 5 例 → 这些 step 一律退回**逐字保留** completion，不静默丢内容。canonical dump 值/类型无损（json.loads 往返相等）。
+- **dedup**：非变异 step（read/aggregate/list_tables）且 action+result 完全重复者去重；write/finish 从不去重。
+- **escalation 阶梯分布**（cards_map.jsonl 实测）：stage0=14, stage1=76, stage2=281, stage3=8, stage4=252, stage5=9（stage≥6 为零，QA-fail=0）。
+- 声明措辞：效应归于 **"amended dslice package"整体策略**，不归因于字面 D1–D5 的某一组件；机制句（"because it keeps decision-relevant tokens"）降级为设计动机 + 探索性 coverage 佐证，不作为已识别因果链。
+
+## A4. Holm 族精确枚举（primary m=6）
+
+1. E1-7b: τ_replaylike(dslice) − τ_replaylike(raw_matched)，qwen7b，单侧 +；
+2. E1-3b: 同上，qwen3b；
+3. E2-7b: τ_replaylike(dslice)，qwen7b，双侧；
+4. E2-3b: 同上，qwen3b；
+5. E3a-7b: HFR(dslice) − HFR(raw_matched) 的**非劣性**（单侧 95% CI 上界 < +5pp），qwen7b；
+6. E3a-3b: 同上，qwen3b。
+
+Secondary（不经 Holm，只报 CI）：E1 vs raw(300)；τ_trap(dslice)−τ_trap(raw_matched) 非劣性（CI 下界 > −5pp，符号约定：τ_trap 更负 = trap 更重）；τ_struct(dslice)；各臂 cell 成功率。
+
+## A5. E3 操作化与符号（回应评审 under-specified）
+
+- 非劣性不使用"n.s. ⇒ 通过"逻辑：一律用 bootstrap 单侧 CI 界限对预设 margin（±5pp）判定。
+- HFR 配对单位 = (family, sibling, seed)，与 Part II 实现一致（family-cluster bootstrap 2,000 reps）。
+- GO 重述（保持冻结原意）：≥1 个模型 E1 Holm SIG+ 且 ≥ +5pp，且该模型 E3a 非劣成立。NO_GO：两模型 E1 均 Holm n.s.，或 E1 显著之模型其 E3a/τ_trap 非劣被违反。
+
+## A6. 历史对照的时间混杂排除
+
+分析时**断言并报告**：raw(300)-7b 历史 rollouts 与本轮新增网格的 `config_hash`、模型 HF snapshot id、harness git commit（含 dirty 状态）逐项一致；任何不一致如实披露为局限性。
+
+## A7. 总新增算力登记
+
+raw-3b (2,560) + raw_matched ×2 模型 (5,120) = 7,680 rollouts；加已在跑的 dslice 5,120，H-DC 合计 12,800。全部跑完前不做任何 outcome 检视（本登记时点：dslice 网格运行中，其余未启动）。

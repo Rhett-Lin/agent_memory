@@ -146,9 +146,31 @@ def read_summary(step):
     return summ
 
 
+_DEC = json.JSONDecoder()
+
+
 def action_copy(step):
-    """Canonical action JSON copy (parsed object only; strips orphaned
-    non-JSON tail fragments some raw completions carry)."""
+    """Action JSON copy.  Default: canonical dump of the parsed object
+    (strips orphaned non-JSON tail fragments some raw completions carry).
+    Exception (external review 019fe063): if the completion's first JSON
+    object does not equal the parsed field, or the tail contains another
+    fully recoverable tool dict, the tail may carry real content -> keep the
+    completion VERBATIM instead (nothing is silently dropped)."""
+    comp = step["completion"].strip()
+    try:
+        obj, end = _DEC.raw_decode(comp)
+    except Exception:
+        return comp
+    if obj != step["parsed"]:
+        return comp
+    tail = comp[end:].strip()
+    if tail:
+        try:
+            o2, _ = _DEC.raw_decode(tail)
+            if isinstance(o2, dict) and "tool" in o2:
+                return comp
+        except Exception:
+            pass
     return json.dumps(step["parsed"], ensure_ascii=False)
 
 
