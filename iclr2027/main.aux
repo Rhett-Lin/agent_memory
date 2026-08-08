@@ -69,11 +69,11 @@
 \newlabel{ssec:replay}{{5.1}{6}{Aggregate gains are replay-dominated}{subsection.5.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Structural transfer flips sign with model scale}{6}{subsection.5.2}\protected@file@percent }
 \newlabel{ssec:scale}{{5.2}{6}{Structural transfer flips sign with model scale}{subsection.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Near-miss harm is structured, noxious---and model-specific}{6}{subsection.5.3}\protected@file@percent }
-\newlabel{ssec:hf}{{5.3}{6}{Near-miss harm is structured, noxious---and model-specific}{subsection.5.3}{}}
 \citation{stitch2026camebench}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Replay-related cell rates and contrasts on fresh families (n=384/arm-cell/model). Arms: S/T=script/transcript; C/P=complete/prefix; eco = verbatim 300-token hard cut.}}{7}{table.3}\protected@file@percent }
 \newlabel{tab:h3}{{3}{7}{Replay-related cell rates and contrasts on fresh families (n=384/arm-cell/model). Arms: S/T=script/transcript; C/P=complete/prefix; eco = verbatim 300-token hard cut}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Near-miss harm is structured, noxious---and model-specific}{7}{subsection.5.3}\protected@file@percent }
+\newlabel{ssec:hf}{{5.3}{7}{Near-miss harm is structured, noxious---and model-specific}{subsection.5.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Models cannot even recognize program equivalence}{7}{subsection.5.4}\protected@file@percent }
 \newlabel{ssec:judge}{{5.4}{7}{Models cannot even recognize program equivalence}{subsection.5.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Replay realization is bounded by coverage, not form}{7}{section.6}\protected@file@percent }
@@ -82,46 +82,56 @@
 \newlabel{ssec:hc}{{6.1}{7}{An anomaly we had to explain}{subsection.6.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Separating form from coverage}{7}{subsection.6.2}\protected@file@percent }
 \newlabel{ssec:h3main}{{6.2}{7}{Separating form from coverage}{subsection.6.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Decision-aware compression vs.\ paired naive truncation (family-cluster bootstrap, 2000 reps). $\tau _{\mathrm  {replay}}=A11-A10$; E1 is the paired difference of replay terms; trap guardrails are noninferiority checks against a $+5$pp margin. \textsc  {dslice} cards: mean 237.5 tokens.}}{8}{table.4}\protected@file@percent }
+\newlabel{tab:hdc}{{4}{8}{Decision-aware compression vs.\ paired naive truncation (family-cluster bootstrap, 2000 reps). $\taureplay =A11-A10$; E1 is the paired difference of replay terms; trap guardrails are noninferiority checks against a $+5$pp margin. \textsc {dslice} cards: mean 237.5 tokens}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Resolution}{8}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Deploying the finding: decision-aware compression}{8}{section.7}\protected@file@percent }
+\newlabel{sec:deployment}{{7}{8}{Deploying the finding: decision-aware compression}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}A paired-budget compression test}{8}{subsection.7.1}\protected@file@percent }
+\newlabel{ssec:dctest}{{7.1}{8}{A paired-budget compression test}{subsection.7.1}{}}
 \citation{feng2026transplants}
 \citation{procedmem2025}
 \citation{stitch2026camebench}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Result: a large Holm-significant realization gap at 7B, a capability gate at 3B}{9}{subsection.7.2}\protected@file@percent }
+\newlabel{ssec:dcresult}{{7.2}{9}{Result: a large Holm-significant realization gap at 7B, a capability gate at 3B}{subsection.7.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Strength of evidence}{9}{subsection.7.3}\protected@file@percent }
+\newlabel{ssec:dcstrength}{{7.3}{9}{Strength of evidence}{subsection.7.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Baselines cannot recover the decomposition}{9}{section.8}\protected@file@percent }
+\newlabel{sec:gatec}{{8}{9}{Baselines cannot recover the decomposition}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}The transplant 2$\times $2 \citep  {feng2026transplants} cannot tell replay from structure}{9}{subsection.8.1}\protected@file@percent }
+\newlabel{ssec:transplants}{{8.1}{9}{The transplant 2$\times $2 \citep {feng2026transplants} cannot tell replay from structure}{subsection.8.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Embedding-based structural signal \citep  {procedmem2025}: only partially predictive}{9}{subsection.8.2}\protected@file@percent }
+\newlabel{ssec:procedmem}{{8.2}{9}{Embedding-based structural signal \citep {procedmem2025}: only partially predictive}{subsection.8.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}LLM intent-mismatch judges \citep  {stitch2026camebench}: miscalibrated at scale}{9}{subsection.8.3}\protected@file@percent }
+\newlabel{ssec:stitch}{{8.3}{9}{LLM intent-mismatch judges \citep {stitch2026camebench}: miscalibrated at scale}{subsection.8.3}{}}
 \citation{amac2026,rscbmc2026,damc2026,reme2026}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Resolution}{8}{subsection.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Baselines cannot recover the decomposition}{8}{section.7}\protected@file@percent }
-\newlabel{sec:gatec}{{7}{8}{Baselines cannot recover the decomposition}{section.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}The transplant 2$\times $2 \citep  {feng2026transplants} cannot tell replay from structure}{8}{subsection.7.1}\protected@file@percent }
-\newlabel{ssec:transplants}{{7.1}{8}{The transplant 2$\times $2 \citep {feng2026transplants} cannot tell replay from structure}{subsection.7.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Embedding-based structural signal \citep  {procedmem2025}: only partially predictive}{8}{subsection.7.2}\protected@file@percent }
-\newlabel{ssec:procedmem}{{7.2}{8}{Embedding-based structural signal \citep {procedmem2025}: only partially predictive}{subsection.7.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}LLM intent-mismatch judges \citep  {stitch2026camebench}: miscalibrated at scale}{8}{subsection.7.3}\protected@file@percent }
-\newlabel{ssec:stitch}{{7.3}{8}{LLM intent-mismatch judges \citep {stitch2026camebench}: miscalibrated at scale}{subsection.7.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}What we deliberately did not claim}{8}{section.8}\protected@file@percent }
-\newlabel{sec:boundaries}{{8}{8}{What we deliberately did not claim}{section.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Stage-A cell success rates with 95\% family-cluster CIs. A11 (replay-like) dominates the 7B pooled gain; the 3B pattern differs---only A11 gets near-parity with N while A10 (clean structural) falls below the unrelated control, foreshadowing the scale reversal of Section~\ref {ssec:scale}.}}{9}{figure.1}\protected@file@percent }
-\newlabel{fig:fig1}{{1}{9}{Stage-A cell success rates with 95\% family-cluster CIs. A11 (replay-like) dominates the 7B pooled gain; the 3B pattern differs---only A11 gets near-parity with N while A10 (clean structural) falls below the unrelated control, foreshadowing the scale reversal of Section~\ref {ssec:scale}}{figure.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Risk differences relative to N and Q. The format/context effect ($Q-N$) hugs zero; the decomposition separates a small structural term from a large replay term; 3B only benefits through A11.}}{9}{figure.2}\protected@file@percent }
-\newlabel{fig:fig2}{{2}{9}{Risk differences relative to N and Q. The format/context effect ($Q-N$) hugs zero; the decomposition separates a small structural term from a large replay term; 3B only benefits through A11}{figure.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Discussion}{9}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}What changes in the aggregate narrative}{9}{subsection.9.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Paired harmful flips, A01 cell. Concentration on branches where the near-miss program semantically differs from the correct program, not a uniform effect; magnitude falls with scale.}}{10}{figure.3}\protected@file@percent }
-\newlabel{fig:fig4}{{3}{10}{Paired harmful flips, A01 cell. Concentration on branches where the near-miss program semantically differs from the correct program, not a uniform effect; magnitude falls with scale}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Form/coverage arms on fresh families (H3). Top pad: A10/A11 rates per arm; bottom pad: replay term per arm with 95\% CIs. Complete transcripts realize replay materially (TOST rejects $\pm 3$pp equivalence), hard-truncated (eco) does not; form contrast is Holm-null in 8 tests.}}{10}{figure.4}\protected@file@percent }
-\newlabel{fig:h3}{{4}{10}{Form/coverage arms on fresh families (H3). Top pad: A10/A11 rates per arm; bottom pad: replay term per arm with 95\% CIs. Complete transcripts realize replay materially (TOST rejects $\pm 3$pp equivalence), hard-truncated (eco) does not; form contrast is Holm-null in 8 tests}{figure.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Deployment reading}{10}{subsection.9.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Stage-A cell success rates with 95\% family-cluster CIs. A11 (replay-like) dominates the 7B pooled gain; the 3B pattern differs---only A11 gets near-parity with N while A10 (clean structural) falls below the unrelated control, foreshadowing the scale reversal of Section~\ref {ssec:scale}.}}{10}{figure.1}\protected@file@percent }
+\newlabel{fig:fig1}{{1}{10}{Stage-A cell success rates with 95\% family-cluster CIs. A11 (replay-like) dominates the 7B pooled gain; the 3B pattern differs---only A11 gets near-parity with N while A10 (clean structural) falls below the unrelated control, foreshadowing the scale reversal of Section~\ref {ssec:scale}}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Risk differences relative to N and Q. The format/context effect ($Q-N$) hugs zero; the decomposition separates a small structural term from a large replay term; 3B only benefits through A11.}}{10}{figure.2}\protected@file@percent }
+\newlabel{fig:fig2}{{2}{10}{Risk differences relative to N and Q. The format/context effect ($Q-N$) hugs zero; the decomposition separates a small structural term from a large replay term; 3B only benefits through A11}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}What we deliberately did not claim}{10}{section.9}\protected@file@percent }
+\newlabel{sec:boundaries}{{9}{10}{What we deliberately did not claim}{section.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Paired harmful flips, A01 cell. Concentration on branches where the near-miss program semantically differs from the correct program, not a uniform effect; magnitude falls with scale.}}{11}{figure.3}\protected@file@percent }
+\newlabel{fig:fig4}{{3}{11}{Paired harmful flips, A01 cell. Concentration on branches where the near-miss program semantically differs from the correct program, not a uniform effect; magnitude falls with scale}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Form/coverage arms on fresh families (H3). Top pad: A10/A11 rates per arm; bottom pad: replay term per arm with 95\% CIs. Complete transcripts realize replay materially (TOST rejects $\pm 3$pp equivalence), hard-truncated (eco) does not; form contrast is Holm-null in 8 tests.}}{11}{figure.4}\protected@file@percent }
+\newlabel{fig:h3}{{4}{11}{Form/coverage arms on fresh families (H3). Top pad: A10/A11 rates per arm; bottom pad: replay term per arm with 95\% CIs. Complete transcripts realize replay materially (TOST rejects $\pm 3$pp equivalence), hard-truncated (eco) does not; form contrast is Holm-null in 8 tests}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Discussion}{11}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}What changes in the aggregate narrative}{11}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Deployment reading}{11}{subsection.10.2}\protected@file@percent }
 \citation{angelopoulos2024crc,wu2016conservative,jalaldoust2024transport}
 \bibdata{references}
 \bibcite{safecommit2026}{{1}{2026}{{Akewar \& Ranjan}}{{Akewar and Ranjan}}}
 \bibcite{angelopoulos2024crc}{{2}{2024}{{Angelopoulos et~al.}}{{Angelopoulos, Bates, et~al.}}}
 \bibcite{lifelong2025}{{3}{2025{a}}{{Anonymous}}{{}}}
 \bibcite{memagentbench2025}{{4}{2025{b}}{{Anonymous}}{{}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Limitations}{12}{subsection.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}What should come next}{12}{subsection.10.4}\protected@file@percent }
 \bibcite{procedmem2025}{{5}{2025{c}}{{Anonymous}}{{}}}
 \bibcite{after2026}{{6}{2026{a}}{{Anonymous}}{{}}}
 \bibcite{attrimem2026}{{7}{2026{b}}{{Anonymous}}{{}}}
 \bibcite{bridge2026}{{8}{2026{c}}{{Anonymous}}{{}}}
 \bibcite{damc2026}{{9}{2026{d}}{{Anonymous}}{{}}}
 \bibcite{faultymem2026}{{10}{2026{e}}{{Anonymous}}{{}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Limitations}{11}{subsection.9.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}What should come next}{11}{subsection.9.4}\protected@file@percent }
 \bibcite{himpo2026}{{11}{2026{f}}{{Anonymous}}{{}}}
 \bibcite{mem2act2026}{{12}{2026{g}}{{Anonymous}}{{}}}
 \bibcite{memaudit2026}{{13}{2026{h}}{{Anonymous}}{{}}}
@@ -148,13 +158,15 @@
 \bibcite{consistencygate2026}{{34}{2026}{{Zhang \& Li}}{{Zhang and Li}}}
 \bibcite{zhao2024expel}{{35}{2024}{{Zhao et~al.}}{{Zhao, Huang, Xu, Lin, Liu, and Huang}}}
 \bibstyle{iclr2027_conference}
+\@writefile{toc}{\contentsline {section}{\numberline {A}H-DC protocol, pre-analysis amendments, and audit}{14}{section.A}\protected@file@percent }
+\newlabel{app:hdc}{{A}{14}{H-DC protocol, pre-analysis amendments, and audit}{section.A}{}}
 \citation{alfworld2020}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Reproducibility}{13}{section.A}\protected@file@percent }
-\newlabel{app:repro}{{A}{13}{Reproducibility}{section.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Families and archetypes}{13}{section.B}\protected@file@percent }
-\newlabel{app:families}{{B}{13}{Families and archetypes}{section.B}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Second-family replication (completed)}{13}{section.C}\protected@file@percent }
-\newlabel{app:llama}{{C}{13}{Second-family replication (completed)}{section.C}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}External validity check (ALFWorld, completed)}{13}{section.D}\protected@file@percent }
-\newlabel{app:alfworld}{{D}{13}{External validity check (ALFWorld, completed)}{section.D}{}}
-\gdef \@abspage@last{14}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Reproducibility}{15}{section.B}\protected@file@percent }
+\newlabel{app:repro}{{B}{15}{Reproducibility}{section.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Families and archetypes}{15}{section.C}\protected@file@percent }
+\newlabel{app:families}{{C}{15}{Families and archetypes}{section.C}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Second-family replication (completed)}{15}{section.D}\protected@file@percent }
+\newlabel{app:llama}{{D}{15}{Second-family replication (completed)}{section.D}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}External validity check (ALFWorld, completed)}{15}{section.E}\protected@file@percent }
+\newlabel{app:alfworld}{{E}{15}{External validity check (ALFWorld, completed)}{section.E}{}}
+\gdef \@abspage@last{15}

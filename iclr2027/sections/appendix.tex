@@ -1,3 +1,14 @@
+\section{H-DC protocol, pre-analysis amendments, and audit}
+\label{app:hdc}
+
+The deployment test of \S\ref{sec:deployment} was pre-registered (GATE\_PROTOCOL Part IV) and then \emph{amended before any outcome was inspected} (Part IV-A, timestamped 2026-08-08, before the primary grids completed), under the project's governance rule: implementation gaps were first self-analyzed, then adjudicated with an external reviewer, then registered. Amendments:
+\begin{enumerate}[leftmargin=1.8em]
+  \item \textbf{3B control arm added.} The registration had assumed all controls already existed; the naive-truncation arm in fact existed only for 7B. The 3B \textsc{raw} arm (2{,}560 rollouts, identical cards/harness/seeds) was run as a registered correction, keeping E1 estimable at both scales and the Holm family ($m=6$) intact.
+  \item \textbf{Paired-budget control made primary.} Realized \textsc{dslice} card length (mean 237.5 tokens) is genuinely shorter than the 300-token cap, so a ``shorter is conservative'' argument would not have sufficed: prompt length itself can affect success. The \textsc{raw\_matched} control---same transcript truncated to the \emph{exact} paired token count (per-card $|\Delta|=0$, 640/640)---became the primary contrast; \textsc{raw(300)} is reported as the secondary senior baseline.
+  \item \textbf{Packaging disclosed.} Action copies are canonical dumps of the parsed action JSON (strips harness parse artifacts; 18/4{,}510 affected steps, with verbatim fallback wherever a tail could carry recoverable content); exact-duplicate non-mutating steps are deduplicated; the escalation ladder reaches stages $\{0,1,2,3,4,5\}=\{14,76,281,8,252,9\}$ cards. Claims therefore attach to the \textsc{dslice} \emph{package}, not to any single rule.
+\end{enumerate}
+Execution-environment assertions passed: identical vLLM/torch/GPU versions across arms; config hashes uniform at 7B (3B pilot N/Q rows differ only in a GPU-memory-utilization resource field); the one post-hoc harness change (single-BOS tokenization, introduced for Llama) was verified to be token-id-identical on Qwen2.5, i.e., a no-op for every arm it touches. Inference: aligned family-cluster bootstrap (2000 reps) with the primary Holm family $m=6$ \{E1$\times$2 models, E2$\times$2, HFR-noninferiority$\times$2\}; trap noninferiority uses one-sided bootstrap bounds against the $\pm5$pp margins. Full numbers: \texttt{pilot/dslice/HDC\_RESULTS.json}; protocol text: \texttt{GATE\_PROTOCOL.md} Part IV/IV-A.
+
 \section{Reproducibility}
 \label{app:repro}
 
@@ -5,9 +16,9 @@ All artifacts at \texttt{github.com/anonymous/CausalMemBench} upon de-anonymizat
 \begin{itemize}[leftmargin=1.4em]
   \item generator \texttt{pilot/generate\_families.py} (pilot seed 20260807, H3 seed 20260809); sealed-vs-public split; oracle walker execution logs confirming 800/800 and 640/640 legal terminals;
   \item environment \texttt{pilot/env\_relationalops.py}, DSL \texttt{pilot/program\_dsl.py}, harness \texttt{pilot/harness.py} (vLLM 0.6.6.post1 / torch 2.5.1+cu124 on RTX A5000 24GB, fp16, temperature 0.7, top-p 0.9, max 12 steps $\times$ 512 tokens);
-  \item rollouts JSONL: 28{,}416 rows (7{,}680 pilot + 7{,}680 H-C + 9{,}216 H3 + 3{,}840 Llama-8B replication; pending ALFWorld check) with per-row commit, config-hash, model, versions, GPU;
-  \item pre-registered protocols: GATE\_PROTOCOL Parts I--III dated 2026-08-07/08 before any analysis run;
-  \item audit suite \texttt{pilot/audit/\{probes,difficulty\_robust,continuous\_s,equivalence\_audit\}.py}, blind annotations, judge outputs verbatim;
+  \item rollouts JSONL: 41{,}216 rows (7{,}680 pilot + 7{,}680 H-C + 9{,}216 H3 + 3{,}840 Llama-8B replication + 12{,}800 H-DC deployment grids) with per-row commit, config-hash, model, versions, GPU;
+  \item pre-registered protocols: GATE\_PROTOCOL Parts I--IV (and the pre-analysis Part IV-A amendment) dated 2026-08-07/08, all registered before analysis runs;
+  \item audit suite \texttt{pilot/audit/\{probes,difficulty\_robust,continuous\_s,equivalence\_audit\}.py}, blind annotations, judge outputs verbatim; \textsc{dslice}/\textsc{raw\_matched} card builders with per-card QA maps;
   \item analysis: family-cluster bootstrap utilities, Holm/TOST routines, and the exact \texttt{analyze.py/json} dumps reported here;
   \item design registers: RESEARCH\_LEDGER (pre-registration chain + external-review outcomes), §13 artifacts, construction rulings for H3 cards.
 \end{itemize}
