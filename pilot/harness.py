@@ -221,8 +221,32 @@ def run_rollouts(llm, episodes, cfg, batch_size=64):
     return results
 
 
+def _chat_single_bos(llm, tokenizer, batch_msgs, batch_sp):
+    """llm.chat() equivalent with single-BOS tokenization.
+
+    vllm 0.6.6 LLM.chat renders the HF chat template to text and then lets
+    the engine retokenize it with add_special_tokens=True. For tokenizers
+    whose chat template already emits BOS (Llama-3.x) this yields a doubled
+    BOS -- out-of-distribution for the model (Llama-3.1-8B selfcheck lost
+    the parseable gate at 0.837 with systematic malformed JSON; see
+    LLAMA_NOTES.md). Qwen-style tokenizers add no BOS and are unaffected.
+    Render + encode exactly once with add_special_tokens=False so every
+    model family receives precisely the token stream its template defines.
+    Prompt text, sampling params and parsing are unchanged.
+    """
+    from vllm.inputs import TokensPrompt
+    prompts = []
+    for msgs in batch_msgs:
+        text = tokenizer.apply_chat_template(msgs, tokenize=False,
+                                             add_generation_prompt=True)
+        ids = tokenizer(text, add_special_tokens=False)["input_ids"]
+        prompts.append(TokensPrompt(prompt_token_ids=ids))
+    return llm.generate(prompts, sampling_params=batch_sp, use_tqdm=False)
+
+
 def _run_chunk(llm, chunk, cfg):
     max_steps = cfg["harness"]["max_steps"]
+    tokenizer = llm.get_tokenizer()
     print("[harness] running chunk of %d episodes (max_steps=%d)"
           % (len(chunk), max_steps), flush=True)
     states = []
@@ -245,8 +269,7 @@ def _run_chunk(llm, chunk, cfg):
         batch_msgs = [states[i]["msgs"] for i in active]
         batch_sp = [_sampling_params(cfg, states[i]["ep"]["meta"]["seed"])
                     for i in active]
-        outs = llm.chat(batch_msgs, sampling_params=batch_sp,
-                        add_generation_prompt=True, use_tqdm=False)
+        outs = _chat_single_bos(llm, tokenizer, batch_msgs, batch_sp)
         still = []
         for idx, out in zip(active, outs):
             st = states[idx]

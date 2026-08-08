@@ -4,7 +4,7 @@
 \subsection{Aggregate gains are replay-dominated}
 \label{ssec:replay}
 
-Table~\ref{tab:rates} lists Stage-A cell success rates (n=640 per cell per model). For Qwen2.5-7B, no-memory solves 54.7\%; replay-like A11 reaches 73.3\% (+18.6pp over N, CI $[11.4, 26.1]$), while structural A10 reaches 58.9\% and context Q is statistically indistinguishable from N ($\tauctx\approx0$, CI spans 0). For 3B, A11 ($=+0.102$ replay premium, significant) is the only cell reliably above N at all; everything else is at or below it.
+Table~\ref{tab:rates} lists Stage-A cell success rates (n=640 per cell per model). For Qwen2.5-7B, no-memory solves 54.7\%; replay-like A11 reaches 73.3\% (+18.6pp over N, CI $[11.4, 26.1]$), while structural A10 reaches 58.9\% and context Q is statistically indistinguishable from N ($\tauctx\approx0$, CI spans 0). For 3B, A11 is the only memory cell that stays at parity with N ($\taureplay=+0.102$ significant over A10), while every other injected memory degrades performance below N.
 
 \begin{table}[t]
 \centering\small
