@@ -1,0 +1,320 @@
+{
+ "n_rollouts": 144,
+ "model": "Qwen/Qwen2.5-7B-Instruct",
+ "grid": "3 families x 4 siblings x 4 cells x 3 seeds",
+ "max_steps": 30,
+ "overall": {
+  "N": {
+   "k": 6,
+   "n": 36,
+   "rate": 0.16666666666666666,
+   "ci95": [
+    0.079,
+    0.319
+   ],
+   "mean_steps": 26.7
+  },
+  "R": {
+   "k": 8,
+   "n": 36,
+   "rate": 0.2222222222222222,
+   "ci95": [
+    0.117,
+    0.381
+   ],
+   "mean_steps": 26.0
+  },
+  "S": {
+   "k": 7,
+   "n": 36,
+   "rate": 0.19444444444444445,
+   "ci95": [
+    0.098,
+    0.35
+   ],
+   "mean_steps": 27.8
+  },
+  "X": {
+   "k": 9,
+   "n": 36,
+   "rate": 0.25,
+   "ci95": [
+    0.138,
+    0.411
+   ],
+   "mean_steps": 25.5
+  }
+ },
+ "per_family": {
+  "clean": {
+   "N": {
+    "k": 0,
+    "n": 12,
+    "rate": 0.0,
+    "ci95": [
+     0.0,
+     0.243
+    ],
+    "mean_steps": 30.0
+   },
+   "R": {
+    "k": 4,
+    "n": 12,
+    "rate": 0.3333333333333333,
+    "ci95": [
+     0.138,
+     0.609
+    ],
+    "mean_steps": 24.1
+   },
+   "S": {
+    "k": 4,
+    "n": 12,
+    "rate": 0.3333333333333333,
+    "ci95": [
+     0.138,
+     0.609
+    ],
+    "mean_steps": 27.3
+   },
+   "X": {
+    "k": 1,
+    "n": 12,
+    "rate": 0.08333333333333333,
+    "ci95": [
+     0.015,
+     0.354
+    ],
+    "mean_steps": 29.0
+   }
+  },
+  "heat": {
+   "N": {
+    "k": 4,
+    "n": 12,
+    "rate": 0.3333333333333333,
+    "ci95": [
+     0.138,
+     0.609
+    ],
+    "mean_steps": 23.0
+   },
+   "R": {
+    "k": 2,
+    "n": 12,
+    "rate": 0.16666666666666666,
+    "ci95": [
+     0.047,
+     0.448
+    ],
+    "mean_steps": 27.5
+   },
+   "S": {
+    "k": 2,
+    "n": 12,
+    "rate": 0.16666666666666666,
+    "ci95": [
+     0.047,
+     0.448
+    ],
+    "mean_steps": 27.2
+   },
+   "X": {
+    "k": 2,
+    "n": 12,
+    "rate": 0.16666666666666666,
+    "ci95": [
+     0.047,
+     0.448
+    ],
+    "mean_steps": 26.8
+   }
+  },
+  "picktwo": {
+   "N": {
+    "k": 2,
+    "n": 12,
+    "rate": 0.16666666666666666,
+    "ci95": [
+     0.047,
+     0.448
+    ],
+    "mean_steps": 27.1
+   },
+   "R": {
+    "k": 2,
+    "n": 12,
+    "rate": 0.16666666666666666,
+    "ci95": [
+     0.047,
+     0.448
+    ],
+    "mean_steps": 26.5
+   },
+   "S": {
+    "k": 1,
+    "n": 12,
+    "rate": 0.08333333333333333,
+    "ci95": [
+     0.015,
+     0.354
+    ],
+    "mean_steps": 28.8
+   },
+   "X": {
+    "k": 6,
+    "n": 12,
+    "rate": 0.5,
+    "ci95": [
+     0.254,
+     0.746
+    ],
+    "mean_steps": 20.8
+   }
+  }
+ },
+ "ordering": {
+  "R>S": true,
+  "S>N": true,
+  "N>X": false,
+  "R>N": true
+ },
+ "pilot_direction_match": {
+  "replay>struct (pilot)": true,
+  "struct|replay>nothing (pilot)": true,
+  "near-miss below nothing (pilot)": false
+ },
+ "flips_vs_N": {
+  "harmful_X": 3,
+  "helpful_X": 6,
+  "pairs": 36,
+  "harmful_S": 6,
+  "helpful_S": 7,
+  "harmful_R": 5,
+  "helpful_R": 7
+ },
+ "card_tokens": {
+  "clean/s0": {
+   "R": 207,
+   "S": 212,
+   "X": 200
+  },
+  "clean/s1": {
+   "R": 271,
+   "S": 210,
+   "X": 212
+  },
+  "clean/s2": {
+   "R": 201,
+   "S": 204,
+   "X": 209
+  },
+  "clean/s3": {
+   "R": 204,
+   "S": 201,
+   "X": 241
+  },
+  "heat/s0": {
+   "R": 208,
+   "S": 201,
+   "X": 293
+  },
+  "heat/s1": {
+   "R": 239,
+   "S": 203,
+   "X": 203
+  },
+  "heat/s2": {
+   "R": 211,
+   "S": 206,
+   "X": 204
+  },
+  "heat/s3": {
+   "R": 209,
+   "S": 206,
+   "X": 200
+  },
+  "picktwo/s0": {
+   "R": 242,
+   "S": 214,
+   "X": 209
+  },
+  "picktwo/s1": {
+   "R": 244,
+   "S": 200,
+   "X": 204
+  },
+  "picktwo/s2": {
+   "R": 253,
+   "S": 203,
+   "X": 202
+  },
+  "picktwo/s3": {
+   "R": 213,
+   "S": 212,
+   "X": 207
+  }
+ },
+ "card_sources": {
+  "clean/s0": {
+   "R": "pick_clean_then_place_in_recep-Bowl-None-DiningTable-21 (same_obj_diff_dir)",
+   "S": "pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25",
+   "X": "pick_and_place_simple-Bowl-None-CoffeeTable-201 (simple_missing_clean)"
+  },
+  "clean/s1": {
+   "R": "pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25 (same_obj_diff_dir)",
+   "S": "pick_clean_then_place_in_recep-Cloth-None-Cart-401",
+   "X": "pick_and_place_simple-ButterKnife-None-Drawer-8 (simple_missing_clean)"
+  },
+  "clean/s2": {
+   "R": "pick_clean_then_place_in_recep-Cloth-None-Cart-401 (same_obj_diff_dir)",
+   "S": "pick_clean_then_place_in_recep-DishSponge-None-Cart-430",
+   "X": "pick_and_place_simple-Cloth-None-Cart-401 (simple_missing_clean)"
+  },
+  "clean/s3": {
+   "R": "pick_clean_then_place_in_recep-DishSponge-None-Cart-430 (same_obj_diff_dir)",
+   "S": "pick_clean_then_place_in_recep-Bowl-None-DiningTable-21",
+   "X": "pick_and_place_simple-DishSponge-None-Cabinet-5 (simple_missing_clean)"
+  },
+  "heat/s0": {
+   "R": "pick_heat_then_place_in_recep-Bread-None-DiningTable-15 (same_obj_diff_dir)",
+   "S": "pick_heat_then_place_in_recep-Egg-None-CounterTop-2",
+   "X": "pick_and_place_simple-Bread-None-Microwave-15 (simple_missing_heat)"
+  },
+  "heat/s1": {
+   "R": "pick_heat_then_place_in_recep-Egg-None-CounterTop-2 (same_obj_diff_dir)",
+   "S": "pick_heat_then_place_in_recep-Mug-None-Cabinet-12",
+   "X": "pick_and_place_simple-Egg-None-Fridge-7 (simple_missing_heat)"
+  },
+  "heat/s2": {
+   "R": "pick_heat_then_place_in_recep-Mug-None-Cabinet-12 (same_obj_diff_dir)",
+   "S": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28",
+   "X": "pick_and_place_simple-Mug-None-Dresser-311 (simple_missing_heat)"
+  },
+  "heat/s3": {
+   "R": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28 (same_obj_diff_dir)",
+   "S": "pick_heat_then_place_in_recep-Bread-None-DiningTable-15",
+   "X": "pick_and_place_simple-Plate-None-Dresser-218 (simple_missing_heat)"
+  },
+  "picktwo/s0": {
+   "R": "pick_two_obj_and_place-AlarmClock-None-Desk-316 (same_obj_diff_dir)",
+   "S": "pick_two_obj_and_place-Book-None-Bed-328",
+   "X": "pick_and_place_simple-AlarmClock-None-Desk-307 (simple_missing_second pick)"
+  },
+  "picktwo/s1": {
+   "R": "pick_two_obj_and_place-Book-None-Bed-328 (same_obj_diff_dir)",
+   "S": "pick_two_obj_and_place-CD-None-Drawer-319",
+   "X": "pick_and_place_simple-Book-None-Bed-306 (simple_missing_second pick)"
+  },
+  "picktwo/s2": {
+   "R": "pick_two_obj_and_place-CD-None-Drawer-319 (same_obj_diff_dir)",
+   "S": "pick_two_obj_and_place-Candle-None-Cabinet-402",
+   "X": "pick_and_place_simple-CD-None-DiningTable-311 (simple_missing_second pick)"
+  },
+  "picktwo/s3": {
+   "R": "pick_two_obj_and_place-Candle-None-Cabinet-402 (same_obj_diff_dir)",
+   "S": "pick_two_obj_and_place-AlarmClock-None-Desk-316",
+   "X": "pick_and_place_simple-Candle-None-Cabinet-407 (simple_missing_second pick)"
+  }
+ }
+}
