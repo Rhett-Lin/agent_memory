@@ -18,5 +18,6 @@ Gate A/B 连续 NO_GO：0 ｜ 假设层连续 NO_GO：**2**（H-C minimal gate +
 
 ## 当前结论
 
-Round 1 实现闭环至 H-C：Gate A=GO、Gate B=GO、H-C minimal gate=**NO_GO**（已如实归档+经 GPT-5.6 复审确认）。下一步方向选择与 GPT-5.6 排序一致：优先注册 representation × semantic-coverage 2×2 析因修复实验作为新假设重回评分（不用旧数据当确认），出版主线为因果测量论文（分解 + 模型规模差异 + 有害翻转 + no-program-recognition 证据 + 诚实的 NO_GO）。
-预登记承诺重申：**GO 与 NO_GO 同等详细记录；不得为保持 loop 运行而放宽 GATE_PROTOCOL.md 已登记阈值。**
+**完成位置（2026-08-08）**：loop §11 最终论文潜力审查通过 → 贡献计 2/3（identification design + 会改变结论的经验发现）；Gate C-lite cond1+cond2 通过 → main 档路径铺通；**`PAPER_PLAN.md` 已产出**（measurement+identification 主线，全差异化矩阵 VERIFIED）。证据链 + 负结果处置（两轮 GPT-5.6 外部讨论：H-C→019fdba5、H3→019fde39）与 §13 全部归档文件齐备。
+
+预登记承诺重申（全程有效）：**GO 与 NO_GO 同等详细记录；不得为保持 loop 运行而放宽 GATE_PROTOCOL.md 已登记阈值。**
