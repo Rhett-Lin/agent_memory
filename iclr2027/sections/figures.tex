@@ -28,3 +28,17 @@
   \caption{Form/coverage arms on fresh families (H3). Top pad: A10/A11 rates per arm; bottom pad: replay term per arm with 95\% CIs. Complete transcripts realize replay materially (TOST rejects $\pm3$pp equivalence), hard-truncated (eco) does not; form contrast is Holm-null in 8 tests.}
   \label{fig:h3}
 \end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.92\linewidth]{figs/fig_hdc_cards.png}
+  \caption{\textsc{dslice} card construction audit (Section~\ref{sec:deployment}). Left: realized card lengths (mean 237.5 tokens vs.\ the 300 cap); the paired \textsc{raw\_matched} control is cut to each card's exact count, so token budgets match per card by construction. Right: how far the deletion ladder had to go to fit budget; decision arguments, aggregate values, and the finish step survive in 640/640 cards (asserted, 0 QA failures).}
+  \label{fig:hdccards}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figs/fig_hdc_contrasts.png}
+  \caption{Deployment result (Section~\ref{sec:deployment}). Top: A10/A11 rates per arm per model, family-cluster 95\% CIs. Bottom: replay term per arm. On 7B, \textsc{dslice} realizes replay while exactly-paired truncation realizes none (E1 $=+0.145$, Holm $p=.012$); on 3B the policy is null (E1 $p=.97$)---a capability gate, not a free lunch.}
+  \label{fig:hdc}
+\end{figure}
