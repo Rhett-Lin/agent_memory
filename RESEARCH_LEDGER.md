@@ -125,7 +125,15 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 ### 连续 NO_GO 计数
 
 - Gate A/B 连续 NO_GO：0
-- 假设层连续 NO_GO（总计）：1（H-C minimal gate，2026-08-08）
+- 假设层连续 NO_GO（总计）：2（H-C minimal gate + H3 form×coverage 析因，均 2026-08-08）
+
+### Round 2 小结（2026-08-08）
+
+- [x] 文献监控复核：3 个监控项维持 Safe/Partial（Rocchi 升级 VERIFIED 但未触发升级判据）；drift 论文实锤换 Safe 并移出威胁；ConsistencyGate/EA-Graph/MERIT 等 Safe 登记；窗口 07-18→08-08 双 claim SAFE
+- [x] H3 form×coverage 析因（fresh 32 fam，9216 rollouts）：formal NO_GO + clarification（完整 transcript 兑现 replay；ε_form 方向反转即 transcript ≥ script；coverage supported-but-unresolved；eco−tp 近似）→ GPT-5.6 二评裁决：停实验写论文
+- [x] **Gate C-lite 通过（cond1+cond2）**：(1) Transplants 式 arch×content 基线实测于本 harness（procedural/raw × matched/near-miss/unrelated）无法揭示 P×S 的 replay/structural 分解（7B procedural 72% matched-effect 来自 A11 replay 腿、I_match −0.129 SIG）；(2) Proced-Mem embedding 信号仅部分预测 uplift（7B Holm SIG），不预测 harmful flip；STITCH-style LLM intent judge AUC 0.508 全报警 → F-MED 增量价值成立
+- [x] §11 审查：贡献 2/3（identification + 经验发现），Findings 档可写；main 档对 Gate C-lite 的通过为进入条件——**现已达成**
+- [~] PAPER_PLAN.md（main: measurement + identification 主线）
 
 ## 资源预算跟踪
 

@@ -1,4 +1,19 @@
-# NEXT_ACTION — §11 审查之后的下一步（2026-08-08）
+# NEXT_ACTION — 写作与对外评审阶段（2026-08-08）
+
+**Loop 状态**：Gate 0 → Round 1（pilot/GateA/GateB/H-C/H3）→ Round 2（文献复核 + Gate C-lite + §11 + 论文计划）**完整闭环**。
+
+**完成位置**：
+- §11 最终审查：通过（贡献 2/3：`identification design` + `会改变结论的经验发现`；Findings/Workshop 档立即可写，main 档路径已铺通后`Gate C-lite cond1+cond2`通过）
+- **主交付物**：`PAPER_PLAN.md` — main 档、measurement+identification 主线、完整贡献声明/相关工作差异化矩阵（全 VERIFIED）/主结果表/图序/大纲/部署含义/写作纪律红线/转向规则
+
+**下一步（唯一）**：进入写作阶段——由 `paper-write` skill 按 `PAPER_PLAN.md` 起稿 Section 1–2 与 Findings 三节；写作冻结禁忌见 `PAPER_PLAN.md` §11（不向 frontier 外推、不声称 coverage-confirmed、不把 H-C 截断差异写成形式机制差异、3B 结论必须条件化）。投稿前由 `auto-review-loop` skill 跑 2 轮外部评审加 90 天 fresh-arxiv 对照。
+
+**纪律保持**：
+- Gate C cond3（published-system profile 逆序）放弃追求（H-C/H3 已显示信号空；GPT-5.6 判 power chasing 禁令生效中）。
+- TRU-Mem 不启动（与 ReMe/A-MAC/RSCB-MC 的空间关系已如实写成边界）。
+- 每个新负结果仍走：自分析 → GPT-5.6 讨论 → 落档（已走两轮，台账第 §外部讨论记录 节为证）。
+
+**Run 命令**：若此时停止 loop，证据链与产出已满足 §13 全部归档文件（见 RESEARCH_LEDGER 轮次记录）；"继续 loop"的默认意思是继续写作阶段而非实验阶段。
 
 **当前状态**：pilot/GateA/GateB GO；H-C NO_GO；H3 formal NO_GO + clarification（完整 transcript 兑现 replay、方向非 script>transcript、覆盖解释 supported-but-unresolved）；§11 审查完成（PAPER_POTENTIAL_REVIEW.md）：贡献计 2/3，Findings/Workshop 档现在可写，main 档唯一缺口 = Gate C 三条件。
 
