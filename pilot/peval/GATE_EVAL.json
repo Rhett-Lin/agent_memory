@@ -1,0 +1,780 @@
+{
+ "by_model": {
+  "qwen7b": {
+   "config": {
+    "model": "qwen7b",
+    "seed": 42,
+    "retriever": "top-1 by sim_embed (tie-break: sim_tf desc, memory_id asc)",
+    "phat_score": "phat_oof_family (family-CV out-of-fold; no train/eval leakage)",
+    "sim_threshold": 0.8,
+    "phat_thresholds": [
+     0.3,
+     0.4,
+     0.5,
+     0.6,
+     0.7
+    ],
+    "abstain_outcome": "N-arm (no-memory) rollout success, same (family,sibling,seed)"
+   },
+   "grid_check": {
+    "rollout_rows_loaded": 3840,
+    "rows_per_cell": {
+     "A00": 640,
+     "A01": 640,
+     "A10": 640,
+     "A11": 640,
+     "N": 640,
+     "Q": 640
+    },
+    "retriever_top1_cell_distribution": {
+     "A01": 260,
+     "A11": 380
+    },
+    "n_instances_total_possible": 640,
+    "n_instances_evaluated": 640,
+    "n_instances_dropped": 0
+   },
+   "policies": [
+    {
+     "policy": "never_admit",
+     "n_instances": 640,
+     "n_admitted": 0,
+     "accept_rate_overall": 0.0,
+     "expected_success": 0.546875,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 0,
+       "accept_rate": 0.0
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 0,
+       "accept_rate": 0.0
+      }
+     },
+     "a01_accept_rate": 0.0,
+     "expected_success_ci95": [
+      0.509375,
+      0.584375
+     ],
+     "uplift_vs_never_admit_pp": 0.0,
+     "uplift_ci95_pp": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "policy": "always_admit",
+     "n_instances": 640,
+     "n_admitted": 640,
+     "accept_rate_overall": 1.0,
+     "expected_success": 0.5984375,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 260,
+       "accept_rate": 1.0
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 380,
+       "accept_rate": 1.0
+      }
+     },
+     "a01_accept_rate": 1.0,
+     "expected_success_ci95": [
+      0.5608984375,
+      0.6359375
+     ],
+     "uplift_vs_never_admit_pp": 5.16,
+     "uplift_ci95_pp": [
+      1.09,
+      9.06
+     ]
+    },
+    {
+     "policy": "s_gate_sim>=0.8",
+     "n_instances": 640,
+     "n_admitted": 588,
+     "accept_rate_overall": 0.91875,
+     "expected_success": 0.603125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 224,
+       "accept_rate": 0.8615384615384616
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 364,
+       "accept_rate": 0.9578947368421052
+      }
+     },
+     "a01_accept_rate": 0.8615384615384616,
+     "expected_success_ci95": [
+      0.5655859375000001,
+      0.6421875
+     ],
+     "uplift_vs_never_admit_pp": 5.63,
+     "uplift_ci95_pp": [
+      1.88,
+      9.38
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.3",
+     "n_instances": 640,
+     "n_admitted": 604,
+     "accept_rate_overall": 0.94375,
+     "expected_success": 0.584375,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 224,
+       "accept_rate": 0.8615384615384616
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 380,
+       "accept_rate": 1.0
+      }
+     },
+     "a01_accept_rate": 0.8615384615384616,
+     "expected_success_ci95": [
+      0.5453125,
+      0.621875
+     ],
+     "uplift_vs_never_admit_pp": 3.75,
+     "uplift_ci95_pp": [
+      0.31,
+      7.34
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.4",
+     "n_instances": 640,
+     "n_admitted": 520,
+     "accept_rate_overall": 0.8125,
+     "expected_success": 0.5953125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 148,
+       "accept_rate": 0.5692307692307692
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 372,
+       "accept_rate": 0.9789473684210527
+      }
+     },
+     "a01_accept_rate": 0.5692307692307692,
+     "expected_success_ci95": [
+      0.5577734375000001,
+      0.6328125
+     ],
+     "uplift_vs_never_admit_pp": 4.84,
+     "uplift_ci95_pp": [
+      1.56,
+      8.28
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.5",
+     "n_instances": 640,
+     "n_admitted": 436,
+     "accept_rate_overall": 0.68125,
+     "expected_success": 0.6171875,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 80,
+       "accept_rate": 0.3076923076923077
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 356,
+       "accept_rate": 0.9368421052631579
+      }
+     },
+     "a01_accept_rate": 0.3076923076923077,
+     "expected_success_ci95": [
+      0.578125,
+      0.65625
+     ],
+     "uplift_vs_never_admit_pp": 7.03,
+     "uplift_ci95_pp": [
+      4.06,
+      10.0
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.6",
+     "n_instances": 640,
+     "n_admitted": 368,
+     "accept_rate_overall": 0.575,
+     "expected_success": 0.6328125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 44,
+       "accept_rate": 0.16923076923076924
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 324,
+       "accept_rate": 0.8526315789473684
+      }
+     },
+     "a01_accept_rate": 0.16923076923076924,
+     "expected_success_ci95": [
+      0.5953125,
+      0.6703125
+     ],
+     "uplift_vs_never_admit_pp": 8.59,
+     "uplift_ci95_pp": [
+      5.62,
+      11.41
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.7",
+     "n_instances": 640,
+     "n_admitted": 268,
+     "accept_rate_overall": 0.41875,
+     "expected_success": 0.63125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 24,
+       "accept_rate": 0.09230769230769231
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 244,
+       "accept_rate": 0.6421052631578947
+      }
+     },
+     "a01_accept_rate": 0.09230769230769231,
+     "expected_success_ci95": [
+      0.59375,
+      0.6671875
+     ],
+     "uplift_vs_never_admit_pp": 8.44,
+     "uplift_ci95_pp": [
+      5.94,
+      10.94
+     ]
+    },
+    {
+     "policy": "oracle_p",
+     "n_instances": 640,
+     "n_admitted": 380,
+     "accept_rate_overall": 0.59375,
+     "expected_success": 0.628125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 0,
+       "accept_rate": 0.0
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 380,
+       "accept_rate": 1.0
+      }
+     },
+     "a01_accept_rate": 0.0,
+     "expected_success_ci95": [
+      0.5890625,
+      0.6640625
+     ],
+     "uplift_vs_never_admit_pp": 8.13,
+     "uplift_ci95_pp": [
+      5.47,
+      10.79
+     ]
+    }
+   ]
+  },
+  "qwen3b": {
+   "config": {
+    "model": "qwen3b",
+    "seed": 42,
+    "retriever": "top-1 by sim_embed (tie-break: sim_tf desc, memory_id asc)",
+    "phat_score": "phat_oof_family (family-CV out-of-fold; no train/eval leakage)",
+    "sim_threshold": 0.8,
+    "phat_thresholds": [
+     0.3,
+     0.4,
+     0.5,
+     0.6,
+     0.7
+    ],
+    "abstain_outcome": "N-arm (no-memory) rollout success, same (family,sibling,seed)"
+   },
+   "grid_check": {
+    "rollout_rows_loaded": 3840,
+    "rows_per_cell": {
+     "A00": 640,
+     "A01": 640,
+     "A10": 640,
+     "A11": 640,
+     "N": 640,
+     "Q": 640
+    },
+    "retriever_top1_cell_distribution": {
+     "A01": 260,
+     "A11": 380
+    },
+    "n_instances_total_possible": 640,
+    "n_instances_evaluated": 640,
+    "n_instances_dropped": 0
+   },
+   "policies": [
+    {
+     "policy": "never_admit",
+     "n_instances": 640,
+     "n_admitted": 0,
+     "accept_rate_overall": 0.0,
+     "expected_success": 0.4203125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 0,
+       "accept_rate": 0.0
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 0,
+       "accept_rate": 0.0
+      }
+     },
+     "a01_accept_rate": 0.0,
+     "expected_success_ci95": [
+      0.3843359375,
+      0.4609375
+     ],
+     "uplift_vs_never_admit_pp": 0.0,
+     "uplift_ci95_pp": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "policy": "always_admit",
+     "n_instances": 640,
+     "n_admitted": 640,
+     "accept_rate_overall": 1.0,
+     "expected_success": 0.421875,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 260,
+       "accept_rate": 1.0
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 380,
+       "accept_rate": 1.0
+      }
+     },
+     "a01_accept_rate": 1.0,
+     "expected_success_ci95": [
+      0.3828125,
+      0.4609375
+     ],
+     "uplift_vs_never_admit_pp": 0.16,
+     "uplift_ci95_pp": [
+      -3.91,
+      4.22
+     ]
+    },
+    {
+     "policy": "s_gate_sim>=0.8",
+     "n_instances": 640,
+     "n_admitted": 588,
+     "accept_rate_overall": 0.91875,
+     "expected_success": 0.421875,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 224,
+       "accept_rate": 0.8615384615384616
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 364,
+       "accept_rate": 0.9578947368421052
+      }
+     },
+     "a01_accept_rate": 0.8615384615384616,
+     "expected_success_ci95": [
+      0.384375,
+      0.4609765624999998
+     ],
+     "uplift_vs_never_admit_pp": 0.16,
+     "uplift_ci95_pp": [
+      -3.59,
+      4.22
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.3",
+     "n_instances": 640,
+     "n_admitted": 604,
+     "accept_rate_overall": 0.94375,
+     "expected_success": 0.4078125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 224,
+       "accept_rate": 0.8615384615384616
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 380,
+       "accept_rate": 1.0
+      }
+     },
+     "a01_accept_rate": 0.8615384615384616,
+     "expected_success_ci95": [
+      0.3703125,
+      0.446875
+     ],
+     "uplift_vs_never_admit_pp": -1.25,
+     "uplift_ci95_pp": [
+      -5.31,
+      2.81
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.4",
+     "n_instances": 640,
+     "n_admitted": 520,
+     "accept_rate_overall": 0.8125,
+     "expected_success": 0.4125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 148,
+       "accept_rate": 0.5692307692307692
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 372,
+       "accept_rate": 0.9789473684210527
+      }
+     },
+     "a01_accept_rate": 0.5692307692307692,
+     "expected_success_ci95": [
+      0.3734375,
+      0.4500390624999998
+     ],
+     "uplift_vs_never_admit_pp": -0.78,
+     "uplift_ci95_pp": [
+      -4.69,
+      2.97
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.5",
+     "n_instances": 640,
+     "n_admitted": 436,
+     "accept_rate_overall": 0.68125,
+     "expected_success": 0.4140625,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 80,
+       "accept_rate": 0.3076923076923077
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 356,
+       "accept_rate": 0.9368421052631579
+      }
+     },
+     "a01_accept_rate": 0.3076923076923077,
+     "expected_success_ci95": [
+      0.3734375,
+      0.4515625
+     ],
+     "uplift_vs_never_admit_pp": -0.62,
+     "uplift_ci95_pp": [
+      -4.22,
+      2.97
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.6",
+     "n_instances": 640,
+     "n_admitted": 368,
+     "accept_rate_overall": 0.575,
+     "expected_success": 0.4140625,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 44,
+       "accept_rate": 0.16923076923076924
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 324,
+       "accept_rate": 0.8526315789473684
+      }
+     },
+     "a01_accept_rate": 0.16923076923076924,
+     "expected_success_ci95": [
+      0.3765625,
+      0.453125
+     ],
+     "uplift_vs_never_admit_pp": -0.62,
+     "uplift_ci95_pp": [
+      -4.06,
+      2.82
+     ]
+    },
+    {
+     "policy": "phat_gate>=0.7",
+     "n_instances": 640,
+     "n_admitted": 268,
+     "accept_rate_overall": 0.41875,
+     "expected_success": 0.421875,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 24,
+       "accept_rate": 0.09230769230769231
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 244,
+       "accept_rate": 0.6421052631578947
+      }
+     },
+     "a01_accept_rate": 0.09230769230769231,
+     "expected_success_ci95": [
+      0.3859375,
+      0.459375
+     ],
+     "uplift_vs_never_admit_pp": 0.16,
+     "uplift_ci95_pp": [
+      -2.97,
+      3.28
+     ]
+    },
+    {
+     "policy": "oracle_p",
+     "n_instances": 640,
+     "n_admitted": 380,
+     "accept_rate_overall": 0.59375,
+     "expected_success": 0.4328125,
+     "accept_rate_by_cell": {
+      "A00": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A01": {
+       "n_top1": 260,
+       "n_accepted": 0,
+       "accept_rate": 0.0
+      },
+      "A10": {
+       "n_top1": 0,
+       "n_accepted": 0,
+       "accept_rate": null
+      },
+      "A11": {
+       "n_top1": 380,
+       "n_accepted": 380,
+       "accept_rate": 1.0
+      }
+     },
+     "a01_accept_rate": 0.0,
+     "expected_success_ci95": [
+      0.3953125,
+      0.475
+     ],
+     "uplift_vs_never_admit_pp": 1.25,
+     "uplift_ci95_pp": [
+      -2.04,
+      4.84
+     ]
+    }
+   ]
+  }
+ }
+}
