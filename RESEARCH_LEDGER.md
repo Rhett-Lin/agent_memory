@@ -67,6 +67,54 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 
 ## 外部讨论记录
 
+### 2026-08-09 — φ+d P-估计评估器设计裁决（Codex thread 019fe66c-7bb5-7560-bfb4-d8b787d4e5a5）
+
+背景：部署态无 P 真值；已注册证据（vanilla 整体判 P 100% 错、STITCH judge 0.508、P̂ v1 指纹崩于 LOAO 0.59）。用户方向：借鉴 Xiong 2026（vanilla LLM evaluator）但判 P 属推断型问题。
+
+**裁决：GO with mandatory amendments**（方案全文 `pilot/peval/PHI_D_EVALUATOR_PLAN.md`）：
+
+1. 架构定为嵌入两阶段检索的**约束检查器**（top-k → 侧独立 φ 抽取（唯一文本缓存，~800 次）→ 确定性比较（矛盾一票否决）→ admit/abstain）；
+2. IR 必须:角色归一（α-renaming，否则 A10 跨域真等价被错杀）、程序图而非线性序列、ABSENT≠UNKNOWN、每字段 evidence span；
+3. 成功门不写 pooled AUC：主指标 = 4 个留出 archetype S=1 AUC 的 **macro 均值**；迁移门 macro ΔAUC≥+0.10 且 bootstrap LB>0；灾难门（无 ≤0.5 族 + 冻结下限）；准入门（A01≤10% 且 A11 保留 ≥50%，整体且逐族）；跨表面门（S=0/A10 保留）；策略门（复用 rollout vs sim-gate/v1/oracle）;
+4. **史料提醒**：早期分解式 CoT 判定仅 25% 一致率（A10 0%）——"分解"本身曾失败，抽取规范化是真瓶颈；分解式判定仅作固定诊断基线入方案；
+5. 诚实等级：本评估是 **locked evaluation** 非预注册（设计者已知四种翻转）;640 对结果只能表述为"已注册构造覆盖"；真·未见机制迁移需规则冻结后造第五种失配 challenge set（无需 rollout）;
+6. 声明边界措辞由裁决锚定（限于固定候选池 + 预设风险覆盖;frontier 零样本若成不构成对"inference not lookup"的反驳）。
+
+### 2026-08-09 — Part V（ALFWorld 主动 near-miss + gate）草案裁决（Codex thread 019fe550-e6b4-72c0-b494-fd21fd525676）
+
+**裁决：GO with mandatory amendments**（两处致命，修正前不得冻结/实现）：
+
+1. **pick_two 的 object-class 翻转被驳回**——不是 P=0 程序翻转（上次外部检查已把"换实体"归类为 program-preserving/structural transfer）；只有 **heat↔cool** 是 ALFWorld PDDL 层面的真实状态冲突（加热消除 isCool)；clean↔heat/cool 可逆，仅可作 secondary，不得称"互斥状态转换"。
+2. **功效不成立**:48 个配对三元组只有 12 个真实 cluster(4 seeds 是重复测量）,3 个"族"不足支撑 bootstrap；按上次 discordance 0.25 与 Holm α/3 计算,+5pp 真实效应下功效 ≈3.6%,80% 功效需真实 +21pp；若冻结 power alternative +10pp（观测下限 +5pp)≈需 229 独立对 → 建议网格 **120 distinct games × 4 seeds ≈ 480 triads**（按下限计）。删除"seed 减半"降级——不完整网格 = NOT_ESTIMATED,不构成证据性 NO_GO。
+
+其他强制修正：表面匹配断言被拒（sim(X)≥sim(R)−0.05 不能推出 G-S 拦不住 X；须 outcome-free 独立校准 τ_s 至固定 R recall 95%，并要求 X 接受率 ≥90% 且与 R 差 ≤5pp);provenance 15% 规则被拒（GO estimand 只收 model_harvest 配对，gold 永远单独报告，不得填充主力）;E-oracle 非劣须纳入同一 Holm step-down；候选分布与 policy-value 公式必须显式定义（认识到 G-struct≡oracle 时 E-serve = ½·E-harm,非独立证据）;bootstrap 2,000→20,000 或精确 cluster sign-flip；操纵性/headroom 检查（memory 是否被遵循——否则 X≈N 可能只是没人看 memory)。
+
+**关于"合法的 paper-relevant 负结论"的界定**:E-harm 只有在主动翻转审计通过、model-only 功效充足网格完成、上单侧界 <+5pp、parser/provenance/headroom 全过时，才构成可发表负结论；宽区间或 p≥.05 只是 engineering-internal null。同理 E-serve 无 margin 时跨零不算"gate 无价值"。
+
+**待办**：按修正案重写 Part V 草案 → 二次裁决 → 冻结入 GATE_PROTOCOL。
+
+### 2026-08-09 — Part V 四轮迭代裁决完成（同一 thread 019fe550，续上条）
+
+- **二轮**（v2）：GO with 6 项残余修正（恰好 60+60 model-only clusters；G-struct 完整定义；headroom 移出主网格并以 X 冲突 verb 采纳率为操纵量；推断公式可执行化；τ_s 校准算法；全运行时冻结）。v2 另查实 train split:heat 459 / cool 533 局，并确认 28 个对象-容器类两族共享（319 heat + 238 cool 局覆盖）。
+- **三轮**（v3）：4 项机械修正（null-centered bootstrap 公式与 §10 边界具体算法；prompt 包全文 hash 钉死代替"稍后附加";8 候选分配规则；power 文件三处更正：+5pp 真实效应 power ≈ **24%** 非 42%、E-serve 精确继承时功效相同但条件性、E-oracle 无功效保障）。
+- **四轮**（v4）:4 项收尾（prompt 包尾部 LF 致 hash 不符——已修；power 文件残留旧句清除；§3.5 确定性算法块【双 RNG 流 PCG64(20260809/20260810)、池保留全局序、拒绝源永久不可用、MD5 字面规则】；终态增加 **INCONCLUSIVE**,NOT_ESTIMATED 逐端点限定，审计失败不抹杀有效 E-harm → PARTIAL)。
+- **五轮**（v5):2 项文本修正（service 端点前提失败时 `p_raw=1` 固定入 Holm 排序，E-harm 恒在 m=3 族、阈值 ≥α/3;stable argsort + NumPy 1.26.4 钉死；校准集恰 20 heat + 20 cool）→ **GO to freeze**。
+- **出版边界（裁决确认）**:paper-relevant NO_GO（混合 UB<+5pp、各类 Bonferroni UB<+10pp）与 PARTIAL 的 E-harm **必写回论文**;INCONCLUSIVE 一句话披露估计与区间;NOT_ESTIMATED 不进结果表但保留一句话披露；全部终态入台账。**该边界已向用户说明并纳入冻结文本。**
+
+**已冻结**:`GATE_PROTOCOL.md` Part V（原文 = `pilot/external/PART_V_PREREG_V5_FINAL.md`;power artifact `PART_V_POWER.md`;prompt 包 `PART_V_PROMPTS.json`,sha256 `46da398a…`)。**未启动**：实现与 GPU 作业待用户指令；分析脚本 `analyze_gate.py` 须先于任何 outcome 检视 commit。
+
+### 2026-08-09 — H-DC Deployment 章节 auto-review-loop（3 轮；round-1 thread 019fe135 因 MCP 重启丢失，rounds 2–3 thread 019fe1f2-1738-7b03-875b-190aca809be1；全程记录 `review-stage/AUTO_REVIEW.md` + `.aris/traces/auto-review-loop/2026-08-08_run01/`）
+
+**范围**：仅 H-DC deployment 章节及其支撑产物（非全文）。fix budget：LaTeX/既有数据分析/图调整；禁止新 rollout。
+
+**轨迹**：4/10（weak reject）→ 5/10（Almost）→ 6/10（Almost，达停止条件终止）。关键转折：
+
+1. **Round 1 致命发现**：188/640（29.4%）dslice 卡为 oracle 重建 fallback 且未披露；真实模型轨迹上 7B E1 塌缩为 +0.041（CI 跨 0）。→ 全文降级为 mixed-provenance benchmark 对比；真实部署问题明确标注为开放（fallback-free re-harvest 为 blocking follow-up，需新算力，与 2026-08-08"停实验"裁决一致地未执行）。
+2. **Round 2 错误修正**:"3B trap 非劣 pass"系误报（lower95 −0.072 < −0.05，改 not est.);"capability gate/null"措辞违规（无等价检验）；预注册时间线披露（builder 16:59 < 计划文本 17:06，分析前冻结但非实现前注册）；A6 断言收窄到可审计产物。
+3. **Round 3 统计学收尾**：直接 provenance 交互改为 40 族并集对齐 cluster bootstrap（保留共享族协方差）——产出 CI 与评审独立审计**逐位一致**（7B +0.382 [+0.166,+0.606]；3B +0.523 [+0.306,+0.783]）;guardrail 主/次归属更正（HFR 属 Holm m=6 主族，Δτ_trap 为族外次项）。
+
+**最终措辞档位**（评审认可）:"robust mixed-provenance benchmark contrast with strong descriptive provenance heterogeneity"——不是真实模型 episode 上的部署验证。
+
 ### 2026-08-08 第二轮 — H3 析因实验判定（Codex thread 019fde39-8a4a-76a1-9357-1428d4dcec15）
 
 **自分析**：`analysis/H3_RESULT_MEMO.md`。
@@ -133,7 +181,14 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - [x] H3 form×coverage 析因（fresh 32 fam，9216 rollouts）：formal NO_GO + clarification（完整 transcript 兑现 replay；ε_form 方向反转即 transcript ≥ script；coverage supported-but-unresolved；eco−tp 近似）→ GPT-5.6 二评裁决：停实验写论文
 - [x] **Gate C-lite 通过（cond1+cond2）**：(1) Transplants 式 arch×content 基线实测于本 harness（procedural/raw × matched/near-miss/unrelated）无法揭示 P×S 的 replay/structural 分解（7B procedural 72% matched-effect 来自 A11 replay 腿、I_match −0.129 SIG）；(2) Proced-Mem embedding 信号仅部分预测 uplift（7B Holm SIG），不预测 harmful flip；STITCH-style LLM intent judge AUC 0.508 全报警 → F-MED 增量价值成立
 - [x] §11 审查：贡献 2/3（identification + 经验发现），Findings 档可写；main 档对 Gate C-lite 的通过为进入条件——**现已达成**
-- [~] PAPER_PLAN.md（main: measurement + identification 主线）
+- [x] PAPER_PLAN.md（main: measurement + identification 主线）
+
+### 写作/评审阶段（2026-08-08 晚 – 08-09）
+
+- [x] 论文初稿完成（14pp，含 Llama-8B 二家族复现 + ALFWorld 外部效度）→ NEXT_ACTION close-out（commit faf19c7）
+- [x] **H-DC deployment 实验**（GATE_PROTOCOL Part IV/IV-A，时间戳计划；12,800 rollouts）：7B GO（E1=+14.5pp Holm p=.012，HFR 双模型非劣；3B 无 pooled 获益证据）→ deployment 章节 + app:hdc 入稿（16pp；commits ca9c74d…f2d9fa6）
+- [x] **auto-review-loop 3 轮**（详见外部讨论记录 2026-08-09 条）：4/10→5/10→6/10 Almost 终止；provenance fallback 披露/降级、直接交互对齐 bootstrap、guardrail 主从更正、A6 产物化等全部落地；终稿 17pp、pdflatex 全清（0 错误/0 overfull/0 未定义引用）
+- [ ] 余项（留给相机就绪）：vector 化图、匿名状态复核、repo 脱敏；**blocking follow-up**：fallback-free re-harvest（新算力，未执行）
 
 ## 资源预算跟踪
 

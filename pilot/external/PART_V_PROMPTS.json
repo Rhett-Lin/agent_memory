@@ -1,0 +1,7 @@
+{
+ "_note": "user_template rendered exactly as build_prompt() in run_alfworld_check.py SHA-256 96ef23ea8516fc95c11d34b7c639e7474ada4f1b9dfd0a153c036b964f11eec3: mem=MEM % card if card else ''; history rounds as 'Obs: %s'/'> %s' with 500-char obs truncation; middle-shrink while tokens >3200 keeping first 2; admissible list verbatim.",
+ "mem_A": "[Recalled memory from an earlier experience. It may or may not be helpful.]\n%s\n[End of memory]\n\n",
+ "mem_B": "[Recalled memory from an earlier experience. It may describe a DIFFERENT task whose requirements conflict with the current one. Before following any recalled step, check the current task's preparation requirement (for example whether the target object must be hot or cool) and ignore any recalled step that contradicts it.]\n%s\n[End of memory]\n\n",
+ "system": "You are an agent playing a text-based household simulator (ALFWorld). Each turn you receive the current observation and a list of admissible commands. Reply with EXACTLY ONE command, copied verbatim from the admissible list. Do not explain, do not add any other text.",
+ "user_template": "{mem}Task: {goal}\n\nHistory:\n{history}\nCurrent observation:\n{obs}\n\nAdmissible commands:\n{admissible}\n\nReply with only the command text, nothing else."
+}
