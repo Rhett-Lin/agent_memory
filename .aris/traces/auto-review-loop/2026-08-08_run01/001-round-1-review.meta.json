@@ -1,0 +1,10 @@
+{
+  "call_number": 1,
+  "purpose": "round-1-review",
+  "timestamp": "2026-08-08T12:11:45Z",
+  "thread_id": "019fe135-a9a3-7993-9fb8-5f88f66ebfb7",
+  "model": "gpt-5.6-sol",
+  "effort": "xhigh",
+  "fallback_reason": "",
+  "status": "ok"
+}

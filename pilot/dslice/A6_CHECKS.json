@@ -1,0 +1,231 @@
+{
+ "full_meta_scan": {
+  "qwen3b": {
+   "dslice": {
+    "config_hash": [
+     "d8b26c3ab4e6"
+    ],
+    "env_versions": [
+     "{\"gpu\": \"NVIDIA RTX A5000\", \"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6.post1\"}"
+    ],
+    "git_commits": [
+     "ca9c74d"
+    ],
+    "missing_field_rows": {
+     "config_hash": 0,
+     "env_versions": 0,
+     "git_commit": 0
+    },
+    "n_config_hash": 1,
+    "n_env_versions": 1,
+    "n_git_commits": 1,
+    "rows": 2560
+   },
+   "pilot": {
+    "config_hash": [
+     "d22dea974ce8"
+    ],
+    "env_versions": [
+     "{\"gpu\": \"NVIDIA RTX A5000\", \"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6.post1\"}"
+    ],
+    "git_commits": [
+     "6f6f8e5"
+    ],
+    "missing_field_rows": {
+     "config_hash": 0,
+     "env_versions": 0,
+     "git_commit": 0
+    },
+    "n_config_hash": 1,
+    "n_env_versions": 1,
+    "n_git_commits": 1,
+    "rows": 3840
+   },
+   "raw": {
+    "config_hash": [
+     "d8b26c3ab4e6"
+    ],
+    "env_versions": [
+     "{\"gpu\": \"NVIDIA RTX A5000\", \"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6.post1\"}"
+    ],
+    "git_commits": [
+     "e46ec28"
+    ],
+    "missing_field_rows": {
+     "config_hash": 0,
+     "env_versions": 0,
+     "git_commit": 0
+    },
+    "n_config_hash": 1,
+    "n_env_versions": 1,
+    "n_git_commits": 1,
+    "rows": 2560
+   },
+   "raw_matched": {
+    "config_hash": [
+     "d8b26c3ab4e6"
+    ],
+    "env_versions": [
+     "{\"gpu\": \"NVIDIA RTX A5000\", \"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6.post1\"}"
+    ],
+    "git_commits": [
+     "e46ec28"
+    ],
+    "missing_field_rows": {
+     "config_hash": 0,
+     "env_versions": 0,
+     "git_commit": 0
+    },
+    "n_config_hash": 1,
+    "n_env_versions": 1,
+    "n_git_commits": 1,
+    "rows": 2560
+   }
+  },
+  "qwen7b": {
+   "dslice": {
+    "config_hash": [
+     "d8b26c3ab4e6"
+    ],
+    "env_versions": [
+     "{\"gpu\": \"NVIDIA RTX A5000\", \"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6.post1\"}"
+    ],
+    "git_commits": [
+     "ca9c74d"
+    ],
+    "missing_field_rows": {
+     "config_hash": 0,
+     "env_versions": 0,
+     "git_commit": 0
+    },
+    "n_config_hash": 1,
+    "n_env_versions": 1,
+    "n_git_commits": 1,
+    "rows": 2560
+   },
+   "pilot": {
+    "config_hash": [
+     "d8b26c3ab4e6"
+    ],
+    "env_versions": [
+     "{\"gpu\": \"NVIDIA RTX A5000\", \"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6.post1\"}"
+    ],
+    "git_commits": [
+     "6f6f8e5"
+    ],
+    "missing_field_rows": {
+     "config_hash": 0,
+     "env_versions": 0,
+     "git_commit": 0
+    },
+    "n_config_hash": 1,
+    "n_env_versions": 1,
+    "n_git_commits": 1,
+    "rows": 3840
+   },
+   "raw": {
+    "config_hash": [
+     "d8b26c3ab4e6"
+    ],
+    "env_versions": [
+     "{\"gpu\": \"NVIDIA RTX A5000\", \"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6.post1\"}"
+    ],
+    "git_commits": [
+     "001f172"
+    ],
+    "missing_field_rows": {
+     "config_hash": 0,
+     "env_versions": 0,
+     "git_commit": 0
+    },
+    "n_config_hash": 1,
+    "n_env_versions": 1,
+    "n_git_commits": 1,
+    "rows": 3840
+   },
+   "raw_matched": {
+    "config_hash": [
+     "d8b26c3ab4e6"
+    ],
+    "env_versions": [
+     "{\"gpu\": \"NVIDIA RTX A5000\", \"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6.post1\"}"
+    ],
+    "git_commits": [
+     "e46ec28"
+    ],
+    "missing_field_rows": {
+     "config_hash": 0,
+     "env_versions": 0,
+     "git_commit": 0
+    },
+    "n_config_hash": 1,
+    "n_env_versions": 1,
+    "n_git_commits": 1,
+    "rows": 2560
+   }
+  }
+ },
+ "token_id_check": {
+  "all_identical": true,
+  "per_model": {
+   "qwen3b": {
+    "all_identical": true,
+    "bos_token_id": null,
+    "resolved": "/work1/zixuan/cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "shapes": {
+     "first-turn sys+user(no memory)": {
+      "identical": true,
+      "len": 815,
+      "render_start": "<|im_start|>system\nYou are a careful data-operat"
+     },
+     "first-turn sys+user(with memory)": {
+      "identical": true,
+      "len": 817,
+      "render_start": "<|im_start|>system\nYou are a careful data-operat"
+     },
+     "multi-turn 2 tool rounds(no memory)": {
+      "identical": true,
+      "len": 931,
+      "render_start": "<|im_start|>system\nYou are a careful data-operat"
+     },
+     "multi-turn 2 tool rounds(with memory)": {
+      "identical": true,
+      "len": 933,
+      "render_start": "<|im_start|>system\nYou are a careful data-operat"
+     }
+    },
+    "tokenizer": "Qwen/Qwen2.5-3B-Instruct"
+   },
+   "qwen7b": {
+    "all_identical": true,
+    "bos_token_id": null,
+    "resolved": "/work1/zixuan/cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "shapes": {
+     "first-turn sys+user(no memory)": {
+      "identical": true,
+      "len": 815,
+      "render_start": "<|im_start|>system\nYou are a careful data-operat"
+     },
+     "first-turn sys+user(with memory)": {
+      "identical": true,
+      "len": 817,
+      "render_start": "<|im_start|>system\nYou are a careful data-operat"
+     },
+     "multi-turn 2 tool rounds(no memory)": {
+      "identical": true,
+      "len": 931,
+      "render_start": "<|im_start|>system\nYou are a careful data-operat"
+     },
+     "multi-turn 2 tool rounds(with memory)": {
+      "identical": true,
+      "len": 933,
+      "render_start": "<|im_start|>system\nYou are a careful data-operat"
+     }
+    },
+    "tokenizer": "Qwen/Qwen2.5-7B-Instruct"
+   }
+  }
+ }
+}

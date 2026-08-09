@@ -87,22 +87,28 @@ def fig_cards(cfg):
     ax.set_xlabel("dslice card length (Qwen-1.5B tokens)")
     ax.set_ylabel("cards")
     ax.set_title("Card length distribution (n=%d)" % len(toks), pad=28)
-    ax.text(0.0, -0.24, "raw_matched cut to each card's exact count\n"
-            "(paired |d tok| = 0, 640/640)", transform=ax.transAxes,
-            fontsize=7)
+    ax.text(0.02, 0.97, "raw_matched cut to each card's exact count\n"
+            "(paired |d tok| = 0, 640/640)\n"
+            "188/640 sources: oracle-plan recons.", transform=ax.transAxes,
+            fontsize=7, va="top")
 
     ax = axes[1]
     ks = sorted(stages)
-    ax.bar([str(k) for k in ks], [stages[k] for k in ks], color="#8E6FB8",
-           edgecolor="black", linewidth=0.5)
+    stage_lab = {0: "0\nbase", 1: "1\n-key\ncols", 2: "2\n-read\nres",
+                 3: "3\n-fin.\nres", 4: "4\n-rd/ls\nact", 5: "5\n-agg\nact",
+                 6: "6\n-prefix", 7: "7\n-trunc"}
+    ax.bar([stage_lab.get(k, str(k)) for k in ks], [stages[k] for k in ks],
+           color="#8E6FB8", edgecolor="black", linewidth=0.5)
     for i, k in enumerate(ks):
-        ax.text(i, stages[k] + 3, str(stages[k]), ha="center", fontsize=8)
-    ax.set_xlabel("escalation stage reached")
+        ax.text(i, stages[k] + 6, str(stages[k]), ha="center", fontsize=8)
+    ax.set_ylim(0, max(stages.values()) * 1.42)
+    ax.set_xlabel("highest escalation stage reached (what it deletes)")
     ax.set_ylabel("cards")
     ax.set_title("Deletion ladder actually used")
-    ax.text(0.0, -0.24, "0 = base D1-D5 card; higher = more deleted;\n"
-            "decision args / finish retained 640/640",
-            transform=ax.transAxes, fontsize=7)
+    ax.text(0.03, 0.97, "asserted invariants (640/640):\n"
+            "parsed write-action args, aggregate\n"
+            "values, finish action", transform=ax.transAxes, fontsize=7,
+            va="top")
     fig.tight_layout()
     out = os.path.join(OUT_DIR, "fig_hdc_cards.png")
     fig.savefig(out, dpi=150, bbox_inches="tight")
@@ -152,15 +158,15 @@ def fig_contrasts(models_stats):
                     ha="center", fontsize=8)
         ax.axhline(0, color="black", linewidth=0.6)
         ax.set_ylabel(r"$\tau_{replay} = A11 - A10$")
-        ax.set_title("%s: replay term by arm" % model)
+        note = ("E1 vs raw_matched = +0.145 [+0.048,+0.233], Holm p=.012"
+                if model == "qwen7b" else
+                "E1 vs raw_matched = -0.084 [-0.177,+0.002], Holm p=.97")
+        ax.set_title("%s: replay term by arm\n%s" % (model, note),
+                     fontsize=9)
         ax.grid(axis="y", alpha=0.3)
         ax.tick_params(axis="x", labelsize=8, rotation=12)
         top = max(v[2] for v in vals)
         ax.set_ylim(top=top + 0.06)
-        note = ("E1 vs raw_matched = +0.145 [+0.048,+0.233]\nHolm p=.012"
-                if model == "qwen7b" else
-                "E1 vs raw_matched = -0.084 [-0.177,+0.002]\nHolm p=.97")
-        ax.text(0.01, -0.32, note, transform=ax.transAxes, fontsize=7)
     fig.tight_layout()
     out = os.path.join(OUT_DIR, "fig_hdc_contrasts.png")
     fig.savefig(out, dpi=150, bbox_inches="tight")

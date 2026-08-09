@@ -1,0 +1,248 @@
+{
+ "cross_model_E1_diff": {
+  "ci95": [
+   0.13125000000000003,
+   0.3375
+  ],
+  "n_boot_ok": 2000,
+  "p_one_sided_pos": 0.0,
+  "point": 0.22968749999999982
+ },
+ "memory_provenance": {
+  "oracle_fallback_cards": 188,
+  "total_cards": 640
+ },
+ "nboot": 2000,
+ "note": "post-hoc, outside the Part IV-A Holm family (m=6)",
+ "provenance_interaction": {
+  "per_model": {
+   "qwen3b": {
+    "E1_model_generated": -0.2264036251105216,
+    "E1_oracle": 0.2970401691331924,
+    "a10_a11_cards": {
+     "model_generated": 233,
+     "oracle_fallback": 87
+    },
+    "ci95": [
+     0.3062090574866309,
+     0.7834441119527648
+    ],
+    "families": {
+     "both": 16,
+     "model_generated": 36,
+     "oracle_fallback": 20,
+     "union": 40
+    },
+    "n_boot_ok": 2000,
+    "p_one_sided_pos": 0.0,
+    "point": 0.523443794243714
+   },
+   "qwen7b": {
+    "E1_model_generated": 0.041371942234011194,
+    "E1_oracle": 0.42362579281183926,
+    "a10_a11_cards": {
+     "model_generated": 233,
+     "oracle_fallback": 87
+    },
+    "ci95": [
+     0.16640611830146684,
+     0.6056656249559998
+    ],
+    "families": {
+     "both": 16,
+     "model_generated": 36,
+     "oracle_fallback": 20,
+     "union": 40
+    },
+    "n_boot_ok": 2000,
+    "p_one_sided_pos": 0.0,
+    "point": 0.38225385057782807
+   }
+  }
+ },
+ "seed": 1234,
+ "strata": {
+  "model_generated": {
+   "cards": 452,
+   "per_model": {
+    "qwen3b": {
+     "E1": {
+      "ci95": [
+       -0.3468694242585371,
+       -0.10404273829585636
+      ],
+      "n_boot_ok": 2000,
+      "p_one_sided_pos": 0.999,
+      "point": -0.2264036251105216
+     },
+     "a10_a11_cards": 233,
+     "families_ok": 36,
+     "rows": {
+      "dslice": {
+       "A10": 468,
+       "A11": 464
+      },
+      "raw_matched": {
+       "A10": 468,
+       "A11": 464
+      }
+     },
+     "tau_rl": {
+      "dslice": {
+       "ci95": [
+        -0.1220593128502822,
+        0.10418356131994254
+       ],
+       "n_boot_ok": 2000,
+       "p_one_sided_pos": 0.574,
+       "point": -0.010646920129678716
+      },
+      "raw_matched": {
+       "ci95": [
+        0.09681762046364849,
+        0.3336348306493772
+       ],
+       "n_boot_ok": 2000,
+       "p_one_sided_pos": 0.0,
+       "point": 0.21575670498084287
+      }
+     }
+    },
+    "qwen7b": {
+     "E1": {
+      "ci95": [
+       -0.07819716301154599,
+       0.14856655721141698
+      ],
+      "n_boot_ok": 2000,
+      "p_one_sided_pos": 0.2265,
+      "point": 0.041371942234011194
+     },
+     "a10_a11_cards": 233,
+     "families_ok": 36,
+     "rows": {
+      "dslice": {
+       "A10": 468,
+       "A11": 464
+      },
+      "raw_matched": {
+       "A10": 468,
+       "A11": 464
+      }
+     },
+     "tau_rl": {
+      "dslice": {
+       "ci95": [
+        -0.005981231073912448,
+        0.23877608821791008
+       ],
+       "n_boot_ok": 2000,
+       "p_one_sided_pos": 0.028,
+       "point": 0.11735558502799881
+      },
+      "raw_matched": {
+       "ci95": [
+        -0.03906997396168196,
+        0.19241534239168753
+       ],
+       "n_boot_ok": 2000,
+       "p_one_sided_pos": 0.093,
+       "point": 0.07598364279398762
+      }
+     }
+    }
+   }
+  },
+  "oracle_fallback": {
+   "cards": 188,
+   "per_model": {
+    "qwen3b": {
+     "E1": {
+      "ci95": [
+       0.16709089017253556,
+       0.4728575350773669
+      ],
+      "n_boot_ok": 2000,
+      "p_one_sided_pos": 0.0,
+      "point": 0.2970401691331924
+     },
+     "a10_a11_cards": 87,
+     "families_ok": 20,
+     "rows": {
+      "dslice": {
+       "A10": 172,
+       "A11": 176
+      },
+      "raw_matched": {
+       "A10": 172,
+       "A11": 176
+      }
+     },
+     "tau_rl": {
+      "dslice": {
+       "ci95": [
+        0.05225283101045298,
+        0.336759838998211
+       ],
+       "n_boot_ok": 2000,
+       "p_one_sided_pos": 0.004,
+       "point": 0.18578224101479915
+      },
+      "raw_matched": {
+       "ci95": [
+        -0.23597322141048074,
+        -0.010414566532258075
+       ],
+       "n_boot_ok": 2000,
+       "p_one_sided_pos": 0.986,
+       "point": -0.11125792811839325
+      }
+     }
+    },
+    "qwen7b": {
+     "E1": {
+      "ci95": [
+       0.25471402018858796,
+       0.6151041666666666
+      ],
+      "n_boot_ok": 2000,
+      "p_one_sided_pos": 0.0,
+      "point": 0.42362579281183926
+     },
+     "a10_a11_cards": 87,
+     "families_ok": 20,
+     "rows": {
+      "dslice": {
+       "A10": 172,
+       "A11": 176
+      },
+      "raw_matched": {
+       "A10": 172,
+       "A11": 176
+      }
+     },
+     "tau_rl": {
+      "dslice": {
+       "ci95": [
+        -0.18036236319124424,
+        0.365929054054054
+       ],
+       "n_boot_ok": 2000,
+       "p_one_sided_pos": 0.226,
+       "point": 0.10438689217758984
+      },
+      "raw_matched": {
+       "ci95": [
+        -0.5594022278295375,
+        -0.12290300546448113
+       ],
+       "n_boot_ok": 2000,
+       "p_one_sided_pos": 0.9995,
+       "point": -0.3192389006342494
+      }
+     }
+    }
+   }
+  }
+ }
+}

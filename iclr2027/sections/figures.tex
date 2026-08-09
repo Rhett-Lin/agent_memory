@@ -32,13 +32,13 @@
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.92\linewidth]{figs/fig_hdc_cards.png}
-  \caption{\textsc{dslice} card construction audit (Section~\ref{sec:deployment}). Left: realized card lengths (mean 237.5 tokens vs.\ the 300 cap); the paired \textsc{raw\_matched} control is cut to each card's exact count, so token budgets match per card by construction. Right: how far the deletion ladder had to go to fit budget; decision arguments, aggregate values, and the finish step survive in 640/640 cards (asserted, 0 QA failures).}
+  \caption{\textsc{dslice} card construction audit (Section~\ref{sec:deployment}). Left: realized card lengths (mean 237.5 tokens vs.\ the 300 cap); the paired \textsc{raw\_matched} control is cut to each card's exact count, so token budgets match per card by construction. 188/640 sources are oracle-plan reconstructions of failed harvests (provenance disclosure in \S\ref{ssec:dctest}); all arms share identical sources. Right: highest deletion stage reached per card (1: read-summary key columns; 2: read result lines; 3: finish \emph{result}; 4: non-decision action lines; 5: aggregate action lines). Asserted invariants---parsed write-action arguments, aggregate values, finish action---hold in 640/640 cards (0 QA failures).}
   \label{fig:hdccards}
 \end{figure}
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{figs/fig_hdc_contrasts.png}
-  \caption{Deployment result (Section~\ref{sec:deployment}). Top: A10/A11 rates per arm per model, family-cluster 95\% CIs. Bottom: replay term per arm. On 7B, \textsc{dslice} realizes replay while exactly-paired truncation realizes none (E1 $=+0.145$, Holm $p=.012$); on 3B the policy is null (E1 $p=.97$)---a capability gate, not a free lunch.}
+  \caption{Deployment result (Section~\ref{sec:deployment}). Top: A10/A11 rates per arm per model, family-cluster 95\% CIs. Bottom: replay term per arm. On the pooled 7B grid, \textsc{dslice} realizes replay while exactly-paired truncation realizes none (E1 $=+0.145$, Holm $p=.012$); at 3B there is no pooled evidence of benefit (E1 $-0.084$ [$-0.177$,$+0.002$], Holm $p=.97$). A post-hoc provenance stratification qualifies both: on authentic model-generated sources E1 $=+0.041$ [$-0.078$,$+0.149$] (7B) and $-0.226$ [$-0.347$,$-0.104$] (3B), and a direct interaction estimates oracle-minus-authentic E1 at $+0.382$ [$+0.166$,$+0.606$] (7B) and $+0.523$ [$+0.306$,$+0.783$] (3B); the pooled 7B win is carried by oracle-reconstructed sources (Appendix~\ref{app:hdc}).}
   \label{fig:hdc}
 \end{figure}
