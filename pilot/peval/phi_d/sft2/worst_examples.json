@@ -1,0 +1,1628 @@
+[
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:04e5a242f82a4722",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "conditional_write",
+  "pair_id": null,
+  "cell": null,
+  "text": "Inventory maintenance request. SKU KB-7225 (sprocket valve, category 'hardware') is tracked in the stock table. Policy: If the on-hand quantity of SKU KB-7225 at warehouse 'main' is above 77, set its flag to 'markdown' and review to 1; otherwise, set flag to 'ok' and review to 0. Verify the current quantity first, apply the update, then read the row back to confirm it.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "present",
+     "surface": "KB-7225",
+     "evidence": "SKU KB-7225 (sprocket valve, category 'hardware') is tracked in the stock table."
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "destination": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Verify the current quantity first",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "branch",
+     "status": "present",
+     "evidence": "If the on-hand quantity of SKU KB-7225 at warehouse 'main' is above",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "on-hand quantity",
+        "evidence": "the on-hand quantity"
+       },
+       "op": {
+        "status": "present",
+        "value": ">",
+        "evidence": "above"
+       },
+       "value": {
+        "status": "present",
+        "value": "77",
+        "evidence": "above 77"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": "above"
+       }
+      },
+      "then_effects": [
+       {
+        "action": "set",
+        "target": "flag",
+        "value": "markdown"
+       },
+       {
+        "action": "set",
+        "target": "review",
+        "value": "1"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "set",
+        "target": "flag",
+        "value": "ok"
+       },
+       {
+        "action": "set",
+        "target": "review",
+        "value": "0"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "verify",
+     "status": "present",
+     "evidence": "read the row back to confirm it",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [
+      "n2"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "read the row back to confirm it"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:1000f0a1e512aace",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "two_row_transfer",
+  "pair_id": null,
+  "cell": null,
+  "text": "Ops note: move 10 attendees of 'Support Retreat' from the morning session to the afternoon session (events table, date 2026-10-08).\nGuard: morning >= 5 after the move; afternoon <= capacity 28.\nRead both rows, check, update both, verify.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "morning session",
+     "evidence": "from the morning session"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "afternoon session",
+     "evidence": "to the afternoon session"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "destination"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "branch",
+     "status": "present",
+     "evidence": "Guard: morning >= 5 after the move; afternoon <= capacity 28.",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "attendees",
+        "evidence": "attendees"
+       },
+       "op": {
+        "status": "present",
+        "value": ">=",
+        "evidence": ">="
+       },
+       "value": {
+        "status": "present",
+        "value": "5",
+        "evidence": ">= 5"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": ">="
+       }
+      },
+      "then_effects": [
+       {
+        "action": "move",
+        "target": "source",
+        "value": "subtract the amount"
+       },
+       {
+        "action": "move",
+        "target": "destination",
+        "value": "add the amount"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "report",
+        "target": "guard",
+        "value": "guard violation; nothing moved"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1",
+      "n2"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n4",
+     "op": "write",
+     "status": "present",
+     "evidence": "move 10 attendees of 'Support Retreat' from the morning session to the",
+     "args": {
+      "target": "source",
+      "action": "move",
+      "value": "subtract the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n5",
+     "op": "write",
+     "status": "present",
+     "evidence": "update both",
+     "args": {
+      "target": "destination",
+      "action": "move",
+      "value": "add the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n6",
+     "op": "verify",
+     "status": "present",
+     "evidence": "update both, verify",
+     "args": {
+      "target": "source and destination"
+     },
+     "depends_on": [
+      "n4",
+      "n5"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "update both, verify"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:183d17a03688b299",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "two_row_transfer",
+  "pair_id": null,
+  "cell": null,
+  "text": "Ops note: move 11 units of SKU QM-8144 from warehouse 'east' to warehouse 'west' (stock table).\nGuard: 'east' >= 0 after the move; 'west' <= 400.\nRead both rows, check, update both, verify.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "warehouse 'east'",
+     "evidence": "from warehouse 'east'"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "warehouse 'west'",
+     "evidence": "to warehouse 'west'"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "destination"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "branch",
+     "status": "present",
+     "evidence": "Guard: 'east' >= 0 after the move; 'west' <= 400.",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "units",
+        "evidence": "units"
+       },
+       "op": {
+        "status": "present",
+        "value": ">=",
+        "evidence": ">="
+       },
+       "value": {
+        "status": "present",
+        "value": "0",
+        "evidence": ">= 0"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": ">="
+       }
+      },
+      "then_effects": [
+       {
+        "action": "move",
+        "target": "source",
+        "value": "subtract the amount"
+       },
+       {
+        "action": "move",
+        "target": "destination",
+        "value": "add the amount"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "report",
+        "target": "guard",
+        "value": "guard violation; nothing moved"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1",
+      "n2"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n4",
+     "op": "write",
+     "status": "present",
+     "evidence": "move 11 units of SKU QM-8144 from warehouse 'east' to warehouse 'west'",
+     "args": {
+      "target": "source",
+      "action": "move",
+      "value": "subtract the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n5",
+     "op": "write",
+     "status": "present",
+     "evidence": "update both",
+     "args": {
+      "target": "destination",
+      "action": "move",
+      "value": "add the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n6",
+     "op": "verify",
+     "status": "present",
+     "evidence": "update both, verify",
+     "args": {
+      "target": "source and destination"
+     },
+     "depends_on": [
+      "n4",
+      "n5"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "update both, verify"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:1d01617f6932fc74",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "two_row_transfer",
+  "pair_id": null,
+  "cell": null,
+  "text": "Hi, warehouse ops here — could you move 10 units of SKU WD-3222 from warehouse 'east' to warehouse 'west' for us (valve assembly, in the stock table)? Guard: 'east' must stay at 0 or more after the move; 'west' may not go over 400. Check the numbers first, do both updates, then make sure the rows look right.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "warehouse 'east'",
+     "evidence": "from warehouse 'east'"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "warehouse 'west'",
+     "evidence": "to warehouse 'west'"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Check the numbers first",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "read",
+     "status": "present",
+     "evidence": "Check the numbers first",
+     "args": {
+      "target": "destination"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "branch",
+     "status": "present",
+     "evidence": "Guard: 'east' must stay at 0 or more after the move; 'west'",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "units",
+        "evidence": "units"
+       },
+       "op": {
+        "status": "present",
+        "value": ">=",
+        "evidence": "or more"
+       },
+       "value": {
+        "status": "present",
+        "value": "0",
+        "evidence": "at 0 or more"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": "or more"
+       }
+      },
+      "then_effects": [
+       {
+        "action": "move",
+        "target": "source",
+        "value": "subtract the amount"
+       },
+       {
+        "action": "move",
+        "target": "destination",
+        "value": "add the amount"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "report",
+        "target": "guard",
+        "value": "guard violation; nothing moved"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1",
+      "n2"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n4",
+     "op": "write",
+     "status": "present",
+     "evidence": "move 10 units of SKU WD-3222 from warehouse 'east' to warehouse 'west'",
+     "args": {
+      "target": "source",
+      "action": "move",
+      "value": "subtract the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n5",
+     "op": "write",
+     "status": "present",
+     "evidence": "do both updates",
+     "args": {
+      "target": "destination",
+      "action": "move",
+      "value": "add the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n6",
+     "op": "verify",
+     "status": "present",
+     "evidence": "make sure the rows look right",
+     "args": {
+      "target": "source and destination"
+     },
+     "depends_on": [
+      "n4",
+      "n5"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "make sure the rows look right"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:1de8da7deaa3642d",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "conditional_write",
+  "pair_id": null,
+  "cell": null,
+  "text": "Ops note: handle SKU AX-9929 (warehouse 'main') in the stock table.\nRule: If the on-hand quantity of SKU AX-9929 at warehouse 'main' is above 77, set its flag to 'markdown' and review to 1; otherwise, set flag to 'ok' and review to 0.\nCheck the stored quantity first, write the update, then verify the row.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "present",
+     "surface": "AX-9929",
+     "evidence": "Ops note: handle SKU AX-9929 (warehouse 'main') in the stock table."
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "destination": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Check the stored quantity first",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "branch",
+     "status": "present",
+     "evidence": "If the on-hand quantity of SKU AX-9929 at warehouse 'main' is above",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "on-hand quantity",
+        "evidence": "the on-hand quantity"
+       },
+       "op": {
+        "status": "present",
+        "value": ">",
+        "evidence": "above"
+       },
+       "value": {
+        "status": "present",
+        "value": "77",
+        "evidence": "above 77"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": "above"
+       }
+      },
+      "then_effects": [
+       {
+        "action": "set",
+        "target": "flag",
+        "value": "markdown"
+       },
+       {
+        "action": "set",
+        "target": "review",
+        "value": "1"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "set",
+        "target": "flag",
+        "value": "ok"
+       },
+       {
+        "action": "set",
+        "target": "review",
+        "value": "0"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "verify",
+     "status": "present",
+     "evidence": "verify the row",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [
+      "n2"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "verify the row"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:29839a89de45ca7b",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "two_row_transfer",
+  "pair_id": null,
+  "cell": null,
+  "text": "Ops note: move 10 attendees of 'Roadmap Forum' from the morning session to the afternoon session (events table, date 2026-10-22).\nGuard: morning >= 5 after the move; afternoon <= capacity 53.\nRead both rows, check, update both, verify.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "morning session",
+     "evidence": "from the morning session"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "afternoon session",
+     "evidence": "to the afternoon session"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "destination"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "branch",
+     "status": "present",
+     "evidence": "Guard: morning >= 5 after the move; afternoon <= capacity 53.",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "attendees",
+        "evidence": "attendees"
+       },
+       "op": {
+        "status": "present",
+        "value": ">=",
+        "evidence": ">="
+       },
+       "value": {
+        "status": "present",
+        "value": "5",
+        "evidence": ">= 5"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": ">="
+       }
+      },
+      "then_effects": [
+       {
+        "action": "move",
+        "target": "source",
+        "value": "subtract the amount"
+       },
+       {
+        "action": "move",
+        "target": "destination",
+        "value": "add the amount"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "report",
+        "target": "guard",
+        "value": "guard violation; nothing moved"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1",
+      "n2"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n4",
+     "op": "write",
+     "status": "present",
+     "evidence": "move 10 attendees of 'Roadmap Forum' from the morning session to the",
+     "args": {
+      "target": "source",
+      "action": "move",
+      "value": "subtract the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n5",
+     "op": "write",
+     "status": "present",
+     "evidence": "update both",
+     "args": {
+      "target": "destination",
+      "action": "move",
+      "value": "add the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n6",
+     "op": "verify",
+     "status": "present",
+     "evidence": "update both, verify",
+     "args": {
+      "target": "source and destination"
+     },
+     "depends_on": [
+      "n4",
+      "n5"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "update both, verify"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:2df94011366c9cf6",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "two_row_transfer",
+  "pair_id": null,
+  "cell": null,
+  "text": "Inventory rebalancing request. In the stock table, move 10 units of SKU AX-5146 from warehouse 'east' to warehouse 'west'. The 'east' row must keep at least 0 units afterwards; the 'west' side must not exceed 400. Read both rows, check the guard, then apply both updates and verify.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "warehouse 'east'",
+     "evidence": "from warehouse 'east'"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "warehouse 'west'",
+     "evidence": "to warehouse 'west'"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "destination"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "branch",
+     "status": "present",
+     "evidence": "The 'east' row must keep at least 0 units afterwards; the 'west'",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "units",
+        "evidence": "units"
+       },
+       "op": {
+        "status": "present",
+        "value": ">=",
+        "evidence": "at least"
+       },
+       "value": {
+        "status": "present",
+        "value": "0",
+        "evidence": "at least 0"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "negative",
+        "evidence": "at least"
+       }
+      },
+      "then_effects": [
+       {
+        "action": "move",
+        "target": "source",
+        "value": "subtract the amount"
+       },
+       {
+        "action": "move",
+        "target": "destination",
+        "value": "add the amount"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "report",
+        "target": "guard",
+        "value": "guard violation; nothing moved"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1",
+      "n2"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n4",
+     "op": "write",
+     "status": "present",
+     "evidence": "move 10 units of SKU AX-5146 from warehouse 'east' to warehouse 'west'",
+     "args": {
+      "target": "source",
+      "action": "move",
+      "value": "subtract the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n5",
+     "op": "write",
+     "status": "present",
+     "evidence": "apply both updates",
+     "args": {
+      "target": "destination",
+      "action": "move",
+      "value": "add the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n6",
+     "op": "verify",
+     "status": "present",
+     "evidence": "and verify",
+     "args": {
+      "target": "source and destination"
+     },
+     "depends_on": [
+      "n4",
+      "n5"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "and verify"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:3e01ae3f789b022d",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "two_row_transfer",
+  "pair_id": null,
+  "cell": null,
+  "text": "Hi, could you move 4 attendees of 'Roadmap Review' from the morning session to the afternoon session? Both sessions are in the events table (same title 'Roadmap Review', date 2026-09-24). Guard: morning stays at 5+; afternoon must not exceed capacity (37). Check the numbers first, do both updates, then confirm.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "morning session",
+     "evidence": "from the morning session"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "afternoon session",
+     "evidence": "to the afternoon session"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Check the numbers first",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "read",
+     "status": "present",
+     "evidence": "Check the numbers first",
+     "args": {
+      "target": "destination"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "branch",
+     "status": "present",
+     "evidence": "Guard: morning stays at 5+; afternoon must not exceed capacity (37).",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "attendees",
+        "evidence": "attendees"
+       },
+       "op": {
+        "status": "present",
+        "value": ">=",
+        "evidence": "+"
+       },
+       "value": {
+        "status": "present",
+        "value": "5",
+        "evidence": "at 5+"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": "+"
+       }
+      },
+      "then_effects": [
+       {
+        "action": "move",
+        "target": "source",
+        "value": "subtract the amount"
+       },
+       {
+        "action": "move",
+        "target": "destination",
+        "value": "add the amount"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "report",
+        "target": "guard",
+        "value": "guard violation; nothing moved"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1",
+      "n2"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n4",
+     "op": "write",
+     "status": "present",
+     "evidence": "move 4 attendees of 'Roadmap Review' from the morning session to the",
+     "args": {
+      "target": "source",
+      "action": "move",
+      "value": "subtract the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n5",
+     "op": "write",
+     "status": "present",
+     "evidence": "do both updates",
+     "args": {
+      "target": "destination",
+      "action": "move",
+      "value": "add the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n6",
+     "op": "verify",
+     "status": "present",
+     "evidence": "then confirm",
+     "args": {
+      "target": "source and destination"
+     },
+     "depends_on": [
+      "n4",
+      "n5"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "then confirm"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:47c5ca809c880563",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "conditional_write",
+  "pair_id": null,
+  "cell": null,
+  "text": "Hi, could you check item NC-9342 (relay valve)? It's in the stock table, warehouse 'main'. The rule is: If the on-hand quantity of SKU NC-9342 at warehouse 'main' is above 70, set its flag to 'markdown' and review to 1; otherwise, set flag to 'ok' and review to 0. Please look at the real quantity before writing, and confirm the row afterwards. Thanks!",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "present",
+     "surface": "NC-9342",
+     "evidence": "Hi, could you check item NC-9342 (relay valve)?"
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "destination": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "look at the real quantity before writing",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "branch",
+     "status": "present",
+     "evidence": "If the on-hand quantity of SKU NC-9342 at warehouse 'main' is above",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "on-hand quantity",
+        "evidence": "the on-hand quantity"
+       },
+       "op": {
+        "status": "present",
+        "value": ">",
+        "evidence": "above"
+       },
+       "value": {
+        "status": "present",
+        "value": "70",
+        "evidence": "above 70"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": "above"
+       }
+      },
+      "then_effects": [
+       {
+        "action": "set",
+        "target": "flag",
+        "value": "markdown"
+       },
+       {
+        "action": "set",
+        "target": "review",
+        "value": "1"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "set",
+        "target": "flag",
+        "value": "ok"
+       },
+       {
+        "action": "set",
+        "target": "review",
+        "value": "0"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "verify",
+     "status": "present",
+     "evidence": "confirm the row afterwards",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [
+      "n2"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "confirm the row afterwards"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:48dce3b485daab45",
+  "n_fail": 1,
+  "fails": [
+   "pred_attribute:contradiction"
+  ],
+  "archetype": "two_row_transfer",
+  "pair_id": null,
+  "cell": null,
+  "text": "Inventory rebalancing request. In the stock table, move 11 units of SKU KB-2160 from warehouse 'east' to warehouse 'west'. The 'east' row must keep at least 0 units afterwards; the 'west' side must not exceed 400. Read both rows, check the guard, then apply both updates and verify.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "warehouse 'east'",
+     "evidence": "from warehouse 'east'"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "warehouse 'west'",
+     "evidence": "to warehouse 'west'"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "destination"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "branch",
+     "status": "present",
+     "evidence": "The 'east' row must keep at least 0 units afterwards; the 'west'",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "units",
+        "evidence": "units"
+       },
+       "op": {
+        "status": "present",
+        "value": ">=",
+        "evidence": "at least"
+       },
+       "value": {
+        "status": "present",
+        "value": "0",
+        "evidence": "at least 0"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "negative",
+        "evidence": "at least"
+       }
+      },
+      "then_effects": [
+       {
+        "action": "move",
+        "target": "source",
+        "value": "subtract the amount"
+       },
+       {
+        "action": "move",
+        "target": "destination",
+        "value": "add the amount"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "report",
+        "target": "guard",
+        "value": "guard violation; nothing moved"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1",
+      "n2"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n4",
+     "op": "write",
+     "status": "present",
+     "evidence": "move 11 units of SKU KB-2160 from warehouse 'east' to warehouse 'west'",
+     "args": {
+      "target": "source",
+      "action": "move",
+      "value": "subtract the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n5",
+     "op": "write",
+     "status": "present",
+     "evidence": "apply both updates",
+     "args": {
+      "target": "destination",
+      "action": "move",
+      "value": "add the amount"
+     },
+     "depends_on": [
+      "n3"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n6",
+     "op": "verify",
+     "status": "present",
+     "evidence": "and verify",
+     "args": {
+      "target": "source and destination"
+     },
+     "depends_on": [
+      "n4",
+      "n5"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "and verify"
+   }
+  },
+  "gold_ir": null
+ }
+]

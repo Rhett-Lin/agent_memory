@@ -133,6 +133,14 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - 工时:Option A(推荐,不动 generator）全量 4,000 文/200 族 ≈ **4–5.5 工日**(6 schema 条款表 2.5–3.5d + 分割/配额/驱动 1d + 门 0.5–1d);Option B（改 generator）被否决。已知杠杆洞：当前全为符号值卡，**数值打印卡变体(~0.5–1d)** 是头号"需新建"。
 - 产物:mint_spec.py、mint20.jsonl(sha `ff87563a…`)、mint20_report.json、FEASIBILITY.md、DATA_SPEC.md。
 
+### 2026-08-11 — SFT2 LoRA 训练 + 抽取门评测：**8/8 门全过（里程碑）**(agent-15)
+
+- 训练:3,000 例,376 步,loss 0.33→~0.0001,held-out-family val 6.9e-5;MAXLEN 实测选择 2304(p95=2241;2048 会丢 70.6%)。adapter:tic_checkpoints tagent_memory/phi_sft/sft2。
+- **test500(全部 4 archetype 持出族):8/8 门过且每项地板级**——parse 1.000(零 repair)、evidence 1.000(6,293/6,293)、precision/recall 1.000、per-arch 召回 1.000、false-ABSENT 0、双侧覆盖 1.000、LCS 1.000;**500/500 逐字节全 IR 相等**(sft1 test90 为 0.874)。
+- **canon80 对照:PASS**(12/13 大幅提升:parse .762→1.000、evidence .200→1.000、coverage .425→1.000、LCS .617→.988);**唯一回退格**:P2 per-arch 召回 .042→.000(−1/24),根因= canon 密封字段锚(qty 类)与 mint D1 表面样式(attendees/on-hand quantity)的测量约定差,非抽取能力丢失——S2 协议须冻结 canon 侧锚定口径。
+- 判词:(i) **S2 比较器 GO**(dialect 内抽取残差为零）;(ii) 更多数据 NO-GO（门已饱和，算力归比较器；可选 LC300/1000 学习曲线做"饱和-规模"论证）。
+- 纪律重申：eval 用 canonical run5200 协议（PREFILL+temp 0+≤1 repair+validate_ir;guided FSM 未用，如实披露）。
+
 ### 2026-08-11 — SFT 全量数据生产完成：**GO for LoRA**(agent-13)
 
 - 引擎 sft2(mint_core/all + p1x–p4x 条款表）;8/8 schema 小批全过，机器迭代 ≤2/schema;一次 kill-trip(45 体积碰撞）按纪律在**机器层**修复（pad 流/filler/A01 实体变体/P2 目标实例化），零后验修标签。
