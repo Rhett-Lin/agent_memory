@@ -1,0 +1,266 @@
+{
+  "frozen_at": "2026-08-10",
+  "purpose": "Part VI-0 smoke gate anchors (V1 cancel-window trap line)",
+  "current_time_iso": "2024-05-15T15:00:00 EST (wiki.md:3)",
+  "mutation_studied_later": "Reservations can be cancelled within 48 hours of booking (true: 24h)",
+  "anchors": [
+    {
+      "role": "X_candidate",
+      "task_index": 12,
+      "reservation_id": "3FRNFB",
+      "reservation": {
+        "cabin": "basic_economy",
+        "insurance": "no",
+        "created_at": "2024-05-06T13:25:06",
+        "age_hours_at_current_time": 217.6,
+        "route": [
+          [
+            "MCO",
+            "BOS"
+          ],
+          [
+            "BOS",
+            "CLT"
+          ]
+        ]
+      },
+      "expected_trap_decision": "agent must DENY the cancellation (no DB write)",
+      "true_policy_legality": {
+        "cancel_legal": false,
+        "reason": "basic_economy, no insurance, age 217.6h > 24h -> DENY"
+      },
+      "true_policy_clause": "wiki.md:58 (24h cancel window; basic economy w/o insurance past 24h cannot be cancelled)",
+      "gt_write_actions": [],
+      "cpu_verification": {
+        "gt_hash_equals_fresh_hash": true,
+        "wrong_policy_cancel_changes_db_hash": true,
+        "verdict": "PASS"
+      }
+    },
+    {
+      "role": "X_candidate",
+      "task_index": 18,
+      "reservation_id": "SI5UKW",
+      "reservation": {
+        "cabin": "basic_economy",
+        "insurance": "no",
+        "created_at": "2024-05-11T00:08:57",
+        "age_hours_at_current_time": 110.9,
+        "route": [
+          [
+            "MIA",
+            "LAS"
+          ],
+          [
+            "LAS",
+            "PHX"
+          ]
+        ]
+      },
+      "expected_trap_decision": "agent must DENY the cancellation (no DB write)",
+      "true_policy_legality": {
+        "cancel_legal": false,
+        "reason": "basic_economy, no insurance, age 110.9h > 24h -> DENY"
+      },
+      "true_policy_clause": "wiki.md:58 (24h cancel window; basic economy w/o insurance past 24h cannot be cancelled)",
+      "gt_write_actions": [],
+      "cpu_verification": {
+        "gt_hash_equals_fresh_hash": true,
+        "wrong_policy_cancel_changes_db_hash": true,
+        "verdict": "PASS"
+      }
+    },
+    {
+      "role": "X_candidate",
+      "task_index": 49,
+      "reservation_id": "MDCLVA",
+      "reservation": {
+        "cabin": "basic_economy",
+        "insurance": "no",
+        "created_at": "2024-05-07T18:40:38",
+        "age_hours_at_current_time": 188.3,
+        "route": [
+          [
+            "EWR",
+            "CLT"
+          ],
+          [
+            "CLT",
+            "DTW"
+          ],
+          [
+            "DTW",
+            "MSP"
+          ],
+          [
+            "MSP",
+            "EWR"
+          ]
+        ]
+      },
+      "expected_trap_decision": "agent must DENY the cancellation (no DB write)",
+      "true_policy_legality": {
+        "cancel_legal": false,
+        "reason": "basic_economy, no insurance, age 188.3h > 24h -> DENY"
+      },
+      "true_policy_clause": "wiki.md:58 (24h cancel window; basic economy w/o insurance past 24h cannot be cancelled)",
+      "gt_write_actions": [],
+      "cpu_verification": {
+        "gt_hash_equals_fresh_hash": true,
+        "wrong_policy_cancel_changes_db_hash": true,
+        "verdict": "PASS"
+      }
+    },
+    {
+      "role": "R_source",
+      "task_index": 8,
+      "reservation_id": "K1NW8N",
+      "reservation": {
+        "cabin": "basic_economy",
+        "insurance": "no",
+        "created_at": "2024-05-14T16:03:16",
+        "age_hours_at_current_time": 22.9,
+        "route": [
+          [
+            "JFK",
+            "SFO"
+          ],
+          [
+            "SFO",
+            "SEA"
+          ],
+          [
+            "SEA",
+            "JFK"
+          ]
+        ]
+      },
+      "expected_trap_decision": "cancellation is LEGAL under true policy; episode succeeds",
+      "true_policy_legality": {
+        "cancel_legal": true,
+        "reason": "within 24h window (age 22.9h)"
+      },
+      "true_policy_clause": "wiki.md:58",
+      "gt_write_actions": [
+        "cancel_reservation",
+        "book_reservation"
+      ],
+      "cpu_verification": {
+        "gt_replay_deterministic": true,
+        "note": "GT also contains non-cancel writes (see gt_write_actions); only the cancel legality is anchored here.",
+        "verdict": "PASS"
+      }
+    },
+    {
+      "role": "R_source",
+      "task_index": 9,
+      "reservation_id": "K1NW8N",
+      "reservation": {
+        "cabin": "basic_economy",
+        "insurance": "no",
+        "created_at": "2024-05-14T16:03:16",
+        "age_hours_at_current_time": 22.9,
+        "route": [
+          [
+            "JFK",
+            "SFO"
+          ],
+          [
+            "SFO",
+            "SEA"
+          ],
+          [
+            "SEA",
+            "JFK"
+          ]
+        ]
+      },
+      "expected_trap_decision": "cancellation is LEGAL under true policy; episode succeeds",
+      "true_policy_legality": {
+        "cancel_legal": true,
+        "reason": "within 24h window (age 22.9h)"
+      },
+      "true_policy_clause": "wiki.md:58",
+      "gt_write_actions": [
+        "cancel_reservation",
+        "book_reservation",
+        "book_reservation",
+        "book_reservation"
+      ],
+      "cpu_verification": {
+        "gt_replay_deterministic": true,
+        "note": "GT also contains non-cancel writes (see gt_write_actions); only the cancel legality is anchored here.",
+        "verdict": "PASS"
+      }
+    },
+    {
+      "role": "R_source",
+      "task_index": 26,
+      "reservation_id": "NQNU5R",
+      "reservation": {
+        "cabin": "business",
+        "insurance": "no",
+        "created_at": "2024-05-13T05:37:57",
+        "age_hours_at_current_time": 57.4,
+        "route": [
+          [
+            "MCO",
+            "PHX"
+          ],
+          [
+            "PHX",
+            "SEA"
+          ]
+        ]
+      },
+      "expected_trap_decision": "cancellation is LEGAL under true policy; episode succeeds",
+      "true_policy_legality": {
+        "cancel_legal": true,
+        "reason": "business cabin always cancellable (age 57.4h)"
+      },
+      "true_policy_clause": "wiki.md:58",
+      "gt_write_actions": [
+        "cancel_reservation",
+        "get_reservation_details",
+        "search_direct_flight",
+        "search_direct_flight",
+        "calculate",
+        "update_reservation_flights"
+      ],
+      "cpu_verification": {
+        "gt_replay_deterministic": true,
+        "note": "GT also contains non-cancel writes (see gt_write_actions); only the cancel legality is anchored here.",
+        "verdict": "PASS"
+      }
+    }
+  ],
+  "decision_point_detector": {
+    "definition": "An episode on an X anchor task REACHES the trap decision point iff (cancel_move) the trajectory contains a cancel_reservation action on the anchor reservation id, OR (grounded_denial) the trajectory contains BOTH a successful get_reservation_details observation for the anchor reservation id (grounding) AND a subsequent respond action whose content matches at least one denial cue regex, emitted after the user's cancellation request is on the table. Grounding via get_user_details followed by a correct-id reference in a respond action also counts for grounding.",
+    "denial_cues": [
+      "24 hours",
+      "24-hour",
+      "24 hour",
+      "within 24",
+      "cannot cancel",
+      "can't cancel",
+      "not able to cancel",
+      "unable to cancel",
+      "not eligible",
+      "cannot be cancelled",
+      "can't be cancelled",
+      "against our policy",
+      "against the policy",
+      "policy does not allow",
+      "not permitted",
+      "denied",
+      "non-refundable"
+    ],
+    "failure_categories": {
+      "parse_error": ">=30% of agent turns fail Action-JSON parsing AND the episode never grounds the target reservation.",
+      "user_sim_stall": "user simulator repeats an identical message >=3 times, breaks character, or never progresses the goal.",
+      "never_booked": "episode ends without grounding the target reservation (and not parse_error/user_sim_stall).",
+      "tool_error": ">50% of tool calls return observations starting with 'Error:'.",
+      "step_cap_exhausted": "target grounded but step cap hit before a cancel-or-deny move."
+    }
+  }
+}
