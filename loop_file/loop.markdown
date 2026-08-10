@@ -94,7 +94,7 @@ Proced-Mem；STITCH / CAME-Bench；`When Memories Collide`\[UNVERIFIED\]；Memor
 ReMe；HiMPO；AttriMem；A-MAC；MemGate；MemRouter；Decision-Aware Memory Cards；RSCB-MC（Learning When to Remember）；ConsistencyGate；CORA；ToolChain-CRC；`RC-MemStop`\[UNVERIFIED\]。
 
 **Procedural memory 系统与 benchmark 线：**
-Reflexion；ExpeL；Agent Workflow Memory；Memp；MCMA；ProcMEM；AFTER；LifelongAgentBench；MemoryAgentBench；Mem2ActBench；RECON；Supersede；SeqMem-Eval；RoMeRL；When Continual Learning Moves to Memory。
+Reflexion；ExpeL；Agent Workflow Memory；Memp；MCMA；Skill-Pro；AFTER；LifelongAgentBench；MemoryAgentBench；Mem2ActBench；RECON；Supersede；SeqMem-Eval；RoMeRL；When Continual Learning Moves to Memory。
 
 出现下列情况时，立即判定为文献碰撞：
 

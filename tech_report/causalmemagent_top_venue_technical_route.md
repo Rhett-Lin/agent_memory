@@ -90,7 +90,7 @@ m^{proc}=(\text{precondition},\text{plan},\text{tool bindings},
 
 [Memp](https://arxiv.org/abs/2508.06433) 系统研究 procedural memory 的 Build、Retrieval 和 Update，并比较 step-level instructions 与 script-like abstraction；其结果支持 procedural memory 可跨模型迁移。
 
-[ProcMEM](https://arxiv.org/abs/2602.01869) 使用 non-parametric PPO 学习可复用 procedural memory；2026 年的多项工作继续采用 RL 优化 memory 的写入、更新和调用。
+[Skill-Pro](https://arxiv.org/abs/2602.01869)（ICML 2026 Spotlight，原名曾误记为 ProcMEM,2026-08-10 更正）以 Skill-MDP 把 episodic 叙事转化为带 **activation/execution/termination 条件**的可执行 Skill，经 Non-Parametric PPO 生成候选与 PPO Gate 验证，实现无参数更新的 procedural memory 复用；2026 年的多项工作继续采用 RL 优化 memory 的写入、更新和调用。
 
 [MCMA](https://aclanthology.org/2026.findings-acl.1535/)（ACL 2026 Findings）把 memory abstraction 视为可学习的 meta-cognitive skill：冻结 task model，以 DPO 训练 memory copilot，组织多层抽象 memory，并测试 OOD 与 cross-task transfer。因此，“学习 memory 的抽象层级”不能再作为本项目的核心 novelty。
 
@@ -219,7 +219,7 @@ Decision-aware memory cards、HiMPO 和 AttriMem 也分别使用 outcome uplift�
 4. **Method：** 根据发现提出 oracle-free transportable-utility gate；
 5. **Optional theory：** 对负迁移风险或在线接纳给出真正有内容的保证。
 
-如果论文以“We propose another memory architecture”开场，MCMA、ReMe、Memp、ProcMEM 等会使 novelty 显得很弱；如果以“现有 memory benchmark 是否把 replay 当成 learning”开场，问题定位明显更强。
+如果论文以“We propose another memory architecture”开场，MCMA、ReMe、Memp、Skill-Pro 等会使 novelty 显得很弱；如果以“现有 memory benchmark 是否把 replay 当成 learning”开场，问题定位明显更强。
 
 ---
 
@@ -796,7 +796,7 @@ P\left(\forall m,\ r_m\le \overline r_m\right)\ge1-\alpha.
 - raw episodic replay；
 - summary memory；
 - procedural/skill memory；
-- 若代码可复现：ProcMEM、Memory-R1 或 AgeMem 的适配版本。
+- 若代码可复现：Skill-Pro、Memory-R1 或 AgeMem 的适配版本。
 
 ### 10.3 近期 utility/credit 基线
 

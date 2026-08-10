@@ -117,6 +117,17 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - 含义:**lane C(SFT 抽取器)由"优先"转"必须"**;比较器 v0 只能走软证据+弃权路线;judge 仍是当前唯一可用 admission primitive。
 - 产物:audit_expanded.py(sha `c80f481c…`)、field_metrics.json、per_sample.jsonl(532 行全字段分)、stratified.jsonl(56 例)、failed_examples/、AUDIT_EXPANDED.md;过程披露:v1.1 五处测量修正全部实现已声明语义并记录前后数,无一项为过线改规则。
 
+### 2026-08-10 — 战略提案"pivot: P→动态 belief/渐进推断"裁决（thread 019fe66c）
+
+**总裁决:NO_GO（当前 pivot）+ GO（未来种子，带里程碑门）**;P 结构性标签与执行的动态 U/active-path 风险**分轨**（"P 在执行中不应被更新;被执行更新的是 mismatch-relevance / utility 的 belief")。
+
+- **批评 1（程序 vs 状态不确定性）:SUSTAIN**,narrow 修约——执行前缀可为**有界分类器提供表示层帮忙**（把文本里已有的信息变成更好用的表征）,不构成 programs 的渐进可识别性；且"underspecified 指令"不是唯一合法环境，判定标准统一为 **I(P;h_t|x,m)>0 by construction**（隐藏工具语义/渐进揭示约束/探针亦可）。在完全明写 program 的环境里,steps→AUROC 曲线将是平的,上升者多半偷的是 agent 行为暴露/U 泄漏/archetype 指纹。
+- **批评 2(likelihood ratio ≈1)**：结论 SUSTAIN（不会产生新证据通道），但"≈1"前提被 OVERRULE 为未测量（+3.1pp 效用不证明逐步 likelihood 相同）。
+- 批评 3（重复包装）：维持，但"零成本"改判为**有成本**——为新增 claim/sequential baseline/泄漏控制/在先义务负责；P-vector 需要另行注册标签语义。
+- **优先级不变**（C>D>A>B>E);C 的监督目标重申为 z 的文本可证投影;D 只允许动态 U/risk belief，因果性来自 randomized canary。未获授权新增"Bayesian belief"第 6 线；廉价证伪分析(x,m vs x,m,h_t，遮 reward/终态）仅作诊断。
+- **系统框架前的 milestone**:`phi_sft_v1` 静态可识别件系列硬门（parse/grounding ≥0.99、hard-veto 精度 LB≥0.95、关键召回 ≥0.90/逐族 ≥0.85、假 ABSENT ≤0.05、双侧支覆盖 ≥0.80/逐族 ≥0.70、LCS ≥0.90)；之后才有渐进环境的第二道 oracle 级门（+0.10 endpoint AUROC,masking 对照）。
+- **collision 处理**:`2602.01869` 核验为 **Skill-Pro**(ICML 2026 Spotlight;activation/execution/termination conditions),tech_report/loop 文件此前误标为 ProcMEM——已修正（`causalmemagent_top_venue_technical_route.md` 3 处、`loop.markdown` 1 处）；措辞护栏已冻结（避免 "program compatibility belief/procedural signature/progressive program inference" 等 at-risk 表述；剩余合法 claim 收窄到"在本 benchmark 上,估计 evaluator-hidden P 需要结构推断,不归结为 embedding lookup");CMI 注册为 close-partial,禁称首个 causal memory usefulness/首个 intervention selection。
+
 ### 2026-08-10 — 用户提案 adjudication（thread 019fe66c，"代理状态 + 微调 evaluator"）
 
 **总裁决：双 estimand 分立**——P 保留为 benchmark 机制诊断变量;**部署决策变量改为因果化、风险调整后的 utility U**。双线并行，非二选一。
