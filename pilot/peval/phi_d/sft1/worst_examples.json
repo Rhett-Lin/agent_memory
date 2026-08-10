@@ -1,0 +1,531 @@
+[
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:0be22a4c35009d7f",
+  "n_fail": 5,
+  "fails": [
+   "pred_attribute:contradiction",
+   "pred_polarity:contradiction",
+   "branch_effects:missing",
+   "roles_required:absent",
+   "termination:contradiction"
+  ],
+  "pair_id": null,
+  "cell": null,
+  "text": "Ops note: finalize event 'Roadmap Summit' (2026-10-15).\nPolicy: If no attendee of the event 'Roadmap Summit' (2026-10-15) has declined (their RSVP count of 'declined' is 0), set the event status to 'confirmed' and insert a 'confirmation' notification addressed to the event's owner (use id 8101); otherwise set it to 'needs_review' and insert a 'warning' notification (id 8102).\nCount RSVPs first, then write the event status and the owner notification (Kofi Osman).",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "present",
+     "surface": "event",
+     "evidence": "Ops note: finalize event 'Roadmap Summit' (2026-10-15)."
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "destination": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "branch",
+     "status": "present",
+     "evidence": "If no attendee of the event 'Roadmap Summit' (2026-10-15) has declined (their RSVP count of 'declined' is 0)",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "declined",
+        "evidence": "declined"
+       },
+       "op": {
+        "status": "present",
+        "value": "==",
+        "evidence": "has declined"
+       },
+       "value": {
+        "status": "present",
+        "value": "0",
+        "evidence": "0"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": "no attendee of the event 'Roadmap Summit' (2026-10-15) has declined"
+       }
+      },
+      "then_effects": [
+       {
+        "action": "set",
+        "target": "status",
+        "value": "confirmed"
+       },
+       {
+        "action": "write",
+        "target": "audit_sink",
+        "value": "confirmation notification addressed to the event's owner (use id 8101)"
+       }
+      ],
+      "else_effects": [
+       {
+        "action": "set",
+        "target": "status",
+        "value": "needs_review"
+       },
+       {
+        "action": "write",
+        "target": "audit_sink",
+        "value": "warning notification (id 8102)"
+       }
+      ]
+     },
+     "depends_on": [],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "warning notification (id 8102)"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:1d01617f6932fc74",
+  "n_fail": 5,
+  "fails": [
+   "pred_attribute:missing",
+   "pred_op:missing",
+   "pred_value:missing",
+   "pred_polarity:missing",
+   "branch_effects:missing"
+  ],
+  "pair_id": null,
+  "cell": null,
+  "text": "Hi, warehouse ops here — could you move 10 units of SKU WD-3222 from warehouse 'east' to warehouse 'west' for us (valve assembly, in the stock table)? Guard: 'east' must stay at 0 or more after the move; 'west' may not go over 400. Check the numbers first, do both updates, then make sure the rows look right.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "present",
+     "surface": "east",
+     "evidence": "'east' must stay at 0 or more after the move"
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "WD-3222",
+     "evidence": "move 10 units of SKU WD-3222"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "west",
+     "evidence": "to warehouse 'west'"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Check the numbers first",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "write",
+     "status": "present",
+     "evidence": "do both updates",
+     "args": {
+      "action": "set",
+      "target": "source",
+      "value": "10"
+     },
+     "depends_on": [
+      "n1"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "verify",
+     "status": "present",
+     "evidence": "make sure the rows look right",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [
+      "n2"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "make sure the rows look right"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:2df94011366c9cf6",
+  "n_fail": 5,
+  "fails": [
+   "pred_attribute:contradiction",
+   "pred_polarity:contradiction",
+   "branch_effects:missing",
+   "roles_required:absent",
+   "termination:contradiction"
+  ],
+  "pair_id": null,
+  "cell": null,
+  "text": "Inventory rebalancing request. In the stock table, move 10 units of SKU AX-5146 from warehouse 'east' to warehouse 'west'. The 'east' row must keep at least 0 units afterwards; the 'west' side must not exceed 400. Read both rows, check the guard, then apply both updates and verify.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "present",
+     "surface": "east",
+     "evidence": "In the stock table, move 10 units of SKU AX-5146 from warehouse 'east' to warehouse 'west'."
+    },
+    "policy_row": {
+     "status": "present",
+     "surface": "west",
+     "evidence": "In the stock table, move 10 units of SKU AX-5146 from warehouse 'east' to warehouse 'west'."
+    },
+    "source": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "destination": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Read both rows",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "branch",
+     "status": "present",
+     "evidence": "the 'east' row must keep at least 0 units afterwards",
+     "args": {
+      "predicate": {
+       "attribute": {
+        "status": "present",
+        "value": "units",
+        "evidence": "units"
+       },
+       "op": {
+        "status": "present",
+        "value": "<=",
+        "evidence": "at least 0"
+       },
+       "value": {
+        "status": "present",
+        "value": "0",
+        "evidence": "at least 0"
+       },
+       "polarity": {
+        "status": "present",
+        "value": "positive",
+        "evidence": "at least 0"
+       }
+      },
+      "then_effects": [],
+      "else_effects": [
+       {
+        "action": "write",
+        "target": "subject_row",
+        "value": "-10"
+       },
+       {
+        "action": "write",
+        "target": "policy_row",
+        "value": "+10"
+       }
+      ]
+     },
+     "depends_on": [
+      "n1"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "verify",
+     "status": "present",
+     "evidence": "verify",
+     "args": {
+      "target": "subject_row"
+     },
+     "depends_on": [
+      "n2"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "verify"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:3e01ae3f789b022d",
+  "n_fail": 5,
+  "fails": [
+   "pred_attribute:missing",
+   "pred_op:missing",
+   "pred_value:missing",
+   "pred_polarity:missing",
+   "branch_effects:missing"
+  ],
+  "pair_id": null,
+  "cell": null,
+  "text": "Hi, could you move 4 attendees of 'Roadmap Review' from the morning session to the afternoon session? Both sessions are in the events table (same title 'Roadmap Review', date 2026-09-24). Guard: morning stays at 5+; afternoon must not exceed capacity (37). Check the numbers first, do both updates, then confirm.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "present",
+     "surface": "attendees",
+     "evidence": "move 4 attendees"
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "morning session",
+     "evidence": "from the morning session"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "afternoon session",
+     "evidence": "to the afternoon session"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Check the numbers first",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "write",
+     "status": "present",
+     "evidence": "do both updates",
+     "args": {
+      "action": "move",
+      "target": "source",
+      "value": "to destination"
+     },
+     "depends_on": [
+      "n1"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "verify",
+     "status": "present",
+     "evidence": "then confirm",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [
+      "n2"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "then confirm"
+   }
+  },
+  "gold_ir": null
+ },
+ {
+  "subset": "sft_canon80",
+  "key": "instruction:4fb9970c86f04087",
+  "n_fail": 5,
+  "fails": [
+   "pred_attribute:missing",
+   "pred_op:missing",
+   "pred_value:missing",
+   "pred_polarity:missing",
+   "branch_effects:missing"
+  ],
+  "pair_id": null,
+  "cell": null,
+  "text": "Hi, could you move 4 attendees of 'Vendor Forum' from the morning session to the afternoon session? Both sessions are in the events table (same title 'Vendor Forum', date 2026-10-01). Guard: morning stays at 5+; afternoon must not exceed capacity (15). Check the numbers first, do both updates, then confirm.",
+  "ir": {
+   "schema": "phi_ir/v0",
+   "roles": {
+    "subject_row": {
+     "status": "present",
+     "surface": "attendees",
+     "evidence": "move 4 attendees"
+    },
+    "policy_row": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "source": {
+     "status": "present",
+     "surface": "morning session",
+     "evidence": "from the morning session"
+    },
+    "destination": {
+     "status": "present",
+     "surface": "afternoon session",
+     "evidence": "to the afternoon session"
+    },
+    "child_set": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    },
+    "audit_sink": {
+     "status": "absent",
+     "surface": null,
+     "evidence": null
+    }
+   },
+   "nodes": [
+    {
+     "id": "n1",
+     "op": "read",
+     "status": "present",
+     "evidence": "Check the numbers first",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [],
+     "commutes_with": []
+    },
+    {
+     "id": "n2",
+     "op": "write",
+     "status": "present",
+     "evidence": "do both updates",
+     "args": {
+      "action": "move",
+      "target": "source",
+      "value": "to destination"
+     },
+     "depends_on": [
+      "n1"
+     ],
+     "commutes_with": []
+    },
+    {
+     "id": "n3",
+     "op": "verify",
+     "status": "present",
+     "evidence": "then confirm",
+     "args": {
+      "target": "source"
+     },
+     "depends_on": [
+      "n2"
+     ],
+     "commutes_with": []
+    }
+   ],
+   "termination": {
+    "status": "present",
+    "evidence": "then confirm"
+   }
+  },
+  "gold_ir": null
+ }
+]

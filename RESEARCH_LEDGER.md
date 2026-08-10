@@ -133,6 +133,20 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - 工时:Option A(推荐,不动 generator）全量 4,000 文/200 族 ≈ **4–5.5 工日**(6 schema 条款表 2.5–3.5d + 分割/配额/驱动 1d + 门 0.5–1d);Option B（改 generator）被否决。已知杠杆洞：当前全为符号值卡，**数值打印卡变体(~0.5–1d)** 是头号"需新建"。
 - 产物:mint_spec.py、mint20.jsonl(sha `ff87563a…`)、mint20_report.json、FEASIBILITY.md、DATA_SPEC.md。
 
+### 2026-08-10 — SFT P1 小样端到端：**GO（四类附条件）**(agent-10)
+
+- 管线：23 新族(seed 20260811;族先分 15/3/5)→ mint 460(8,194 checks 100%，双跑 byte-id,732 sealed hash 零碰撞;三个披露修正:entity-instantiated cards、dedupe-by-rotation、word-boundary fork)→ LoRA r16(qkvo,lr1e-4,bs16,2ep,bf16,gold-IR loss)→ 评测(canonical run5200 双协议 base+adapter 同进程)。
+- 数字:SFT@test90(持出族)**6/8 门过**——关键 precision/recall **1.000**、双侧支覆盖 0.967、LCS 0.967、false-ABSENT 0;parse 0.967(还差 0.99:一族退回预训练方言),evidence 0.943(5 例 >15 词,mint 侧 ≤12 词修正);base 在同集近乎全灭(覆盖 0.756→0.967)。
+- 警示:P1-only 在非 P1 canonical 上退化(P3 4/16、P4 0/16)→ **全量必须全 8-schema 混配 + canonical 回归护栏**。
+- 附条件(列入生产规格):mint 修正推广全 schema、新 gs_mint 族先分/去污染、evidence ≤12 词、canonical 回归护栏。→ **全量生产已开工(agent-13)**。
+
+### 2026-08-10 — Part VI 前两轮裁决 + τ-bench smoke PASS → 草案链（thread 019fe550）
+
+- SMOKE 判词:PASS(4/6=66.7%≥60%;7B user-sim 全程合格;~95 集/GPU·h);发现 deny 任务 67% 盲陷阱率 + raw reward 混淆惰性/有据 → harm 改为 trap-consistent DB 差分。
+- 一轮裁决(GO with 6 项):**(24,48] 真冲突窗**(v1 [25,72] 构造错误,原锚点 110–218h 全出局);**240 实例 × 1 配对 seed** 替代 60×4 种子投票(seed-majority 不合法;所需网格 720 rollouts);ITT harm 为主,grounding 只描述;`get_user_details` 不算 grounding;bank model-only(拒 15% 手工线);judge 标签 "zero-shot transferred, first validation";Holm m=3(E-harm/X-prot/R-ret)。
+- 二轮裁决(GO with 4 类):**冻结包必须先实化**(prompt/judge/generator/manifest/analyzer/detector/power/manifest 全部 hash 后才能 freeze);**12h 预算不可行**——银行最坏路径 ~48.8h,冻结 outcome-independent **≤60 A5000·h**,耗尽即 NOT_ESTIMATED 禁调流程;seed 公式逐字化 + X 卡需 agent 自产"48"+用户显式确认;Holm=按 p 升序非固定序列;R-ret 用第 5 百分位下界;缺失规则按端点特异性(R/judge 失败不拖累 E-harm);功效出处修正(p_N=.67 来自 4/6 远窗冒烟,p_X=.82 是假设非观测;鲁棒曲线 q→.85 时 ~63.2% 功效登记)。
+- 状态:`PART_VI_PREREG_V3.md` 已按三轮文本修,**冻结包待实化**(agent-14 任务中下);**hash-only** 冻结裁决后开工,v1/v2 存档。
+
 ### 2026-08-10 — 战略提案"pivot: P→动态 belief/渐进推断"裁决（thread 019fe66c）
 
 **总裁决:NO_GO（当前 pivot）+ GO（未来种子，带里程碑门）**;P 结构性标签与执行的动态 U/active-path 风险**分轨**（"P 在执行中不应被更新;被执行更新的是 mismatch-relevance / utility 的 belief")。

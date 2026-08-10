@@ -1,0 +1,322 @@
+{
+ "by_kind": {
+  "test": {
+   "instruction": 23,
+   "memory": 67
+  },
+  "train": {
+   "instruction": 75,
+   "memory": 225
+  },
+  "val": {
+   "instruction": 15,
+   "memory": 45
+  }
+ },
+ "by_stratum": {
+  "test": {
+   "crm_escalate_J1": 31,
+   "crm_escalate_J2": 18,
+   "inv_overstock_J1": 20,
+   "inv_overstock_J2": 21
+  },
+  "train": {
+   "crm_escalate_J1": 92,
+   "crm_escalate_J2": 62,
+   "inv_overstock_J1": 64,
+   "inv_overstock_J2": 82
+  },
+  "val": {
+   "crm_escalate_J1": 20,
+   "crm_escalate_J2": 6,
+   "inv_overstock_J1": 16,
+   "inv_overstock_J2": 18
+  }
+ },
+ "checks_failed": [],
+ "checks_pass_rate": 1.0,
+ "checks_total": 8194,
+ "counts": {
+  "minted_total": 460,
+  "test": 90,
+  "test_minted_excluded": 10,
+  "train": 300,
+  "val": 60
+ },
+ "decontamination": {
+  "collisions": 0,
+  "corpus": "tasks_sealed.instruction + memories_sealed.text + pairs.jsonl unique texts",
+  "n_reference_hashes": 732
+ },
+ "dedupe_by_rotation": {
+  "slots_with_rotation_gt0": 32,
+  "slots_with_variant_gt0": 0,
+  "total_card_slots": 345
+ },
+ "family_plan": [
+  {
+   "a00_partner": 15,
+   "a10_partner": 1,
+   "group": "test",
+   "idx": 0,
+   "join_depth": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 4
+  },
+  {
+   "a00_partner": 16,
+   "a10_partner": 0,
+   "group": "train",
+   "idx": 1,
+   "join_depth": 1,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 46
+  },
+  {
+   "a00_partner": 19,
+   "a10_partner": 3,
+   "group": "test",
+   "idx": 2,
+   "join_depth": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 7
+  },
+  {
+   "a00_partner": 6,
+   "a10_partner": 2,
+   "group": "train",
+   "idx": 3,
+   "join_depth": 1,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 39
+  },
+  {
+   "a00_partner": 7,
+   "a10_partner": 11,
+   "group": "train",
+   "idx": 4,
+   "join_depth": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 7
+  },
+  {
+   "a00_partner": 20,
+   "a10_partner": 16,
+   "group": "train",
+   "idx": 5,
+   "join_depth": 2,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 72
+  },
+  {
+   "a00_partner": 1,
+   "a10_partner": 15,
+   "group": "train",
+   "idx": 6,
+   "join_depth": 2,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 3
+  },
+  {
+   "a00_partner": 12,
+   "a10_partner": 18,
+   "group": "train",
+   "idx": 7,
+   "join_depth": 2,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 35
+  },
+  {
+   "a00_partner": 21,
+   "a10_partner": 17,
+   "group": "test",
+   "idx": 8,
+   "join_depth": 2,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 9
+  },
+  {
+   "a00_partner": 4,
+   "a10_partner": 6,
+   "group": "test",
+   "idx": 9,
+   "join_depth": 2,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 68
+  },
+  {
+   "a00_partner": 7,
+   "a10_partner": 1,
+   "group": "train",
+   "idx": 10,
+   "join_depth": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 8
+  },
+  {
+   "a00_partner": 6,
+   "a10_partner": 14,
+   "group": "test",
+   "idx": 11,
+   "join_depth": 1,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 67
+  },
+  {
+   "a00_partner": 15,
+   "a10_partner": 3,
+   "group": "train",
+   "idx": 12,
+   "join_depth": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 6
+  },
+  {
+   "a00_partner": 16,
+   "a10_partner": 20,
+   "group": "train",
+   "idx": 13,
+   "join_depth": 1,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 47
+  },
+  {
+   "a00_partner": 19,
+   "a10_partner": 11,
+   "group": "train",
+   "idx": 14,
+   "join_depth": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 3
+  },
+  {
+   "a00_partner": 12,
+   "a10_partner": 18,
+   "group": "train",
+   "idx": 15,
+   "join_depth": 2,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 54
+  },
+  {
+   "a00_partner": 1,
+   "a10_partner": 9,
+   "group": "train",
+   "idx": 16,
+   "join_depth": 2,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 3
+  },
+  {
+   "a00_partner": 4,
+   "a10_partner": 6,
+   "group": "val",
+   "idx": 17,
+   "join_depth": 2,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 78
+  },
+  {
+   "a00_partner": 21,
+   "a10_partner": 15,
+   "group": "train",
+   "idx": 18,
+   "join_depth": 2,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 3
+  },
+  {
+   "a00_partner": 0,
+   "a10_partner": 8,
+   "group": "train",
+   "idx": 19,
+   "join_depth": 2,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 72
+  },
+  {
+   "a00_partner": 19,
+   "a10_partner": 1,
+   "group": "val",
+   "idx": 20,
+   "join_depth": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 6
+  },
+  {
+   "a00_partner": 16,
+   "a10_partner": 4,
+   "group": "val",
+   "idx": 21,
+   "join_depth": 1,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 54
+  },
+  {
+   "a00_partner": 7,
+   "a10_partner": 3,
+   "group": "train",
+   "idx": 22,
+   "join_depth": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+   "theta": 8
+  }
+ ],
+ "group_rule": "rank by sha1(gs|group|idx) within (schema,join_depth) stratum; quotas {('crm_escalate', 1): (5, 1, 2), ('crm_escalate', 2): (3, 0, 1), ('inv_overstock', 1): (3, 1, 1), ('inv_overstock', 2): (4, 1, 1)}",
+ "gs_mint": 20260811,
+ "hashes": {
+  "minted_all": "8c2c0bf03f6d67b1becaa65161e28eb096bda67edb99222c476c084556140798",
+  "test": "24d9dd6bbf1efa45c2d3d067ee99d963c1ca12367384a41c9b51d99047e0bb8d",
+  "train": "8c6af91f1de076a19f239863356cfb50733d7bc9f47043d98042e152758d6521",
+  "val": "30649f4b68c89a4fe9e0292a2c8f835fb99f81d72dbe2b4103fa9c60370985c6"
+ },
+ "mix": {
+  "test": {
+   "near_miss": 25,
+   "same": 46,
+   "unrelated": 19
+  },
+  "train": {
+   "near_miss": 90,
+   "same": 150,
+   "unrelated": 60
+  },
+  "val": {
+   "near_miss": 18,
+   "same": 30,
+   "unrelated": 12
+  }
+ },
+ "n_families": 23,
+ "per_family_quota": "4 sib instr + 1 nm instr + 4 A11 + 2 A10 + 5 A01 + 4 A00 = 20",
+ "provenance_note": "A00 = generator's unrelated-partner rule (different signature, different domain) restricted to the P1 slice => opposite join-depth, cross domain. A01 s=4 = documented extra slot (same nm roles, 5th card style via the Latin formula). Cards are ENTITY-INSTANTIATED at mint time (concrete email/SKU parenthesized into the roles id-phrase) because entity-generic P1 card cores are param-free and collide byte-for-byte with sealed benchmark memories (162/345 naive cards); labels never enter model input.",
+ "sealed_seed_held_out": 20260807,
+ "test_selection": "5 test families mint 100; test.jsonl = first 18/family by pair_order_key = 90",
+ "value_policy_counts": {
+  "numeric": 65,
+  "symbolic": 395
+ }
+}

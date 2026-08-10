@@ -1,0 +1,3454 @@
+{
+ "gates": {
+  "parse": 0.99,
+  "evidence_verbatim": 0.99,
+  "critical_precision": 0.95,
+  "critical_recall": 0.9,
+  "critical_recall_per_archetype": 0.85,
+  "false_ABSENT": 0.05,
+  "both_side_joint_branch_coverage": 0.8,
+  "lcs": 0.9
+ },
+ "blocks": {
+  "base_test90": {
+   "n": 90,
+   "n_valid": 68,
+   "parse": 0.7555555555555555,
+   "parse_first_pass": 0.7555555555555555,
+   "evidence_verbatim": 0.6029411764705882,
+   "evidence_span_level": {
+    "n": 732,
+    "bad": 40,
+    "rate": 0.9453551912568307
+   },
+   "both_side_joint_branch_coverage": 0.7555555555555555,
+   "lcs": 0.7555555555555555,
+   "fields": {
+    "pred_attribute": {
+     "n_app": 68,
+     "n_na": 0,
+     "n_unmeas": 22,
+     "agree": 68,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 68,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "pred_op": {
+     "n_app": 68,
+     "n_na": 0,
+     "n_unmeas": 22,
+     "agree": 68,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 68,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "pred_value": {
+     "n_app": 39,
+     "n_na": 0,
+     "n_unmeas": 51,
+     "agree": 37,
+     "disagree": 2,
+     "missing": 0,
+     "all_rows": 0.9487179487179487,
+     "present_only": 0.9487179487179487,
+     "worst_archetype": 0.9487179487179487,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 39,
+       "all_rows": 0.9487179487179487,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 2,
+      "missing": 0
+     },
+     "disagree_examples_keys": [
+      [
+       "t90:mem:f9:s0:A10",
+       "contradiction"
+      ],
+      [
+       "t90:mem:f8:s3:A11",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "pred_polarity": {
+     "n_app": 68,
+     "n_na": 0,
+     "n_unmeas": 22,
+     "agree": 68,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 68,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "pred_all": {
+     "n_app": 39,
+     "n_na": 0,
+     "n_unmeas": 51,
+     "agree": 37,
+     "disagree": 2,
+     "missing": 0,
+     "all_rows": 0.9487179487179487,
+     "present_only": 0.9487179487179487,
+     "worst_archetype": 0.9487179487179487,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 39,
+       "all_rows": 0.9487179487179487,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 2,
+      "missing": 0
+     },
+     "disagree_examples_keys": [
+      [
+       "t90:mem:f9:s0:A10",
+       "contradiction"
+      ],
+      [
+       "t90:mem:f8:s3:A11",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "branch_effects": {
+     "n_app": 68,
+     "n_na": 0,
+     "n_unmeas": 22,
+     "agree": 68,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 68,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "direction": {
+     "n_app": 0,
+     "n_na": 68,
+     "n_unmeas": 22,
+     "agree": 0,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": null,
+     "present_only": null,
+     "worst_archetype": null,
+     "per_archetype": {},
+     "false_absent": null,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "scope": {
+     "n_app": 0,
+     "n_na": 68,
+     "n_unmeas": 22,
+     "agree": 0,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": null,
+     "present_only": null,
+     "worst_archetype": null,
+     "per_archetype": {},
+     "false_absent": null,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "archive_capture": {
+     "n_app": 0,
+     "n_na": 68,
+     "n_unmeas": 22,
+     "agree": 0,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": null,
+     "present_only": null,
+     "worst_archetype": null,
+     "per_archetype": {},
+     "false_absent": null,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "roles_required": {
+     "n_app": 68,
+     "n_na": 0,
+     "n_unmeas": 22,
+     "agree": 68,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 68,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "slot_level": {
+      "n_slots": 92,
+      "present_rate": 1.0,
+      "absent_rate": 0.0,
+      "unknown_rate": 0.0,
+      "per_archetype": {
+       "conditional_write": {
+        "present_rate": 1.0,
+        "absent_rate": 0.0,
+        "unknown_rate": 0.0
+       }
+      }
+     },
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "termination": {
+     "n_app": 68,
+     "n_na": 0,
+     "n_unmeas": 22,
+     "agree": 68,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 68,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "branch_presence": {
+     "context_only": true,
+     "has_branch_overall": 0.7555555555555555,
+     "n": 90,
+     "n_has_branch": 68,
+     "per_archetype": {
+      "conditional_write": {
+       "n": 90,
+       "has_branch_rate": 0.7555555555555555
+      }
+     },
+     "note": "fraction of IRs containing >=1 branch node (op==branch, any status); the predicate/effects payload may sit on a non-branch carrier (see corpus.carrier_mix)"
+    }
+   },
+   "critical_recall": 0.9487179487179487,
+   "critical_precision": 0.9487179487179487,
+   "critical_recall_per_archetype": {
+    "conditional_write": {
+     "n_app": 39,
+     "all_rows": 0.9487179487179487,
+     "false_absent": 0.0
+    }
+   },
+   "false_ABSENT": 0.0,
+   "gates": {
+    "parse": false,
+    "evidence_verbatim": false,
+    "critical_precision": false,
+    "critical_recall": true,
+    "critical_recall_per_archetype": true,
+    "false_ABSENT": true,
+    "both_side_joint_branch_coverage": false,
+    "lcs": false
+   },
+   "gates_pass": false,
+   "gold_exact": {
+    "n": 68,
+    "rates": {
+     "full_ir_exact": 0.0,
+     "exact_attribute": 1.0,
+     "exact_op": 1.0,
+     "exact_value": 0.4411764705882353,
+     "exact_polarity": 1.0,
+     "exact_then_effects": 0.6764705882352942,
+     "exact_else_effects": 0.6764705882352942
+    },
+    "role_status_confusion": {
+     "audit_sink gold=absent ir=absent": 68,
+     "child_set gold=absent ir=absent": 68,
+     "destination gold=absent ir=absent": 68,
+     "policy_row gold=absent ir=absent": 44,
+     "policy_row gold=present ir=present": 24,
+     "source gold=absent ir=absent": 68,
+     "subject_row gold=present ir=present": 68
+    }
+   }
+  },
+  "sft_test90": {
+   "n": 90,
+   "n_valid": 87,
+   "parse": 0.9666666666666667,
+   "parse_first_pass": 0.9666666666666667,
+   "evidence_verbatim": 0.9425287356321839,
+   "evidence_span_level": {
+    "n": 845,
+    "bad": 5,
+    "rate": 0.9940828402366864
+   },
+   "both_side_joint_branch_coverage": 0.9666666666666667,
+   "lcs": 0.9666666666666667,
+   "fields": {
+    "pred_attribute": {
+     "n_app": 87,
+     "n_na": 0,
+     "n_unmeas": 3,
+     "agree": 87,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 87,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "pred_op": {
+     "n_app": 87,
+     "n_na": 0,
+     "n_unmeas": 3,
+     "agree": 87,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 87,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "pred_value": {
+     "n_app": 51,
+     "n_na": 0,
+     "n_unmeas": 39,
+     "agree": 51,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 51,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "pred_polarity": {
+     "n_app": 87,
+     "n_na": 0,
+     "n_unmeas": 3,
+     "agree": 87,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 87,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "pred_all": {
+     "n_app": 51,
+     "n_na": 0,
+     "n_unmeas": 39,
+     "agree": 51,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 51,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "branch_effects": {
+     "n_app": 87,
+     "n_na": 0,
+     "n_unmeas": 3,
+     "agree": 87,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 87,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "direction": {
+     "n_app": 0,
+     "n_na": 87,
+     "n_unmeas": 3,
+     "agree": 0,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": null,
+     "present_only": null,
+     "worst_archetype": null,
+     "per_archetype": {},
+     "false_absent": null,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "scope": {
+     "n_app": 0,
+     "n_na": 87,
+     "n_unmeas": 3,
+     "agree": 0,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": null,
+     "present_only": null,
+     "worst_archetype": null,
+     "per_archetype": {},
+     "false_absent": null,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "archive_capture": {
+     "n_app": 0,
+     "n_na": 87,
+     "n_unmeas": 3,
+     "agree": 0,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": null,
+     "present_only": null,
+     "worst_archetype": null,
+     "per_archetype": {},
+     "false_absent": null,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "roles_required": {
+     "n_app": 87,
+     "n_na": 0,
+     "n_unmeas": 3,
+     "agree": 87,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 87,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "slot_level": {
+      "n_slots": 123,
+      "present_rate": 1.0,
+      "absent_rate": 0.0,
+      "unknown_rate": 0.0,
+      "per_archetype": {
+       "conditional_write": {
+        "present_rate": 1.0,
+        "absent_rate": 0.0,
+        "unknown_rate": 0.0
+       }
+      }
+     },
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "termination": {
+     "n_app": 87,
+     "n_na": 0,
+     "n_unmeas": 3,
+     "agree": 87,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": 1.0,
+     "present_only": 1.0,
+     "worst_archetype": 1.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 87,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": true,
+      "per_archetype_ok": true,
+      "false_absent_ok": true,
+      "PASS": true
+     },
+     "veto_eligibility": "HARD VETO"
+    },
+    "branch_presence": {
+     "context_only": true,
+     "has_branch_overall": 0.9666666666666667,
+     "n": 90,
+     "n_has_branch": 87,
+     "per_archetype": {
+      "conditional_write": {
+       "n": 90,
+       "has_branch_rate": 0.9666666666666667
+      }
+     },
+     "note": "fraction of IRs containing >=1 branch node (op==branch, any status); the predicate/effects payload may sit on a non-branch carrier (see corpus.carrier_mix)"
+    }
+   },
+   "critical_recall": 1.0,
+   "critical_precision": 1.0,
+   "critical_recall_per_archetype": {
+    "conditional_write": {
+     "n_app": 51,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_ABSENT": 0.0,
+   "gates": {
+    "parse": false,
+    "evidence_verbatim": false,
+    "critical_precision": true,
+    "critical_recall": true,
+    "critical_recall_per_archetype": true,
+    "false_ABSENT": true,
+    "both_side_joint_branch_coverage": true,
+    "lcs": true
+   },
+   "gates_pass": false,
+   "gold_exact": {
+    "n": 87,
+    "rates": {
+     "full_ir_exact": 0.8735632183908046,
+     "exact_attribute": 1.0,
+     "exact_op": 1.0,
+     "exact_value": 1.0,
+     "exact_polarity": 1.0,
+     "exact_then_effects": 1.0,
+     "exact_else_effects": 1.0
+    },
+    "role_status_confusion": {
+     "audit_sink gold=absent ir=absent": 87,
+     "child_set gold=absent ir=absent": 87,
+     "destination gold=absent ir=absent": 87,
+     "policy_row gold=absent ir=absent": 51,
+     "policy_row gold=present ir=present": 36,
+     "source gold=absent ir=absent": 87,
+     "subject_row gold=present ir=present": 87
+    }
+   }
+  },
+  "base_canon80": {
+   "n": 80,
+   "n_valid": 80,
+   "parse": 1.0,
+   "parse_first_pass": 0.7625,
+   "evidence_verbatim": 0.2,
+   "evidence_span_level": {
+    "n": 836,
+    "bad": 195,
+    "rate": 0.7667464114832536
+   },
+   "both_side_joint_branch_coverage": 0.425,
+   "lcs": 0.6166666666666667,
+   "fields": {
+    "pred_attribute": {
+     "n_app": 80,
+     "n_na": 0,
+     "n_unmeas": 0,
+     "agree": 28,
+     "disagree": 36,
+     "missing": 16,
+     "all_rows": 0.35,
+     "present_only": 0.4375,
+     "worst_archetype": 0.0625,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 24,
+       "all_rows": 0.4583333333333333,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.08333333333333333,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.0625,
+       "false_absent": 0.0
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.875,
+       "false_absent": 0.0625
+      }
+     },
+     "false_absent": 0.0125,
+     "n_disagree_missing": {
+      "contradiction": 36,
+      "missing": 16
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:47c5ca809c880563",
+       "contradiction"
+      ],
+      [
+       "instruction:95cf9c19c7b4489e",
+       "contradiction"
+      ],
+      [
+       "instruction:aacb9178f0f4d4ab",
+       "contradiction"
+      ],
+      [
+       "instruction:956f65b4df5ef7d6",
+       "contradiction"
+      ],
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:551020f39e3f173b",
+       "contradiction"
+      ],
+      [
+       "instruction:1000f0a1e512aace",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:45cd04538aa73731",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:acc7f0ec9c400167",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "contradiction"
+      ],
+      [
+       "instruction:f6d487c8096b1b28",
+       "contradiction"
+      ],
+      [
+       "instruction:d3c41f57c0e5d50c",
+       "contradiction"
+      ],
+      [
+       "instruction:1de8da7deaa3642d",
+       "contradiction"
+      ],
+      [
+       "instruction:04e5a242f82a4722",
+       "contradiction"
+      ],
+      [
+       "instruction:48dce3b485daab45",
+       "contradiction"
+      ],
+      [
+       "instruction:c0145d03c196aab4",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ],
+      [
+       "instruction:ebe7bed3b506b218",
+       "contradiction"
+      ],
+      [
+       "instruction:4e8ffff870f57a79",
+       "contradiction"
+      ],
+      [
+       "instruction:8536da17b071d86b",
+       "contradiction"
+      ],
+      [
+       "instruction:cc8b7a95139983c3",
+       "contradiction"
+      ],
+      [
+       "instruction:1d99fde92911be2b",
+       "contradiction"
+      ],
+      [
+       "instruction:d16e80cafda7f5d7",
+       "contradiction"
+      ],
+      [
+       "instruction:f6207ddc1b5f160b",
+       "contradiction"
+      ],
+      [
+       "instruction:bafb8d848be7b495",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:fbbe711a94eeee5b",
+      "instruction:1d01617f6932fc74",
+      "instruction:63eb2a3a37ad328d",
+      "instruction:78e4f2f449a6f267",
+      "instruction:985a8ead5caae1f3",
+      "instruction:183d17a03688b299",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:9ab85bb8855c5b9d",
+      "instruction:cf87f98723d4c889",
+      "instruction:72aa425daef0eccc",
+      "instruction:3160982fb6e5950d",
+      "instruction:bf3dbe310b0bb39a",
+      "instruction:e9da5e131748330d",
+      "instruction:53b792936d3ebe57",
+      "instruction:4fabf98d10aa5497"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "pred_op": {
+     "n_app": 80,
+     "n_na": 0,
+     "n_unmeas": 0,
+     "agree": 54,
+     "disagree": 10,
+     "missing": 16,
+     "all_rows": 0.675,
+     "present_only": 0.84375,
+     "worst_archetype": 0.375,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 24,
+       "all_rows": 0.9166666666666666,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.5,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.375,
+       "false_absent": 0.0
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.875,
+       "false_absent": 0.0625
+      }
+     },
+     "false_absent": 0.0125,
+     "n_disagree_missing": {
+      "contradiction": 10,
+      "missing": 16
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:1000f0a1e512aace",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:45cd04538aa73731",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:c0145d03c196aab4",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ],
+      [
+       "instruction:ebe7bed3b506b218",
+       "contradiction"
+      ],
+      [
+       "instruction:4e8ffff870f57a79",
+       "contradiction"
+      ],
+      [
+       "instruction:8536da17b071d86b",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:fbbe711a94eeee5b",
+      "instruction:1d01617f6932fc74",
+      "instruction:63eb2a3a37ad328d",
+      "instruction:78e4f2f449a6f267",
+      "instruction:985a8ead5caae1f3",
+      "instruction:183d17a03688b299",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:9ab85bb8855c5b9d",
+      "instruction:cf87f98723d4c889",
+      "instruction:72aa425daef0eccc",
+      "instruction:3160982fb6e5950d",
+      "instruction:bf3dbe310b0bb39a",
+      "instruction:e9da5e131748330d",
+      "instruction:53b792936d3ebe57",
+      "instruction:4fabf98d10aa5497"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "pred_value": {
+     "n_app": 80,
+     "n_na": 0,
+     "n_unmeas": 0,
+     "agree": 53,
+     "disagree": 11,
+     "missing": 16,
+     "all_rows": 0.6625,
+     "present_only": 0.828125,
+     "worst_archetype": 0.375,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 24,
+       "all_rows": 0.9166666666666666,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.4583333333333333,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.375,
+       "false_absent": 0.0
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.875,
+       "false_absent": 0.0625
+      }
+     },
+     "false_absent": 0.0125,
+     "n_disagree_missing": {
+      "contradiction": 11,
+      "missing": 16
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:1000f0a1e512aace",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:45cd04538aa73731",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:c0145d03c196aab4",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ],
+      [
+       "instruction:ebe7bed3b506b218",
+       "contradiction"
+      ],
+      [
+       "instruction:4e8ffff870f57a79",
+       "contradiction"
+      ],
+      [
+       "instruction:8536da17b071d86b",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:fbbe711a94eeee5b",
+      "instruction:1d01617f6932fc74",
+      "instruction:63eb2a3a37ad328d",
+      "instruction:78e4f2f449a6f267",
+      "instruction:985a8ead5caae1f3",
+      "instruction:183d17a03688b299",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:9ab85bb8855c5b9d",
+      "instruction:cf87f98723d4c889",
+      "instruction:72aa425daef0eccc",
+      "instruction:3160982fb6e5950d",
+      "instruction:bf3dbe310b0bb39a",
+      "instruction:e9da5e131748330d",
+      "instruction:53b792936d3ebe57",
+      "instruction:4fabf98d10aa5497"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "pred_polarity": {
+     "n_app": 80,
+     "n_na": 0,
+     "n_unmeas": 0,
+     "agree": 45,
+     "disagree": 19,
+     "missing": 16,
+     "all_rows": 0.5625,
+     "present_only": 0.703125,
+     "worst_archetype": 0.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 24,
+       "all_rows": 0.9166666666666666,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.375,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.875,
+       "false_absent": 0.0625
+      }
+     },
+     "false_absent": 0.0125,
+     "n_disagree_missing": {
+      "contradiction": 19,
+      "missing": 16
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:8716fedf7c195417",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:45cd04538aa73731",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:acc7f0ec9c400167",
+       "contradiction"
+      ],
+      [
+       "instruction:e2e46f7d10c88a3e",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "contradiction"
+      ],
+      [
+       "instruction:48dce3b485daab45",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ],
+      [
+       "instruction:ebe7bed3b506b218",
+       "contradiction"
+      ],
+      [
+       "instruction:4e8ffff870f57a79",
+       "contradiction"
+      ],
+      [
+       "instruction:8536da17b071d86b",
+       "contradiction"
+      ],
+      [
+       "instruction:cc8b7a95139983c3",
+       "contradiction"
+      ],
+      [
+       "instruction:1d99fde92911be2b",
+       "contradiction"
+      ],
+      [
+       "instruction:d16e80cafda7f5d7",
+       "contradiction"
+      ],
+      [
+       "instruction:97e7c9b9aec737d2",
+       "contradiction"
+      ],
+      [
+       "instruction:829bc379210f74a1",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:fbbe711a94eeee5b",
+      "instruction:1d01617f6932fc74",
+      "instruction:63eb2a3a37ad328d",
+      "instruction:78e4f2f449a6f267",
+      "instruction:985a8ead5caae1f3",
+      "instruction:183d17a03688b299",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:9ab85bb8855c5b9d",
+      "instruction:cf87f98723d4c889",
+      "instruction:72aa425daef0eccc",
+      "instruction:3160982fb6e5950d",
+      "instruction:bf3dbe310b0bb39a",
+      "instruction:e9da5e131748330d",
+      "instruction:53b792936d3ebe57",
+      "instruction:4fabf98d10aa5497"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "pred_all": {
+     "n_app": 80,
+     "n_na": 0,
+     "n_unmeas": 0,
+     "agree": 26,
+     "disagree": 38,
+     "missing": 16,
+     "all_rows": 0.325,
+     "present_only": 0.40625,
+     "worst_archetype": 0.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 24,
+       "all_rows": 0.4583333333333333,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.041666666666666664,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.875,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 38,
+      "missing": 16
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:47c5ca809c880563",
+       "contradiction"
+      ],
+      [
+       "instruction:95cf9c19c7b4489e",
+       "contradiction"
+      ],
+      [
+       "instruction:aacb9178f0f4d4ab",
+       "contradiction"
+      ],
+      [
+       "instruction:956f65b4df5ef7d6",
+       "contradiction"
+      ],
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:551020f39e3f173b",
+       "contradiction"
+      ],
+      [
+       "instruction:1000f0a1e512aace",
+       "contradiction"
+      ],
+      [
+       "instruction:8716fedf7c195417",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:45cd04538aa73731",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:acc7f0ec9c400167",
+       "contradiction"
+      ],
+      [
+       "instruction:e2e46f7d10c88a3e",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "contradiction"
+      ],
+      [
+       "instruction:f6d487c8096b1b28",
+       "contradiction"
+      ],
+      [
+       "instruction:d3c41f57c0e5d50c",
+       "contradiction"
+      ],
+      [
+       "instruction:1de8da7deaa3642d",
+       "contradiction"
+      ],
+      [
+       "instruction:04e5a242f82a4722",
+       "contradiction"
+      ],
+      [
+       "instruction:48dce3b485daab45",
+       "contradiction"
+      ],
+      [
+       "instruction:c0145d03c196aab4",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ],
+      [
+       "instruction:ebe7bed3b506b218",
+       "contradiction"
+      ],
+      [
+       "instruction:4e8ffff870f57a79",
+       "contradiction"
+      ],
+      [
+       "instruction:8536da17b071d86b",
+       "contradiction"
+      ],
+      [
+       "instruction:cc8b7a95139983c3",
+       "contradiction"
+      ],
+      [
+       "instruction:1d99fde92911be2b",
+       "contradiction"
+      ],
+      [
+       "instruction:d16e80cafda7f5d7",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:fbbe711a94eeee5b",
+      "instruction:1d01617f6932fc74",
+      "instruction:63eb2a3a37ad328d",
+      "instruction:78e4f2f449a6f267",
+      "instruction:985a8ead5caae1f3",
+      "instruction:183d17a03688b299",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:9ab85bb8855c5b9d",
+      "instruction:cf87f98723d4c889",
+      "instruction:72aa425daef0eccc",
+      "instruction:3160982fb6e5950d",
+      "instruction:bf3dbe310b0bb39a",
+      "instruction:e9da5e131748330d",
+      "instruction:53b792936d3ebe57",
+      "instruction:4fabf98d10aa5497"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "branch_effects": {
+     "n_app": 80,
+     "n_na": 0,
+     "n_unmeas": 0,
+     "agree": 31,
+     "disagree": 45,
+     "missing": 4,
+     "all_rows": 0.3875,
+     "present_only": 0.40789473684210525,
+     "worst_archetype": 0.125,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 24,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.125,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.125,
+       "false_absent": 0.0
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.125,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 45,
+      "missing": 4
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:aeeacc575a8df50a",
+       "missing"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "contradiction"
+      ],
+      [
+       "instruction:551020f39e3f173b",
+       "missing"
+      ],
+      [
+       "instruction:1000f0a1e512aace",
+       "contradiction"
+      ],
+      [
+       "instruction:8716fedf7c195417",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "missing"
+      ],
+      [
+       "instruction:45cd04538aa73731",
+       "missing"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "missing"
+      ],
+      [
+       "instruction:acc7f0ec9c400167",
+       "missing"
+      ],
+      [
+       "instruction:78e4f2f449a6f267",
+       "missing"
+      ],
+      [
+       "instruction:e2e46f7d10c88a3e",
+       "missing"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "missing"
+      ],
+      [
+       "instruction:a6420175160a3748",
+       "missing"
+      ],
+      [
+       "instruction:de16b004e7e88af1",
+       "missing"
+      ],
+      [
+       "instruction:e7d776e7c2dc78f2",
+       "missing"
+      ],
+      [
+       "instruction:df0c1127794e2acd",
+       "missing"
+      ],
+      [
+       "instruction:d788754298cf2bd5",
+       "missing"
+      ],
+      [
+       "instruction:8a7466eaad22e205",
+       "missing"
+      ],
+      [
+       "instruction:7f458d91dce1db6e",
+       "missing"
+      ],
+      [
+       "instruction:985a8ead5caae1f3",
+       "contradiction"
+      ],
+      [
+       "instruction:48dce3b485daab45",
+       "contradiction"
+      ],
+      [
+       "instruction:c0145d03c196aab4",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:eafce7e77eed5445",
+       "contradiction"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "missing"
+      ],
+      [
+       "instruction:ebe7bed3b506b218",
+       "missing"
+      ],
+      [
+       "instruction:4e8ffff870f57a79",
+       "missing"
+      ],
+      [
+       "instruction:8536da17b071d86b",
+       "missing"
+      ],
+      [
+       "instruction:cc8b7a95139983c3",
+       "missing"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:1d01617f6932fc74",
+      "instruction:ca57dcbba09095f2",
+      "instruction:53b792936d3ebe57",
+      "instruction:4fabf98d10aa5497"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "direction": {
+     "n_app": 24,
+     "n_na": 56,
+     "n_unmeas": 0,
+     "agree": 9,
+     "disagree": 12,
+     "missing": 3,
+     "all_rows": 0.375,
+     "present_only": 0.42857142857142855,
+     "worst_archetype": 0.375,
+     "per_archetype": {
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.375,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 12,
+      "missing": 3
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:1d01617f6932fc74",
+       "contradiction"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "contradiction"
+      ],
+      [
+       "instruction:551020f39e3f173b",
+       "contradiction"
+      ],
+      [
+       "instruction:8716fedf7c195417",
+       "contradiction"
+      ],
+      [
+       "instruction:48dce3b485daab45",
+       "contradiction"
+      ],
+      [
+       "instruction:ca57dcbba09095f2",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:e9da5e131748330d",
+       "contradiction"
+      ],
+      [
+       "instruction:829bc379210f74a1",
+       "contradiction"
+      ],
+      [
+       "instruction:4fb9970c86f04087",
+       "contradiction"
+      ],
+      [
+       "instruction:4fabf98d10aa5497",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:eafce7e77eed5445",
+      "instruction:29839a89de45ca7b",
+      "instruction:53b792936d3ebe57"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "scope": {
+     "n_app": 32,
+     "n_na": 48,
+     "n_unmeas": 0,
+     "agree": 20,
+     "disagree": 10,
+     "missing": 2,
+     "all_rows": 0.625,
+     "present_only": 0.6666666666666666,
+     "worst_archetype": 0.4375,
+     "per_archetype": {
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.4375,
+       "false_absent": 0.0
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.8125,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 10,
+      "missing": 2
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:63eb2a3a37ad328d",
+       "missing"
+      ],
+      [
+       "instruction:acc7f0ec9c400167",
+       "contradiction"
+      ],
+      [
+       "instruction:e2e46f7d10c88a3e",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "missing"
+      ],
+      [
+       "instruction:df0c1127794e2acd",
+       "contradiction"
+      ],
+      [
+       "instruction:7f458d91dce1db6e",
+       "contradiction"
+      ],
+      [
+       "instruction:cc8b7a95139983c3",
+       "contradiction"
+      ],
+      [
+       "instruction:1d99fde92911be2b",
+       "contradiction"
+      ],
+      [
+       "instruction:d16e80cafda7f5d7",
+       "missing"
+      ],
+      [
+       "instruction:d6912406be4b5972",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:78e4f2f449a6f267",
+      "instruction:9ab85bb8855c5b9d"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "archive_capture": {
+     "n_app": 16,
+     "n_na": 64,
+     "n_unmeas": 0,
+     "agree": 12,
+     "disagree": 4,
+     "missing": 0,
+     "all_rows": 0.75,
+     "present_only": 0.75,
+     "worst_archetype": 0.75,
+     "per_archetype": {
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.75,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 4,
+      "missing": 0
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:de16b004e7e88af1",
+       "missing"
+      ],
+      [
+       "instruction:df0c1127794e2acd",
+       "missing"
+      ],
+      [
+       "instruction:6ae87eb054e66be7",
+       "missing"
+      ],
+      [
+       "instruction:cf87f98723d4c889",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "roles_required": {
+     "n_app": 80,
+     "n_na": 0,
+     "n_unmeas": 0,
+     "agree": 41,
+     "disagree": 39,
+     "missing": 0,
+     "all_rows": 0.5125,
+     "present_only": 0.5125,
+     "worst_archetype": 0.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 24,
+       "all_rows": 0.9583333333333334,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.5416666666666666,
+       "false_absent": 0.16666666666666666
+      },
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.3125,
+       "false_absent": 0.5
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.0,
+       "false_absent": 0.9375
+      }
+     },
+     "false_absent": 0.3375,
+     "n_disagree_missing": {
+      "contradiction": 12,
+      "missing": 0
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:fbbe711a94eeee5b",
+       "missing"
+      ],
+      [
+       "instruction:1d01617f6932fc74",
+       "missing"
+      ],
+      [
+       "instruction:551020f39e3f173b",
+       "absent"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "absent"
+      ],
+      [
+       "instruction:63eb2a3a37ad328d",
+       "missing"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "absent"
+      ],
+      [
+       "instruction:acc7f0ec9c400167",
+       "absent"
+      ],
+      [
+       "instruction:78e4f2f449a6f267",
+       "missing"
+      ],
+      [
+       "instruction:e2e46f7d10c88a3e",
+       "absent"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "absent"
+      ],
+      [
+       "instruction:a6420175160a3748",
+       "absent"
+      ],
+      [
+       "instruction:0c24b2410bee2292",
+       "absent"
+      ],
+      [
+       "instruction:de16b004e7e88af1",
+       "absent"
+      ],
+      [
+       "instruction:e7d776e7c2dc78f2",
+       "absent"
+      ],
+      [
+       "instruction:df0c1127794e2acd",
+       "absent"
+      ],
+      [
+       "instruction:d788754298cf2bd5",
+       "absent"
+      ],
+      [
+       "instruction:8a7466eaad22e205",
+       "absent"
+      ],
+      [
+       "instruction:7f458d91dce1db6e",
+       "absent"
+      ],
+      [
+       "instruction:985a8ead5caae1f3",
+       "missing"
+      ],
+      [
+       "instruction:183d17a03688b299",
+       "missing"
+      ],
+      [
+       "instruction:ca57dcbba09095f2",
+       "missing"
+      ],
+      [
+       "instruction:eafce7e77eed5445",
+       "missing"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "absent"
+      ],
+      [
+       "instruction:cc8b7a95139983c3",
+       "absent"
+      ],
+      [
+       "instruction:1d99fde92911be2b",
+       "absent"
+      ],
+      [
+       "instruction:9ab85bb8855c5b9d",
+       "missing"
+      ],
+      [
+       "instruction:d16e80cafda7f5d7",
+       "absent"
+      ],
+      [
+       "instruction:6ae87eb054e66be7",
+       "absent"
+      ],
+      [
+       "instruction:90aa5235c96e6920",
+       "absent"
+      ],
+      [
+       "instruction:511da15b4a1409ef",
+       "absent"
+      ]
+     ],
+     "missing_examples_keys": [],
+     "slot_level": {
+      "n_slots": 172,
+      "present_rate": 0.5523255813953488,
+      "absent_rate": 0.28488372093023256,
+      "unknown_rate": 0.16279069767441862,
+      "per_archetype": {
+       "conditional_write": {
+        "present_rate": 0.9285714285714286,
+        "absent_rate": 0.0,
+        "unknown_rate": 0.07142857142857142
+       },
+       "two_row_transfer": {
+        "present_rate": 0.5416666666666666,
+        "absent_rate": 0.16666666666666666,
+        "unknown_rate": 0.2916666666666667
+       },
+       "aggregate_gate": {
+        "present_rate": 0.5625,
+        "absent_rate": 0.25,
+        "unknown_rate": 0.1875
+       },
+       "delete_after_capture": {
+        "present_rate": 0.3333333333333333,
+        "absent_rate": 0.6041666666666666,
+        "unknown_rate": 0.0625
+       }
+      }
+     },
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "termination": {
+     "n_app": 80,
+     "n_na": 0,
+     "n_unmeas": 0,
+     "agree": 40,
+     "disagree": 28,
+     "missing": 12,
+     "all_rows": 0.5,
+     "present_only": 0.5882352941176471,
+     "worst_archetype": 0.16666666666666666,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 24,
+       "all_rows": 0.9583333333333334,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 24,
+       "all_rows": 0.16666666666666666,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 16,
+       "all_rows": 0.25,
+       "false_absent": 0.0
+      },
+      "delete_after_capture": {
+       "n_app": 16,
+       "all_rows": 0.5625,
+       "false_absent": 0.0625
+      }
+     },
+     "false_absent": 0.0125,
+     "n_disagree_missing": {
+      "contradiction": 27,
+      "missing": 12
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "contradiction"
+      ],
+      [
+       "instruction:1000f0a1e512aace",
+       "contradiction"
+      ],
+      [
+       "instruction:8716fedf7c195417",
+       "contradiction"
+      ],
+      [
+       "instruction:45cd04538aa73731",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:acc7f0ec9c400167",
+       "contradiction"
+      ],
+      [
+       "instruction:e2e46f7d10c88a3e",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "contradiction"
+      ],
+      [
+       "instruction:a6420175160a3748",
+       "contradiction"
+      ],
+      [
+       "instruction:de16b004e7e88af1",
+       "contradiction"
+      ],
+      [
+       "instruction:d788754298cf2bd5",
+       "contradiction"
+      ],
+      [
+       "instruction:48dce3b485daab45",
+       "contradiction"
+      ],
+      [
+       "instruction:c0145d03c196aab4",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "contradiction"
+      ],
+      [
+       "instruction:8536da17b071d86b",
+       "contradiction"
+      ],
+      [
+       "instruction:cc8b7a95139983c3",
+       "contradiction"
+      ],
+      [
+       "instruction:1d99fde92911be2b",
+       "contradiction"
+      ],
+      [
+       "instruction:d16e80cafda7f5d7",
+       "contradiction"
+      ],
+      [
+       "instruction:6ae87eb054e66be7",
+       "contradiction"
+      ],
+      [
+       "instruction:9d94edc16b74d0cf",
+       "contradiction"
+      ],
+      [
+       "instruction:72aa425daef0eccc",
+       "absent"
+      ],
+      [
+       "instruction:97e7c9b9aec737d2",
+       "contradiction"
+      ],
+      [
+       "instruction:c5ec863759c5e268",
+       "contradiction"
+      ],
+      [
+       "instruction:829bc379210f74a1",
+       "contradiction"
+      ],
+      [
+       "instruction:53b792936d3ebe57",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:fbbe711a94eeee5b",
+      "instruction:1d01617f6932fc74",
+      "instruction:63eb2a3a37ad328d",
+      "instruction:78e4f2f449a6f267",
+      "instruction:985a8ead5caae1f3",
+      "instruction:183d17a03688b299",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:9ab85bb8855c5b9d",
+      "instruction:cf87f98723d4c889",
+      "instruction:bf3dbe310b0bb39a",
+      "instruction:e9da5e131748330d"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "branch_presence": {
+     "context_only": true,
+     "has_branch_overall": 0.5375,
+     "n": 80,
+     "n_has_branch": 43,
+     "per_archetype": {
+      "aggregate_gate": {
+       "n": 16,
+       "has_branch_rate": 0.1875
+      },
+      "conditional_write": {
+       "n": 24,
+       "has_branch_rate": 0.7083333333333334
+      },
+      "delete_after_capture": {
+       "n": 16,
+       "has_branch_rate": 0.8125
+      },
+      "two_row_transfer": {
+       "n": 24,
+       "has_branch_rate": 0.4166666666666667
+      }
+     },
+     "note": "fraction of IRs containing >=1 branch node (op==branch, any status); the predicate/effects payload may sit on a non-branch carrier (see corpus.carrier_mix)"
+    }
+   },
+   "critical_recall": 0.325,
+   "critical_precision": 0.40625,
+   "critical_recall_per_archetype": {
+    "conditional_write": {
+     "n_app": 24,
+     "all_rows": 0.4583333333333333,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 24,
+     "all_rows": 0.041666666666666664,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 16,
+     "all_rows": 0.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 16,
+     "all_rows": 0.875,
+     "false_absent": 0.0
+    }
+   },
+   "false_ABSENT": 0.3375,
+   "gates": {
+    "parse": true,
+    "evidence_verbatim": false,
+    "critical_precision": false,
+    "critical_recall": false,
+    "critical_recall_per_archetype": false,
+    "false_ABSENT": false,
+    "both_side_joint_branch_coverage": false,
+    "lcs": false
+   },
+   "gates_pass": false
+  },
+  "sft_canon80": {
+   "n": 80,
+   "n_valid": 45,
+   "parse": 0.5625,
+   "parse_first_pass": 0.5625,
+   "evidence_verbatim": 0.6222222222222222,
+   "evidence_span_level": {
+    "n": 405,
+    "bad": 45,
+    "rate": 0.8888888888888888
+   },
+   "both_side_joint_branch_coverage": 0.3375,
+   "lcs": 0.4281250000000001,
+   "fields": {
+    "pred_attribute": {
+     "n_app": 45,
+     "n_na": 0,
+     "n_unmeas": 35,
+     "agree": 12,
+     "disagree": 26,
+     "missing": 7,
+     "all_rows": 0.26666666666666666,
+     "present_only": 0.3157894736842105,
+     "worst_archetype": 0.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 23,
+       "all_rows": 0.5217391304347826,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 26,
+      "missing": 7
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:47c5ca809c880563",
+       "contradiction"
+      ],
+      [
+       "instruction:95cf9c19c7b4489e",
+       "contradiction"
+      ],
+      [
+       "instruction:aacb9178f0f4d4ab",
+       "contradiction"
+      ],
+      [
+       "instruction:956f65b4df5ef7d6",
+       "contradiction"
+      ],
+      [
+       "instruction:fbbe711a94eeee5b",
+       "contradiction"
+      ],
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "contradiction"
+      ],
+      [
+       "instruction:f6d487c8096b1b28",
+       "contradiction"
+      ],
+      [
+       "instruction:d3c41f57c0e5d50c",
+       "contradiction"
+      ],
+      [
+       "instruction:1de8da7deaa3642d",
+       "contradiction"
+      ],
+      [
+       "instruction:04e5a242f82a4722",
+       "contradiction"
+      ],
+      [
+       "instruction:985a8ead5caae1f3",
+       "contradiction"
+      ],
+      [
+       "instruction:183d17a03688b299",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ],
+      [
+       "instruction:bf3dbe310b0bb39a",
+       "contradiction"
+      ],
+      [
+       "instruction:f6207ddc1b5f160b",
+       "contradiction"
+      ],
+      [
+       "instruction:6cf21dff7cc4013d",
+       "contradiction"
+      ],
+      [
+       "instruction:c5ec863759c5e268",
+       "contradiction"
+      ],
+      [
+       "instruction:53b792936d3ebe57",
+       "contradiction"
+      ],
+      [
+       "instruction:4fabf98d10aa5497",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:1d01617f6932fc74",
+      "instruction:551020f39e3f173b",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:e9da5e131748330d",
+      "instruction:4fb9970c86f04087",
+      "instruction:3e01ae3f789b022d"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "pred_op": {
+     "n_app": 45,
+     "n_na": 0,
+     "n_unmeas": 35,
+     "agree": 35,
+     "disagree": 3,
+     "missing": 7,
+     "all_rows": 0.7777777777777778,
+     "present_only": 0.9210526315789473,
+     "worst_archetype": 0.25,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 23,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.6111111111111112,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.25,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 3,
+      "missing": 7
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:1d01617f6932fc74",
+      "instruction:551020f39e3f173b",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:e9da5e131748330d",
+      "instruction:4fb9970c86f04087",
+      "instruction:3e01ae3f789b022d"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "positive-only veto / soft evidence (unknown-if-absent)"
+    },
+    "pred_value": {
+     "n_app": 45,
+     "n_na": 0,
+     "n_unmeas": 35,
+     "agree": 35,
+     "disagree": 3,
+     "missing": 7,
+     "all_rows": 0.7777777777777778,
+     "present_only": 0.9210526315789473,
+     "worst_archetype": 0.25,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 23,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.6111111111111112,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.25,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 3,
+      "missing": 7
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:1d01617f6932fc74",
+      "instruction:551020f39e3f173b",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:e9da5e131748330d",
+      "instruction:4fb9970c86f04087",
+      "instruction:3e01ae3f789b022d"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "positive-only veto / soft evidence (unknown-if-absent)"
+    },
+    "pred_polarity": {
+     "n_app": 45,
+     "n_na": 0,
+     "n_unmeas": 35,
+     "agree": 30,
+     "disagree": 8,
+     "missing": 7,
+     "all_rows": 0.6666666666666666,
+     "present_only": 0.7894736842105263,
+     "worst_archetype": 0.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 23,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.3888888888888889,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 8,
+      "missing": 7
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ],
+      [
+       "instruction:4fabf98d10aa5497",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:1d01617f6932fc74",
+      "instruction:551020f39e3f173b",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:e9da5e131748330d",
+      "instruction:4fb9970c86f04087",
+      "instruction:3e01ae3f789b022d"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "pred_all": {
+     "n_app": 45,
+     "n_na": 0,
+     "n_unmeas": 35,
+     "agree": 12,
+     "disagree": 26,
+     "missing": 7,
+     "all_rows": 0.26666666666666666,
+     "present_only": 0.3157894736842105,
+     "worst_archetype": 0.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 23,
+       "all_rows": 0.5217391304347826,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 26,
+      "missing": 7
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:47c5ca809c880563",
+       "contradiction"
+      ],
+      [
+       "instruction:95cf9c19c7b4489e",
+       "contradiction"
+      ],
+      [
+       "instruction:aacb9178f0f4d4ab",
+       "contradiction"
+      ],
+      [
+       "instruction:956f65b4df5ef7d6",
+       "contradiction"
+      ],
+      [
+       "instruction:fbbe711a94eeee5b",
+       "contradiction"
+      ],
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "contradiction"
+      ],
+      [
+       "instruction:f6d487c8096b1b28",
+       "contradiction"
+      ],
+      [
+       "instruction:d3c41f57c0e5d50c",
+       "contradiction"
+      ],
+      [
+       "instruction:1de8da7deaa3642d",
+       "contradiction"
+      ],
+      [
+       "instruction:04e5a242f82a4722",
+       "contradiction"
+      ],
+      [
+       "instruction:985a8ead5caae1f3",
+       "contradiction"
+      ],
+      [
+       "instruction:183d17a03688b299",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ],
+      [
+       "instruction:bf3dbe310b0bb39a",
+       "contradiction"
+      ],
+      [
+       "instruction:f6207ddc1b5f160b",
+       "contradiction"
+      ],
+      [
+       "instruction:6cf21dff7cc4013d",
+       "contradiction"
+      ],
+      [
+       "instruction:c5ec863759c5e268",
+       "contradiction"
+      ],
+      [
+       "instruction:53b792936d3ebe57",
+       "contradiction"
+      ],
+      [
+       "instruction:4fabf98d10aa5497",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:1d01617f6932fc74",
+      "instruction:551020f39e3f173b",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:e9da5e131748330d",
+      "instruction:4fb9970c86f04087",
+      "instruction:3e01ae3f789b022d"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "branch_effects": {
+     "n_app": 45,
+     "n_na": 0,
+     "n_unmeas": 35,
+     "agree": 25,
+     "disagree": 13,
+     "missing": 7,
+     "all_rows": 0.5555555555555556,
+     "present_only": 0.6578947368421053,
+     "worst_archetype": 0.0,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 23,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.5,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 13,
+      "missing": 7
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:fbbe711a94eeee5b",
+       "missing"
+      ],
+      [
+       "instruction:2df94011366c9cf6",
+       "missing"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "missing"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "missing"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "missing"
+      ],
+      [
+       "instruction:985a8ead5caae1f3",
+       "missing"
+      ],
+      [
+       "instruction:183d17a03688b299",
+       "missing"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "missing"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "missing"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "missing"
+      ],
+      [
+       "instruction:c5ec863759c5e268",
+       "missing"
+      ],
+      [
+       "instruction:53b792936d3ebe57",
+       "missing"
+      ],
+      [
+       "instruction:4fabf98d10aa5497",
+       "missing"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:1d01617f6932fc74",
+      "instruction:551020f39e3f173b",
+      "instruction:ca57dcbba09095f2",
+      "instruction:eafce7e77eed5445",
+      "instruction:e9da5e131748330d",
+      "instruction:4fb9970c86f04087",
+      "instruction:3e01ae3f789b022d"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "direction": {
+     "n_app": 18,
+     "n_na": 27,
+     "n_unmeas": 35,
+     "agree": 7,
+     "disagree": 9,
+     "missing": 2,
+     "all_rows": 0.3888888888888889,
+     "present_only": 0.4375,
+     "worst_archetype": 0.3888888888888889,
+     "per_archetype": {
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.3888888888888889,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 9,
+      "missing": 2
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:1d01617f6932fc74",
+       "contradiction"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "contradiction"
+      ],
+      [
+       "instruction:551020f39e3f173b",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:eafce7e77eed5445",
+       "contradiction"
+      ],
+      [
+       "instruction:e9da5e131748330d",
+       "contradiction"
+      ],
+      [
+       "instruction:4fabf98d10aa5497",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:29839a89de45ca7b",
+      "instruction:53b792936d3ebe57"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "scope": {
+     "n_app": 4,
+     "n_na": 41,
+     "n_unmeas": 35,
+     "agree": 0,
+     "disagree": 3,
+     "missing": 1,
+     "all_rows": 0.0,
+     "present_only": 0.0,
+     "worst_archetype": 0.0,
+     "per_archetype": {
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.0,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 3,
+      "missing": 1
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:e8bd27079fc3cb96",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [
+      "instruction:0be22a4c35009d7f"
+     ],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "archive_capture": {
+     "n_app": 0,
+     "n_na": 45,
+     "n_unmeas": 35,
+     "agree": 0,
+     "disagree": 0,
+     "missing": 0,
+     "all_rows": null,
+     "present_only": null,
+     "worst_archetype": null,
+     "per_archetype": {},
+     "false_absent": null,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "roles_required": {
+     "n_app": 45,
+     "n_na": 0,
+     "n_unmeas": 35,
+     "agree": 39,
+     "disagree": 6,
+     "missing": 0,
+     "all_rows": 0.8666666666666667,
+     "present_only": 0.8666666666666667,
+     "worst_archetype": 0.7222222222222222,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 23,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.7222222222222222,
+       "false_absent": 0.2777777777777778
+      },
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.75,
+       "false_absent": 0.25
+      }
+     },
+     "false_absent": 0.13333333333333333,
+     "n_disagree_missing": {
+      "contradiction": 0,
+      "missing": 0
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:fbbe711a94eeee5b",
+       "absent"
+      ],
+      [
+       "instruction:2df94011366c9cf6",
+       "absent"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "absent"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "absent"
+      ],
+      [
+       "instruction:29839a89de45ca7b",
+       "absent"
+      ],
+      [
+       "instruction:53b792936d3ebe57",
+       "absent"
+      ]
+     ],
+     "missing_examples_keys": [],
+     "slot_level": {
+      "n_slots": 74,
+      "present_rate": 0.8378378378378378,
+      "absent_rate": 0.16216216216216217,
+      "unknown_rate": 0.0,
+      "per_archetype": {
+       "conditional_write": {
+        "present_rate": 1.0,
+        "absent_rate": 0.0,
+        "unknown_rate": 0.0
+       },
+       "two_row_transfer": {
+        "present_rate": 0.7222222222222222,
+        "absent_rate": 0.2777777777777778,
+        "unknown_rate": 0.0
+       },
+       "aggregate_gate": {
+        "present_rate": 0.8333333333333334,
+        "absent_rate": 0.16666666666666666,
+        "unknown_rate": 0.0
+       }
+      }
+     },
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": false,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "termination": {
+     "n_app": 45,
+     "n_na": 0,
+     "n_unmeas": 35,
+     "agree": 35,
+     "disagree": 10,
+     "missing": 0,
+     "all_rows": 0.7777777777777778,
+     "present_only": 0.7777777777777778,
+     "worst_archetype": 0.25,
+     "per_archetype": {
+      "conditional_write": {
+       "n_app": 23,
+       "all_rows": 1.0,
+       "false_absent": 0.0
+      },
+      "two_row_transfer": {
+       "n_app": 18,
+       "all_rows": 0.6111111111111112,
+       "false_absent": 0.0
+      },
+      "aggregate_gate": {
+       "n_app": 4,
+       "all_rows": 0.25,
+       "false_absent": 0.0
+      }
+     },
+     "false_absent": 0.0,
+     "n_disagree_missing": {
+      "contradiction": 10,
+      "missing": 0
+     },
+     "disagree_examples_keys": [
+      [
+       "instruction:fbbe711a94eeee5b",
+       "contradiction"
+      ],
+      [
+       "instruction:2df94011366c9cf6",
+       "contradiction"
+      ],
+      [
+       "instruction:aeeacc575a8df50a",
+       "contradiction"
+      ],
+      [
+       "instruction:efe1b524a9d4a68c",
+       "contradiction"
+      ],
+      [
+       "instruction:d0c854bbc452cf18",
+       "contradiction"
+      ],
+      [
+       "instruction:c019afb5193cad2d",
+       "contradiction"
+      ],
+      [
+       "instruction:0be22a4c35009d7f",
+       "contradiction"
+      ],
+      [
+       "instruction:8589dc7a41b71812",
+       "contradiction"
+      ],
+      [
+       "instruction:53b792936d3ebe57",
+       "contradiction"
+      ],
+      [
+       "instruction:4fabf98d10aa5497",
+       "contradiction"
+      ]
+     ],
+     "missing_examples_keys": [],
+     "gate": {
+      "overall_ok": false,
+      "per_archetype_ok": false,
+      "false_absent_ok": true,
+      "PASS": false
+     },
+     "veto_eligibility": "excluded from veto fields"
+    },
+    "branch_presence": {
+     "context_only": true,
+     "has_branch_overall": 0.475,
+     "n": 80,
+     "n_has_branch": 38,
+     "per_archetype": {
+      "aggregate_gate": {
+       "n": 16,
+       "has_branch_rate": 0.25
+      },
+      "conditional_write": {
+       "n": 24,
+       "has_branch_rate": 0.9583333333333334
+      },
+      "delete_after_capture": {
+       "n": 16,
+       "has_branch_rate": 0.0
+      },
+      "two_row_transfer": {
+       "n": 24,
+       "has_branch_rate": 0.4583333333333333
+      }
+     },
+     "note": "fraction of IRs containing >=1 branch node (op==branch, any status); the predicate/effects payload may sit on a non-branch carrier (see corpus.carrier_mix)"
+    }
+   },
+   "critical_recall": 0.26666666666666666,
+   "critical_precision": 0.3157894736842105,
+   "critical_recall_per_archetype": {
+    "conditional_write": {
+     "n_app": 23,
+     "all_rows": 0.5217391304347826,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 18,
+     "all_rows": 0.0,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 4,
+     "all_rows": 0.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_ABSENT": 0.13333333333333333,
+   "gates": {
+    "parse": false,
+    "evidence_verbatim": false,
+    "critical_precision": false,
+    "critical_recall": false,
+    "critical_recall_per_archetype": false,
+    "false_ABSENT": false,
+    "both_side_joint_branch_coverage": false,
+    "lcs": false
+   },
+   "gates_pass": false
+  }
+ },
+ "notes": {
+  "parse": "valid after <=1 repair retry; parse_first_pass alongside",
+  "field_aggregates_scope": "valid rows only; invalid rows marked UNMEAS (so they inflate n_unmeas, excluded from denominators) and enter parse/coverage/lcs denominators",
+  "both_side_joint_branch_coverage_def": "valid IR with branch node carrying predicate + non-empty then_effects + else_effects; denominator = ALL rows",
+  "critical_recall_def": "pred_all all-rows (missing=disagreement, UNMEAS excluded)",
+  "critical_precision_def": "pred_all present-only",
+  "false_ABSENT_def": "max(roles_required, termination) audit false-absent rates (row level)",
+  "lcs_def": "mean LCS(expected, ir_ops)/len(expected), invalid = 0",
+  "minted_pred_attr_anchor": "gold IR attribute tokens (sealed-field anchor would be a D1 artifact on minted data); canon80 keeps audited sealed-join anchors"
+ },
+ "hashes": {
+  "base_test90": "c844f5def8478f1e",
+  "sft_test90": "d63738ac06d01079",
+  "sft_canon80": "34904e70a07b28c5"
+ }
+}
