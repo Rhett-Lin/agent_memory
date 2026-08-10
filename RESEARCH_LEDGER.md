@@ -117,6 +117,13 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - **Part V-A 修正案（最终可行性修正，不再允许后续缩减/加码/复用）**:(1) 源-尝试契约：ex-ante 角色分立（target/R/X 源）,(candidate,role) 全局 ≤8 尝试+缓存，首次成功可用、8 败永久失格，接受源唯一;(2) 池构造改为**确定性元组约束匹配**（同 obj+recep,max min(n_heat,n_cool),tie 按 sha 序，恰 50+50 否则 NOT_ESTIMATED，校准/headroom 同池预留）;(3) 网格 **50+50 × 4 seeds = 400 triads(1,200 rollouts)**;(4) 预算 harvest ≤30h、全程 ≤60h;(5) 功效 v2:E-harm 唯一前瞻功率端点,**计划功率 ≈76–78%,低于 80%**;(6) **GPU 前可行动门槛**:cache-consistent 模拟 10,000 seeds,两类型第 5 百分位 ≥50 @ p=0.17，不过 → 不开 GPU 直接 NOT_ESTIMATED。
 - 状态:PART_V_A_FINAL.md + GATE_PROTOCOL Part V-A + PART_V_POWER.md v2 已冻结;**分配器实现 + 门槛模拟待跑（CPU),GPU 未启动**。
 
+### 2026-08-10 — Part V 可行动门槛：FAIL → **NOT_ESTIMATED，按最终性条款关闭**
+
+- 分配器+匹配器实现完成并冻结（allocator.py、feasibility_sim.py；与 matcher 本体逐项交叉一致；FREEZE_MANIFEST v2;builder/prompt 包 pin 复核无损）。
+- **门槛结果（10,000 seeds,cache-consistent，主解读 k=2 bundles)**:p=0.17 两类型第 5 百分位 **heat 25 / cool 23**（要求 ≥50);**任何 p、任何解读下 P(≥50)=0**——结构性天花板而非胜率问题：均衡目标每簇耗 3 同侧 + 2 异侧局，预留校准/headroom 后双侧 cool 仅 190，聚合上界 ≤38，逐元组碎片化后实分配 28/26(p=0.5 亦同）。校准/headroom 池 fill 率 ~1，不是瓶颈。
+- 终态执行：**NOT_ESTIMATED**。0 rollouts、0 outcome 检视（GPU 全程未动）。出版边界按冻结执行：论文 appendix/limitations 一句话披露"预注册主动翻转后续未达可估计门槛及原因"+"这是该环境的设计空间天花板而非 outcome 测量";台账本条全量记录；全部终态代码/模拟产物入库。
+- 后续资源：按既定分流全部转 φ+d guided 抽取修复线（Part V 的 G-struct/harvest 基建留档可复用）。
+
 ### 2026-08-09 — H-DC Deployment 章节 auto-review-loop（3 轮；round-1 thread 019fe135 因 MCP 重启丢失，rounds 2–3 thread 019fe1f2-1738-7b03-875b-190aca809be1；全程记录 `review-stage/AUTO_REVIEW.md` + `.aris/traces/auto-review-loop/2026-08-08_run01/`）
 
 **范围**：仅 H-DC deployment 章节及其支撑产物（非全文）。fix budget：LaTeX/既有数据分析/图调整；禁止新 rollout。

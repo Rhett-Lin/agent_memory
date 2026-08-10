@@ -12,6 +12,7 @@
 | 6 | H-C minimal gate | GATE_PROTOCOL Part II §11 冻结判据 | **NO_GO**：|Δτ_struct| 最大 5pp 且 CI 均跨 0；τ_trap 排序仅点估计反转 + 修正推断不显著。GPT-5.6 确认维持 NO_GO；次级信号 Δτ_replaylike=−0.158 记为 hypothesis-generating（截断/覆盖混杂未分），不作为既定发现 | 2026-08-08 |
 | 7 | H3 form×coverage 析因（fresh 32 fam × 2 models，9216 rollouts） | GATE_PROTOCOL Part III §13 冻结判定树 | **formal NO_GO + informative clarification**：冻结 GO 判据（ε_form 显著）未达；方向反（transcript ≥ script）；cov 覆盖对比 Holm m=8 下全 n.s.；robust 发现：完整 transcript 在两模型下 replay 收益实质性非零（TOST 拒绝等价）；H-C 异常记为"对覆盖/截断敏感"，不代表示形式结论。GPT-5.6：NO_GO 入账，下一步停实验写测量论文 | 2026-08-08 |
 | 8 | H-DC deployment（GATE_PROTOCOL Part IV/IV-A；12,800 rollouts） | A5 GO 判据 + auto-review-loop 3 轮外部评审 | **GO 但限档**：7B E1=+14.5pp Holm p=.012、HFR 双模型非劣成立；评审发现 188/640 oracle fallback 污染 → 结论降级为 mixed-provenance benchmark 对比（真实模型轨迹上 7B 获益未确立，交互检验证异质性显著）；真实部署验证列为 blocking follow-up（fallback-free re-harvest，需新算力，未执行）。loop 4/10→5/10→6/10 Almost 终止 | 2026-08-08/09 |
+| 9 | Part V：ALFWorld 主动 near-miss + gate 外部验证（Part V 五轮裁决冻结；Part V-A 六轮裁决修正） | Part V-A A5 可行动门槛（cache-consistent 10,000-seed 模拟） | **NOT_ESTIMATED（结构性天花板）**：池分配上界 28 heat / 26 cool < 所需 50+50（与胜率无关，逐元组碎片化所致，任何 p 下 P(≥50)=0）；按最终性条款关闭，0 rollouts；论文 appendix 一句话披露；资源转 φ+d guided 抽取线 | 2026-08-10 |
 
 ## 止损计数
 

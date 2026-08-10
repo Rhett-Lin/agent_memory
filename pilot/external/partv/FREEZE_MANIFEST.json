@@ -1,4 +1,5 @@
 {
+ "amendment": "Part V-A (frozen 2026-08-10): pool-construction amendment modules hashed pre-harvest per $A6",
  "builder": {
   "path": "../run_alfworld_check.py",
   "sha256": "96ef23ea8516fc95c11d34b7c639e7474ada4f1b9dfd0a153c036b964f11eec3",
@@ -6,19 +7,21 @@
  },
  "partv_modules": {
   "__init__.py": "0c88bac78b1daec93f4a1f536ab3aa59bbacce9b0dc1be23973f27fe0a5c0e8a",
+  "allocator.py": "8d5212ac3690d1e468130d61ae87f0b244043b87a0a3817d790a16edf65460a6",
   "analyze_gate.py": "1199c7096652322c396c7ff14a6a300b7a113eb0242c6d82fee2ddd833abb129",
   "build_cards.py": "306a37b89ca1c2c495213bf505a12c7198ff5847bf67f2007c88a3c8fe4c57b7",
   "common.py": "c183d1a7e922617468ad71acfc03d506b5fdfe85e0fe05d37f4d9d9f97dd06a7",
-  "freeze_manifest.py": "cfb0488b29ccc5c0c53a5c6fce358b3c966003c386cc1bc6ffd9adc5799c9d61",
+  "feasibility_sim.py": "78a713a7f20d126b6934746100a3a57c8969b98dc8432c4e105d7a7bf729a3ff",
+  "freeze_manifest.py": "1751004ebdc30fd5363ce5fdbbea32e9fb613ca20a911bc16cbadb0e9b5915ff",
   "gates_and_audits.py": "07022f55210bdaeee7f0255b95af0ff664d14275cae69ead909c16ab738d0668",
   "grid.py": "21c50e7566e6399b0d8038c966ca49c3f07ea310fd153c8e82f8c8de93d7be46",
   "gstruct.py": "04abce7598ec22a000b3f4340699fa92abc093b2d5feb35bfe79342ff0c1dd4d",
   "harvest.py": "1f506e9c426c4d08c0d61c103aaada7c07c5af5e89757cc8e2b72f22e75c8e5b",
   "headroom.py": "f95ff2cbab3bffce4ecede3654c4a779e8c4e3dfdca4497f289a9e505b6bf758",
-  "prepare_pools.py": "805162a278dc65d256e13ef6b7e76545a1b80659b1f9f9e27ef42af2568f2c62",
+  "prepare_pools.py": "26247706780147cd1ced1991c1cee83887669aba6a495c5ca262cb18dbc55309",
   "rollout_engine.py": "7a3030aedc049880a266287c972b43567823c36f52baf490f44b7307bb5238fe"
  },
- "power_sha256": "bd2a91861cb04d1ca9770f3d34b971ab4f2a8b9c524c3bf3c90718a735b81909",
+ "power_sha256": "b302b90d62ca1066e6e7a830a4c0e08d76e5d7b48d48ee69e833125b0fc06c04",
  "prompts": {
   "file_sha256": "46da398ab41e173155c48fde247a12e14e3b0359cb3ba0eb898370694884d739",
   "mem_A_sha256": "707adb37ca25ccb2b2955fc3a0bc9805ec8a6b980e32d5c10e29f8bd7546274b",
@@ -33,5 +36,22 @@
   "model_rev": "a09a35458c702b33eeacc393d103063234e8bc28",
   "numpy_pin": "1.26.4"
  },
- "schema": "partv.freeze.v1"
+ "schema": "partv.freeze.v2",
+ "superseded": {
+  "harvest.py": {
+   "note": "per-(target, candidate) exposure ledger with 8+8 lists superseded by the $A2 global (candidate, role) attempt cache (k=2 slots, <=8 global attempts, 8-fail permanent ineligibility); file unchanged, hash re-recorded in partv_modules above",
+   "pre_amendment_sha256": "1f506e9c426c4d08c0d61c103aaada7c07c5af5e89757cc8e2b72f22e75c8e5b",
+   "superseded_by": "allocator.SourceAttemptLedger + tuple matcher"
+  },
+  "pools_manifest.json": {
+   "note": "v1 derivation-state output is left untouched in $OUT_ROOT; the v2 manifest is produced by prepare_pools --build-v2 / allocator --build",
+   "pre_amendment_sha256": null,
+   "superseded_by": "pools_manifest_v2.json (schema partv.pools.v2)"
+  },
+  "prepare_pools.py": {
+   "note": "v1 greedy reservation order + per-attempt reservation superseded by Part V-A $A2 ex-ante role contract and $A3 tuple-constrained matching; v1 code path retained for provenance only (module docstring Part V-A block)",
+   "pre_amendment_sha256": "805162a278dc65d256e13ef6b7e76545a1b80659b1f9f9e27ef42af2568f2c62",
+   "superseded_by": "allocator.py"
+  }
+ }
 }

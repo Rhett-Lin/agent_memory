@@ -1,24 +1,26 @@
-# NEXT_ACTION — 评审阶段已完成，相机就绪前事项（2026-08-09 更新）
+# NEXT_ACTION — Part V 收官后阵线（2026-08-10 更新）
 
-**Loop 全程 + 写作评审阶段已完成**（Gate 0 → pilot/Gates → H-C/H3 → 论文初稿 → H-DC deployment → auto-review-loop 3 轮终止）。
+**论文本体已完成并被评审认可；下游验证线 Part V 已按最终性条款收官（NOT_ESTIMATED)。**
 
 ## 当下完成位置
 
-- **论文 17pp**：`iclr2027/main.pdf`（pdflatex ×2：0 错误 / 0 未定义引用 / 0 overfull），全部数字与归档 JSON 一致（评审独立复算 max 差异 0）。
-- **auto-review-loop 终止**：4/10 → 5/10 → **6/10, verdict Almost，达停止条件**（≥6 且 ready/almost）。记录：`review-stage/AUTO_REVIEW.md`(+\.html)、`REVIEW_STATE.json`(completed)、trace `.aris/traces/auto-review-loop/2026-08-08_run01/`。
-- **H-DC 结论档位**（评审认可）：mixed-provenance benchmark 对比——7B pooled E1=+14.5pp Holm p=.012、HFR 主 guardrail 双模型成立、τ_trap 次项仅 7B 成立、3B 无 pooled 获益证据（−8.4pp）；provenance 交互显著（7B +0.382 [+0.166,+0.606]）。
-- 台账已同步：`RESEARCH_LEDGER.md`（写作/评审阶段 + 外部讨论记录 2026-08-09）、`DECISION.md`（决策链第 8 行）。
+- **论文 17pp**:6/10 Almost 终止外部评审；数字与归档 JSON 一致。
+- **Part V = NOT_ESTIMATED(2026-08-10)**:ALFWorld 外部验证的可行动门槛 FAIL——池分配上界 28/26 < 50/50（结构性天花板，与胜率无关）,0 rollouts。协议终身态已登记；论文 app:alfworld 一句话披露已写；基建（G-struct/harvest/analyzer）留档。
+- **φ+d**:judge 基线 GO(AUC S=1 0.664,A10 误杀 85%);φ 抽取 NO-GO(34.8%);比较器 S2 阻塞待 guided 修复。
+- **P̂ v1 + GATE_EVAL**:P-gate 域内已达 oracle 级收益（工程可用件）。
 
-## Blocking follow-up（未执行，需新算力+裁决）
+## 下一步主线（按价值排序）
 
-- **fallback-free re-harvest + H-DC 重跑**：验证 dslice 在真实模型轨迹上的部署获益（当前未确立：+4.1pp，CI 跨 0）。受 fix budget 与 2026-08-08"停实验"裁决约束，启动前须按负结果处置规则先自析 + GPT-5.6 讨论。
+1. **φ+d guided 抽取修复**(guided decoding + FSM 缓存/负例 prompt 双轨）：目标首通 ≥90%,解锁比较器 S2(法定下限 = judge 的 A01≤19.4% 误收与 A10/A11 保留）;
+2. S2 之后：比较器五门评测（macro LOAO S=1 Δ≥+0.10、灾难门、准入门 A01≤10% 且 A11≥50%、跨表面门、策略门）;
+3. **可选**:fallback-free re-harvest(H-DC 真实部署验证，需新算力 + GPT-5.6 前置讨论）。
 
 ## 相机就绪前（可选）
 
-- 图 vector 化、模型作者匿名状态复核、reproducibility 仓库脱敏；
-- 工作区未提交改动（评审修复三轮 + 新产物）尚未 commit——待用户确认后提交。
+图 vector 化、匿名复核、repo 脱敏；appendix 的 artifact 仓库地址改真仓。
 
 ## 纪律（保持中）
 
-- Gate C cond3 放弃、TRU-Mem 不启动、power chasing 禁令、负结果处置三件套——全部按既有记录执行；
-- Part IV 预注册 provenance 以 commit 时间线披露（实现前注册不可独立验证），不再使用 "pre-registered" 称呼 Part IV/IV-A。
+- Gate C cond3 放弃、TRU-Mem 不启动、power chasing 禁令、负结果处置三件套;
+- Part V 终态纪律：未达门槛的后续实验不再重启同构设计；restart 需新预注册。
+

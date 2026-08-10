@@ -1,11 +1,43 @@
 """Part V $3.5 pool reservation + candidate lists (frozen algorithm block).
 
-ANALYSIS HYGIENE: success-rate inspection is FORBIDDEN here; this module
-never runs an episode and never looks at outcomes.  The dry-run harvest
-simulation (--dry-run) uses an explicit synthetic win probability purely to
-assess pool feasibility -- it reads no model output.
+========================================================================
+PART V-A SUPERSESSION (2026-08-10 amendment, PART_V_A_FINAL.md)
+========================================================================
+The Part V-A amendment replaces $3.5.4's greedy reservation semantics for
+pool construction.  Where the v1 logic below conflicts with the frozen
+source-attempt contract ($A2) or the tuple-constrained matching ($A3),
+THE CONTRACT WINS and the v2 pipeline in `allocator.py` is authoritative:
 
-Frozen rules implemented:
+  C1. Greedy pool-order reservation (confirmatory-heat first, attempt =
+      death) is replaced by: ex-ante role separation (one role per game)
+      + k=2 candidate slots per role per target + <=8 globally cached
+      attempts per (candidate, role) + 8-fail permanent ineligibility
+      (allocator.SourceAttemptLedger) + deterministic (obj,recep)
+      tuple-constrained matching maximizing min(n_heat, n_cool)
+      (allocator.match_allocation).
+  C2. Confirmatory grid size is now exactly 50 heat + 50 cool (else
+      NOT_ESTIMATED); calibration (20+20) and headroom (6+6 x2) are
+      reserved inside the SAME single full-pool allocation and are
+      designated FIRST (calibration, headroom-A, headroom-B, then the
+      interleaved balanced confirmatory walk) -- the v1 global pool order
+      no longer applies to designation.
+  C3. k dropped from 8 to 2; max attempts rose from 4 to 8 and are now
+      GLOBAL per (candidate, role) with a cache (attempt key
+      "candidate|role|attempt_idx", never executed twice), replacing the
+      per-(target, candidate) exposure semantics.
+  C4. The v1 functions below (cmd_build / dry_run / planned_targets) are
+      RETAINED ONLY for provenance of pools_manifest.json (schema
+      "partv.pools.v1"); that file is left untouched.  The v2 derivation
+      state lives in pools_manifest_v2.json (schema "partv.pools.v2"),
+      produced by --build-v2, which delegates to allocator.py and reuses
+      only build_game_table/screening_orders (the frozen $3.5.1/.3
+      primitives) read-only from this module.
+  C5. Feasibility of the v2 pipeline before any GPU work is gated by
+      feasibility_sim.py ($A5: 10,000 draws, seeds 20260811..20270811,
+      5th percentile of completed confirmatory counts >= 50 for both
+      types at p = 0.17).
+
+Frozen v1 rules implemented (pre-amendment record):
   $3.5.1 canonical POSIX relpath;  $3.5.3 sha256-ascending then
   np.argsort(rng_screen.random(n), kind="stable") (float ties keep sha
   order);  rng_screen = PCG64(20260809), rng_rollout = PCG64(20260810)
@@ -36,6 +68,11 @@ Documented derivation choices (discretion closed by construction):
 
 Game classes come ONLY from goal text parsed out of each game.tw-pddl
 (documented parser in common.py -- no metadata/dirname labels).
+
+ANALYSIS HYGIENE: success-rate inspection is FORBIDDEN here; this module
+never runs an episode and never looks at outcomes.  The dry-run harvest
+simulation (--dry-run) uses an explicit synthetic win probability purely to
+assess pool feasibility -- it reads no model output.
 """
 
 import argparse
@@ -60,6 +97,18 @@ POOL_SPECS = [
 ]
 OPPOSITE = {"heat": "cool", "cool": "heat"}
 MANIFEST_PATH = os.path.join(common.OUT_ROOT, "pools_manifest.json")
+
+
+def cmd_build_v2(out_path=None):
+    """Part V-A v2 build: delegate to allocator.build_manifest_v2 (C4).
+
+    The v1 manifest (pools_manifest.json, schema partv.pools.v1) is NOT
+    modified; allocator.py owns the v2 pipeline end to end and reuses only
+    the frozen $3.5.1/.3 primitives above (read-only)."""
+    from pilot.external.partv import allocator
+    path = out_path or allocator.MANIFEST_V2_PATH
+    man = allocator.build_manifest_v2(path)
+    return man, path
 
 
 # ---------------------------------------------------------------------------
@@ -291,13 +340,23 @@ def cmd_build(out_path=MANIFEST_PATH):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--build", action="store_true",
-                    help="write pools_manifest.json derivation state")
+                    help="write pools_manifest.json derivation state (v1, "
+                         "pre-amendment record only)")
+    ap.add_argument("--build-v2", action="store_true",
+                    help="Part V-A: write pools_manifest_v2.json via "
+                         "allocator.py (authoritative pool derivation)")
     ap.add_argument("--dry-run", action="store_true",
-                    help="simulate all pools with synthetic win prob")
+                    help="simulate all pools with synthetic win prob "
+                         "(v1 semantics, pre-amendment record only)")
     ap.add_argument("--sim-win-prob", type=float, default=0.5)
     ap.add_argument("--out", default=MANIFEST_PATH)
     args = ap.parse_args(argv)
-    if args.dry_run:
+    if args.build_v2:
+        man, path = cmd_build_v2()
+        print("wrote", path)
+        print(json.dumps(_jsonable(man["designation"]), indent=1,
+                         sort_keys=True))
+    elif args.dry_run:
         rep = dry_run(sim_win_prob=args.sim_win_prob)
         print(json.dumps(_jsonable(rep), indent=1, sort_keys=True))
     elif args.build:
