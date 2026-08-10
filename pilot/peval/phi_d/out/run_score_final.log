@@ -1,0 +1,4 @@
+[score] pairs=640 judgments=640 extractions=532
+[score] wrote /work1/zixuan/projects/agent_memory/pilot/peval/phi_d/out/summary.json and examples.jsonl (5 examples)
+[score] judge AUC overall=0.5971 S=1=0.6637 coverage=0.833 acc_covered=0.5929
+[score] sim_embed overall=0.6055 S=1=0.5288

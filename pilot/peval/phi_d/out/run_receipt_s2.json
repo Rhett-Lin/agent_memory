@@ -1,0 +1,11 @@
+{
+  "code_sha256": {
+    "common": "20c653cd473ce1c088e5ae6b769077c96ac884907082ce46b5d067052af9edc7",
+    "extract_phi": "5c93a3e0c274cdf72c9a0a2a3af32c2b6a7667543c2bcedeb5c8978844725c05",
+    "decomposed_judge": "a0d9158e9401f27f845fdc3b9fd2a80d2d77503f7733a8361bbd959227fa60fb",
+    "score_baselines": "67f03008f78459ccb047452467b3bc586e2c8bf0fa059c32236ab7ccec7595df"
+  },
+  "extraction_prompt_sha": "5200e56eee95af6799e3bbe8635a1585469d977eaa919f4ce1a23d11bdd37853",
+  "judge_prompt_sha": "47669c03df5602822db36105e8794a1e5bdb13b316759b9cc1732e1426e4fe0f",
+  "format_anchor": "assistant prefill (extraction: phi_ir prefix; judge: phi_judge/goal/instruction_says prefix)"
+}

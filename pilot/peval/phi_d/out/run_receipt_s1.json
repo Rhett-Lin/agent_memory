@@ -1,0 +1,13 @@
+{
+  "code_sha256": {
+    "common": "20c653cd473ce1c088e5ae6b769077c96ac884907082ce46b5d067052af9edc7",
+    "extract_phi": "f22c9015438c6d257ac63a59c074760cbf93c5ac5de52083038038e251c6830a",
+    "decomposed_judge": "60bed0b50539a175357f0d5376b27614c07274b6ce560876cdc5712454de8bdd",
+    "score_baselines": "67f03008f78459ccb047452467b3bc586e2c8bf0fa059c32236ab7ccec7595df"
+  },
+  "extraction_prompt_sha": "f5163594d56d2e3b1623563fd5f7696ec6a1e3484ee39e5b3eff2e75d2043836",
+  "judge_prompt_sha": "082bf5237e57a44edca29381af173aaf24a4e43dec9e44e2b6f36d4ad14141b2",
+  "extraction_guided": "json:IR_GUIDE_SCHEMA",
+  "judge_guided": "json:JUDGE_GUIDE_SCHEMA",
+  "note": "no PREFILL in this code state; format enforcement via vLLM guided decoding"
+}

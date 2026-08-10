@@ -1,0 +1,332 @@
+[extract] unique texts=532 done=0 todo=532
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING 08-10 01:04:58 config.py:2276] Casting torch.bfloat16 to torch.float16.
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.19s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.45s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:04<00:01,  1.47s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.50s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.46s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:19,  1.74it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:17,  1.87it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:16,  1.95it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:15,  2.04it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:02<00:14,  2.10it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:02<00:13,  2.12it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:03<00:13,  2.08it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:03<00:13,  2.05it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:04<00:13,  1.97it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:04<00:12,  1.99it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:05<00:11,  2.02it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:05<00:11,  2.06it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:06<00:10,  2.10it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:06<00:09,  2.12it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:07<00:09,  2.14it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:07<00:08,  2.17it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:08<00:08,  2.22it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:08<00:07,  2.19it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:09<00:07,  2.22it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:09<00:06,  2.26it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:09<00:06,  2.28it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:10<00:05,  2.29it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:10<00:05,  2.30it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:11<00:04,  2.29it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:11<00:04,  2.33it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:12<00:03,  2.32it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:12<00:03,  2.35it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:12<00:02,  2.37it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:13<00:02,  2.39it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:13<00:02,  2.40it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:14<00:01,  2.38it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:14<00:01,  2.38it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:15<00:00,  2.29it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:15<00:00,  2.33it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:15<00:00,  2.28it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:15<00:00,  2.20it/s]
+/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/tvm_ffi/_optional_torch_c_dlpack.py:192: UserWarning: Failed to JIT torch c dlpack extension, EnvTensorAllocator will not be enabled.
+We recommend installing via `pip install torch-c-dlpack-ext`
+  warnings.warn(
+Processed prompts:   0%|          | 0/64 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][rank0]: Traceback (most recent call last):
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner_base.py", line 116, in _wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner.py", line 1737, in execute_model
+[rank0]:     logits = self.model.compute_logits(hidden_or_intermediate_states,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/models/qwen2.py", line 487, in compute_logits
+[rank0]:     logits = self.logits_processor(self.lm_head, hidden_states,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/layers/logits_processor.py", line 77, in forward
+[rank0]:     logits = _apply_logits_processors(logits, sampling_metadata)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/layers/logits_processor.py", line 153, in _apply_logits_processors
+[rank0]:     logits_row = logits_processor(past_tokens_ids,
+[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 272, in __call__
+[rank0]:     self._ensure_ctx()
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 258, in _ensure_ctx
+[rank0]:     compiler = GrammarCompilerCache.get_compiler(self.config)
+[rank0]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 136, in get_compiler
+[rank0]:     xgr_core.TokenizerInfo.from_huggingface(
+[rank0]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: AttributeError: type object 'TokenizerInfo' has no attribute 'from_huggingface'
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 187, in <module>
+[rank0]:     main()
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 152, in main
+[rank0]:     rows = run_one_round(llm, tok, sp, jobs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 101, in run_one_round
+[rank0]:     outs = llm.generate(prompts, sp)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/utils.py", line 1021, in inner
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 462, in generate
+[rank0]:     outputs = self._run_engine(use_tqdm=use_tqdm)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 1242, in _run_engine
+[rank0]:     step_outputs = self.llm_engine.step()
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 1390, in step
+[rank0]:     outputs = self.model_executor.execute_model(
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/executor/gpu_executor.py", line 88, in execute_model
+[rank0]:     output = self.driver_worker.execute_model(execute_model_req)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/worker_base.py", line 343, in execute_model
+[rank0]:     output = self.model_runner.execute_model(
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner_base.py", line 152, in _wrapper
+[rank0]:     raise type(err)(
+[rank0]: AttributeError: Error in model execution (input dumped to /tmp/err_execute_model_input_20260810-010537.pkl): type object 'TokenizerInfo' has no attribute 'from_huggingface'
+Processed prompts:   0%|          | 0/64 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[rank0]:[W810 01:05:38.747370115 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[extract] unique texts=532 done=0 todo=532
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING 08-10 01:06:31 config.py:2276] Casting torch.bfloat16 to torch.float16.
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.19s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.41s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:04<00:01,  1.43s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.51s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.46s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:19,  1.73it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:18,  1.83it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:16,  1.89it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:16,  1.93it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:02<00:15,  1.92it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:03<00:15,  1.86it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:03<00:14,  1.92it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:04<00:13,  1.99it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:04<00:12,  2.04it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:05<00:12,  2.06it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:05<00:11,  2.12it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:06<00:10,  2.10it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:06<00:10,  2.15it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:06<00:09,  2.19it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:07<00:09,  2.21it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:07<00:08,  2.22it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:08<00:08,  2.24it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:08<00:07,  2.26it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:09<00:06,  2.29it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:09<00:06,  2.32it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:09<00:06,  2.33it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:10<00:05,  2.35it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:10<00:05,  2.28it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:11<00:04,  2.29it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:11<00:04,  2.32it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:12<00:03,  2.34it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:12<00:03,  2.35it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:12<00:02,  2.36it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:13<00:02,  2.35it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:13<00:02,  2.37it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:14<00:01,  2.36it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:14<00:01,  2.38it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:15<00:00,  2.39it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:15<00:00,  2.40it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:15<00:00,  2.36it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:15<00:00,  2.21it/s]
+/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/tvm_ffi/_optional_torch_c_dlpack.py:192: UserWarning: Failed to JIT torch c dlpack extension, EnvTensorAllocator will not be enabled.
+We recommend installing via `pip install torch-c-dlpack-ext`
+  warnings.warn(
+Processed prompts:   0%|          | 0/64 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][rank0]: Traceback (most recent call last):
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner_base.py", line 116, in _wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner.py", line 1737, in execute_model
+[rank0]:     logits = self.model.compute_logits(hidden_or_intermediate_states,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/models/qwen2.py", line 487, in compute_logits
+[rank0]:     logits = self.logits_processor(self.lm_head, hidden_states,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/layers/logits_processor.py", line 77, in forward
+[rank0]:     logits = _apply_logits_processors(logits, sampling_metadata)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/layers/logits_processor.py", line 153, in _apply_logits_processors
+[rank0]:     logits_row = logits_processor(past_tokens_ids,
+[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 272, in __call__
+[rank0]:     self._ensure_ctx()
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 258, in _ensure_ctx
+[rank0]:     compiler = GrammarCompilerCache.get_compiler(self.config)
+[rank0]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 136, in get_compiler
+[rank0]:     xgr_core.TokenizerInfo.from_huggingface(
+[rank0]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: AttributeError: type object 'TokenizerInfo' has no attribute 'from_huggingface'
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 187, in <module>
+[rank0]:     main()
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 152, in main
+[rank0]:     rows = run_one_round(llm, tok, sp, jobs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 101, in run_one_round
+[rank0]:     outs = llm.generate(prompts, sp)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/utils.py", line 1021, in inner
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 462, in generate
+[rank0]:     outputs = self._run_engine(use_tqdm=use_tqdm)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 1242, in _run_engine
+[rank0]:     step_outputs = self.llm_engine.step()
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 1390, in step
+[rank0]:     outputs = self.model_executor.execute_model(
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/executor/gpu_executor.py", line 88, in execute_model
+[rank0]:     output = self.driver_worker.execute_model(execute_model_req)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/worker_base.py", line 343, in execute_model
+[rank0]:     output = self.model_runner.execute_model(
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner_base.py", line 152, in _wrapper
+[rank0]:     raise type(err)(
+[rank0]: AttributeError: Error in model execution (input dumped to /tmp/err_execute_model_input_20260810-010711.pkl): type object 'TokenizerInfo' has no attribute 'from_huggingface'
+Processed prompts:   0%|          | 0/64 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[rank0]:[W810 01:07:12.017844816 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[extract] unique texts=532 done=0 todo=532
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING 08-10 01:08:05 config.py:2276] Casting torch.bfloat16 to torch.float16.
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.22s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.42s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:04<00:01,  1.44s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.49s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.45s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:19,  1.71it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:17,  1.86it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:16,  1.92it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:16,  1.92it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:02<00:15,  1.94it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:03<00:14,  2.00it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:03<00:13,  2.05it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:04<00:13,  2.07it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:04<00:12,  2.08it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:05<00:12,  1.98it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:05<00:12,  1.91it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:06<00:12,  1.90it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:06<00:11,  1.95it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:07<00:10,  1.93it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:07<00:10,  1.94it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:08<00:09,  1.97it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:08<00:08,  2.07it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:09<00:07,  2.13it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:09<00:07,  2.18it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:09<00:06,  2.22it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:10<00:06,  2.19it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:10<00:05,  2.23it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:11<00:05,  2.23it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:11<00:04,  2.25it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:12<00:04,  2.28it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:12<00:03,  2.30it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:12<00:03,  2.32it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:13<00:03,  2.33it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:13<00:02,  2.35it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:14<00:02,  2.36it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:14<00:01,  2.36it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:15<00:01,  2.30it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:15<00:00,  2.32it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:15<00:00,  2.31it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:16<00:00,  2.28it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:16<00:00,  2.13it/s]
+/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/tvm_ffi/_optional_torch_c_dlpack.py:192: UserWarning: Failed to JIT torch c dlpack extension, EnvTensorAllocator will not be enabled.
+We recommend installing via `pip install torch-c-dlpack-ext`
+  warnings.warn(
+Processed prompts:   0%|          | 0/64 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][rank0]: Traceback (most recent call last):
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner_base.py", line 116, in _wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner.py", line 1737, in execute_model
+[rank0]:     logits = self.model.compute_logits(hidden_or_intermediate_states,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/models/qwen2.py", line 487, in compute_logits
+[rank0]:     logits = self.logits_processor(self.lm_head, hidden_states,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/layers/logits_processor.py", line 77, in forward
+[rank0]:     logits = _apply_logits_processors(logits, sampling_metadata)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/layers/logits_processor.py", line 153, in _apply_logits_processors
+[rank0]:     logits_row = logits_processor(past_tokens_ids,
+[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 272, in __call__
+[rank0]:     self._ensure_ctx()
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 258, in _ensure_ctx
+[rank0]:     compiler = GrammarCompilerCache.get_compiler(self.config)
+[rank0]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 136, in get_compiler
+[rank0]:     xgr_core.TokenizerInfo.from_huggingface(
+[rank0]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: AttributeError: type object 'TokenizerInfo' has no attribute 'from_huggingface'
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 187, in <module>
+[rank0]:     main()
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 152, in main
+[rank0]:     rows = run_one_round(llm, tok, sp, jobs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 101, in run_one_round
+[rank0]:     outs = llm.generate(prompts, sp)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/utils.py", line 1021, in inner
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 462, in generate
+[rank0]:     outputs = self._run_engine(use_tqdm=use_tqdm)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 1242, in _run_engine
+[rank0]:     step_outputs = self.llm_engine.step()
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 1390, in step
+[rank0]:     outputs = self.model_executor.execute_model(
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/executor/gpu_executor.py", line 88, in execute_model
+[rank0]:     output = self.driver_worker.execute_model(execute_model_req)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/worker_base.py", line 343, in execute_model
+[rank0]:     output = self.model_runner.execute_model(
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner_base.py", line 152, in _wrapper
+[rank0]:     raise type(err)(
+[rank0]: AttributeError: Error in model execution (input dumped to /tmp/err_execute_model_input_20260810-010846.pkl): type object 'TokenizerInfo' has no attribute 'from_huggingface'
+Processed prompts:   0%|          | 0/64 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[rank0]:[W810 01:08:47.345806007 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[extract] unique texts=532 done=0 todo=532
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING 08-10 01:09:40 config.py:2276] Casting torch.bfloat16 to torch.float16.
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.23s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.40s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:04<00:01,  1.41s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.45s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.42s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:18,  1.80it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:17,  1.90it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:16,  1.98it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:15,  2.01it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:02<00:14,  2.03it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:02<00:14,  2.06it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:03<00:13,  2.09it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:03<00:12,  2.10it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:04<00:12,  2.12it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:04<00:11,  2.15it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:05<00:11,  2.13it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:05<00:10,  2.17it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:06<00:10,  2.18it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:06<00:09,  2.21it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:07<00:08,  2.23it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:07<00:08,  2.24it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:07<00:07,  2.28it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:08<00:07,  2.32it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:08<00:06,  2.33it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:09<00:06,  2.30it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:09<00:06,  2.28it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:10<00:05,  2.26it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:10<00:05,  2.24it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:11<00:04,  2.24it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:11<00:04,  2.29it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:11<00:03,  2.26it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:12<00:03,  2.31it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:12<00:02,  2.35it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:13<00:02,  2.37it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:13<00:02,  2.37it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:13<00:01,  2.39it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:14<00:01,  2.41it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:14<00:00,  2.43it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:15<00:00,  2.41it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:15<00:00,  2.37it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:15<00:00,  2.24it/s]
+/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/tvm_ffi/_optional_torch_c_dlpack.py:192: UserWarning: Failed to JIT torch c dlpack extension, EnvTensorAllocator will not be enabled.
+We recommend installing via `pip install torch-c-dlpack-ext`
+  warnings.warn(
+Processed prompts:   0%|          | 0/64 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][rank0]: Traceback (most recent call last):
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner_base.py", line 116, in _wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner.py", line 1737, in execute_model
+[rank0]:     logits = self.model.compute_logits(hidden_or_intermediate_states,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/models/qwen2.py", line 487, in compute_logits
+[rank0]:     logits = self.logits_processor(self.lm_head, hidden_states,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/layers/logits_processor.py", line 77, in forward
+[rank0]:     logits = _apply_logits_processors(logits, sampling_metadata)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/layers/logits_processor.py", line 153, in _apply_logits_processors
+[rank0]:     logits_row = logits_processor(past_tokens_ids,
+[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 272, in __call__
+[rank0]:     self._ensure_ctx()
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 258, in _ensure_ctx
+[rank0]:     compiler = GrammarCompilerCache.get_compiler(self.config)
+[rank0]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py", line 136, in get_compiler
+[rank0]:     xgr_core.TokenizerInfo.from_huggingface(
+[rank0]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: AttributeError: type object 'TokenizerInfo' has no attribute 'from_huggingface'
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 187, in <module>
+[rank0]:     main()
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 152, in main
+[rank0]:     rows = run_one_round(llm, tok, sp, jobs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/extract_phi.py", line 101, in run_one_round
+[rank0]:     outs = llm.generate(prompts, sp)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/utils.py", line 1021, in inner
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 462, in generate
+[rank0]:     outputs = self._run_engine(use_tqdm=use_tqdm)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 1242, in _run_engine
+[rank0]:     step_outputs = self.llm_engine.step()
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 1390, in step
+[rank0]:     outputs = self.model_executor.execute_model(
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/executor/gpu_executor.py", line 88, in execute_model
+[rank0]:     output = self.driver_worker.execute_model(execute_model_req)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/worker_base.py", line 343, in execute_model
+[rank0]:     output = self.model_runner.execute_model(
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/work1/zixuan/envs/conda_envs/causalmemagent/lib/python3.11/site-packages/vllm/worker/model_runner_base.py", line 152, in _wrapper
+[rank0]:     raise type(err)(
+[rank0]: AttributeError: Error in model execution (input dumped to /tmp/err_execute_model_input_20260810-011019.pkl): type object 'TokenizerInfo' has no attribute 'from_huggingface'
+Processed prompts:   0%|          | 0/64 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[rank0]:[W810 01:10:21.126645707 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

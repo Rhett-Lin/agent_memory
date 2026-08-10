@@ -1,0 +1,152 @@
+{
+  "judge": {
+    "auc_overall_all_pairs": 0.597060546875,
+    "auc_S1_all_pairs": 0.6637109375,
+    "n_pairs": 640,
+    "n_covered": 533,
+    "coverage": 0.8328125,
+    "auc_overall_covered_only": 0.5831712473572939,
+    "auc_S1_covered_only": 0.6710819672131147,
+    "accuracy_covered": 0.5928705440900562,
+    "accuracy_all_abstain_as_error": 0.5640625,
+    "verdict_distribution": {
+      "contradict": 430,
+      "unknown": 99,
+      "match": 103,
+      "invalid": 8
+    },
+    "per_cell": {
+      "A00": {
+        "n": 160,
+        "verdict_rates": {
+          "match": 0.0,
+          "contradict": 0.9375,
+          "unknown": 0.025,
+          "invalid": 0.0375
+        }
+      },
+      "A01": {
+        "n": 160,
+        "verdict_rates": {
+          "match": 0.19375,
+          "contradict": 0.5875,
+          "unknown": 0.21875,
+          "invalid": 0.0
+        }
+      },
+      "A10": {
+        "n": 160,
+        "verdict_rates": {
+          "match": 0.0,
+          "contradict": 0.85,
+          "unknown": 0.15,
+          "invalid": 0.0
+        }
+      },
+      "A11": {
+        "n": 160,
+        "verdict_rates": {
+          "match": 0.45,
+          "contradict": 0.3125,
+          "unknown": 0.225,
+          "invalid": 0.0125
+        }
+      }
+    },
+    "invalid_by_error_class": {
+      "schema_validation_error": 7,
+      "json_parse_error": 1
+    },
+    "invalid_rate": 0.0125
+  },
+  "extraction": {
+    "n_texts": 532,
+    "n_valid": 185,
+    "failure_rate": 0.6522556390977443,
+    "retried": 347,
+    "by_kind": {
+      "instruction": {
+        "n": 160,
+        "n_valid": 58
+      },
+      "memory": {
+        "n": 372,
+        "n_valid": 127
+      }
+    },
+    "invalid_by_error_class": {
+      "schema_validation_error": 272,
+      "json_parse_error": 75
+    },
+    "first_pass_error_classes": {
+      "json_parse_error": 226,
+      "schema_validation_error": 121
+    },
+    "status_distribution": {
+      "role:present": 301,
+      "role:absent": 809,
+      "node:present": 996,
+      "predicate.attribute:present": 187,
+      "predicate.op:present": 187,
+      "predicate.value:present": 187,
+      "predicate.polarity:present": 185,
+      "termination:present": 185,
+      "node:unknown": 9,
+      "predicate.polarity:unknown": 2
+    },
+    "evidence_presence_rate_among_present": {
+      "role": 1.0,
+      "node": 0.9939759036144579,
+      "predicate.attribute": 1.0,
+      "predicate.op": 1.0,
+      "predicate.value": 1.0,
+      "predicate.polarity": 1.0,
+      "termination": 0.9945945945945946
+    },
+    "node_op_distribution": {
+      "read": 203,
+      "branch": 187,
+      "write": 241,
+      "verify": 199,
+      "aggregate": 48,
+      "finish": 127
+    }
+  },
+  "sim_recomputed": {
+    "sim_embed": {
+      "overall": 0.605546875,
+      "S1": 0.528828125
+    },
+    "sim_tf": {
+      "overall": 0.608046875,
+      "S1": 0.59505859375
+    }
+  },
+  "registered_baselines": {
+    "sim_embed (recomputed from pairs.jsonl)": {
+      "overall": 0.6055,
+      "S1": 0.5288
+    },
+    "holistic intent judge ~ STITCH (registered)": {
+      "overall": 0.508,
+      "S1": null
+    },
+    "P-hat v1 logistic, family-CV (registered)": {
+      "overall": 0.966,
+      "S1": 0.935
+    },
+    "P-hat v1 logistic, LOAO (registered)": {
+      "overall": 0.636,
+      "S1": 0.59
+    }
+  },
+  "inputs": {
+    "pairs_jsonl_sha256": "aa33ea61935dc9c4a516bce77c0db7a6a9e0c32338e871b6c5b955a2d45b44bf",
+    "score_mapping": {
+      "match": 1.0,
+      "unknown": 0.5,
+      "contradict": 0.0
+    },
+    "abstain_rule": "invalid judge OR verdict=unknown -> score 0.5 (kept, never dropped)"
+  }
+}

@@ -103,6 +103,20 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 
 **已冻结**:`GATE_PROTOCOL.md` Part V（原文 = `pilot/external/PART_V_PREREG_V5_FINAL.md`;power artifact `PART_V_POWER.md`;prompt 包 `PART_V_PROMPTS.json`,sha256 `46da398a…`)。**未启动**：实现与 GPU 作业待用户指令；分析脚本 `analyze_gate.py` 须先于任何 outcome 检视 commit。
 
+### 2026-08-10 — φ+d S0+S1 结果（工程,非预注册实验；产物 byte-pinned + 逐行 prompt_sha 审计）
+
+- **分解判定基线：GO（作 ablation 下限）**:640/640,98.75% 有效;AUC overall 0.597 / **S=1 0.664**（压过 sim_embed 0.529、P̂ v1 LOAO 0.590;远低于 P̂ v1 域内 0.935）。性格为矛盾先验:A01 误收 19.4%、**A10 误杀 85%、A11 仅保 45%**——再次坐实"跨表面程序等价不是 lookup"。
+- **φ-IR 结构化抽取:NO-GO**:532 唯一文本仅 34.8% 合法；失败=5-role schema 漂移 + 长 evidence JSON 断链;repair 0/347。双侧 IR 合法对仅 18.1% → **比较器 S2 阻塞（未被证伪）**。救赎线：guided decoding 需 vllm/outlines 适配（FSM 缓存路径已知）。
+- 产物:`pilot/peval/phi_d/`（REPORT.md、SPEC.md、`*_run5200/4766.py` 钉版实例、out/frozen 快照）。过程事故：并发子代理撞目录 → 全部产物已按 byte-pin + prompt_sha 重推干净;rank zombie 进程已清。
+
+### 2026-08-10 — Part V 实现期池构造缺口 → 第六轮裁决（thread 019fe550,GO with mandatory amendments）
+
+- 代码包完成并冻结（`pilot/external/partv/`:analyze_gate 7/7 合成自测、prepare/rollout_engine/harvest/build_cards/gates_and_audits/headroom/grid,FREEZE_MANIFEST 全 hash 核验：builder 96ef23ea、prompt 包 46da398a 均完好）。
+- **CP 关键发现**:v5 冻结池构造（全局贪心序 + attempt=死亡 + 8 槽悬崖）在 dry-run 下 confirmatory **heat ≈39/60,cool ≈0-2/60** → 注定 NOT_ESTIMATED；静态资格 158/112 是假象（k 悬崖+元组跨角色吞并）。
+- 我先前的 A1 修正（accept-only）被裁决指出**建模错误**（确定性 seed 下复用否决候选=重复同批试验；裁决 cache-consistent 复核 p=0.17 时 50+50 达成率仅 2%)。
+- **Part V-A 修正案（最终可行性修正，不再允许后续缩减/加码/复用）**:(1) 源-尝试契约：ex-ante 角色分立（target/R/X 源）,(candidate,role) 全局 ≤8 尝试+缓存，首次成功可用、8 败永久失格，接受源唯一;(2) 池构造改为**确定性元组约束匹配**（同 obj+recep,max min(n_heat,n_cool),tie 按 sha 序，恰 50+50 否则 NOT_ESTIMATED，校准/headroom 同池预留）;(3) 网格 **50+50 × 4 seeds = 400 triads(1,200 rollouts)**;(4) 预算 harvest ≤30h、全程 ≤60h;(5) 功效 v2:E-harm 唯一前瞻功率端点,**计划功率 ≈76–78%,低于 80%**;(6) **GPU 前可行动门槛**:cache-consistent 模拟 10,000 seeds,两类型第 5 百分位 ≥50 @ p=0.17，不过 → 不开 GPU 直接 NOT_ESTIMATED。
+- 状态:PART_V_A_FINAL.md + GATE_PROTOCOL Part V-A + PART_V_POWER.md v2 已冻结;**分配器实现 + 门槛模拟待跑（CPU),GPU 未启动**。
+
 ### 2026-08-09 — H-DC Deployment 章节 auto-review-loop（3 轮；round-1 thread 019fe135 因 MCP 重启丢失，rounds 2–3 thread 019fe1f2-1738-7b03-875b-190aca809be1；全程记录 `review-stage/AUTO_REVIEW.md` + `.aris/traces/auto-review-loop/2026-08-08_run01/`）
 
 **范围**：仅 H-DC deployment 章节及其支撑产物（非全文）。fix budget：LaTeX/既有数据分析/图调整；禁止新 rollout。
