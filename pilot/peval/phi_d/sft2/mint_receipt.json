@@ -1,0 +1,2341 @@
+{
+ "by_archetype": {
+  "test": {
+   "aggregate_gate": 136,
+   "conditional_write": 130,
+   "delete_after_capture": 128,
+   "two_row_transfer": 106
+  },
+  "train": {
+   "aggregate_gate": 776,
+   "conditional_write": 735,
+   "delete_after_capture": 759,
+   "two_row_transfer": 730
+  },
+  "val": {
+   "aggregate_gate": 111,
+   "conditional_write": 134,
+   "delete_after_capture": 129,
+   "two_row_transfer": 126
+  }
+ },
+ "by_kind": {
+  "test": {
+   "instruction": 125,
+   "memory": 375
+  },
+  "train": {
+   "instruction": 750,
+   "memory": 2250
+  },
+  "val": {
+   "instruction": 125,
+   "memory": 375
+  }
+ },
+ "by_schema": {
+  "test": {
+   "cal_finalize": 77,
+   "cal_move_headcount": 52,
+   "crm_escalate": 66,
+   "crm_purge_lead": 67,
+   "inv_overstock": 64,
+   "inv_transfer": 54,
+   "ticket_gate_close": 59,
+   "ticket_purge_spam": 61
+  },
+  "train": {
+   "cal_finalize": 419,
+   "cal_move_headcount": 359,
+   "crm_escalate": 361,
+   "crm_purge_lead": 412,
+   "inv_overstock": 374,
+   "inv_transfer": 371,
+   "ticket_gate_close": 357,
+   "ticket_purge_spam": 347
+  },
+  "val": {
+   "cal_finalize": 58,
+   "cal_move_headcount": 76,
+   "crm_escalate": 62,
+   "crm_purge_lead": 58,
+   "inv_overstock": 72,
+   "inv_transfer": 50,
+   "ticket_gate_close": 53,
+   "ticket_purge_spam": 71
+  }
+ },
+ "by_stratum": {
+  "test": {
+   "cal_finalize_J1": 77,
+   "cal_move_headcount_J1": 52,
+   "crm_escalate_J1": 45,
+   "crm_escalate_J2": 21,
+   "crm_purge_lead_J1": 67,
+   "inv_overstock_J1": 20,
+   "inv_overstock_J2": 44,
+   "inv_transfer_J1": 54,
+   "ticket_gate_close_J1": 59,
+   "ticket_purge_spam_J1": 61
+  },
+  "train": {
+   "cal_finalize_J1": 419,
+   "cal_move_headcount_J1": 359,
+   "crm_escalate_J1": 208,
+   "crm_escalate_J2": 153,
+   "crm_purge_lead_J1": 412,
+   "inv_overstock_J1": 171,
+   "inv_overstock_J2": 203,
+   "inv_transfer_J1": 371,
+   "ticket_gate_close_J1": 357,
+   "ticket_purge_spam_J1": 347
+  },
+  "val": {
+   "cal_finalize_J1": 58,
+   "cal_move_headcount_J1": 76,
+   "crm_escalate_J1": 28,
+   "crm_escalate_J2": 34,
+   "crm_purge_lead_J1": 58,
+   "inv_overstock_J1": 23,
+   "inv_overstock_J2": 49,
+   "inv_transfer_J1": 50,
+   "ticket_gate_close_J1": 53,
+   "ticket_purge_spam_J1": 71
+  }
+ },
+ "checks_failed": [],
+ "checks_pass_rate": 1.0,
+ "checks_total": 82151,
+ "code_sha256": {
+  "mint_all.py": "c8db19dd8a3a5955",
+  "mint_core.py": "4ddf98a4a11909a8",
+  "mint_p1x.py": "c9bdb0366edd258b",
+  "mint_p2x.py": "8d404b357b383194",
+  "mint_p3x.py": "05a89e02a51b373e",
+  "mint_p4x.py": "69f2fe1d893f5ad8"
+ },
+ "counts": {
+  "failed_texts": 0,
+  "minted": 4000,
+  "planned": 4000,
+  "test": 500,
+  "train": 3000,
+  "val": 500
+ },
+ "decontamination": {
+  "collisions": 0,
+  "corpus": "tasks_sealed.instruction + memories_sealed.text + pairs.jsonl unique texts",
+  "n_reference_hashes": 732
+ },
+ "dedupe_by_rotation": {
+  "attempt_histogram": {
+   "v0_r0_f0": 2447,
+   "v0_r0_f1": 203,
+   "v0_r1_f0": 152,
+   "v0_r1_f1": 32,
+   "v0_r1_f2": 3,
+   "v0_r2_f0": 86,
+   "v0_r2_f1": 18,
+   "v0_r2_f2": 1,
+   "v0_r3_f0": 14,
+   "v0_r3_f1": 7,
+   "v0_r4_f0": 13,
+   "v0_r4_f1": 5,
+   "v0_r5_f0": 8,
+   "v0_r5_f1": 6,
+   "v0_r5_f2": 2,
+   "v1_r0_f0": 1,
+   "v1_r1_f0": 1,
+   "v1_r3_f0": 1
+  },
+  "failed_families": {},
+  "slots_with_filler_force_gt0": 277,
+  "slots_with_rotation_gt0": 349,
+  "slots_with_variant_gt0": 3,
+  "whitelisted_gap_counts": {
+   "cal_finalize|scope": 554,
+   "crm_escalate|pred_all": 103,
+   "crm_escalate|pred_value": 103,
+   "inv_overstock|pred_all": 97,
+   "inv_overstock|pred_value": 97,
+   "ticket_gate_close|clause_artifact": 1,
+   "ticket_gate_close|scope": 125
+  }
+ },
+ "family_plan": [
+  {
+   "a00_partner": 5,
+   "a10_partner": 1,
+   "group": "test",
+   "idx": 0,
+   "join_depth": 1,
+   "occ": 0,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 19,
+   "a10_partner": 0,
+   "group": "train",
+   "idx": 1,
+   "join_depth": 1,
+   "occ": 0,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 29,
+   "a10_partner": 3,
+   "group": "train",
+   "idx": 2,
+   "join_depth": 1,
+   "occ": 0,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 39,
+   "a10_partner": 2,
+   "group": "train",
+   "idx": 3,
+   "join_depth": 1,
+   "occ": 0,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 49,
+   "a10_partner": 5,
+   "group": "train",
+   "idx": 4,
+   "join_depth": 1,
+   "occ": 0,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 62,
+   "a10_partner": 4,
+   "group": "train",
+   "idx": 5,
+   "join_depth": 1,
+   "occ": 0,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 73,
+   "a10_partner": 7,
+   "group": "test",
+   "idx": 6,
+   "join_depth": 1,
+   "occ": 0,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 82,
+   "a10_partner": 6,
+   "group": "train",
+   "idx": 7,
+   "join_depth": 1,
+   "occ": 0,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 85,
+   "a10_partner": 9,
+   "group": "train",
+   "idx": 8,
+   "join_depth": 1,
+   "occ": 1,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 101,
+   "a10_partner": 8,
+   "group": "train",
+   "idx": 9,
+   "join_depth": 1,
+   "occ": 1,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 118,
+   "a10_partner": 11,
+   "group": "val",
+   "idx": 10,
+   "join_depth": 1,
+   "occ": 1,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 128,
+   "a10_partner": 10,
+   "group": "train",
+   "idx": 11,
+   "join_depth": 1,
+   "occ": 1,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 138,
+   "a10_partner": 13,
+   "group": "train",
+   "idx": 12,
+   "join_depth": 1,
+   "occ": 1,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 151,
+   "a10_partner": 12,
+   "group": "train",
+   "idx": 13,
+   "join_depth": 1,
+   "occ": 1,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 162,
+   "a10_partner": 15,
+   "group": "train",
+   "idx": 14,
+   "join_depth": 1,
+   "occ": 1,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 171,
+   "a10_partner": 14,
+   "group": "val",
+   "idx": 15,
+   "join_depth": 1,
+   "occ": 1,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 165,
+   "a10_partner": 41,
+   "group": "test",
+   "idx": 16,
+   "join_depth": 1,
+   "occ": 2,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 174,
+   "a10_partner": 64,
+   "group": "test",
+   "idx": 17,
+   "join_depth": 2,
+   "occ": 2,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 7,
+   "a10_partner": 19,
+   "group": "train",
+   "idx": 18,
+   "join_depth": 1,
+   "occ": 2,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 17,
+   "a10_partner": 18,
+   "group": "train",
+   "idx": 19,
+   "join_depth": 1,
+   "occ": 2,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 27,
+   "a10_partner": 21,
+   "group": "val",
+   "idx": 20,
+   "join_depth": 1,
+   "occ": 2,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 40,
+   "a10_partner": 20,
+   "group": "train",
+   "idx": 21,
+   "join_depth": 1,
+   "occ": 2,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 51,
+   "a10_partner": 23,
+   "group": "train",
+   "idx": 22,
+   "join_depth": 1,
+   "occ": 2,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 61,
+   "a10_partner": 22,
+   "group": "train",
+   "idx": 23,
+   "join_depth": 1,
+   "occ": 2,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 52,
+   "a10_partner": 57,
+   "group": "train",
+   "idx": 24,
+   "join_depth": 2,
+   "occ": 3,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 54,
+   "a10_partner": 72,
+   "group": "train",
+   "idx": 25,
+   "join_depth": 2,
+   "occ": 3,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 96,
+   "a10_partner": 27,
+   "group": "train",
+   "idx": 26,
+   "join_depth": 1,
+   "occ": 3,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 108,
+   "a10_partner": 26,
+   "group": "val",
+   "idx": 27,
+   "join_depth": 1,
+   "occ": 3,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 118,
+   "a10_partner": 29,
+   "group": "test",
+   "idx": 28,
+   "join_depth": 1,
+   "occ": 3,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 129,
+   "a10_partner": 28,
+   "group": "train",
+   "idx": 29,
+   "join_depth": 1,
+   "occ": 3,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 140,
+   "a10_partner": 31,
+   "group": "train",
+   "idx": 30,
+   "join_depth": 1,
+   "occ": 3,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 152,
+   "a10_partner": 30,
+   "group": "train",
+   "idx": 31,
+   "join_depth": 1,
+   "occ": 3,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 135,
+   "a10_partner": 65,
+   "group": "val",
+   "idx": 32,
+   "join_depth": 2,
+   "occ": 4,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 134,
+   "a10_partner": 104,
+   "group": "val",
+   "idx": 33,
+   "join_depth": 2,
+   "occ": 4,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 188,
+   "a10_partner": 35,
+   "group": "train",
+   "idx": 34,
+   "join_depth": 1,
+   "occ": 4,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 198,
+   "a10_partner": 34,
+   "group": "train",
+   "idx": 35,
+   "join_depth": 1,
+   "occ": 4,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 8,
+   "a10_partner": 37,
+   "group": "train",
+   "idx": 36,
+   "join_depth": 1,
+   "occ": 4,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 18,
+   "a10_partner": 36,
+   "group": "train",
+   "idx": 37,
+   "join_depth": 1,
+   "occ": 4,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 29,
+   "a10_partner": 39,
+   "group": "train",
+   "idx": 38,
+   "join_depth": 1,
+   "occ": 4,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 41,
+   "a10_partner": 38,
+   "group": "train",
+   "idx": 39,
+   "join_depth": 1,
+   "occ": 4,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 5,
+   "a10_partner": 89,
+   "group": "train",
+   "idx": 40,
+   "join_depth": 1,
+   "occ": 5,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 31,
+   "a10_partner": 56,
+   "group": "train",
+   "idx": 41,
+   "join_depth": 1,
+   "occ": 5,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 77,
+   "a10_partner": 43,
+   "group": "train",
+   "idx": 42,
+   "join_depth": 1,
+   "occ": 5,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 87,
+   "a10_partner": 42,
+   "group": "train",
+   "idx": 43,
+   "join_depth": 1,
+   "occ": 5,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 97,
+   "a10_partner": 45,
+   "group": "test",
+   "idx": 44,
+   "join_depth": 1,
+   "occ": 5,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 110,
+   "a10_partner": 44,
+   "group": "train",
+   "idx": 45,
+   "join_depth": 1,
+   "occ": 5,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 121,
+   "a10_partner": 47,
+   "group": "train",
+   "idx": 46,
+   "join_depth": 1,
+   "occ": 5,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 130,
+   "a10_partner": 46,
+   "group": "train",
+   "idx": 47,
+   "join_depth": 1,
+   "occ": 5,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 85,
+   "a10_partner": 121,
+   "group": "test",
+   "idx": 48,
+   "join_depth": 1,
+   "occ": 6,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 115,
+   "a10_partner": 80,
+   "group": "train",
+   "idx": 49,
+   "join_depth": 1,
+   "occ": 6,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 166,
+   "a10_partner": 51,
+   "group": "train",
+   "idx": 50,
+   "join_depth": 1,
+   "occ": 6,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 176,
+   "a10_partner": 50,
+   "group": "test",
+   "idx": 51,
+   "join_depth": 1,
+   "occ": 6,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 186,
+   "a10_partner": 53,
+   "group": "val",
+   "idx": 52,
+   "join_depth": 1,
+   "occ": 6,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 199,
+   "a10_partner": 52,
+   "group": "val",
+   "idx": 53,
+   "join_depth": 1,
+   "occ": 6,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 10,
+   "a10_partner": 55,
+   "group": "test",
+   "idx": 54,
+   "join_depth": 1,
+   "occ": 6,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 19,
+   "a10_partner": 54,
+   "group": "test",
+   "idx": 55,
+   "join_depth": 1,
+   "occ": 6,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 165,
+   "a10_partner": 129,
+   "group": "val",
+   "idx": 56,
+   "join_depth": 1,
+   "occ": 7,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 174,
+   "a10_partner": 152,
+   "group": "val",
+   "idx": 57,
+   "join_depth": 2,
+   "occ": 7,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 55,
+   "a10_partner": 59,
+   "group": "train",
+   "idx": 58,
+   "join_depth": 1,
+   "occ": 7,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 65,
+   "a10_partner": 58,
+   "group": "train",
+   "idx": 59,
+   "join_depth": 1,
+   "occ": 7,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 75,
+   "a10_partner": 61,
+   "group": "train",
+   "idx": 60,
+   "join_depth": 1,
+   "occ": 7,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 88,
+   "a10_partner": 60,
+   "group": "train",
+   "idx": 61,
+   "join_depth": 1,
+   "occ": 7,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 99,
+   "a10_partner": 63,
+   "group": "train",
+   "idx": 62,
+   "join_depth": 1,
+   "occ": 7,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 109,
+   "a10_partner": 62,
+   "group": "train",
+   "idx": 63,
+   "join_depth": 1,
+   "occ": 7,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 68,
+   "a10_partner": 113,
+   "group": "train",
+   "idx": 64,
+   "join_depth": 2,
+   "occ": 8,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 54,
+   "a10_partner": 184,
+   "group": "train",
+   "idx": 65,
+   "join_depth": 2,
+   "occ": 8,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 144,
+   "a10_partner": 67,
+   "group": "train",
+   "idx": 66,
+   "join_depth": 1,
+   "occ": 8,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 156,
+   "a10_partner": 66,
+   "group": "test",
+   "idx": 67,
+   "join_depth": 1,
+   "occ": 8,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 166,
+   "a10_partner": 69,
+   "group": "test",
+   "idx": 68,
+   "join_depth": 1,
+   "occ": 8,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 177,
+   "a10_partner": 68,
+   "group": "val",
+   "idx": 69,
+   "join_depth": 1,
+   "occ": 8,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 188,
+   "a10_partner": 71,
+   "group": "test",
+   "idx": 70,
+   "join_depth": 1,
+   "occ": 8,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 0,
+   "a10_partner": 70,
+   "group": "train",
+   "idx": 71,
+   "join_depth": 1,
+   "occ": 8,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 151,
+   "a10_partner": 137,
+   "group": "test",
+   "idx": 72,
+   "join_depth": 2,
+   "occ": 9,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 134,
+   "a10_partner": 192,
+   "group": "train",
+   "idx": 73,
+   "join_depth": 2,
+   "occ": 9,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 36,
+   "a10_partner": 75,
+   "group": "train",
+   "idx": 74,
+   "join_depth": 1,
+   "occ": 9,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 46,
+   "a10_partner": 74,
+   "group": "train",
+   "idx": 75,
+   "join_depth": 1,
+   "occ": 9,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 56,
+   "a10_partner": 77,
+   "group": "train",
+   "idx": 76,
+   "join_depth": 1,
+   "occ": 9,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 66,
+   "a10_partner": 76,
+   "group": "train",
+   "idx": 77,
+   "join_depth": 1,
+   "occ": 9,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 77,
+   "a10_partner": 79,
+   "group": "train",
+   "idx": 78,
+   "join_depth": 1,
+   "occ": 9,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 89,
+   "a10_partner": 78,
+   "group": "train",
+   "idx": 79,
+   "join_depth": 1,
+   "occ": 9,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 5,
+   "a10_partner": 1,
+   "group": "train",
+   "idx": 80,
+   "join_depth": 1,
+   "occ": 10,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 46,
+   "a10_partner": 128,
+   "group": "test",
+   "idx": 81,
+   "join_depth": 1,
+   "occ": 10,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 125,
+   "a10_partner": 83,
+   "group": "test",
+   "idx": 82,
+   "join_depth": 1,
+   "occ": 10,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 135,
+   "a10_partner": 82,
+   "group": "train",
+   "idx": 83,
+   "join_depth": 1,
+   "occ": 10,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 145,
+   "a10_partner": 85,
+   "group": "train",
+   "idx": 84,
+   "join_depth": 1,
+   "occ": 10,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 158,
+   "a10_partner": 84,
+   "group": "train",
+   "idx": 85,
+   "join_depth": 1,
+   "occ": 10,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 169,
+   "a10_partner": 87,
+   "group": "val",
+   "idx": 86,
+   "join_depth": 1,
+   "occ": 10,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 178,
+   "a10_partner": 86,
+   "group": "train",
+   "idx": 87,
+   "join_depth": 1,
+   "occ": 10,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 85,
+   "a10_partner": 9,
+   "group": "val",
+   "idx": 88,
+   "join_depth": 1,
+   "occ": 11,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 131,
+   "a10_partner": 136,
+   "group": "train",
+   "idx": 89,
+   "join_depth": 1,
+   "occ": 11,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 14,
+   "a10_partner": 91,
+   "group": "train",
+   "idx": 90,
+   "join_depth": 1,
+   "occ": 11,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 24,
+   "a10_partner": 90,
+   "group": "train",
+   "idx": 91,
+   "join_depth": 1,
+   "occ": 11,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 34,
+   "a10_partner": 93,
+   "group": "train",
+   "idx": 92,
+   "join_depth": 1,
+   "occ": 11,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 47,
+   "a10_partner": 92,
+   "group": "test",
+   "idx": 93,
+   "join_depth": 1,
+   "occ": 11,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 58,
+   "a10_partner": 95,
+   "group": "train",
+   "idx": 94,
+   "join_depth": 1,
+   "occ": 11,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 67,
+   "a10_partner": 94,
+   "group": "train",
+   "idx": 95,
+   "join_depth": 1,
+   "occ": 11,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 165,
+   "a10_partner": 41,
+   "group": "train",
+   "idx": 96,
+   "join_depth": 1,
+   "occ": 12,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 174,
+   "a10_partner": 64,
+   "group": "train",
+   "idx": 97,
+   "join_depth": 2,
+   "occ": 12,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 103,
+   "a10_partner": 99,
+   "group": "val",
+   "idx": 98,
+   "join_depth": 1,
+   "occ": 12,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 113,
+   "a10_partner": 98,
+   "group": "train",
+   "idx": 99,
+   "join_depth": 1,
+   "occ": 12,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 123,
+   "a10_partner": 101,
+   "group": "val",
+   "idx": 100,
+   "join_depth": 1,
+   "occ": 12,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 136,
+   "a10_partner": 100,
+   "group": "train",
+   "idx": 101,
+   "join_depth": 1,
+   "occ": 12,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 147,
+   "a10_partner": 103,
+   "group": "val",
+   "idx": 102,
+   "join_depth": 1,
+   "occ": 12,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 157,
+   "a10_partner": 102,
+   "group": "train",
+   "idx": 103,
+   "join_depth": 1,
+   "occ": 12,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 83,
+   "a10_partner": 185,
+   "group": "val",
+   "idx": 104,
+   "join_depth": 2,
+   "occ": 13,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 54,
+   "a10_partner": 72,
+   "group": "train",
+   "idx": 105,
+   "join_depth": 2,
+   "occ": 13,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 192,
+   "a10_partner": 107,
+   "group": "train",
+   "idx": 106,
+   "join_depth": 1,
+   "occ": 13,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 4,
+   "a10_partner": 106,
+   "group": "val",
+   "idx": 107,
+   "join_depth": 1,
+   "occ": 13,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 14,
+   "a10_partner": 109,
+   "group": "train",
+   "idx": 108,
+   "join_depth": 1,
+   "occ": 13,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 25,
+   "a10_partner": 108,
+   "group": "val",
+   "idx": 109,
+   "join_depth": 1,
+   "occ": 13,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 36,
+   "a10_partner": 111,
+   "group": "train",
+   "idx": 110,
+   "join_depth": 1,
+   "occ": 13,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 48,
+   "a10_partner": 110,
+   "group": "train",
+   "idx": 111,
+   "join_depth": 1,
+   "occ": 13,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 165,
+   "a10_partner": 193,
+   "group": "train",
+   "idx": 112,
+   "join_depth": 2,
+   "occ": 14,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 134,
+   "a10_partner": 104,
+   "group": "train",
+   "idx": 113,
+   "join_depth": 2,
+   "occ": 14,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 84,
+   "a10_partner": 115,
+   "group": "train",
+   "idx": 114,
+   "join_depth": 1,
+   "occ": 14,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 94,
+   "a10_partner": 114,
+   "group": "train",
+   "idx": 115,
+   "join_depth": 1,
+   "occ": 14,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 104,
+   "a10_partner": 117,
+   "group": "train",
+   "idx": 116,
+   "join_depth": 1,
+   "occ": 14,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 114,
+   "a10_partner": 116,
+   "group": "train",
+   "idx": 117,
+   "join_depth": 1,
+   "occ": 14,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 125,
+   "a10_partner": 119,
+   "group": "train",
+   "idx": 118,
+   "join_depth": 1,
+   "occ": 14,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 137,
+   "a10_partner": 118,
+   "group": "train",
+   "idx": 119,
+   "join_depth": 1,
+   "occ": 14,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 5,
+   "a10_partner": 89,
+   "group": "train",
+   "idx": 120,
+   "join_depth": 1,
+   "occ": 15,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 62,
+   "a10_partner": 0,
+   "group": "train",
+   "idx": 121,
+   "join_depth": 1,
+   "occ": 15,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 173,
+   "a10_partner": 123,
+   "group": "train",
+   "idx": 122,
+   "join_depth": 1,
+   "occ": 15,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 183,
+   "a10_partner": 122,
+   "group": "val",
+   "idx": 123,
+   "join_depth": 1,
+   "occ": 15,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 193,
+   "a10_partner": 125,
+   "group": "train",
+   "idx": 124,
+   "join_depth": 1,
+   "occ": 15,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 6,
+   "a10_partner": 124,
+   "group": "train",
+   "idx": 125,
+   "join_depth": 1,
+   "occ": 15,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 17,
+   "a10_partner": 127,
+   "group": "train",
+   "idx": 126,
+   "join_depth": 1,
+   "occ": 15,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 26,
+   "a10_partner": 126,
+   "group": "test",
+   "idx": 127,
+   "join_depth": 1,
+   "occ": 15,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 85,
+   "a10_partner": 121,
+   "group": "train",
+   "idx": 128,
+   "join_depth": 1,
+   "occ": 16,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 144,
+   "a10_partner": 8,
+   "group": "val",
+   "idx": 129,
+   "join_depth": 1,
+   "occ": 16,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 62,
+   "a10_partner": 131,
+   "group": "train",
+   "idx": 130,
+   "join_depth": 1,
+   "occ": 16,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 72,
+   "a10_partner": 130,
+   "group": "test",
+   "idx": 131,
+   "join_depth": 1,
+   "occ": 16,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 82,
+   "a10_partner": 133,
+   "group": "train",
+   "idx": 132,
+   "join_depth": 1,
+   "occ": 16,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 95,
+   "a10_partner": 132,
+   "group": "train",
+   "idx": 133,
+   "join_depth": 1,
+   "occ": 16,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 106,
+   "a10_partner": 135,
+   "group": "train",
+   "idx": 134,
+   "join_depth": 1,
+   "occ": 16,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 115,
+   "a10_partner": 134,
+   "group": "train",
+   "idx": 135,
+   "join_depth": 1,
+   "occ": 16,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 165,
+   "a10_partner": 129,
+   "group": "train",
+   "idx": 136,
+   "join_depth": 1,
+   "occ": 17,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 174,
+   "a10_partner": 152,
+   "group": "train",
+   "idx": 137,
+   "join_depth": 2,
+   "occ": 17,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 151,
+   "a10_partner": 139,
+   "group": "train",
+   "idx": 138,
+   "join_depth": 1,
+   "occ": 17,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 161,
+   "a10_partner": 138,
+   "group": "train",
+   "idx": 139,
+   "join_depth": 1,
+   "occ": 17,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 171,
+   "a10_partner": 141,
+   "group": "train",
+   "idx": 140,
+   "join_depth": 1,
+   "occ": 17,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 184,
+   "a10_partner": 140,
+   "group": "train",
+   "idx": 141,
+   "join_depth": 1,
+   "occ": 17,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 195,
+   "a10_partner": 143,
+   "group": "train",
+   "idx": 142,
+   "join_depth": 1,
+   "occ": 17,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 5,
+   "a10_partner": 142,
+   "group": "train",
+   "idx": 143,
+   "join_depth": 1,
+   "occ": 17,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 98,
+   "a10_partner": 57,
+   "group": "train",
+   "idx": 144,
+   "join_depth": 2,
+   "occ": 18,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 54,
+   "a10_partner": 184,
+   "group": "train",
+   "idx": 145,
+   "join_depth": 2,
+   "occ": 18,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 40,
+   "a10_partner": 147,
+   "group": "train",
+   "idx": 146,
+   "join_depth": 1,
+   "occ": 18,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 52,
+   "a10_partner": 146,
+   "group": "train",
+   "idx": 147,
+   "join_depth": 1,
+   "occ": 18,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 62,
+   "a10_partner": 149,
+   "group": "train",
+   "idx": 148,
+   "join_depth": 1,
+   "occ": 18,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 73,
+   "a10_partner": 148,
+   "group": "test",
+   "idx": 149,
+   "join_depth": 1,
+   "occ": 18,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 84,
+   "a10_partner": 151,
+   "group": "train",
+   "idx": 150,
+   "join_depth": 1,
+   "occ": 18,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 96,
+   "a10_partner": 150,
+   "group": "train",
+   "idx": 151,
+   "join_depth": 1,
+   "occ": 18,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 180,
+   "a10_partner": 65,
+   "group": "train",
+   "idx": 152,
+   "join_depth": 2,
+   "occ": 19,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 134,
+   "a10_partner": 192,
+   "group": "train",
+   "idx": 153,
+   "join_depth": 2,
+   "occ": 19,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 132,
+   "a10_partner": 155,
+   "group": "train",
+   "idx": 154,
+   "join_depth": 1,
+   "occ": 19,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 142,
+   "a10_partner": 154,
+   "group": "train",
+   "idx": 155,
+   "join_depth": 1,
+   "occ": 19,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 152,
+   "a10_partner": 157,
+   "group": "train",
+   "idx": 156,
+   "join_depth": 1,
+   "occ": 19,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 162,
+   "a10_partner": 156,
+   "group": "train",
+   "idx": 157,
+   "join_depth": 1,
+   "occ": 19,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 173,
+   "a10_partner": 159,
+   "group": "train",
+   "idx": 158,
+   "join_depth": 1,
+   "occ": 19,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 185,
+   "a10_partner": 158,
+   "group": "val",
+   "idx": 159,
+   "join_depth": 1,
+   "occ": 19,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 5,
+   "a10_partner": 1,
+   "group": "train",
+   "idx": 160,
+   "join_depth": 1,
+   "occ": 20,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 76,
+   "a10_partner": 56,
+   "group": "train",
+   "idx": 161,
+   "join_depth": 1,
+   "occ": 20,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 21,
+   "a10_partner": 163,
+   "group": "test",
+   "idx": 162,
+   "join_depth": 1,
+   "occ": 20,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 31,
+   "a10_partner": 162,
+   "group": "train",
+   "idx": 163,
+   "join_depth": 1,
+   "occ": 20,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 41,
+   "a10_partner": 165,
+   "group": "train",
+   "idx": 164,
+   "join_depth": 1,
+   "occ": 20,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 54,
+   "a10_partner": 164,
+   "group": "train",
+   "idx": 165,
+   "join_depth": 1,
+   "occ": 20,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 65,
+   "a10_partner": 167,
+   "group": "val",
+   "idx": 166,
+   "join_depth": 1,
+   "occ": 20,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 74,
+   "a10_partner": 166,
+   "group": "train",
+   "idx": 167,
+   "join_depth": 1,
+   "occ": 20,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 85,
+   "a10_partner": 9,
+   "group": "train",
+   "idx": 168,
+   "join_depth": 1,
+   "occ": 21,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 158,
+   "a10_partner": 80,
+   "group": "train",
+   "idx": 169,
+   "join_depth": 1,
+   "occ": 21,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 110,
+   "a10_partner": 171,
+   "group": "train",
+   "idx": 170,
+   "join_depth": 1,
+   "occ": 21,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 120,
+   "a10_partner": 170,
+   "group": "train",
+   "idx": 171,
+   "join_depth": 1,
+   "occ": 21,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 130,
+   "a10_partner": 173,
+   "group": "train",
+   "idx": 172,
+   "join_depth": 1,
+   "occ": 21,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 143,
+   "a10_partner": 172,
+   "group": "test",
+   "idx": 173,
+   "join_depth": 1,
+   "occ": 21,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 154,
+   "a10_partner": 175,
+   "group": "train",
+   "idx": 174,
+   "join_depth": 1,
+   "occ": 21,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 163,
+   "a10_partner": 174,
+   "group": "val",
+   "idx": 175,
+   "join_depth": 1,
+   "occ": 21,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 165,
+   "a10_partner": 41,
+   "group": "train",
+   "idx": 176,
+   "join_depth": 1,
+   "occ": 22,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 174,
+   "a10_partner": 64,
+   "group": "train",
+   "idx": 177,
+   "join_depth": 2,
+   "occ": 22,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 199,
+   "a10_partner": 179,
+   "group": "val",
+   "idx": 178,
+   "join_depth": 1,
+   "occ": 22,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 9,
+   "a10_partner": 178,
+   "group": "train",
+   "idx": 179,
+   "join_depth": 1,
+   "occ": 22,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 19,
+   "a10_partner": 181,
+   "group": "train",
+   "idx": 180,
+   "join_depth": 1,
+   "occ": 22,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 32,
+   "a10_partner": 180,
+   "group": "train",
+   "idx": 181,
+   "join_depth": 1,
+   "occ": 22,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 43,
+   "a10_partner": 183,
+   "group": "train",
+   "idx": 182,
+   "join_depth": 1,
+   "occ": 22,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 53,
+   "a10_partner": 182,
+   "group": "test",
+   "idx": 183,
+   "join_depth": 1,
+   "occ": 22,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 114,
+   "a10_partner": 113,
+   "group": "train",
+   "idx": 184,
+   "join_depth": 2,
+   "occ": 23,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 54,
+   "a10_partner": 72,
+   "group": "train",
+   "idx": 185,
+   "join_depth": 2,
+   "occ": 23,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 88,
+   "a10_partner": 187,
+   "group": "train",
+   "idx": 186,
+   "join_depth": 1,
+   "occ": 23,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 100,
+   "a10_partner": 186,
+   "group": "train",
+   "idx": 187,
+   "join_depth": 1,
+   "occ": 23,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 110,
+   "a10_partner": 189,
+   "group": "train",
+   "idx": 188,
+   "join_depth": 1,
+   "occ": 23,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 121,
+   "a10_partner": 188,
+   "group": "train",
+   "idx": 189,
+   "join_depth": 1,
+   "occ": 23,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 132,
+   "a10_partner": 191,
+   "group": "train",
+   "idx": 190,
+   "join_depth": 1,
+   "occ": 23,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 144,
+   "a10_partner": 190,
+   "group": "train",
+   "idx": 191,
+   "join_depth": 1,
+   "occ": 23,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 196,
+   "a10_partner": 137,
+   "group": "train",
+   "idx": 192,
+   "join_depth": 2,
+   "occ": 24,
+   "schema_key": "crm_escalate",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 134,
+   "a10_partner": 104,
+   "group": "test",
+   "idx": 193,
+   "join_depth": 2,
+   "occ": 24,
+   "schema_key": "inv_overstock",
+   "signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY"
+  },
+  {
+   "a00_partner": 180,
+   "a10_partner": 195,
+   "group": "test",
+   "idx": 194,
+   "join_depth": 1,
+   "occ": 24,
+   "schema_key": "inv_transfer",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 190,
+   "a10_partner": 194,
+   "group": "train",
+   "idx": 195,
+   "join_depth": 1,
+   "occ": 24,
+   "schema_key": "cal_move_headcount",
+   "signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 0,
+   "a10_partner": 197,
+   "group": "train",
+   "idx": 196,
+   "join_depth": 1,
+   "occ": 24,
+   "schema_key": "ticket_gate_close",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 10,
+   "a10_partner": 196,
+   "group": "train",
+   "idx": 197,
+   "join_depth": 1,
+   "occ": 24,
+   "schema_key": "cal_finalize",
+   "signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY"
+  },
+  {
+   "a00_partner": 21,
+   "a10_partner": 199,
+   "group": "train",
+   "idx": 198,
+   "join_depth": 1,
+   "occ": 24,
+   "schema_key": "crm_purge_lead",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  },
+  {
+   "a00_partner": 33,
+   "a10_partner": 198,
+   "group": "train",
+   "idx": 199,
+   "join_depth": 1,
+   "occ": 24,
+   "schema_key": "ticket_purge_spam",
+   "signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY"
+  }
+ ],
+ "group_rule": "rank by sha1(gs|group|idx) within (schema,join_depth) stratum; frozen quotas {('crm_escalate', 1): (10, 2, 3), ('crm_escalate', 2): (7, 2, 1), ('inv_overstock', 1): (8, 1, 1), ('inv_overstock', 2): (11, 2, 2), ('inv_transfer', 1): (19, 3, 3), ('cal_move_headcount', 1): (19, 3, 3), ('ticket_gate_close', 1): (19, 3, 3), ('cal_finalize', 1): (19, 3, 3), ('crm_purge_lead', 1): (19, 3, 3), ('ticket_purge_spam', 1): (19, 3, 3)}",
+ "gs_mint": 20260812,
+ "hashes": {
+  "minted_all": "d02aed1e32521ff7d072c53bfdef70113c63b5c17d78e0f17f8ac4a8d09676b1",
+  "test": "414061bb50be42c2d80bc3ae3db11b154fea6cdce0ab15d77ab5d5f619392ecf",
+  "train": "54685e41326864e3d95790a3cbd8373ae7ff3bd209e7edc758b81a5b82bcbd03",
+  "train_lc1000": "1a6021ba55a31db1342dc8465b7ffa16b8caa91f3cfd66b42930a56b6a7155d2",
+  "train_lc300": "e0af3f1603c8608ad841cd83989f0e94121ac3d8f8c1480c8ffbbe9500b08179",
+  "train_lc3000": "54685e41326864e3d95790a3cbd8373ae7ff3bd209e7edc758b81a5b82bcbd03",
+  "val": "8d0aa43b3f9751ebc42af27518ccd8b32ec1a1efa4f18eb45bb5333cfd53c020"
+ },
+ "lc_subsets": {
+  "archetype_share_check_pp": [
+   {
+    "archetype": "aggregate_gate",
+    "dev_pp": 1.47,
+    "global": 0.2587,
+    "level": 300,
+    "share": 0.2733
+   },
+   {
+    "archetype": "conditional_write",
+    "dev_pp": -0.5,
+    "global": 0.245,
+    "level": 300,
+    "share": 0.24
+   },
+   {
+    "archetype": "delete_after_capture",
+    "dev_pp": -3.63,
+    "global": 0.253,
+    "level": 300,
+    "share": 0.2167
+   },
+   {
+    "archetype": "two_row_transfer",
+    "dev_pp": 2.67,
+    "global": 0.2433,
+    "level": 300,
+    "share": 0.27
+   },
+   {
+    "archetype": "aggregate_gate",
+    "dev_pp": -0.37,
+    "global": 0.2587,
+    "level": 1000,
+    "share": 0.255
+   },
+   {
+    "archetype": "conditional_write",
+    "dev_pp": -0.4,
+    "global": 0.245,
+    "level": 1000,
+    "share": 0.241
+   },
+   {
+    "archetype": "delete_after_capture",
+    "dev_pp": 0.2,
+    "global": 0.253,
+    "level": 1000,
+    "share": 0.255
+   },
+   {
+    "archetype": "two_row_transfer",
+    "dev_pp": 0.57,
+    "global": 0.2433,
+    "level": 1000,
+    "share": 0.249
+   },
+   {
+    "archetype": "aggregate_gate",
+    "dev_pp": 0.0,
+    "global": 0.2587,
+    "level": 3000,
+    "share": 0.2587
+   },
+   {
+    "archetype": "conditional_write",
+    "dev_pp": 0.0,
+    "global": 0.245,
+    "level": 3000,
+    "share": 0.245
+   },
+   {
+    "archetype": "delete_after_capture",
+    "dev_pp": 0.0,
+    "global": 0.253,
+    "level": 3000,
+    "share": 0.253
+   },
+   {
+    "archetype": "two_row_transfer",
+    "dev_pp": 0.0,
+    "global": 0.2433,
+    "level": 3000,
+    "share": 0.2433
+   }
+  ],
+  "levels": {
+   "lc1000": 1000,
+   "lc300": 300,
+   "lc3000": 3000
+  },
+  "order_rule": "sha1(gs|'curve'|pair_id) over train texts; nested",
+  "redraw_swaps": []
+ },
+ "mix_all_texts": {
+  "test": {
+   "near_miss": 137,
+   "same": 250,
+   "unrelated": 113
+  },
+  "train": {
+   "near_miss": 826,
+   "same": 1500,
+   "unrelated": 674
+  },
+  "val": {
+   "near_miss": 137,
+   "same": 250,
+   "unrelated": 113
+  }
+ },
+ "mix_cards_only": {
+  "test": {
+   "near_miss": 112,
+   "same": 150,
+   "unrelated": 113
+  },
+  "train": {
+   "near_miss": 676,
+   "same": 900,
+   "unrelated": 674
+  },
+  "val": {
+   "near_miss": 112,
+   "same": 150,
+   "unrelated": 113
+  }
+ },
+ "n_families": 200,
+ "n_families_per_schema": 25,
+ "numeric_share_p1p2_cards": {
+  "cal_move_headcount": {
+   "numeric": 182,
+   "share": 0.5028,
+   "symbolic": 180
+  },
+  "crm_escalate": {
+   "numeric": 182,
+   "share": 0.5,
+   "symbolic": 182
+  },
+  "inv_overstock": {
+   "numeric": 170,
+   "share": 0.4416,
+   "symbolic": 215
+  },
+  "inv_transfer": {
+   "numeric": 166,
+   "share": 0.4743,
+   "symbolic": 184
+  }
+ },
+ "per_family_quota": "4 sib instr + 1 nm instr + 4 A11 + 2 A10 + A01 x4/x5 + A00 x5/x4 (family parity) = 20",
+ "pilot_seed_disjoint": 20260811,
+ "sealed_seed_held_out": 20260807,
+ "value_policy_counts": {
+  "numeric": 1275,
+  "numeric_cards_lever": 700,
+  "numeric_cards_lever_slots": 700,
+  "string": 1016,
+  "symbolic": 1709
+ }
+}

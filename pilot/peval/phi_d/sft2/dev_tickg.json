@@ -1,0 +1,25 @@
+{
+ "by_schema": {
+  "cal_finalize": 2,
+  "inv_overstock": 5,
+  "ticket_gate_close": 13
+ },
+ "checks_failed": [],
+ "checks_pass_rate": 1.0,
+ "checks_total": 120,
+ "failed_families": {},
+ "families": [
+  4
+ ],
+ "gs_mint": 20260812,
+ "mode": "dev",
+ "n_pairs": 20,
+ "value_policy": {
+  "cal_finalize|memory|symbolic": 2,
+  "inv_overstock|memory|numeric": 1,
+  "inv_overstock|memory|symbolic": 4,
+  "ticket_gate_close|instruction|numeric": 4,
+  "ticket_gate_close|instruction|symbolic": 1,
+  "ticket_gate_close|memory|symbolic": 8
+ }
+}

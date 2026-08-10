@@ -1,0 +1,16 @@
+[mint] tokenizer load ...
+[mint] decontamination reference: 732 hashes
+[mint] family 24 (crm_escalate) done: 20 texts, 0 failures
+[mint] family 49 (inv_overstock) done: 20 texts, 0 failures
+[mint] family 74 (inv_transfer) done: 20 texts, 0 failures
+[mint] family 99 (cal_move_headcount) done: 20 texts, 0 failures
+[mint] family 124 (ticket_gate_close) done: 20 texts, 0 failures
+[mint] family 149 (cal_finalize) done: 20 texts, 0 failures
+[mint] family 174 (crm_purge_lead) done: 20 texts, 0 failures
+[mint] family 199 (ticket_purge_spam) done: 20 texts, 0 failures
+[mint] DONE: 4000/4000 texts, 82151/82151 checks pass, decon collisions=0
+[mint] counts: {'planned': 4000, 'minted': 4000, 'failed_texts': 0, 'train': 3000, 'val': 500, 'test': 500}
+[mint] mix(all): {'train': {'same': 1500, 'near_miss': 826, 'unrelated': 674}, 'val': {'same': 250, 'near_miss': 137, 'unrelated': 113}, 'test': {'same': 250, 'near_miss': 137, 'unrelated': 113}}
+[mint] mix(cards): {'train': {'same': 900, 'near_miss': 676, 'unrelated': 674}, 'val': {'same': 150, 'near_miss': 112, 'unrelated': 113}, 'test': {'same': 150, 'near_miss': 112, 'unrelated': 113}}
+[mint] numeric P1/P2 card shares: {'crm_escalate': {'numeric': 182, 'symbolic': 182, 'share': 0.5}, 'inv_overstock': {'numeric': 170, 'symbolic': 215, 'share': 0.4416}, 'inv_transfer': {'numeric': 166, 'symbolic': 184, 'share': 0.4743}, 'cal_move_headcount': {'numeric': 182, 'symbolic': 180, 'share': 0.5028}}
+[mint] sha: {'minted_all': 'd02aed1e32521ff7', 'train': '54685e41326864e3', 'val': '8d0aa43b3f9751eb', 'test': '414061bb50be42c2', 'train_lc300': 'e0af3f1603c8608a', 'train_lc1000': '1a6021ba55a31db1', 'train_lc3000': '54685e41326864e3'}

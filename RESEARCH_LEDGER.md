@@ -133,6 +133,13 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - 工时:Option A(推荐,不动 generator）全量 4,000 文/200 族 ≈ **4–5.5 工日**(6 schema 条款表 2.5–3.5d + 分割/配额/驱动 1d + 门 0.5–1d);Option B（改 generator）被否决。已知杠杆洞：当前全为符号值卡，**数值打印卡变体(~0.5–1d)** 是头号"需新建"。
 - 产物:mint_spec.py、mint20.jsonl(sha `ff87563a…`)、mint20_report.json、FEASIBILITY.md、DATA_SPEC.md。
 
+### 2026-08-11 — SFT 全量数据生产完成：**GO for LoRA**(agent-13)
+
+- 引擎 sft2(mint_core/all + p1x–p4x 条款表）;8/8 schema 小批全过，机器迭代 ≤2/schema;一次 kill-trip(45 体积碰撞）按纪律在**机器层**修复（pad 流/filler/A01 实体变体/P2 目标实例化），零后验修标签。
+- 数据：200 新族(seed 20260812,150/25/25 → 3,000/500/500)+ 嵌套 300/1k/3k；卡关系 40/30/30 精确;numeric/symbolic/string 分布合理且打破"kind⇒value-mode"捷径核。
+- 门:`validate_ir` 4,000/4,000;**82,151/82,151 全检过**;evidence ≤12w 预填核心;op==program 含翻转;全部 7 产物双跑字节一致;**732 sealed hash 零碰撞**。
+- 五个冻结决策(P2 复合 guard 单 branch、P3 termination 披露、P4 存档链、as-stated 白名单、数字 stepwise 判定）已入 DATA_QC §5。
+
 ### 2026-08-10 — SFT P1 小样端到端：**GO（四类附条件）**(agent-10)
 
 - 管线：23 新族(seed 20260811;族先分 15/3/5)→ mint 460(8,194 checks 100%，双跑 byte-id,732 sealed hash 零碰撞;三个披露修正:entity-instantiated cards、dedupe-by-rotation、word-boundary fork)→ LoRA r16(qkvo,lr1e-4,bs16,2ep,bf16,gold-IR loss)→ 评测(canonical run5200 双协议 base+adapter 同进程)。

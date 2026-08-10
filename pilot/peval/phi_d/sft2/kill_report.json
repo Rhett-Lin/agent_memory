@@ -1,0 +1,259 @@
+{
+ "kill": "failed text fraction",
+ "failed_texts": 45,
+ "failed_families": {
+  "51": [
+   {
+    "slot": "mem:f51:s3:A11",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "112": [
+   {
+    "slot": "mem:f112:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f112:s4:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "120": [
+   {
+    "slot": "mem:f120:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f120:s4:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "128": [
+   {
+    "slot": "mem:f128:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f128:s4:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "135": [
+   {
+    "slot": "mem:f135:s1:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f135:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "136": [
+   {
+    "slot": "mem:f136:s0:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f136:s1:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f136:s2:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f136:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f136:s4:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "143": [
+   {
+    "slot": "mem:f143:s0:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f143:s1:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f143:s2:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f143:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "160": [
+   {
+    "slot": "mem:f160:s0:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f160:s1:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f160:s2:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f160:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f160:s4:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "164": [
+   {
+    "slot": "instr:f164:s1",
+    "stage": "checks",
+    "error": "self-consistency failure instr:f164:s1/audit_selfcheck_whitelisted: [('pred_polarity', False, 'contradiction', \"{'ir': 'negative', 'truth': 'positive', 'note': None}\"), ('pred_all', False, 'contradiction', 'None')]"
+   },
+   {
+    "slot": "mem:f164:s0:A10",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f164:s1:A10",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "165": [
+   {
+    "slot": "mem:f165:s0:A11",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f165:s1:A11",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f165:s2:A11",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f165:s3:A11",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "168": [
+   {
+    "slot": "mem:f168:s0:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f168:s1:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f168:s2:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f168:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f168:s4:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "171": [
+   {
+    "slot": "mem:f171:s0:A11",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "176": [
+   {
+    "slot": "mem:f176:s0:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f176:s1:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f176:s2:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f176:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f176:s4:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ],
+  "180": [
+   {
+    "slot": "mem:f180:s0:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f180:s1:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f180:s3:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   },
+   {
+    "slot": "mem:f180:s4:A00",
+    "stage": "dedupe",
+    "error": "dedupe-by-rotation exhausted (incl. length retry)"
+   }
+  ]
+ }
+}
