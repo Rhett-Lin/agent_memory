@@ -117,6 +117,14 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - 含义:**lane C(SFT 抽取器)由"优先"转"必须"**;比较器 v0 只能走软证据+弃权路线;judge 仍是当前唯一可用 admission primitive。
 - 产物:audit_expanded.py(sha `c80f481c…`)、field_metrics.json、per_sample.jsonl(532 行全字段分)、stratified.jsonl(56 例)、failed_examples/、AUDIT_EXPANDED.md;过程披露:v1.1 五处测量修正全部实现已声明语义并记录前后数,无一项为过线改规则。
 
+### 2026-08-10 — SFT 数据可行性判词：**YES（本周可立项）**(agent-8,sft0/)
+
+- (a) 渲染器 provenance:**PARTIAL 不阻塞**——instruction/memory 组装为平面 f-string 不留 span 记录，但 roles dict/各 instruction slot 均为族参数×样式轮换的确定性函数，**逐字节再生+精确对齐即可恢复**;原生 span 化改造（可选):8 builder + 卡片 join 留 span ≈ 1.5–2.5 工日，非必须。(b) IR 全字段 YES，仅 3 个文本可证检查（数值-or-符号谓词值、polarity 缺省-否定线索则、span 偏移）。(c) 隐藏 theta 双向策略落地：J1 指令→数值（assert 可见）,J2→符号引用,memory 卡→as-stated 短语。
+- **mint20 原型**:20 对（J1 数值 + J2 符号，含 6 near-miss）逐字节与密封件一致,**355/355 检查全过**,sha256 可复现;gold op == program cond_op 含全部翻转;235/235 evidence 落入无 filler 核心区。
+- **12/372 之谜解开**:73/372 卡文本 join>1 源,12 例 conflict 是 theta 数值撞表;z→text→IR 铸造下同名文本得同标签,conflict 全消解;符号化占比实测 **29.5%**(157/532)。
+- 工时:Option A(推荐,不动 generator）全量 4,000 文/200 族 ≈ **4–5.5 工日**(6 schema 条款表 2.5–3.5d + 分割/配额/驱动 1d + 门 0.5–1d);Option B（改 generator）被否决。已知杠杆洞：当前全为符号值卡，**数值打印卡变体(~0.5–1d)** 是头号"需新建"。
+- 产物:mint_spec.py、mint20.jsonl(sha `ff87563a…`)、mint20_report.json、FEASIBILITY.md、DATA_SPEC.md。
+
 ### 2026-08-10 — 战略提案"pivot: P→动态 belief/渐进推断"裁决（thread 019fe66c）
 
 **总裁决:NO_GO（当前 pivot）+ GO（未来种子，带里程碑门）**;P 结构性标签与执行的动态 U/active-path 风险**分轨**（"P 在执行中不应被更新;被执行更新的是 mismatch-relevance / utility 的 belief")。

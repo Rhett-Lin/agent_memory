@@ -1,0 +1,33 @@
+{
+ "byte_equality": "every minted text == sealed artifact text (tasks_sealed seed0 / memories_sealed by memory_id)",
+ "checks_failed": [],
+ "checks_pass_rate": 1.0,
+ "checks_total": 355,
+ "families": {
+  "0": {
+   "a10_partner": 1,
+   "join_depth": 1,
+   "schema_key": "crm_escalate"
+  },
+  "17": {
+   "a10_partner": 24,
+   "join_depth": 2,
+   "schema_key": "inv_overstock"
+  }
+ },
+ "generator_seed": 20260807,
+ "label_provenance": "clause-level renderer expectations asserted verbatim; evidence spans exact-aligned with offsets; numeric theta only when printed in the condition clause",
+ "mint20_sha256": "ff87563a42b0eaee7f03aaf3001b183fe26b0bfe04c4b51f901adaa825713d08",
+ "n_instruction": 10,
+ "n_memory": 10,
+ "n_pairs": 20,
+ "program_mix": {
+  "correct": 12,
+  "correct_cross_domain": 2,
+  "near_miss": 6
+ },
+ "value_policy": {
+  "numeric": 5,
+  "symbolic": 15
+ }
+}
