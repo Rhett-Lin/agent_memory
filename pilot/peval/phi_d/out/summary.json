@@ -1,36 +1,35 @@
 {
   "judge": {
-    "auc_overall_all_pairs": 0.597060546875,
-    "auc_S1_all_pairs": 0.6637109375,
+    "auc_overall_all_pairs": 0.629853515625,
+    "auc_S1_all_pairs": 0.740078125,
     "n_pairs": 640,
-    "n_covered": 533,
-    "coverage": 0.8328125,
-    "auc_overall_covered_only": 0.5831712473572939,
-    "auc_S1_covered_only": 0.6710819672131147,
-    "accuracy_covered": 0.5928705440900562,
-    "accuracy_all_abstain_as_error": 0.5640625,
+    "n_covered": 586,
+    "coverage": 0.915625,
+    "auc_overall_covered_only": 0.6284058477488497,
+    "auc_S1_covered_only": 0.735177304964539,
+    "accuracy_covered": 0.6296928327645052,
+    "accuracy_all_abstain_as_error": 0.615625,
     "verdict_distribution": {
-      "contradict": 430,
-      "unknown": 99,
-      "match": 103,
-      "invalid": 8
+      "contradict": 404,
+      "match": 182,
+      "unknown": 54
     },
     "per_cell": {
       "A00": {
         "n": 160,
         "verdict_rates": {
           "match": 0.0,
-          "contradict": 0.9375,
-          "unknown": 0.025,
-          "invalid": 0.0375
+          "contradict": 0.9625,
+          "unknown": 0.0375,
+          "invalid": 0.0
         }
       },
       "A01": {
         "n": 160,
         "verdict_rates": {
-          "match": 0.19375,
-          "contradict": 0.5875,
-          "unknown": 0.21875,
+          "match": 0.3375,
+          "contradict": 0.54375,
+          "unknown": 0.11875,
           "invalid": 0.0
         }
       },
@@ -38,78 +37,78 @@
         "n": 160,
         "verdict_rates": {
           "match": 0.0,
-          "contradict": 0.85,
-          "unknown": 0.15,
+          "contradict": 0.88125,
+          "unknown": 0.11875,
           "invalid": 0.0
         }
       },
       "A11": {
         "n": 160,
         "verdict_rates": {
-          "match": 0.45,
-          "contradict": 0.3125,
-          "unknown": 0.225,
-          "invalid": 0.0125
+          "match": 0.8,
+          "contradict": 0.1375,
+          "unknown": 0.0625,
+          "invalid": 0.0
         }
       }
     },
-    "invalid_by_error_class": {
-      "schema_validation_error": 7,
-      "json_parse_error": 1
-    },
-    "invalid_rate": 0.0125
+    "invalid_by_error_class": {},
+    "invalid_rate": 0.0
   },
   "extraction": {
     "n_texts": 532,
-    "n_valid": 185,
-    "failure_rate": 0.6522556390977443,
-    "retried": 347,
+    "n_valid": 381,
+    "failure_rate": 0.28383458646616544,
+    "retried": 362,
     "by_kind": {
       "instruction": {
         "n": 160,
-        "n_valid": 58
+        "n_valid": 118
       },
       "memory": {
         "n": 372,
-        "n_valid": 127
+        "n_valid": 263
       }
     },
     "invalid_by_error_class": {
-      "schema_validation_error": 272,
-      "json_parse_error": 75
+      "json_parse_error": 120,
+      "schema_validation_error": 31
     },
     "first_pass_error_classes": {
-      "json_parse_error": 226,
-      "schema_validation_error": 121
+      "json_parse_error": 361,
+      "schema_validation_error": 1
     },
     "status_distribution": {
-      "role:present": 301,
-      "role:absent": 809,
-      "node:present": 996,
-      "predicate.attribute:present": 187,
-      "predicate.op:present": 187,
-      "predicate.value:present": 187,
-      "predicate.polarity:present": 185,
-      "termination:present": 185,
-      "node:unknown": 9,
-      "predicate.polarity:unknown": 2
+      "role:present": 360,
+      "role:absent": 816,
+      "node:present": 805,
+      "predicate.attribute:present": 143,
+      "predicate.op:present": 143,
+      "predicate.value:present": 143,
+      "predicate.polarity:present": 143,
+      "termination:present": 195,
+      "role:unknown": 1110,
+      "node:unknown": 227,
+      "termination:unknown": 185,
+      "node:absent": 40,
+      "termination:absent": 1
     },
     "evidence_presence_rate_among_present": {
-      "role": 1.0,
-      "node": 0.9939759036144579,
+      "role": 0.9694444444444444,
+      "node": 0.9975155279503105,
       "predicate.attribute": 1.0,
       "predicate.op": 1.0,
       "predicate.value": 1.0,
       "predicate.polarity": 1.0,
-      "termination": 0.9945945945945946
+      "termination": 0.9948717948717949
     },
     "node_op_distribution": {
-      "read": 203,
-      "branch": 187,
-      "write": 241,
-      "verify": 199,
-      "aggregate": 48,
-      "finish": 127
+      "read": 414,
+      "branch": 143,
+      "write": 230,
+      "verify": 156,
+      "aggregate": 23,
+      "finish": 106
     }
   },
   "sim_recomputed": {

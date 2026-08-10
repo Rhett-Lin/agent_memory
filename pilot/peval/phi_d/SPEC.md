@@ -19,7 +19,7 @@ prompts verbatim for review; if the copies drift, the scripts + `prompt_sha` win
 | model | `Qwen/Qwen2.5-7B-Instruct`, revision `a09a35458c702b33eeacc393d103063234e8bc28`, fp16, vLLM 0.6.6.post1, `gpu_memory_utilization=0.85`, `max_model_len=4096`, `seed=42` |
 | python | `/work1/zixuan/envs/conda_envs/causalmemagent/bin/python` |
 | prompt hashes | recorded per-row as `prompt_sha` in `out/extractions.jsonl` / `out/judgments.jsonl` |
-| code freeze | `out/freeze_v0.sha256` holds the live sha256 of all four code files at freeze time; every output row also carries `prompt_sha` + `decode` + `guided` provenance, so a post-run file mutation cannot silently change what the numbers mean. Run history: v1 (prefill anchor) and v2-spaced (guided, default whitespace → pervasive 768-token truncation) are preserved under `out/dev_smoke/`; canonical outputs are v2-compact (`whitespace_pattern=""`) |
+| code freeze | `out/freeze_v0.sha256` holds the live sha256 of all four code files at freeze time; every output row also carries `prompt_sha` + `decode` + `guided` provenance, so a post-run file mutation cannot silently change what the numbers mean. Run history: v1 (prefill anchor) and v2-spaced (guided, default whitespace → pervasive 768-token truncation) are preserved under `out/dev_smoke/`; canonical outputs are v2-compact (`whitespace_pattern=""`). A v3c rescue variant (`maxLength`-bounded strings, re-run of the 151 still-invalid keys) hung the outlines guide builder for hours and was abandoned without touching canonical rows |
 | guided FSM cache | `OUTLINES_CACHE_DIR=/work1/zixuan/cache/outlines`; one-time FSM build ~10 min per distinct schema/regex (measured), cached afterwards |
 
 ## 1. Input freeze

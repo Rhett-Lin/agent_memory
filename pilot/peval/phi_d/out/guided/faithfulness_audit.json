@@ -1,0 +1,1917 @@
+{
+  "design": "pre-registered field definitions in script header; blind seed-42 sample; sealed truth eval-only",
+  "sample": {
+    "n": 30,
+    "instructions": 10,
+    "memories": 20,
+    "cells": {
+      "A01": 11,
+      "A00": 4,
+      "A10": 4,
+      "A11": 1
+    },
+    "archetypes": {
+      "delete_after_capture": 14,
+      "two_row_transfer": 4,
+      "aggregate_gate": 3,
+      "conditional_write": 9
+    },
+    "no_branch_in_ir": 13
+  },
+  "agreement": {
+    "pred_op": {
+      "all_rows": 0.5666666666666667,
+      "present_only": 1.0,
+      "n_present": 17,
+      "n_missing": 13
+    },
+    "pred_op_bucket": {
+      "all_rows": 0.5666666666666667,
+      "present_only": 1.0,
+      "n_present": 17,
+      "n_missing": 13
+    },
+    "pred_value": {
+      "all_rows": 0.3,
+      "present_only": 0.6,
+      "n_present": 15,
+      "n_missing": 15
+    },
+    "polarity": {
+      "all_rows": 0.4,
+      "present_only": 0.7058823529411765,
+      "n_present": 17,
+      "n_missing": 13
+    },
+    "seq_contained": {
+      "all_rows": 0.2,
+      "present_only": 0.2,
+      "n_present": 30,
+      "n_missing": 0
+    },
+    "seq_lcs_ratio": {
+      "mean": 0.5894444444444444,
+      "min": 0.16666666666666666,
+      "n_present": 30
+    }
+  },
+  "by_kind": {
+    "instruction": {
+      "pred_op": {
+        "all_rows": 0.6,
+        "n_missing": 4
+      },
+      "pred_op_bucket": {
+        "all_rows": 0.6,
+        "n_missing": 4
+      },
+      "pred_value": {
+        "all_rows": 0.4,
+        "n_missing": 4
+      },
+      "polarity": {
+        "all_rows": 0.6,
+        "n_missing": 4
+      },
+      "seq_contained": {
+        "all_rows": 0.1,
+        "n_missing": 0
+      },
+      "seq_lcs_mean": 0.6
+    },
+    "memory": {
+      "pred_op": {
+        "all_rows": 0.55,
+        "n_missing": 9
+      },
+      "pred_op_bucket": {
+        "all_rows": 0.55,
+        "n_missing": 9
+      },
+      "pred_value": {
+        "all_rows": 0.25,
+        "n_missing": 11
+      },
+      "polarity": {
+        "all_rows": 0.3,
+        "n_missing": 9
+      },
+      "seq_contained": {
+        "all_rows": 0.25,
+        "n_missing": 0
+      },
+      "seq_lcs_mean": 0.5841666666666666
+    }
+  },
+  "posthoc_verification": {
+    "rules": [
+      "polarity clause re-targeting for else-path guard fragments (operative condition stated positively upstream)",
+      "pred_value textual-indirect classification (numeric theta absent from text)"
+    ],
+    "polarity_remarked": 5,
+    "polarity_verified_agreement": {
+      "present_only": 1.0,
+      "all_rows": 0.5666666666666667
+    },
+    "pred_value_textually_indirect": 6,
+    "pred_value_indirect_adjusted": {
+      "present_only": 1.0
+    }
+  },
+  "n_disagreement": 29,
+  "disagreement_examples": [
+    {
+      "key": "instruction:183d17a03688b299",
+      "kind": "instruction",
+      "cell": null,
+      "archetype": "two_row_transfer",
+      "truth_signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY",
+      "ir_ops": [
+        "read",
+        "verify",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "ir_predicate": null,
+      "truth_predicate": {
+        "mode": "membership",
+        "op_set": [
+          ">=",
+          "<="
+        ],
+        "value_set": [
+          0.0,
+          400.0
+        ]
+      },
+      "scores": {
+        "pred_op": null,
+        "pred_op_bucket": null,
+        "pred_value": null,
+        "polarity": null,
+        "seq_contained": false,
+        "seq_lcs_ratio": 0.3333333333333333
+      },
+      "polarity_clause": "Guard: 'east' >= 0 after the move"
+    },
+    {
+      "key": "instruction:7e936b9d250bd8ae",
+      "kind": "instruction",
+      "cell": null,
+      "archetype": "aggregate_gate",
+      "truth_signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "aggregate",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "ir_predicate": null,
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": 0
+      },
+      "scores": {
+        "pred_op": null,
+        "pred_op_bucket": null,
+        "pred_value": null,
+        "polarity": null,
+        "seq_contained": false,
+        "seq_lcs_ratio": 0.16666666666666666
+      },
+      "polarity_clause": "Policy: If no attendee of the event 'Roadmap Workshop' (2026-10-08) has declined (their RSVP count of 'declined' is 0)"
+    },
+    {
+      "key": "instruction:72846c7bb1cafa7d",
+      "kind": "instruction",
+      "cell": null,
+      "archetype": "delete_after_capture",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "ir_ops": [
+        "read",
+        "branch",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "ir_predicate": {
+        "op": "==",
+        "value": "spam",
+        "polarity": "positive",
+        "attribute": "tag"
+      },
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "spam"
+      },
+      "scores": {
+        "pred_op": true,
+        "pred_op_bucket": true,
+        "pred_value": true,
+        "polarity": true,
+        "seq_contained": false,
+        "seq_lcs_ratio": 0.5
+      },
+      "polarity_clause": "If the ticket APP-5815 in the tickets table is tagged 'spam'"
+    },
+    {
+      "key": "instruction:6cf21dff7cc4013d",
+      "kind": "instruction",
+      "cell": null,
+      "archetype": "conditional_write",
+      "truth_signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+      "ir_ops": [
+        "read",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "verify"
+      ],
+      "ir_predicate": null,
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">",
+        "value": 38
+      },
+      "scores": {
+        "pred_op": null,
+        "pred_op_bucket": null,
+        "pred_value": null,
+        "polarity": null,
+        "seq_contained": false,
+        "seq_lcs_ratio": 0.5
+      },
+      "polarity_clause": "If the on-hand quantity of SKU AX-8277 at warehouse 'main' is above the overstock limit for category 'hardware' in the inv_policies table (column overstock_limit)"
+    },
+    {
+      "key": "instruction:4e1dcf2f63204b24",
+      "kind": "instruction",
+      "cell": null,
+      "archetype": "conditional_write",
+      "truth_signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "verify"
+      ],
+      "ir_predicate": {
+        "op": ">",
+        "value": "overstock_limit",
+        "polarity": "positive",
+        "attribute": "on-hand quantity"
+      },
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">",
+        "value": 77
+      },
+      "scores": {
+        "pred_op": true,
+        "pred_op_bucket": true,
+        "pred_value": false,
+        "polarity": true,
+        "seq_contained": false,
+        "seq_lcs_ratio": 0.75
+      },
+      "polarity_clause": "Policy: If the on-hand quantity of SKU AX-7250 at warehouse 'main' is above the overstock limit for category 'plumbing' in the inv_policies table (column overstock_limit)"
+    },
+    {
+      "key": "instruction:3ca5775e76fc35de",
+      "kind": "instruction",
+      "cell": null,
+      "archetype": "conditional_write",
+      "truth_signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "verify"
+      ],
+      "ir_predicate": {
+        "op": ">",
+        "value": "escalate_threshold",
+        "polarity": "positive",
+        "attribute": "complaint count"
+      },
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">",
+        "value": 7
+      },
+      "scores": {
+        "pred_op": true,
+        "pred_op_bucket": true,
+        "pred_value": false,
+        "polarity": true,
+        "seq_contained": false,
+        "seq_lcs_ratio": 0.75
+      },
+      "polarity_clause": "If the customer's complaint count is above the escalation threshold for tier 'silver' in the sla_policies table (column escalate_threshold)"
+    },
+    {
+      "key": "instruction:df0c1127794e2acd",
+      "kind": "instruction",
+      "cell": null,
+      "archetype": "delete_after_capture",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "branch",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "ir_predicate": {
+        "op": "==",
+        "value": "spam",
+        "polarity": "positive",
+        "attribute": "tag"
+      },
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "spam"
+      },
+      "scores": {
+        "pred_op": true,
+        "pred_op_bucket": true,
+        "pred_value": true,
+        "polarity": true,
+        "seq_contained": false,
+        "seq_lcs_ratio": 0.8333333333333334
+      },
+      "polarity_clause": "If the ticket DBA-7070 in the tickets table is tagged 'spam'"
+    },
+    {
+      "key": "instruction:346224fe949bc8b3",
+      "kind": "instruction",
+      "cell": null,
+      "archetype": "two_row_transfer",
+      "truth_signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY",
+      "ir_ops": [
+        "read",
+        "write",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "ir_predicate": null,
+      "truth_predicate": {
+        "mode": "membership",
+        "op_set": [
+          ">=",
+          "<="
+        ],
+        "value_set": [
+          5.0,
+          46.0
+        ]
+      },
+      "scores": {
+        "pred_op": null,
+        "pred_op_bucket": null,
+        "pred_value": null,
+        "polarity": null,
+        "seq_contained": false,
+        "seq_lcs_ratio": 0.6666666666666666
+      },
+      "polarity_clause": "Guard: morning stays at 5+"
+    }
+  ],
+  "per_sample": [
+    {
+      "key": "instruction:4151d7a16018f271",
+      "kind": "instruction",
+      "provenance": "rescue1",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 22,
+      "source_kind": "instruction",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "cold"
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the lead Priya Haddad (priya.haddad@demo.example.io) in the leads table has status 'cold'",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "cold",
+        "polarity": "positive",
+        "attribute": "status"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": true,
+      "seq_contained": true,
+      "seq_lcs_ratio": 1.0,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "instruction:183d17a03688b299",
+      "kind": "instruction",
+      "provenance": "canonical_v2",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "two_row_transfer",
+      "family_idx": 10,
+      "source_kind": "instruction",
+      "truth_signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY",
+      "truth_predicate": {
+        "mode": "membership",
+        "op_set": [
+          ">=",
+          "<="
+        ],
+        "value_set": [
+          0.0,
+          400.0
+        ]
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "Guard: 'east' >= 0 after the move",
+      "ir_ops": [
+        "read",
+        "verify",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.3333333333333333,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "instruction:7e936b9d250bd8ae",
+      "kind": "instruction",
+      "provenance": "canonical_v2",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "aggregate_gate",
+      "family_idx": 29,
+      "source_kind": "instruction",
+      "truth_signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": 0
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "Policy: If no attendee of the event 'Roadmap Workshop' (2026-10-08) has declined (their RSVP count of 'declined' is 0)",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "aggregate",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.16666666666666666,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "instruction:72846c7bb1cafa7d",
+      "kind": "instruction",
+      "provenance": "canonical_v2",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 31,
+      "source_kind": "instruction",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "spam"
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the ticket APP-5815 in the tickets table is tagged 'spam'",
+      "ir_ops": [
+        "read",
+        "branch",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "spam",
+        "polarity": "positive",
+        "attribute": "tag"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": true,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.5,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "instruction:6cf21dff7cc4013d",
+      "kind": "instruction",
+      "provenance": "rescue1",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 17,
+      "source_kind": "instruction",
+      "truth_signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">",
+        "value": 38
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the on-hand quantity of SKU AX-8277 at warehouse 'main' is above the overstock limit for category 'hardware' in the inv_policies table (column overstock_limit)",
+      "ir_ops": [
+        "read",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.5,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "instruction:4e1dcf2f63204b24",
+      "kind": "instruction",
+      "provenance": "canonical_v2",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 33,
+      "source_kind": "instruction",
+      "truth_signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">",
+        "value": 77
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "Policy: If the on-hand quantity of SKU AX-7250 at warehouse 'main' is above the overstock limit for category 'plumbing' in the inv_policies table (column overstock_limit)",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": ">",
+        "value": "overstock_limit",
+        "polarity": "positive",
+        "attribute": "on-hand quantity"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": false,
+      "polarity": true,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.75,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      },
+      "pred_value_textually_indirect": {
+        "truth_value": 77,
+        "ir_value": "overstock_limit",
+        "note": "numeric theta nowhere in text; IR emitted the policy-field reference"
+      }
+    },
+    {
+      "key": "instruction:3ca5775e76fc35de",
+      "kind": "instruction",
+      "provenance": "canonical_v2",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 24,
+      "source_kind": "instruction",
+      "truth_signature": "P1|J2|op>|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">",
+        "value": 7
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the customer's complaint count is above the escalation threshold for tier 'silver' in the sla_policies table (column escalate_threshold)",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": ">",
+        "value": "escalate_threshold",
+        "polarity": "positive",
+        "attribute": "complaint count"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": false,
+      "polarity": true,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.75,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      },
+      "pred_value_textually_indirect": {
+        "truth_value": 7,
+        "ir_value": "escalate_threshold",
+        "note": "numeric theta nowhere in text; IR emitted the policy-field reference"
+      }
+    },
+    {
+      "key": "instruction:df0c1127794e2acd",
+      "kind": "instruction",
+      "provenance": "rescue1",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 7,
+      "source_kind": "instruction",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "spam"
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the ticket DBA-7070 in the tickets table is tagged 'spam'",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "branch",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "spam",
+        "polarity": "positive",
+        "attribute": "tag"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": true,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.8333333333333334,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "instruction:346224fe949bc8b3",
+      "kind": "instruction",
+      "provenance": "rescue1",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "two_row_transfer",
+      "family_idx": 35,
+      "source_kind": "instruction",
+      "truth_signature": "P2|transfer:origin>target|READx2;CHECK;WRITEx2;VERIFY",
+      "truth_predicate": {
+        "mode": "membership",
+        "op_set": [
+          ">=",
+          "<="
+        ],
+        "value_set": [
+          5.0,
+          46.0
+        ]
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "Guard: morning stays at 5+",
+      "ir_ops": [
+        "read",
+        "write",
+        "write",
+        "verify"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.6666666666666666,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "instruction:ed8458b3d07d85c9",
+      "kind": "instruction",
+      "provenance": "canonical_v2",
+      "cell": null,
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 38,
+      "source_kind": "instruction",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "cold"
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the lead Oren Abara (oren.abara@corp.example.net) in the leads table has status 'cold'",
+      "ir_ops": [
+        "read",
+        "branch",
+        "verify",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "cold",
+        "polarity": "positive",
+        "attribute": "status"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": true,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.5,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "memory:91ef7eb04e1c932d",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 32,
+      "source_kind": "near_miss",
+      "truth_signature": "P1|J2|op<=|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "<=",
+        "value": 7
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the complaint count is at or below the escalation threshold from the sla_policies table",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.25,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "memory:0864fd0334ea4a1f",
+      "kind": "memory",
+      "provenance": "rescue1",
+      "cell": "A00",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 14,
+      "source_kind": "unrelated",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "cold"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "read",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "cold",
+        "polarity": "positive",
+        "attribute": "status"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": false,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.8333333333333334,
+      "polarity_clause_rule_note": "first-cue clause is an else-path guard fragment; operative condition stated positively upstream -> verified truth positive",
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "memory:07720cf64c078c88",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 2,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 0,
+      "source_kind": "near_miss",
+      "truth_signature": "P1|J1|op<=|READ;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "<=",
+        "value": 5
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the complaint count is at or below the complaint threshold stated in the request",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "<=",
+        "value": "complaint threshold",
+        "polarity": "positive",
+        "attribute": "complaint count"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": false,
+      "polarity": true,
+      "seq_contained": true,
+      "seq_lcs_ratio": 1.0,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      },
+      "pred_value_textually_indirect": {
+        "truth_value": 5,
+        "ir_value": "complaint threshold",
+        "note": "numeric theta nowhere in text; IR emitted the policy-field reference"
+      }
+    },
+    {
+      "key": "memory:1b3c7db7d277dbd2",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 6,
+      "source_kind": "near_miss",
+      "truth_signature": "P4|delete_only|READ;CHECK;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "cold"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "read",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "cold",
+        "polarity": "positive",
+        "attribute": "status"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": false,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.8,
+      "polarity_clause_rule_note": "first-cue clause is an else-path guard fragment; operative condition stated positively upstream -> verified truth positive",
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "memory:4ba01733354afed6",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 14,
+      "source_kind": "near_miss",
+      "truth_signature": "P4|delete_only|READ;CHECK;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "cold"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "read",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "cold",
+        "polarity": "positive",
+        "attribute": "status"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": false,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.8,
+      "polarity_clause_rule_note": "first-cue clause is an else-path guard fragment; operative condition stated positively upstream -> verified truth positive",
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "memory:535dd2f9a41e4364",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 2,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 24,
+      "source_kind": "near_miss",
+      "truth_signature": "P1|J2|op<=|READ+POLICY;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "<=",
+        "value": 7
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the complaint count is at or below the escalation threshold from the sla_policies table",
+      "ir_ops": [
+        "read",
+        "read",
+        "branch",
+        "write",
+        "verify",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "<=",
+        "value": "escalate_threshold",
+        "polarity": "positive",
+        "attribute": "complaint count"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": false,
+      "polarity": true,
+      "seq_contained": true,
+      "seq_lcs_ratio": 1.0,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      },
+      "pred_value_textually_indirect": {
+        "truth_value": 7,
+        "ir_value": "escalate_threshold",
+        "note": "numeric theta nowhere in text; IR emitted the policy-field reference"
+      }
+    },
+    {
+      "key": "memory:b260d662cbaa7666",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A10",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 39,
+      "source_kind": "cross_domain_pair",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "spam"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read",
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.16666666666666666,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "memory:d75b83efcd27474e",
+      "kind": "memory",
+      "provenance": "rescue1",
+      "cell": "A11",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 23,
+      "source_kind": "sibling_same_family",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "spam"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "read",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "'spam'",
+        "polarity": "positive",
+        "attribute": "tag"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": false,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.8333333333333334,
+      "polarity_clause_rule_note": "first-cue clause is an else-path guard fragment; operative condition stated positively upstream -> verified truth positive",
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "memory:066d89739a50c398",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A10",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 15,
+      "source_kind": "cross_domain_pair",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "spam"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.16666666666666666,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "memory:ca287f98e77f2359",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 6,
+      "source_kind": "near_miss",
+      "truth_signature": "P4|delete_only|READ;CHECK;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "cold"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "read",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "==",
+        "value": "cold",
+        "polarity": "positive",
+        "attribute": "status"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": true,
+      "polarity": false,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.8,
+      "polarity_clause_rule_note": "first-cue clause is an else-path guard fragment; operative condition stated positively upstream -> verified truth positive",
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "memory:4661d76b2324ee65",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A10",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 23,
+      "source_kind": "cross_domain_pair",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "spam"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.16666666666666666,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "memory:fd3db43d03791444",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A00",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 9,
+      "source_kind": "unrelated",
+      "truth_signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">",
+        "value": 77
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the on-hand quantity is above the overstock limit stated in the request",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.3333333333333333,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "memory:ea0ec5604bfda863",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 9,
+      "source_kind": "near_miss",
+      "truth_signature": "P1|J1|op<=|READ;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "<=",
+        "value": 77
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the on-hand quantity is at or below the overstock limit stated in the request",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": "<=",
+        "value": "overstock limit",
+        "polarity": "positive",
+        "attribute": "on-hand quantity"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": false,
+      "polarity": true,
+      "seq_contained": true,
+      "seq_lcs_ratio": 1.0,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      },
+      "pred_value_textually_indirect": {
+        "truth_value": 77,
+        "ir_value": "overstock limit",
+        "note": "numeric theta nowhere in text; IR emitted the policy-field reference"
+      }
+    },
+    {
+      "key": "memory:fa700c7a58bbf04c",
+      "kind": "memory",
+      "provenance": "rescue1",
+      "cell": "A01",
+      "n_join_candidates": 4,
+      "join_conflicts": [
+        "predicate_value"
+      ],
+      "archetype": "two_row_transfer",
+      "family_idx": 3,
+      "source_kind": "near_miss",
+      "truth_signature": "P2|transfer:target>origin|READx2;CHECK;WRITEx2;VERIFY",
+      "truth_predicate": {
+        "mode": "membership",
+        "op_set": [
+          ">=",
+          "<="
+        ],
+        "value_set": [
+          5.0,
+          40.0
+        ]
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the guard fails",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify",
+        "finish"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": ">=",
+        "value": "minimum floor",
+        "polarity": "positive",
+        "attribute": "afternoon session headcount"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": null,
+      "polarity": true,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.8333333333333334,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "memory:c6210d657938917e",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "aggregate_gate",
+      "family_idx": 5,
+      "source_kind": "near_miss",
+      "truth_signature": "P3|agg:done|op>=|READ;AGG;CHECK;WRITEx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">=",
+        "value": 1
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If at least one is accepted",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "aggregate",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.16666666666666666,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "memory:909ffd7bb118660f",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A00",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 14,
+      "source_kind": "unrelated",
+      "truth_signature": "P4|archive_then_delete|READ;CHECK;ARCHIVE;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "cold"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.16666666666666666,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "memory:4be72df3927a52f0",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A00",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "aggregate_gate",
+      "family_idx": 5,
+      "source_kind": "unrelated",
+      "truth_signature": "P3|agg:open|op==|READ;AGG;CHECK;WRITEx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": 0
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "If none remain",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "aggregate",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.16666666666666666,
+      "polarity_clause_rule_note": null
+    },
+    {
+      "key": "memory:9c541cd24017a32e",
+      "kind": "memory",
+      "provenance": "rescue1",
+      "cell": "A01",
+      "n_join_candidates": 3,
+      "join_conflicts": [
+        "predicate_value"
+      ],
+      "archetype": "two_row_transfer",
+      "family_idx": 2,
+      "source_kind": "near_miss",
+      "truth_signature": "P2|transfer:target>origin|READx2;CHECK;WRITEx2;VERIFY",
+      "truth_predicate": {
+        "mode": "membership",
+        "op_set": [
+          ">=",
+          "<="
+        ],
+        "value_set": [
+          0.0,
+          400.0
+        ]
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the guard fails",
+      "ir_ops": [
+        "read",
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify",
+        "finish",
+        "branch",
+        "branch",
+        "branch"
+      ],
+      "expected_ops": [
+        "read",
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": ">=",
+        "value": "minimum keep level",
+        "polarity": "positive",
+        "attribute": "west warehouse row"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": null,
+      "polarity": true,
+      "seq_contained": true,
+      "seq_lcs_ratio": 1.0,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      }
+    },
+    {
+      "key": "memory:d30caf596dc438d4",
+      "kind": "memory",
+      "provenance": "rescue1",
+      "cell": "A10",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "conditional_write",
+      "family_idx": 0,
+      "source_kind": "cross_domain_pair",
+      "truth_signature": "P1|J1|op>|READ;CHECK;BRANCHWRITE;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": ">",
+        "value": 5
+      },
+      "truth_polarity": "positive",
+      "polarity_clause": "If the complaint count is above the complaint threshold stated in the request",
+      "ir_ops": [
+        "read",
+        "branch",
+        "write",
+        "verify",
+        "finish",
+        "branch",
+        "branch",
+        "branch",
+        "branch",
+        "branch",
+        "branch",
+        "branch"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "verify"
+      ],
+      "has_branch": true,
+      "ir_predicate": {
+        "op": ">",
+        "value": "complaint threshold",
+        "polarity": "positive",
+        "attribute": "complaint count"
+      },
+      "ir_polarity": "positive",
+      "pred_op": true,
+      "pred_op_bucket": true,
+      "pred_value": false,
+      "polarity": true,
+      "seq_contained": true,
+      "seq_lcs_ratio": 1.0,
+      "polarity_clause_rule_note": null,
+      "polarity_verified": {
+        "truth": "positive",
+        "agree": true
+      },
+      "pred_value_textually_indirect": {
+        "truth_value": 5,
+        "ir_value": "complaint threshold",
+        "note": "numeric theta nowhere in text; IR emitted the policy-field reference"
+      }
+    },
+    {
+      "key": "memory:61cbe03fa9328b47",
+      "kind": "memory",
+      "provenance": "canonical_v2",
+      "cell": "A01",
+      "n_join_candidates": 1,
+      "join_conflicts": [],
+      "archetype": "delete_after_capture",
+      "family_idx": 14,
+      "source_kind": "near_miss",
+      "truth_signature": "P4|delete_only|READ;CHECK;DELx2;VERIFY",
+      "truth_predicate": {
+        "mode": "exact",
+        "op": "==",
+        "value": "cold"
+      },
+      "truth_polarity": "negative",
+      "polarity_clause": "if it is not",
+      "ir_ops": [
+        "read"
+      ],
+      "expected_ops": [
+        "read",
+        "branch",
+        "write",
+        "write",
+        "verify"
+      ],
+      "has_branch": false,
+      "pred_op": null,
+      "pred_op_bucket": null,
+      "pred_value": null,
+      "polarity": null,
+      "ir_predicate": null,
+      "ir_polarity": null,
+      "seq_contained": false,
+      "seq_lcs_ratio": 0.2,
+      "polarity_clause_rule_note": null
+    }
+  ]
+}

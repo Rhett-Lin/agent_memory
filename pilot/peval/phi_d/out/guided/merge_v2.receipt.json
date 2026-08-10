@@ -1,0 +1,25 @@
+{
+  "created": "2026-08-10T16:23:23+0900",
+  "rule": "canonical valid rows carried; invalid keys promoted from valid rescue1 rows; otherwise canonical invalid row kept with rescue note",
+  "inputs": {
+    "canonical": {
+      "path": "extractions.jsonl",
+      "sha256": "09f49df9e7bc4e981094f07bc3407d668599e4d54593e1aa94eea997bfce267c"
+    },
+    "rescue": {
+      "path": "out/guided/rescue1.jsonl",
+      "sha256": "bc3a27aefb48e9bd117f6e755d35431eaf1d17b48ba0f775f933de532ecc7aef"
+    }
+  },
+  "output": {
+    "path": "out/extractions_v2.jsonl",
+    "rows": 532,
+    "valid": 532,
+    "validity_rate": 1.0,
+    "promoted_from_rescue": 151,
+    "still_invalid": 0,
+    "sha256": "9e66c3dbc9d0ca2624a839d634bed88e93b688a07b14c1f8461e4d8b8cf2324d"
+  },
+  "keys_unique": true,
+  "row_order": "canonical file order"
+}

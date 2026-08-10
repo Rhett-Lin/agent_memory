@@ -1,0 +1,69 @@
+{
+  "run_id": "rescue1",
+  "created": "2026-08-10T16:01:37+0900",
+  "purpose": "guided rescue of the 151 invalid rows of out/extractions.jsonl (v2-compact lineage)",
+  "git_head_at_run": "fc1767f5525c901b2c221b9f1ef4e8406edc6236",
+  "code_sha256": {
+    "rescue_guided.py": "5c287d65a091ae96c3502116ccbce6363ed109b8e671187a53dd0d6e79a043b9",
+    "common.py": "3fb08925b2c2375263115b45931001eff9d4779725de32dfe9d1e2a779247e95",
+    "extract_phi.py": "fde92cbeb7e1ee12a913b8c2749f7cad12549f53871147794d40cc8db0daaecd"
+  },
+  "lineage": {
+    "prompt_sha": "dde9f4154a6c6a5e02ce583c3cd8a2edb16ae05625acd6b2775ec30656a7a23b",
+    "prompt_sha_check": "rescue_guided.self_checks() asserted equality with canonical corpus prompt_sha",
+    "schema": "common.IR_GUIDE_SCHEMA with maxLength stripped == git-committed v2-compact schema (runtime-equality-asserted; live common.py is the hung/forbidden v3c variant)",
+    "guided": "json:IR_GUIDE_SCHEMA_v2_compact(outlines), whitespace_pattern=''"
+  },
+  "decode": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 2048,
+    "seed": 42
+  },
+  "decode_delta_vs_canonical": "max_tokens 768 -> 2048; everything else unchanged",
+  "model": "Qwen/Qwen2.5-7B-Instruct@a09a35458c702b33eeacc393d103063234e8bc28 fp16 vLLM outlines",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "4",
+    "HF_HUB_OFFLINE": "1",
+    "OUTLINES_CACHE_DIR": "/work1/zixuan/cache/outlines"
+  },
+  "retry_policy": "one repair retry, class-mapped sanitized feedback (same rules as extract_phi.py)",
+  "phases": {
+    "smoke": {
+      "keys": 51,
+      "keys_file": "out/guided/smoke1_keys.json",
+      "report": "out/guided/smoke1_report.json",
+      "result": "json_parse_error 20/20 first-pass; schema 29/31 first-pass, 31/31 post-retry"
+    },
+    "full": {
+      "keys_total": 151,
+      "batches": [
+        "64 keys (after smoke resume-skip)",
+        "36 keys"
+      ],
+      "result": "64/64 and 36/36 valid after retry"
+    }
+  },
+  "results": {
+    "valid": 151,
+    "n": 151,
+    "first_pass_valid": 148,
+    "post_retry_valid": 151,
+    "attempts_hist": {
+      "1": 148,
+      "2": 3
+    },
+    "finish_reason": {
+      "stop": 151
+    }
+  },
+  "negative_exemplar_tweak": "NOT used (schema-class first-pass 93.5% >= 50% trigger; no second intervention)",
+  "output": {
+    "rows": "out/guided/rescue1.jsonl",
+    "sha256": "bc3a27aefb48e9bd117f6e755d35431eaf1d17b48ba0f775f933de532ecc7aef"
+  },
+  "logs": [
+    "out/guided/rescue1_smoke.log",
+    "out/guided/rescue1_full.log"
+  ]
+}

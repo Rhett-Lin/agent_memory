@@ -120,17 +120,29 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--out", default=str(C.OUT / "extractions.jsonl"))
+    ap.add_argument("--retry-invalid-of", default="",
+                    help="rescue pass: rerun only keys recorded invalid in the given jsonl")
     args = ap.parse_args()
 
     out_path = pathlib.Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     pairs = C.load_pairs()
     work = build_worklist(pairs)
-    done = C.done_keys(out_path)
-    todo = [w for w in work if w[0] not in done]
+    if args.retry_invalid_of:
+        retry_keys = {json.loads(l)["key"] for l in open(args.retry_invalid_of)
+                      if not json.loads(l).get("valid")}
+        existing_valid = {json.loads(l)["key"] for l in open(out_path)
+                          if json.loads(l).get("valid")} if out_path.exists() else set()
+        todo = [w for w in work if w[0] in retry_keys and w[0] not in existing_valid]
+        n_done = len(work) - len(retry_keys)
+        print(f"[extract] rescue pass: invalid keys={len(retry_keys)} todo={len(todo)}", flush=True)
+    else:
+        done = C.done_keys(out_path)
+        todo = [w for w in work if w[0] not in done]
+        n_done = len(done)
     if args.limit:
         todo = todo[:args.limit]
-    print(f"[extract] unique texts={len(work)} done={len(done)} todo={len(todo)}", flush=True)
+    print(f"[extract] unique texts={len(work)} done={n_done} todo={len(todo)}", flush=True)
     if not todo:
         return
 
@@ -144,7 +156,7 @@ def main():
     tok = llm.get_tokenizer()
     prompt_sha = C.sha(SYSTEM_V0 + "\n" + EXTRACTION_PROMPT_V0 + "\n" + REPAIR_PROMPT_V0)
     meta = {"prompt_sha": prompt_sha, "model": C.MODEL_ID, "revision": C.MODEL_REV,
-            "decode": DECODE, "guided": "json:IR_GUIDE_SCHEMA_v2_compact(outlines)"}
+            "decode": DECODE, "guided": "json:IR_GUIDE_SCHEMA_v3c_maxlen64(outlines)"}
 
     fh = open(out_path, "a")
     t0 = time.time()
@@ -157,8 +169,15 @@ def main():
         retry_jobs = []
         for j, r in zip(jobs, rows):
             if r["error_class"] is not None:
+                if r.get("finish_reason") == "length":
+                    emsg = ("output hit the token budget before the JSON closed; re-emit more compact: "
+                            "shorter quotes, at most 10 nodes, never enumerate long ID lists")
+                elif r["error_class"] == "json_parse_error":
+                    emsg = f"output was not valid JSON ({str(r['error_detail'])[:120]})"
+                else:
+                    emsg = "output JSON did not match the required schema/keys"
                 retry_jobs.append({**j, "prompt": REPAIR_PROMPT_V0.replace(
-                    "{ERROR}", f"{r['error_class']} {r['error_detail'] or ''}".strip()[:300]).replace("{TEXT}", j["text"])})
+                    "{ERROR}", emsg).replace("{TEXT}", j["text"])})
         retry_by_key = {}
         if retry_jobs:
             for r in run_one_round(llm, tok, sp, retry_jobs):

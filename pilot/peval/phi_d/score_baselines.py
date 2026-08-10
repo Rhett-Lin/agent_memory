@@ -56,6 +56,15 @@ def load_jsonl(path):
         return [json.loads(l) for l in f if l.strip()]
 
 
+def load_extractions_dedup(path):
+    """Latest row per key wins (rescue-pass rows are appended after the originals)."""
+    rows = load_jsonl(path)
+    by_key = {}
+    for r in rows:          # later occurrences overwrite earlier ones
+        by_key[r["key"]] = r
+    return list(by_key.values())
+
+
 # ---------------------------------------------------------------- judge metrics
 
 def judge_metrics(pairs, judgments):
@@ -185,7 +194,7 @@ def extraction_stats(extractions):
 def main():
     pairs = C.load_pairs()
     judgments = load_jsonl(C.OUT / "judgments.jsonl")
-    extractions = load_jsonl(C.OUT / "extractions.jsonl")
+    extractions = load_extractions_dedup(C.OUT / "extractions.jsonl")
     print(f"[score] pairs={len(pairs)} judgments={len(judgments)} extractions={len(extractions)}")
 
     summary = {}

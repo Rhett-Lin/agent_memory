@@ -1,0 +1,102 @@
+{
+  "file": "out/extractions_v2.jsonl",
+  "n_rows": 532,
+  "n_valid": 532,
+  "validity_rate": 1.0,
+  "target_479": {
+    "met": true,
+    "short_by": 0
+  },
+  "by_kind": {
+    "instruction": {
+      "n": 160,
+      "valid": 160
+    },
+    "memory": {
+      "n": 372,
+      "valid": 372
+    }
+  },
+  "invalid_survivors_by_error_class": {},
+  "rescue": {
+    "attempted": 151,
+    "promoted": 151,
+    "promoted_by_canonical_error_class": {
+      "json_parse_error": 120,
+      "schema_validation_error": 31
+    }
+  },
+  "comparator_ceiling": {
+    "overall_both_side_valid": "640/640",
+    "overall_rate": 1.0,
+    "per_cell": {
+      "A00": {
+        "both_valid": 160,
+        "n": 160,
+        "rate": 1.0
+      },
+      "A01": {
+        "both_valid": 160,
+        "n": 160,
+        "rate": 1.0
+      },
+      "A10": {
+        "both_valid": 160,
+        "n": 160,
+        "rate": 1.0
+      },
+      "A11": {
+        "both_valid": 160,
+        "n": 160,
+        "rate": 1.0
+      }
+    },
+    "side_valid_cross": {
+      "instruction_valid=True memory_valid=True": 640
+    }
+  },
+  "status_distribution": {
+    "role:present": 636,
+    "role:absent": 1428,
+    "node:present": 1783,
+    "predicate.attribute:present": 309,
+    "predicate.op:present": 309,
+    "predicate.value:present": 309,
+    "predicate.polarity:present": 309,
+    "termination:present": 343,
+    "role:unknown": 1128,
+    "node:unknown": 231,
+    "termination:unknown": 188,
+    "node:absent": 74,
+    "termination:absent": 1,
+    "predicate.attribute:absent": 21,
+    "predicate.op:absent": 21,
+    "predicate.value:absent": 21,
+    "predicate.polarity:absent": 21,
+    "predicate.attribute:unknown": 1,
+    "predicate.op:unknown": 1,
+    "predicate.value:unknown": 1,
+    "predicate.polarity:unknown": 1
+  },
+  "evidence_presence_rate_among_present": {
+    "role": 0.9827044025157232,
+    "node": 0.9988782950084127,
+    "predicate.attribute": 1.0,
+    "predicate.op": 1.0,
+    "predicate.value": 1.0,
+    "predicate.polarity": 1.0,
+    "termination": 0.9970845481049563
+  },
+  "node_op_distribution": {
+    "read": 630,
+    "branch": 331,
+    "write": 528,
+    "verify": 287,
+    "finish": 228,
+    "aggregate": 84
+  },
+  "first_pass_error_classes": {
+    "json_parse_error": 211,
+    "schema_validation_error": 3
+  }
+}

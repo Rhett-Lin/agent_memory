@@ -135,8 +135,15 @@ def main():
         retry_jobs = []
         for j, r in zip(jobs, rows):
             if r["error_class"] is not None:
+                if r.get("finish_reason") == "length":
+                    emsg = ("output hit the token budget before the JSON closed; re-emit more compact, "
+                            "shorter quotes")
+                elif r["error_class"] == "json_parse_error":
+                    emsg = f"output was not valid JSON ({str(r['error_detail'])[:120]})"
+                else:
+                    emsg = "output JSON did not match the required schema/keys"
                 retry_jobs.append({**j, "prompt": REPAIR_PROMPT_V0.replace(
-                    "{ERROR}", f"{r['error_class']} {r['error_detail'] or ''}".strip()[:300])
+                    "{ERROR}", emsg)
                     .replace("{INSTRUCTION}", j["instruction"]).replace("{MEMORY}", j["memory"])})
         retry_by_key = {}
         if retry_jobs:

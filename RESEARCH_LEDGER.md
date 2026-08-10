@@ -109,6 +109,22 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - **φ-IR 结构化抽取:NO-GO**:532 唯一文本仅 34.8% 合法；失败=5-role schema 漂移 + 长 evidence JSON 断链;repair 0/347。双侧 IR 合法对仅 18.1% → **比较器 S2 阻塞（未被证伪）**。救赎线：guided decoding 需 vllm/outlines 适配（FSM 缓存路径已知）。
 - 产物:`pilot/peval/phi_d/`（REPORT.md、SPEC.md、`*_run5200/4766.py` 钉版实例、out/frozen 快照）。过程事故：并发子代理撞目录 → 全部产物已按 byte-pin + prompt_sha 重推干净;rank zombie 进程已清。
 
+### 2026-08-10 — φ+d 设计裁决 round 2（thread 019fe66c,S2 比较器冻结前置;GO with mandatory amendments）
+
+- **stage-zero**:两抽取语料统计矛盾（381/532 guided vs 185/532 frozen)→ S2 前必须合并唯一 canonical、唯一 hash、重算全部统计、judge(4766）法定基线（已由 rescue 合并完成：extractions_v2.jsonl,532/532)。
+- ABSENT/UNKNOWN：采纳**字段级完整度证书**(7 子句）;`absent` 裸值永不成否决理由；最终 match 要求全部任务必需组件可比且相符。
+- 矛盾真值表以**规范化决策函数**为准(anchor+算子补+双效交换;complement+swap=等价,complement 不 swap=矛盾);阈值符号化（禁止裸数值比较）；增删若干否决项；**否决字段须先过忠实度门**:自动核验全量 joinable IR + 4 archetype × 3 cell 分层人审，每字段 ≥0.90 总一致 / ≥0.80 逐族 / 假 ABSENT ≤0.05,不过即丧失硬否决资格。
+- 判定：禁连续分数，严格三值;top-1 主策略（k=4 仅诊断、其乐观性登记）。
+- 门槛：保留 macro-LOAO ΔAUC≥+0.10 + 灾难门（逐族 AUC>0.5，最差族 ≥0.60）;**新增**:A00/A01 误收 ≤0.10（整体且逐族）、**A10/A11 保留 ≥0.50（整体且逐族，新增地板，防 compare-and-kill 跨域等价）**;judge 正式对比:Δsafety 上界<0、Δretain 下界>0、macro 逐族对比；策略评估同容器 top-1/top-k 对照 sim/P̂/oracle。
+- 迁移挑战：五种示例不再算"未见机制";S5 独立门，独立挑战者在比较器 hash 后选择变换、含正控、单次运行；S5 不能救 S3 失败。
+- 顺序（10 步，含第三轮 Codex 对抗审查 S2 规则代码后定最终 hash）：救援→合并→扩编忠实度→S2-rc1→裁决 round 3→最终 hash→640 一次跑→S5。
+
+### 2026-08-10 — φ 抽取救援完成（工程纪录）
+
+- 先前 guided canonical:381/532(71.6%),151 invalid = 120 截断 + 31 schema。救援（同 prompt/schema，仅 max_tokens 768→2048;smoke 51/51)后全量 151/151 救回 → **extractions_v2.jsonl 532/532 = 100% 合法;640/640 双侧合法**。
+- 忠实度 30 样本盲审：原值弱（op 56.7 / polarity 40 / LCS 0.589)，验证后：polarity 100%(else 片段伪影修正）、value-as-stated 100%(12/372 文本不可判定 theta);**真缺口 = 程序结构覆盖：13/30 缺 branch 节点（aggregate_gate 3/3)、roles-unknown 35.3%**——S2 比较器规则必须容忍该格局，ABSENT-vs-UNKNOWN 语义是冻结关键。
+- 产物：rescue_guided.py / merge_v2.py / stats_v2.py / faithfulness_audit.py + out/guided/*、extractions_v2.jsonl、REPORT.md §7。canonical 原件未动（sha 复核）。
+
 ### 2026-08-10 — Part V 实现期池构造缺口 → 第六轮裁决（thread 019fe550,GO with mandatory amendments）
 
 - 代码包完成并冻结（`pilot/external/partv/`:analyze_gate 7/7 合成自测、prepare/rollout_engine/harvest/build_cards/gates_and_audits/headroom/grid,FREEZE_MANIFEST 全 hash 核验：builder 96ef23ea、prompt 包 46da398a 均完好）。

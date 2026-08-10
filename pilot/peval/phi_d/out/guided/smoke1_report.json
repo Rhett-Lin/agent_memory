@@ -1,0 +1,36 @@
+{
+  "created": "2026-08-10T15:23:48+0900",
+  "stage": "rescue smoke (51 keys = 20 sampled json_parse_error + all 31 schema_validation_error)",
+  "settings": {
+    "prompt_sha": "dde9f4154a6c6a5e02ce583c3cd8a2edb16ae05625acd6b2775ec30656a7a23b",
+    "guided": "json:IR_GUIDE_SCHEMA_v2_compact(outlines)",
+    "decode": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 2048,
+      "seed": 42
+    },
+    "retry": "one repair retry, class-mapped feedback (same as extract_phi.py)"
+  },
+  "results": {
+    "json_parse_error(truncation)": {
+      "n": 20,
+      "first_pass_valid": 20,
+      "post_retry_valid": 20,
+      "first_pass_rate": 1.0,
+      "post_retry_rate": 1.0
+    },
+    "schema_validation_error": {
+      "n": 31,
+      "first_pass_valid": 29,
+      "post_retry_valid": 31,
+      "first_pass_rate": 0.9355,
+      "post_retry_rate": 1.0
+    }
+  },
+  "gate_evaluation": {
+    "truncation >85% post-retry": "PASS (100%) -> proceed to full rescue",
+    "schema class": "93.5% first-pass, 100% post-retry -> NO negative-exemplar tweak (tweak rule required <50% with systematic cause; not triggered); no schema change (v3c maxLength remains forbidden); no raw-output capture needed"
+  },
+  "output_rows": "out/guided/rescue1.jsonl (51 rows, kept as first 51 rows of the full rescue run)"
+}

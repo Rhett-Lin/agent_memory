@@ -31,7 +31,7 @@ JUDGE_FIELDS = ["goal", "roles", "branch_predicates", "transfer_direction",
 # backend; outlines in this env requires string "type", so nullables use anyOf).
 # `args` is left a free object; per-op argument shape is enforced afterwards by
 # validate_ir / validate_judge (+ one repair retry).
-_STR_OR_NULL = {"anyOf": [{"type": "string"}, {"type": "null"}]}
+_STR_OR_NULL = {"anyOf": [{"type": "string", "maxLength": 64}, {"type": "null"}]}
 _STATUS_EV = {"type": "object", "additionalProperties": False,
               "properties": {"status": {"enum": STATUSES},
                              "surface": _STR_OR_NULL,
@@ -76,13 +76,13 @@ _ARGS = {"type": "object", "additionalProperties": False,
          "required": ["target", "over", "function", "action", "value",
                       "predicate", "then_effects", "else_effects"]}
 _NODE = {"type": "object", "additionalProperties": False,
-         "properties": {"id": {"type": "string"},
+         "properties": {"id": {"type": "string", "maxLength": 6},
                         "op": {"enum": NODE_OPS},
                         "status": {"enum": STATUSES},
                         "evidence": _STR_OR_NULL,
                         "args": _ARGS,
-                        "depends_on": {"type": "array", "items": {"type": "string"}},
-                        "commutes_with": {"type": "array", "items": {"type": "string"}}},
+                        "depends_on": {"type": "array", "items": {"type": "string", "maxLength": 6}},
+                        "commutes_with": {"type": "array", "items": {"type": "string", "maxLength": 6}}},
          "required": ["id", "op", "status", "evidence", "args", "depends_on", "commutes_with"]}
 IR_GUIDE_SCHEMA = {
     "type": "object", "additionalProperties": False,
