@@ -1,0 +1,484 @@
+{
+  "comparator_v0": {
+    "scorer": "comparator_v0",
+    "auc_overall": 0.521806640625,
+    "auc_S1": 0.512421875,
+    "auc_overall_family_macro40": 0.5220703125,
+    "auc_S1_family_macro40": 0.5125,
+    "family_folds": {
+      "n_total": 40,
+      "n_overall_used": 40,
+      "n_S1_used": 40,
+      "n_overall_single_class_skipped": 0
+    },
+    "per_archetype": {
+      "aggregate_gate": {
+        "auc_overall": 0.56875,
+        "auc_S1": 0.525
+      },
+      "conditional_write": {
+        "auc_overall": 0.54140625,
+        "auc_S1": 0.6065625
+      },
+      "delete_after_capture": {
+        "auc_overall": 0.4834375,
+        "auc_S1": 0.454375
+      },
+      "two_row_transfer": {
+        "auc_overall": 0.49375,
+        "auc_S1": 0.4625
+      }
+    },
+    "auc_S1_LOAO_macro": 0.512109375,
+    "auc_S1_leave_one_archetype_out": {
+      "aggregate_gate": 0.5082638888888888,
+      "conditional_write": 0.4805902777777778,
+      "delete_after_capture": 0.5317708333333333,
+      "two_row_transfer": 0.5289236111111111
+    },
+    "per_cell": {
+      "A00": {
+        "n": 160,
+        "admission": 0.3125,
+        "per_archetype": {
+          "aggregate_gate": 0.2625,
+          "conditional_write": 0.3625,
+          "delete_after_capture": 0.3125,
+          "two_row_transfer": 0.3125
+        }
+      },
+      "A01": {
+        "n": 160,
+        "admission": 0.328125,
+        "per_archetype": {
+          "aggregate_gate": 0.3,
+          "conditional_write": 0.2625,
+          "delete_after_capture": 0.375,
+          "two_row_transfer": 0.375
+        }
+      },
+      "A10": {
+        "n": 160,
+        "admission": 0.34375,
+        "per_archetype": {
+          "aggregate_gate": 0.375,
+          "conditional_write": 0.3375,
+          "delete_after_capture": 0.325,
+          "two_row_transfer": 0.3375
+        }
+      },
+      "A11": {
+        "n": 160,
+        "admission": 0.340625,
+        "per_archetype": {
+          "aggregate_gate": 0.325,
+          "conditional_write": 0.375,
+          "delete_after_capture": 0.325,
+          "two_row_transfer": 0.3375
+        }
+      }
+    }
+  },
+  "sim_embed": {
+    "scorer": "sim_embed",
+    "auc_overall": 0.605546875,
+    "auc_S1": 0.528828125,
+    "auc_overall_family_macro40": 0.61171875,
+    "auc_S1_family_macro40": 0.5984375,
+    "family_folds": {
+      "n_total": 40,
+      "n_overall_used": 40,
+      "n_S1_used": 40,
+      "n_overall_single_class_skipped": 0
+    },
+    "per_archetype": {
+      "aggregate_gate": {
+        "auc_overall": 0.623671875,
+        "auc_S1": 0.5678125
+      },
+      "conditional_write": {
+        "auc_overall": 0.55140625,
+        "auc_S1": 0.501875
+      },
+      "delete_after_capture": {
+        "auc_overall": 0.668828125,
+        "auc_S1": 0.7403125
+      },
+      "two_row_transfer": {
+        "auc_overall": 0.613203125,
+        "auc_S1": 0.4859375
+      }
+    },
+    "auc_S1_LOAO_macro": 0.573984375,
+    "auc_S1_leave_one_archetype_out": {
+      "aggregate_gate": 0.5300347222222223,
+      "conditional_write": 0.5419444444444445,
+      "delete_after_capture": 0.5188541666666666,
+      "two_row_transfer": 0.5445486111111111
+    },
+    "per_cell": {
+      "A00": {
+        "n": 160,
+        "admission": 0.62018375,
+        "per_archetype": {
+          "aggregate_gate": 0.6258774999999999,
+          "conditional_write": 0.6197150000000002,
+          "delete_after_capture": 0.6223449999999998,
+          "two_row_transfer": 0.6127975000000001
+        }
+      },
+      "A01": {
+        "n": 160,
+        "admission": 0.8525131250000001,
+        "per_archetype": {
+          "aggregate_gate": 0.8267650000000003,
+          "conditional_write": 0.833015,
+          "delete_after_capture": 0.9056274999999998,
+          "two_row_transfer": 0.8446449999999999
+        }
+      },
+      "A10": {
+        "n": 160,
+        "admission": 0.6909318750000001,
+        "per_archetype": {
+          "aggregate_gate": 0.6998149999999997,
+          "conditional_write": 0.6547,
+          "delete_after_capture": 0.6998125000000001,
+          "two_row_transfer": 0.7093999999999998
+        }
+      },
+      "A11": {
+        "n": 160,
+        "admission": 0.8581475000000003,
+        "per_archetype": {
+          "aggregate_gate": 0.8351375000000001,
+          "conditional_write": 0.8327650000000002,
+          "delete_after_capture": 0.9205775,
+          "two_row_transfer": 0.8441099999999999
+        }
+      }
+    }
+  },
+  "judge_frozen": {
+    "scorer": "judge_frozen",
+    "auc_overall": 0.629853515625,
+    "auc_S1": 0.740078125,
+    "auc_overall_family_macro40": 0.630078125,
+    "auc_S1_family_macro40": 0.73828125,
+    "family_folds": {
+      "n_total": 40,
+      "n_overall_used": 40,
+      "n_S1_used": 40,
+      "n_overall_single_class_skipped": 0
+    },
+    "per_archetype": {
+      "aggregate_gate": {
+        "auc_overall": 0.675078125,
+        "auc_S1": 0.75
+      },
+      "conditional_write": {
+        "auc_overall": 0.60625,
+        "auc_S1": 0.7125
+      },
+      "delete_after_capture": {
+        "auc_overall": 0.663125,
+        "auc_S1": 0.823125
+      },
+      "two_row_transfer": {
+        "auc_overall": 0.56921875,
+        "auc_S1": 0.648125
+      }
+    },
+    "auc_S1_LOAO_macro": 0.7334375,
+    "auc_S1_leave_one_archetype_out": {
+      "aggregate_gate": 0.7365625,
+      "conditional_write": 0.7479166666666667,
+      "delete_after_capture": 0.7108333333333333,
+      "two_row_transfer": 0.7620486111111111
+    },
+    "per_cell": {
+      "A00": {
+        "n": 160,
+        "admission": 0.01875,
+        "per_archetype": {
+          "aggregate_gate": 0.0125,
+          "conditional_write": 0.0,
+          "delete_after_capture": 0.0125,
+          "two_row_transfer": 0.05
+        }
+      },
+      "A01": {
+        "n": 160,
+        "admission": 0.396875,
+        "per_archetype": {
+          "aggregate_gate": 0.275,
+          "conditional_write": 0.525,
+          "delete_after_capture": 0.2125,
+          "two_row_transfer": 0.575
+        }
+      },
+      "A10": {
+        "n": 160,
+        "admission": 0.059375,
+        "per_archetype": {
+          "aggregate_gate": 0.125,
+          "conditional_write": 0.0,
+          "delete_after_capture": 0.0375,
+          "two_row_transfer": 0.075
+        }
+      },
+      "A11": {
+        "n": 160,
+        "admission": 0.83125,
+        "per_archetype": {
+          "aggregate_gate": 0.775,
+          "conditional_write": 0.95,
+          "delete_after_capture": 0.8125,
+          "two_row_transfer": 0.7875
+        }
+      }
+    }
+  },
+  "comparator_verdict_mix_per_cell": {
+    "A00": {
+      "n": 160,
+      "match": 0,
+      "contradict": 60,
+      "unknown": 100,
+      "directional_coverage": 0.375
+    },
+    "A01": {
+      "n": 160,
+      "match": 1,
+      "contradict": 56,
+      "unknown": 103,
+      "directional_coverage": 0.35625
+    },
+    "A10": {
+      "n": 160,
+      "match": 0,
+      "contradict": 50,
+      "unknown": 110,
+      "directional_coverage": 0.3125
+    },
+    "A11": {
+      "n": 160,
+      "match": 1,
+      "contradict": 52,
+      "unknown": 107,
+      "directional_coverage": 0.33125
+    }
+  },
+  "both_side_valid_per_cell": {
+    "A00": {
+      "n": 160,
+      "both_side_valid": 160,
+      "rate": 1.0
+    },
+    "A01": {
+      "n": 160,
+      "both_side_valid": 160,
+      "rate": 1.0
+    },
+    "A10": {
+      "n": 160,
+      "both_side_valid": 160,
+      "rate": 1.0
+    },
+    "A11": {
+      "n": 160,
+      "both_side_valid": 160,
+      "rate": 1.0
+    }
+  },
+  "reason_stats": {
+    "reason_level_histogram": {
+      "unknown": 820,
+      "note": 1485,
+      "benign": 416,
+      "contradict": 532
+    },
+    "top_contradiction_reasons": [
+      [
+        "EXTRA_EFFECTFUL_OP:write:set|contradict",
+        129
+      ],
+      [
+        "EXTRA_EFFECTFUL_OP:write:insert|contradict",
+        89
+      ],
+      [
+        "EXTRA_EFFECTFUL_OP:branch|contradict",
+        69
+      ],
+      [
+        "EXTRA_EFFECTFUL_OP:write:delete|contradict",
+        60
+      ],
+      [
+        "PRED_OP_MISMATCH|contradict",
+        48
+      ],
+      [
+        "REQ_OP_MISSING_UNDER_COMPLETE:write|contradict",
+        39
+      ],
+      [
+        "TARGET_CONFLICT:write|contradict",
+        18
+      ],
+      [
+        "REQ_OP_MISSING_UNDER_COMPLETE:aggregate|contradict",
+        17
+      ],
+      [
+        "AGG_FN_MISMATCH|contradict",
+        16
+      ],
+      [
+        "TARGET_CONFLICT:verify|contradict",
+        13
+      ]
+    ],
+    "top_unknown_reasons": [
+      [
+        "VACUOUS_MEMORY|unknown",
+        248
+      ],
+      [
+        "VACUOUS_INSTRUCTION|unknown",
+        112
+      ],
+      [
+        "PRED_EFFECT_MISMATCH|unknown",
+        83
+      ],
+      [
+        "REQ_OP_MISSING_INCOMPLETE:write|unknown",
+        61
+      ],
+      [
+        "ROLE_OMITTED_SOFT:policy_row|unknown",
+        50
+      ],
+      [
+        "REQ_OP_MISSING_INCOMPLETE:branch|unknown",
+        43
+      ],
+      [
+        "ROLE_OMITTED_SOFT:audit_sink|unknown",
+        36
+      ],
+      [
+        "REQ_OP_MISSING_INCOMPLETE:verify|unknown",
+        35
+      ],
+      [
+        "ROLE_OMITTED_SOFT:source|unknown",
+        34
+      ],
+      [
+        "PRED_COMPLEMENT_NO_SWAP|unknown",
+        24
+      ]
+    ],
+    "per_cell_reason_counts": {
+      "A00": {
+        "VACUOUS_MEMORY|unknown": 71,
+        "TERM_ALIGNED|note": 61,
+        "ROLE_ALIGNED:subject_row|note": 58,
+        "OP_ALIGNED:read|note": 50,
+        "EXTRA_EFFECTFUL_OP:write:set|contradict": 44,
+        "EXTRA_BENIGN:read|benign": 42,
+        "PRED_ANCHOR_CROSS|note": 37,
+        "PRED_OP_MISMATCH|contradict": 34,
+        "OP_ALIGNED:verify|note": 29,
+        "VACUOUS_INSTRUCTION|unknown": 28,
+        "REQ_OP_MISSING_INCOMPLETE:write|unknown": 26,
+        "EXTRA_EFFECTFUL_OP:write:insert|contradict": 20
+      },
+      "A01": {
+        "TERM_ALIGNED|note": 85,
+        "ROLE_ALIGNED:subject_row|note": 82,
+        "OP_ALIGNED:read|note": 75,
+        "OP_ALIGNED:write|note": 64,
+        "EXTRA_BENIGN:read|benign": 59,
+        "OP_ALIGNED:verify|note": 50,
+        "VACUOUS_MEMORY|unknown": 47,
+        "PRED_ANCHOR_SHARED|note": 45,
+        "EXTRA_EFFECTFUL_OP:write:set|contradict": 30,
+        "VACUOUS_INSTRUCTION|unknown": 28,
+        "PRED_COMPLEMENT_NO_SWAP|unknown": 23,
+        "EXTRA_BENIGN:verify|benign": 22
+      },
+      "A10": {
+        "VACUOUS_MEMORY|unknown": 67,
+        "TERM_ALIGNED|note": 65,
+        "ROLE_ALIGNED:subject_row|note": 64,
+        "OP_ALIGNED:read|note": 58,
+        "OP_ALIGNED:write|note": 43,
+        "PRED_ANCHOR_CROSS|note": 42,
+        "OP_ALIGNED:verify|note": 41,
+        "EXTRA_BENIGN:read|benign": 41,
+        "PRED_EFFECT_MISMATCH|unknown": 36,
+        "VACUOUS_INSTRUCTION|unknown": 28,
+        "EXTRA_EFFECTFUL_OP:write:insert|contradict": 26,
+        "EXTRA_EFFECTFUL_OP:write:set|contradict": 25
+      },
+      "A11": {
+        "TERM_ALIGNED|note": 69,
+        "ROLE_ALIGNED:subject_row|note": 66,
+        "VACUOUS_MEMORY|unknown": 63,
+        "OP_ALIGNED:read|note": 59,
+        "OP_ALIGNED:write|note": 50,
+        "OP_ALIGNED:verify|note": 38,
+        "EXTRA_BENIGN:read|benign": 37,
+        "PRED_ANCHOR_SHARED|note": 35,
+        "EXTRA_EFFECTFUL_OP:write:set|contradict": 30,
+        "VACUOUS_INSTRUCTION|unknown": 28,
+        "EXTRA_EFFECTFUL_OP:write:insert|contradict": 26,
+        "EXTRA_BENIGN:verify|benign": 23
+      }
+    },
+    "certificate": {
+      "memory_complete_rate": 0.2453125,
+      "instruction_complete_rate": 0.2125,
+      "memory_check_failures": {
+        "connected": 308,
+        "no_unknown_in_used_fields": 307,
+        "evidence_verbatim": 158,
+        "branch_populated": 45
+      },
+      "instruction_check_failures": {
+        "evidence_verbatim": 380,
+        "connected": 136,
+        "no_unknown_in_used_fields": 108,
+        "branch_populated": 84
+      }
+    }
+  },
+  "kill_conditions": {
+    "thresholds": {
+      "retention_A10_A11_min": 0.5,
+      "archetype_S1_auc_min": 0.6,
+      "admission_A01_max": 0.1
+    },
+    "violations": [
+      "retention(A10) overall 0.344 < 0.50",
+      "retention(A10|aggregate_gate) 0.375 < 0.50",
+      "retention(A10|conditional_write) 0.338 < 0.50",
+      "retention(A10|delete_after_capture) 0.325 < 0.50",
+      "retention(A10|two_row_transfer) 0.338 < 0.50",
+      "retention(A11) overall 0.341 < 0.50",
+      "retention(A11|aggregate_gate) 0.325 < 0.50",
+      "retention(A11|conditional_write) 0.375 < 0.50",
+      "retention(A11|delete_after_capture) 0.325 < 0.50",
+      "retention(A11|two_row_transfer) 0.338 < 0.50",
+      "S=1 AUC(aggregate_gate) 0.525 < 0.60",
+      "S=1 AUC(delete_after_capture) 0.454 < 0.60",
+      "S=1 AUC(two_row_transfer) 0.463 < 0.60",
+      "admission(A01) 0.328 > 0.10"
+    ],
+    "lane_A_verdict": "DEMOTE to baseline-only, no rule iteration"
+  }
+}

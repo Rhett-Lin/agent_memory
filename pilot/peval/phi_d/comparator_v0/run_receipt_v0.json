@@ -1,0 +1,50 @@
+{
+  "code": {
+    "comparator_sha256": "f9961194ed57a0ac14c69e31a1312cfe11dfd069f15eede351f0e93b9560a90c",
+    "run_comparator_sha256": "1a010264a4b7896c832c72b53a456e482a8b74f06d5d08256fbb9dbe6f23f078",
+    "test_comparator_sha256": "55ee3689bac29feab1e15000ae5f5bcfd8fd5461146dbedc0793f69ecc38787d"
+  },
+  "inputs": {
+    "pairs_jsonl_sha256": "aa33ea61935dc9c4a516bce77c0db7a6a9e0c32338e871b6c5b955a2d45b44bf",
+    "extractions_v2_sha256": "9e66c3dbc9d0ca2624a839d634bed88e93b688a07b14c1f8461e4d8b8cf2324d",
+    "audit_field_metrics_sha256": "c4aef3808944df17853e13c9b0138ea3c95fecb7651ff65978b50a5b58588695"
+  },
+  "eligibility": {
+    "pred_attribute": "excluded",
+    "pred_op": "positive_only",
+    "pred_value": "excluded",
+    "pred_polarity": "excluded",
+    "pred_all": "excluded",
+    "branch_effects": "excluded",
+    "direction": "excluded",
+    "scope": "excluded",
+    "archive_capture": "excluded",
+    "roles_required": "excluded",
+    "termination": "excluded",
+    "branch_presence": "hard"
+  },
+  "eligibility_raw": {
+    "pred_attribute": "excluded from veto fields",
+    "pred_op": "positive-only veto / soft evidence (unknown-if-absent)",
+    "pred_value": "excluded from veto fields",
+    "pred_polarity": "excluded from veto fields",
+    "pred_all": "excluded from veto fields",
+    "branch_effects": "excluded from veto fields",
+    "direction": "excluded from veto fields",
+    "scope": "excluded from veto fields",
+    "archive_capture": "excluded from veto fields",
+    "roles_required": "excluded from veto fields",
+    "termination": "excluded from veto fields",
+    "branch_presence": ""
+  },
+  "require_branch_completeness": true,
+  "n_pairs": 640,
+  "n_extraction_missing": 0,
+  "verdict_mix": {
+    "unknown": 420,
+    "contradict": 218,
+    "match": 2
+  },
+  "memory_certificate_complete_rate": 0.2453125,
+  "instruction_certificate_complete_rate": 0.2125
+}

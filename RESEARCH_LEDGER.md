@@ -117,6 +117,14 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - 含义:**lane C(SFT 抽取器)由"优先"转"必须"**;比较器 v0 只能走软证据+弃权路线;judge 仍是当前唯一可用 admission primitive。
 - 产物:audit_expanded.py(sha `c80f481c…`)、field_metrics.json、per_sample.jsonl(532 行全字段分)、stratified.jsonl(56 例)、failed_examples/、AUDIT_EXPANDED.md;过程披露:v1.1 五处测量修正全部实现已声明语义并记录前后数,无一项为过线改规则。
 
+### 2026-08-10 — 比较器 v0 基线：**DEMOTE（14/14 kill 门全灭，一次跑完不再迭代）**(agent-9)
+
+- 一次冻结运行（640 对，audit 表驱动模式）:verdict 结构 match **2** / contradict 218 / unknown 420;memory 完整度证书通过 24.5%,instruction 21.3%。
+- 数字：comparator AUC overall/S=1 = **0.522/0.512 ≈ 随机**;judge（同打分口径）0.630/0.740,LOAO macro 0.738;sim_embed 0.606/0.529。逐族 comparator S=1:conditional_write 0.607（唯一过 0.6),aggregate_gate 0.525,delete_after_capture 0.454,two_row_transfer 0.463。A01 误收 0.328（超 0.10)。
+- **核心科学结论**：幸存的硬否决是**结构性（模板指纹）而无语义**——在 A01 与 A11 上同频触发（0.328 vs 0.341，零分离）；而能分离 near-miss 与等价的通道（value/effects/scope/direction/order）恰被忠实度审计全部降级。**56% 的判定源于抽取退化（vacuous IR)**,REQ/VACUOUS 是主因。
+- 纪律：18/18 合成单测过；bug 修全靠测试/类型，不看 outcome；比较器冻结后未再动。
+- 地位：lane A 基线合法就位（SFT 的法定对照行 0.522/0.512);SFT 的及格线由此定义。
+
 ### 2026-08-10 — SFT 数据可行性判词：**YES（本周可立项）**(agent-8,sft0/)
 
 - (a) 渲染器 provenance:**PARTIAL 不阻塞**——instruction/memory 组装为平面 f-string 不留 span 记录，但 roles dict/各 instruction slot 均为族参数×样式轮换的确定性函数，**逐字节再生+精确对齐即可恢复**;原生 span 化改造（可选):8 builder + 卡片 join 留 span ≈ 1.5–2.5 工日，非必须。(b) IR 全字段 YES，仅 3 个文本可证检查（数值-or-符号谓词值、polarity 缺省-否定线索则、span 偏移）。(c) 隐藏 theta 双向策略落地：J1 指令→数值（assert 可见）,J2→符号引用,memory 卡→as-stated 短语。
