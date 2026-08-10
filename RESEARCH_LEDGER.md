@@ -109,6 +109,23 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - **φ-IR 结构化抽取:NO-GO**:532 唯一文本仅 34.8% 合法；失败=5-role schema 漂移 + 长 evidence JSON 断链;repair 0/347。双侧 IR 合法对仅 18.1% → **比较器 S2 阻塞（未被证伪）**。救赎线：guided decoding 需 vllm/outlines 适配（FSM 缓存路径已知）。
 - 产物:`pilot/peval/phi_d/`（REPORT.md、SPEC.md、`*_run5200/4766.py` 钉版实例、out/frozen 快照）。过程事故：并发子代理撞目录 → 全部产物已按 byte-pin + prompt_sha 重推干净;rank zombie 进程已清。
 
+### 2026-08-10 — 扩编忠实度审计完成（φ+d 裁决步骤 3–4）
+
+- 532/532 IR 全部 join sealed truth（0 冲突）；11 个否决字段按冻结门（总一致≥0.90/逐族≥0.80/假 ABSENT≤0.05）评测。
+- **判词:无一字段保留硬否决资格**;`pred_op` 唯一过 "present-only≥0.90"(297/327=90.8%,且失误集中在 P3 锚定漂移模式）→ 仅在场软证据;**`absent` 全向不可用作否决理由**（假 ABSENT 19.6% 槽级,P4 29.6%;完整度证书条获实测背书）。
+- 关键测量:branch 节点仅 52.8%(P2/P3 ~37%,47.5% 谓词挂在非 branch 载体）；必需角色槽 41.4% present / 39.0% unknown;branch_effects 一致 32.7%;18.4% 文本 theta 文本/连接层面不可判定,63 例 value 抽象文本 100% 发符号引用(文本忠实);P3 锚定漂移(drift 59/59 全为 ir+/truth−);attribute 失配 82.9% 实为文本忠实词与密封字段名差异。
+- 含义:**lane C(SFT 抽取器)由"优先"转"必须"**;比较器 v0 只能走软证据+弃权路线;judge 仍是当前唯一可用 admission primitive。
+- 产物:audit_expanded.py(sha `c80f481c…`)、field_metrics.json、per_sample.jsonl(532 行全字段分)、stratified.jsonl(56 例)、failed_examples/、AUDIT_EXPANDED.md;过程披露:v1.1 五处测量修正全部实现已声明语义并记录前后数,无一项为过线改规则。
+
+### 2026-08-10 — 用户提案 adjudication（thread 019fe66c，"代理状态 + 微调 evaluator"）
+
+**总裁决：双 estimand 分立**——P 保留为 benchmark 机制诊断变量;**部署决策变量改为因果化、风险调整后的 utility U**。双线并行，非二选一。
+
+1. **代理状态（utility history):GO with amendments**。关键修正：`E[Y|被检索] ≠ E[Y(m)−Y(∅)]`——检索是选择性的，纯历史平均不是因果 uplift;"免费标签"的免费只在 outcome，伤害暴露/反事实/归因不免费。正解栈：写入隔离 quarantine → 读出 **randomized canary 暴露（记 propensity)** → 分模型修订×上下文类的收缩估计（IPW/DR 或 hierarchical),promote 需 LCB>边际、**prune-for-harm 需 UCB<伤害边际否则留 quarantine**;adoption 信号只能做中介诊断不能当标签（后处理偏差）。P-U 张力裁决：**部署态 utility 赢**(7B A01 +3.1pp:utility-first 保留是对的；风险敏感则仍隔离；3B −5.8pp 倾向剪枝）;Part V NOT_ESTIMATED → utility 线必须自建随机化评估，不能继承 G-struct 证据。
+2. **SFT φ 抽取器（2a):GO，最高优先**。修正:"oracle 标签"必须定义为 **z 的文本可证投影**（程序草图），不是 z 本身（隐藏 theta 必须保持符号化）;evidence span 从 renderer 对齐生成。协议：≥4,000 文本/≥200 族，族先分后渲染，300/1k/3k 学习曲线，LOAO/LODO/leave-renderer-out + 最终锁定 532/640 评测 + 外来 renderer 挑战；抽取门：parse≥0.99、evidence 逐字≥0.99、关键字段 P≥0.95/R≥0.90（逐族 ≥0.85)、假 ABSENT≤0.05、**双侧支/效覆盖 ≥0.80/逐族 ≥0.70**、LCS≥0.90;checkpoint 只用验证字段质量（禁看 640 P-AUC)。claim 措辞："similarity 与通用判断恢复不了程序等价，任务监督程序 parser+确定性比较可以"——fine-tune = **amortized inference**,不推翻 "not a lookup"。
+3. **SFT judge(2b):DEFER**——神经版指纹风险最高；若做须过与 φ+d 同门的全部迁移测试。
+4. **优先级**:C(SFT extractor) #1 / D(utility 控制面 + 离线 dry-run) #2 / A(current-IR 比较器，≤1 天基线一次跑，禁止对着错误调规则） #3 / B(prompt v3 一次 64–80 文 smoke,五个 kill 条件） #4 / E #5。各线 kill 条件已冻结（祥见 thread 与 NOTES)。
+
 ### 2026-08-10 — φ+d 设计裁决 round 2（thread 019fe66c,S2 比较器冻结前置;GO with mandatory amendments）
 
 - **stage-zero**:两抽取语料统计矛盾（381/532 guided vs 185/532 frozen)→ S2 前必须合并唯一 canonical、唯一 hash、重算全部统计、judge(4766）法定基线（已由 rescue 合并完成：extractions_v2.jsonl,532/532)。
