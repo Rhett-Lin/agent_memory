@@ -133,6 +133,16 @@ intervention 单位从"系统/域级 architecture×content"下沉到"memory–ta
 - 工时:Option A(推荐,不动 generator）全量 4,000 文/200 族 ≈ **4–5.5 工日**(6 schema 条款表 2.5–3.5d + 分割/配额/驱动 1d + 门 0.5–1d);Option B（改 generator）被否决。已知杠杆洞：当前全为符号值卡，**数值打印卡变体(~0.5–1d)** 是头号"需新建"。
 - 产物:mint_spec.py、mint20.jsonl(sha `ff87563a…`)、mint20_report.json、FEASIBILITY.md、DATA_SPEC.md。
 
+### 2026-08-11 — S2-prep:canonical 重抽 + SFT 时代审计（agent-16)
+
+- 重抽：canonical 532 全部合法、零修复、0 修复(protocol 线 dde9f415/5200 一致,80/80 与 sft canon80 位一致）。
+- **双侧 branch 覆盖全部 4 archetype = 1.000(640/640)**——lane A 时代的 15.6–42.5% 封顶线全破。
+- **SFT 时代否决资格(冻结门 ≥.90 总/.80 逐族/假 ABSENT ≤.05)**:8 字段 HARD VETO(1.000/1.000/0)(pred_op/value/polarity、branch_effects、direction、archive_capture、roles、termination）；余 3 排除；attribute 锚新测:dual-tokcov 规则下 **10/11 HARD VETO**;UNMEAS(116 value、57 pred_all、11 scope）政策不变。
+- attribute 锚审计:125/532 冲突中 90.4% 为 D1-surface 逐字(非捏造）,12 例 P2 paraphrase 为 token 覆盖——冻结 dual-tokcov 判定规则后零捏造证据。
+- vs base 时代:全部 11 行严格提升;base 曾 1 soft/10 排除且 roles 假 ABSENT 0.327,**今 0.000**。
+
+→ S2 规则冻结输入齐备（S2-rc1 待写）。
+
 ### 2026-08-11 — SFT2 LoRA 训练 + 抽取门评测：**8/8 门全过（里程碑）**(agent-15)
 
 - 训练:3,000 例,376 步,loss 0.33→~0.0001,held-out-family val 6.9e-5;MAXLEN 实测选择 2304(p95=2241;2048 会丢 70.6%)。adapter:tic_checkpoints tagent_memory/phi_sft/sft2。

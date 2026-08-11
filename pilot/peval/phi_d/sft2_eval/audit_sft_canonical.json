@@ -1,0 +1,1698 @@
+{
+ "meta": {
+  "task": "S2-prep stage 2: expanded audit of SFT2 IRs on canonical 532 vs sealed truth",
+  "measurement_code": "audit_expanded.py imported read-only (code_sha16 c80f481c964449bb)",
+  "irs": "/work1/zixuan/projects/agent_memory/pilot/peval/phi_d/sft2_eval/canonical_sft.jsonl",
+  "irs_sha16": "6ac5ebb9aef0fd8b",
+  "truth": "/work1/zixuan/data/agent_memory/sealed (measurement-only; never model input)",
+  "e1_e2": "pre-registered exceptions inherited verbatim from audit_expanded (frozen)",
+  "script_sha16": "0591b229c05befb2"
+ },
+ "corpus": {
+  "n": 532,
+  "by_kind": {
+   "instruction": 160,
+   "memory": 372
+  },
+  "by_archetype": {
+   "conditional_write": 153,
+   "two_row_transfer": 64,
+   "aggregate_gate": 128,
+   "delete_after_capture": 187
+  },
+  "carrier_mix": {
+   "aggregate_gate|branch": 128,
+   "conditional_write|branch": 153,
+   "delete_after_capture|branch": 187,
+   "two_row_transfer|branch": 64
+  },
+  "effects_payload": {},
+  "termination_status": {
+   "present": 532
+  },
+  "roles_status_mix_all_slots": {
+   "present": {
+    "n": 1237,
+    "rate": 0.387531328320802
+   },
+   "absent": {
+    "n": 1955,
+    "rate": 0.6124686716791979
+   }
+  },
+  "effects_payload_location": {
+   "aggregate_gate|carrier+extra": 128,
+   "conditional_write|carrier_only": 153,
+   "delete_after_capture|carrier+extra": 187,
+   "two_row_transfer|carrier+extra": 64
+  }
+ },
+ "fields": {
+  "pred_attribute": {
+   "n_app": 532,
+   "n_na": 0,
+   "n_unmeas": 0,
+   "agree": 407,
+   "disagree": 125,
+   "missing": 0,
+   "all_rows": 0.7650375939849624,
+   "present_only": 0.7650375939849624,
+   "worst_archetype": 0.1875,
+   "per_archetype": {
+    "conditional_write": {
+     "n_app": 153,
+     "all_rows": 0.5228758169934641,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 64,
+     "all_rows": 0.1875,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 128,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 125,
+    "missing": 0
+   },
+   "disagree_examples_keys": [
+    [
+     "instruction:47c5ca809c880563",
+     "contradiction"
+    ],
+    [
+     "instruction:95cf9c19c7b4489e",
+     "contradiction"
+    ],
+    [
+     "instruction:aacb9178f0f4d4ab",
+     "contradiction"
+    ],
+    [
+     "instruction:956f65b4df5ef7d6",
+     "contradiction"
+    ],
+    [
+     "instruction:fbbe711a94eeee5b",
+     "contradiction"
+    ],
+    [
+     "instruction:2df94011366c9cf6",
+     "contradiction"
+    ],
+    [
+     "instruction:1d01617f6932fc74",
+     "contradiction"
+    ],
+    [
+     "instruction:aeeacc575a8df50a",
+     "contradiction"
+    ],
+    [
+     "instruction:efe1b524a9d4a68c",
+     "contradiction"
+    ],
+    [
+     "instruction:551020f39e3f173b",
+     "contradiction"
+    ],
+    [
+     "instruction:1000f0a1e512aace",
+     "contradiction"
+    ],
+    [
+     "instruction:8716fedf7c195417",
+     "contradiction"
+    ],
+    [
+     "instruction:f6d487c8096b1b28",
+     "contradiction"
+    ],
+    [
+     "instruction:d3c41f57c0e5d50c",
+     "contradiction"
+    ],
+    [
+     "instruction:1de8da7deaa3642d",
+     "contradiction"
+    ],
+    [
+     "instruction:04e5a242f82a4722",
+     "contradiction"
+    ],
+    [
+     "instruction:985a8ead5caae1f3",
+     "contradiction"
+    ],
+    [
+     "instruction:183d17a03688b299",
+     "contradiction"
+    ],
+    [
+     "instruction:48dce3b485daab45",
+     "contradiction"
+    ],
+    [
+     "instruction:ca57dcbba09095f2",
+     "contradiction"
+    ],
+    [
+     "instruction:c0145d03c196aab4",
+     "contradiction"
+    ],
+    [
+     "instruction:8589dc7a41b71812",
+     "contradiction"
+    ],
+    [
+     "instruction:eafce7e77eed5445",
+     "contradiction"
+    ],
+    [
+     "instruction:29839a89de45ca7b",
+     "contradiction"
+    ],
+    [
+     "instruction:bf3dbe310b0bb39a",
+     "contradiction"
+    ],
+    [
+     "instruction:f6207ddc1b5f160b",
+     "contradiction"
+    ],
+    [
+     "instruction:bafb8d848be7b495",
+     "contradiction"
+    ],
+    [
+     "instruction:6cf21dff7cc4013d",
+     "contradiction"
+    ],
+    [
+     "instruction:97e7c9b9aec737d2",
+     "contradiction"
+    ],
+    [
+     "instruction:e9da5e131748330d",
+     "contradiction"
+    ]
+   ],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": false,
+    "per_archetype_ok": false,
+    "false_absent_ok": true,
+    "PASS": false
+   },
+   "veto_eligibility": "excluded from veto fields"
+  },
+  "pred_op": {
+   "n_app": 532,
+   "n_na": 0,
+   "n_unmeas": 0,
+   "agree": 532,
+   "disagree": 0,
+   "missing": 0,
+   "all_rows": 1.0,
+   "present_only": 1.0,
+   "worst_archetype": 1.0,
+   "per_archetype": {
+    "conditional_write": {
+     "n_app": 153,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 64,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 128,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 0,
+    "missing": 0
+   },
+   "disagree_examples_keys": [],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": true,
+    "per_archetype_ok": true,
+    "false_absent_ok": true,
+    "PASS": true
+   },
+   "veto_eligibility": "HARD VETO"
+  },
+  "pred_value": {
+   "n_app": 416,
+   "n_na": 0,
+   "n_unmeas": 116,
+   "agree": 416,
+   "disagree": 0,
+   "missing": 0,
+   "all_rows": 1.0,
+   "present_only": 1.0,
+   "worst_archetype": 1.0,
+   "per_archetype": {
+    "conditional_write": {
+     "n_app": 61,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 40,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 128,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 0,
+    "missing": 0
+   },
+   "disagree_examples_keys": [],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": true,
+    "per_archetype_ok": true,
+    "false_absent_ok": true,
+    "PASS": true
+   },
+   "veto_eligibility": "HARD VETO"
+  },
+  "pred_polarity": {
+   "n_app": 532,
+   "n_na": 0,
+   "n_unmeas": 0,
+   "agree": 532,
+   "disagree": 0,
+   "missing": 0,
+   "all_rows": 1.0,
+   "present_only": 1.0,
+   "worst_archetype": 1.0,
+   "per_archetype": {
+    "conditional_write": {
+     "n_app": 153,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 64,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 128,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 0,
+    "missing": 0
+   },
+   "disagree_examples_keys": [],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": true,
+    "per_archetype_ok": true,
+    "false_absent_ok": true,
+    "PASS": true
+   },
+   "veto_eligibility": "HARD VETO"
+  },
+  "pred_all": {
+   "n_app": 475,
+   "n_na": 0,
+   "n_unmeas": 57,
+   "agree": 350,
+   "disagree": 125,
+   "missing": 0,
+   "all_rows": 0.7368421052631579,
+   "present_only": 0.7368421052631579,
+   "worst_archetype": 0.0,
+   "per_archetype": {
+    "conditional_write": {
+     "n_app": 108,
+     "all_rows": 0.32407407407407407,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 52,
+     "all_rows": 0.0,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 128,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 125,
+    "missing": 0
+   },
+   "disagree_examples_keys": [
+    [
+     "instruction:47c5ca809c880563",
+     "contradiction"
+    ],
+    [
+     "instruction:95cf9c19c7b4489e",
+     "contradiction"
+    ],
+    [
+     "instruction:aacb9178f0f4d4ab",
+     "contradiction"
+    ],
+    [
+     "instruction:956f65b4df5ef7d6",
+     "contradiction"
+    ],
+    [
+     "instruction:fbbe711a94eeee5b",
+     "contradiction"
+    ],
+    [
+     "instruction:2df94011366c9cf6",
+     "contradiction"
+    ],
+    [
+     "instruction:1d01617f6932fc74",
+     "contradiction"
+    ],
+    [
+     "instruction:aeeacc575a8df50a",
+     "contradiction"
+    ],
+    [
+     "instruction:efe1b524a9d4a68c",
+     "contradiction"
+    ],
+    [
+     "instruction:551020f39e3f173b",
+     "contradiction"
+    ],
+    [
+     "instruction:1000f0a1e512aace",
+     "contradiction"
+    ],
+    [
+     "instruction:8716fedf7c195417",
+     "contradiction"
+    ],
+    [
+     "instruction:f6d487c8096b1b28",
+     "contradiction"
+    ],
+    [
+     "instruction:d3c41f57c0e5d50c",
+     "contradiction"
+    ],
+    [
+     "instruction:1de8da7deaa3642d",
+     "contradiction"
+    ],
+    [
+     "instruction:04e5a242f82a4722",
+     "contradiction"
+    ],
+    [
+     "instruction:985a8ead5caae1f3",
+     "contradiction"
+    ],
+    [
+     "instruction:183d17a03688b299",
+     "contradiction"
+    ],
+    [
+     "instruction:48dce3b485daab45",
+     "contradiction"
+    ],
+    [
+     "instruction:ca57dcbba09095f2",
+     "contradiction"
+    ],
+    [
+     "instruction:c0145d03c196aab4",
+     "contradiction"
+    ],
+    [
+     "instruction:8589dc7a41b71812",
+     "contradiction"
+    ],
+    [
+     "instruction:eafce7e77eed5445",
+     "contradiction"
+    ],
+    [
+     "instruction:29839a89de45ca7b",
+     "contradiction"
+    ],
+    [
+     "instruction:bf3dbe310b0bb39a",
+     "contradiction"
+    ],
+    [
+     "instruction:f6207ddc1b5f160b",
+     "contradiction"
+    ],
+    [
+     "instruction:bafb8d848be7b495",
+     "contradiction"
+    ],
+    [
+     "instruction:6cf21dff7cc4013d",
+     "contradiction"
+    ],
+    [
+     "instruction:97e7c9b9aec737d2",
+     "contradiction"
+    ],
+    [
+     "instruction:e9da5e131748330d",
+     "contradiction"
+    ]
+   ],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": false,
+    "per_archetype_ok": false,
+    "false_absent_ok": true,
+    "PASS": false
+   },
+   "veto_eligibility": "excluded from veto fields"
+  },
+  "branch_effects": {
+   "n_app": 532,
+   "n_na": 0,
+   "n_unmeas": 0,
+   "agree": 532,
+   "disagree": 0,
+   "missing": 0,
+   "all_rows": 1.0,
+   "present_only": 1.0,
+   "worst_archetype": 1.0,
+   "per_archetype": {
+    "conditional_write": {
+     "n_app": 153,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 64,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 128,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 0,
+    "missing": 0
+   },
+   "disagree_examples_keys": [],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": true,
+    "per_archetype_ok": true,
+    "false_absent_ok": true,
+    "PASS": true
+   },
+   "veto_eligibility": "HARD VETO"
+  },
+  "direction": {
+   "n_app": 64,
+   "n_na": 468,
+   "n_unmeas": 0,
+   "agree": 64,
+   "disagree": 0,
+   "missing": 0,
+   "all_rows": 1.0,
+   "present_only": 1.0,
+   "worst_archetype": 1.0,
+   "per_archetype": {
+    "two_row_transfer": {
+     "n_app": 64,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 0,
+    "missing": 0
+   },
+   "disagree_examples_keys": [],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": true,
+    "per_archetype_ok": true,
+    "false_absent_ok": true,
+    "PASS": true
+   },
+   "veto_eligibility": "HARD VETO"
+  },
+  "scope": {
+   "n_app": 304,
+   "n_na": 217,
+   "n_unmeas": 11,
+   "agree": 230,
+   "disagree": 74,
+   "missing": 0,
+   "all_rows": 0.756578947368421,
+   "present_only": 0.756578947368421,
+   "worst_archetype": 0.36752136752136755,
+   "per_archetype": {
+    "aggregate_gate": {
+     "n_app": 117,
+     "all_rows": 0.36752136752136755,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 74,
+    "missing": 0
+   },
+   "disagree_examples_keys": [
+    [
+     "instruction:acc7f0ec9c400167",
+     "contradiction"
+    ],
+    [
+     "instruction:78e4f2f449a6f267",
+     "contradiction"
+    ],
+    [
+     "instruction:e2e46f7d10c88a3e",
+     "contradiction"
+    ],
+    [
+     "instruction:0be22a4c35009d7f",
+     "contradiction"
+    ],
+    [
+     "instruction:cc8b7a95139983c3",
+     "contradiction"
+    ],
+    [
+     "instruction:1d99fde92911be2b",
+     "contradiction"
+    ],
+    [
+     "instruction:9ab85bb8855c5b9d",
+     "contradiction"
+    ],
+    [
+     "instruction:d16e80cafda7f5d7",
+     "contradiction"
+    ],
+    [
+     "instruction:4bcce735fffa91a3",
+     "contradiction"
+    ],
+    [
+     "instruction:2bb7d902d0f9436b",
+     "contradiction"
+    ],
+    [
+     "instruction:e9d556198328e6c4",
+     "contradiction"
+    ],
+    [
+     "instruction:d21b8afddc8ed41f",
+     "contradiction"
+    ],
+    [
+     "instruction:8f5d44332cb5189e",
+     "contradiction"
+    ],
+    [
+     "instruction:df6a8397eaab58e6",
+     "contradiction"
+    ],
+    [
+     "instruction:446cc442bafc6252",
+     "contradiction"
+    ],
+    [
+     "instruction:7e936b9d250bd8ae",
+     "contradiction"
+    ],
+    [
+     "instruction:58a8db87cc287da8",
+     "contradiction"
+    ],
+    [
+     "instruction:954a7c4c9799070a",
+     "contradiction"
+    ],
+    [
+     "instruction:eef53cfeb58cac89",
+     "contradiction"
+    ],
+    [
+     "instruction:d5f43f24b30caf1b",
+     "contradiction"
+    ],
+    [
+     "memory:7b9fe2fe207d562d",
+     "contradiction"
+    ],
+    [
+     "memory:efe7e956f5a78ded",
+     "contradiction"
+    ],
+    [
+     "memory:ebaecc1984cb3aca",
+     "contradiction"
+    ],
+    [
+     "memory:86563b7aa9ec6bc3",
+     "contradiction"
+    ],
+    [
+     "memory:0ca8f135e6b1cb53",
+     "contradiction"
+    ],
+    [
+     "memory:039eeec1c6a31732",
+     "contradiction"
+    ],
+    [
+     "memory:d7152c7fe211a98a",
+     "contradiction"
+    ],
+    [
+     "memory:46a806a8efbe1cc9",
+     "contradiction"
+    ],
+    [
+     "memory:bc328d3205a3015f",
+     "contradiction"
+    ],
+    [
+     "memory:9b7bf6959aeaf174",
+     "contradiction"
+    ]
+   ],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": false,
+    "per_archetype_ok": false,
+    "false_absent_ok": true,
+    "PASS": false
+   },
+   "veto_eligibility": "excluded from veto fields"
+  },
+  "archive_capture": {
+   "n_app": 147,
+   "n_na": 385,
+   "n_unmeas": 0,
+   "agree": 147,
+   "disagree": 0,
+   "missing": 0,
+   "all_rows": 1.0,
+   "present_only": 1.0,
+   "worst_archetype": 1.0,
+   "per_archetype": {
+    "delete_after_capture": {
+     "n_app": 147,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 0,
+    "missing": 0
+   },
+   "disagree_examples_keys": [],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": true,
+    "per_archetype_ok": true,
+    "false_absent_ok": true,
+    "PASS": true
+   },
+   "veto_eligibility": "HARD VETO"
+  },
+  "roles_required": {
+   "n_app": 532,
+   "n_na": 0,
+   "n_unmeas": 0,
+   "agree": 532,
+   "disagree": 0,
+   "missing": 0,
+   "all_rows": 1.0,
+   "present_only": 1.0,
+   "worst_archetype": 1.0,
+   "per_archetype": {
+    "conditional_write": {
+     "n_app": 153,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 64,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 128,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 0,
+    "missing": 0
+   },
+   "disagree_examples_keys": [],
+   "missing_examples_keys": [],
+   "slot_level": {
+    "n_slots": 1237,
+    "present_rate": 1.0,
+    "absent_rate": 0.0,
+    "unknown_rate": 0.0,
+    "per_archetype": {
+     "conditional_write": {
+      "present_rate": 1.0,
+      "absent_rate": 0.0,
+      "unknown_rate": 0.0
+     },
+     "two_row_transfer": {
+      "present_rate": 1.0,
+      "absent_rate": 0.0,
+      "unknown_rate": 0.0
+     },
+     "aggregate_gate": {
+      "present_rate": 1.0,
+      "absent_rate": 0.0,
+      "unknown_rate": 0.0
+     },
+     "delete_after_capture": {
+      "present_rate": 1.0,
+      "absent_rate": 0.0,
+      "unknown_rate": 0.0
+     }
+    }
+   },
+   "gate": {
+    "overall_ok": true,
+    "per_archetype_ok": true,
+    "false_absent_ok": true,
+    "PASS": true
+   },
+   "veto_eligibility": "HARD VETO"
+  },
+  "termination": {
+   "n_app": 532,
+   "n_na": 0,
+   "n_unmeas": 0,
+   "agree": 532,
+   "disagree": 0,
+   "missing": 0,
+   "all_rows": 1.0,
+   "present_only": 1.0,
+   "worst_archetype": 1.0,
+   "per_archetype": {
+    "conditional_write": {
+     "n_app": 153,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "two_row_transfer": {
+     "n_app": 64,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "aggregate_gate": {
+     "n_app": 128,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    },
+    "delete_after_capture": {
+     "n_app": 187,
+     "all_rows": 1.0,
+     "false_absent": 0.0
+    }
+   },
+   "false_absent": 0.0,
+   "n_disagree_missing": {
+    "contradiction": 0,
+    "missing": 0
+   },
+   "disagree_examples_keys": [],
+   "missing_examples_keys": [],
+   "gate": {
+    "overall_ok": true,
+    "per_archetype_ok": true,
+    "false_absent_ok": true,
+    "PASS": true
+   },
+   "veto_eligibility": "HARD VETO"
+  },
+  "branch_presence": {
+   "context_only": true,
+   "has_branch_overall": 1.0,
+   "n": 532,
+   "n_has_branch": 532,
+   "per_archetype": {
+    "aggregate_gate": {
+     "n": 128,
+     "has_branch_rate": 1.0
+    },
+    "conditional_write": {
+     "n": 153,
+     "has_branch_rate": 1.0
+    },
+    "delete_after_capture": {
+     "n": 187,
+     "has_branch_rate": 1.0
+    },
+    "two_row_transfer": {
+     "n": 64,
+     "has_branch_rate": 1.0
+    }
+   },
+   "note": "fraction of IRs containing >=1 branch node (op==branch, any status); the predicate/effects payload may sit on a non-branch carrier (see corpus.carrier_mix)"
+  }
+ },
+ "posthoc_diagnostics": {
+  "D1_attribute_text_faithfulness": {
+   "n_attribute_disagreements": 125,
+   "n_ir_attribute_verbatim_in_text": 113,
+   "share": 0.904
+  },
+  "D2_polarity_direction": {
+   "polarity_direction_matrix": {},
+   "p3_polarity_disagreements": 0,
+   "p3_ir_positive_truth_negative_share": null
+  },
+  "D3_value_symbolic_unmeasurable": {
+   "n_no_handle_unmeasurable": 80,
+   "n_ir_value_symbolic_nonnumeric": 80,
+   "share": 1.0
+  }
+ },
+ "join": {
+  "n_candidates": {
+   "1": 459,
+   "2": 25,
+   "14": 1,
+   "9": 4,
+   "10": 5,
+   "11": 4,
+   "3": 14,
+   "4": 9,
+   "8": 4,
+   "7": 1,
+   "5": 6
+  },
+  "conflicts": {
+   "scope": 11,
+   "pred_value": 36
+  },
+  "no_join": 0,
+  "arch_conflict": 0,
+  "n_joined": 532
+ },
+ "gate_rule": {
+  "overall": 0.9,
+  "per_archetype": 0.8,
+  "false_absent": 0.05,
+  "agreement_rate": "all-rows (missing counts as disagreement; UNMEASURABLE/NA excluded from denominators)"
+ },
+ "veto_rule": "PASS -> HARD VETO; FAIL & present_only>=0.90 -> positive-only veto / soft evidence (unknown-if-absent); FAIL & present_only<0.90 -> excluded",
+ "extraction": {
+  "n": 532,
+  "valid": 532,
+  "first_pass_valid": 532,
+  "repairs": 0,
+  "evidence_span_level": {
+   "n": 6621,
+   "bad": 0,
+   "rate": 1.0
+  }
+ },
+ "attribute_anchor_audit": {
+  "per_archetype": {
+   "conditional_write": {
+    "n_app": 153,
+    "agree": 80,
+    "contradict": 73,
+    "missing": 0,
+    "contradict_verbatim_in_text": 73
+   },
+   "two_row_transfer": {
+    "n_app": 64,
+    "agree": 12,
+    "contradict": 52,
+    "missing": 0,
+    "contradict_verbatim_in_text": 40
+   },
+   "aggregate_gate": {
+    "n_app": 128,
+    "agree": 128,
+    "contradict": 0,
+    "missing": 0,
+    "contradict_verbatim_in_text": 0
+   },
+   "delete_after_capture": {
+    "n_app": 187,
+    "agree": 187,
+    "contradict": 0,
+    "missing": 0,
+    "contradict_verbatim_in_text": 0
+   }
+  },
+  "overall": {
+   "n_app": 532,
+   "contradict": 125,
+   "contradict_verbatim_in_text": 113
+  },
+  "share_verbatim_in_text": 0.904,
+  "non_verbatim_contradiction_residue": [
+   {
+    "key": "memory:5adecbf7e2ad1cd3",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:bda910087f070321",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:9c541cd24017a32e",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:d924d94af50907b8",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:48dfc61b36a5ac56",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:fb108cc837fd40e8",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:8fa5f1a841114d38",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:d89b351b3b7e20ab",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:4a2e768a61c321d5",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:18c080afa06161d4",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:33e7fd0401fe2ca3",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   },
+   {
+    "key": "memory:5a72201e379afd7c",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "stock level",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "attr_tokens_covered_by_text": true,
+    "clause": "If the guard fails"
+   }
+  ],
+  "examples": [
+   {
+    "key": "instruction:47c5ca809c880563",
+    "archetype": "conditional_write",
+    "ir_attribute": "on-hand quantity",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "clause": "If the on-hand quantity of SKU NC-9342 at warehouse 'main' is above 70"
+   },
+   {
+    "key": "instruction:95cf9c19c7b4489e",
+    "archetype": "conditional_write",
+    "ir_attribute": "on-hand quantity",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "clause": "If the on-hand quantity of SKU NC-4190 at warehouse 'main' is above 70"
+   },
+   {
+    "key": "instruction:aacb9178f0f4d4ab",
+    "archetype": "conditional_write",
+    "ir_attribute": "on-hand quantity",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "clause": "Policy: If the on-hand quantity of SKU AX-1878 at warehouse 'main' is above 70"
+   },
+   {
+    "key": "instruction:956f65b4df5ef7d6",
+    "archetype": "conditional_write",
+    "ir_attribute": "on-hand quantity",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "clause": "If the on-hand quantity of SKU ZR-5372 at warehouse 'main' is above 70"
+   },
+   {
+    "key": "instruction:fbbe711a94eeee5b",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "units",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "clause": "Guard: 'east' >= 0 after the move"
+   },
+   {
+    "key": "instruction:2df94011366c9cf6",
+    "archetype": "two_row_transfer",
+    "ir_attribute": "units",
+    "truth_anchor_tokens": [
+     "qty"
+    ],
+    "clause": "Inventory rebalancing request. In the stock table, move 10 units of SKU AX-5146 from warehouse 'east' to warehouse 'west'. The 'east' row must keep at least 0 units afterwards; the 'west' side must not exceed 400. Read both rows, check the guard, then apply both updates and verif"
+   }
+  ],
+  "dual_anchor_posthoc": {
+   "pred_attribute_dual_verbatim": {
+    "n_app": 532,
+    "n_na": 0,
+    "n_unmeas": 0,
+    "agree": 520,
+    "disagree": 12,
+    "missing": 0,
+    "all_rows": 0.9774436090225563,
+    "present_only": 0.9774436090225563,
+    "worst_archetype": 0.8125,
+    "per_archetype": {
+     "conditional_write": {
+      "n_app": 153,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "two_row_transfer": {
+      "n_app": 64,
+      "all_rows": 0.8125,
+      "false_absent": 0.0
+     },
+     "aggregate_gate": {
+      "n_app": 128,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "delete_after_capture": {
+      "n_app": 187,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     }
+    },
+    "false_absent": 0.0,
+    "n_disagree_missing": {
+     "contradiction": 12,
+     "missing": 0
+    },
+    "disagree_examples_keys": [
+     [
+      "memory:5adecbf7e2ad1cd3",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:bda910087f070321",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:9c541cd24017a32e",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:d924d94af50907b8",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:48dfc61b36a5ac56",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:fb108cc837fd40e8",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:8fa5f1a841114d38",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:d89b351b3b7e20ab",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:4a2e768a61c321d5",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:18c080afa06161d4",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:33e7fd0401fe2ca3",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:5a72201e379afd7c",
+      "posthoc-dual_verbatim"
+     ]
+    ],
+    "missing_examples_keys": [],
+    "gate": {
+     "overall_ok": true,
+     "per_archetype_ok": true,
+     "false_absent_ok": true,
+     "PASS": true
+    },
+    "veto_eligibility": "HARD VETO"
+   },
+   "pred_all_dual_verbatim": {
+    "n_app": 428,
+    "n_na": 0,
+    "n_unmeas": 104,
+    "agree": 416,
+    "disagree": 12,
+    "missing": 0,
+    "all_rows": 0.9719626168224299,
+    "present_only": 0.9719626168224299,
+    "worst_archetype": 0.7692307692307693,
+    "per_archetype": {
+     "conditional_write": {
+      "n_app": 61,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "two_row_transfer": {
+      "n_app": 52,
+      "all_rows": 0.7692307692307693,
+      "false_absent": 0.0
+     },
+     "aggregate_gate": {
+      "n_app": 128,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "delete_after_capture": {
+      "n_app": 187,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     }
+    },
+    "false_absent": 0.0,
+    "n_disagree_missing": {
+     "contradiction": 12,
+     "missing": 0
+    },
+    "disagree_examples_keys": [
+     [
+      "memory:5adecbf7e2ad1cd3",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:bda910087f070321",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:9c541cd24017a32e",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:d924d94af50907b8",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:48dfc61b36a5ac56",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:fb108cc837fd40e8",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:8fa5f1a841114d38",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:d89b351b3b7e20ab",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:4a2e768a61c321d5",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:18c080afa06161d4",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:33e7fd0401fe2ca3",
+      "posthoc-dual_verbatim"
+     ],
+     [
+      "memory:5a72201e379afd7c",
+      "posthoc-dual_verbatim"
+     ]
+    ],
+    "missing_examples_keys": [],
+    "gate": {
+     "overall_ok": true,
+     "per_archetype_ok": false,
+     "false_absent_ok": true,
+     "PASS": false
+    },
+    "veto_eligibility": "positive-only veto / soft evidence (unknown-if-absent)"
+   },
+   "pred_attribute_dual_tokcov": {
+    "n_app": 532,
+    "n_na": 0,
+    "n_unmeas": 0,
+    "agree": 532,
+    "disagree": 0,
+    "missing": 0,
+    "all_rows": 1.0,
+    "present_only": 1.0,
+    "worst_archetype": 1.0,
+    "per_archetype": {
+     "conditional_write": {
+      "n_app": 153,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "two_row_transfer": {
+      "n_app": 64,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "aggregate_gate": {
+      "n_app": 128,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "delete_after_capture": {
+      "n_app": 187,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     }
+    },
+    "false_absent": 0.0,
+    "n_disagree_missing": {
+     "contradiction": 0,
+     "missing": 0
+    },
+    "disagree_examples_keys": [],
+    "missing_examples_keys": [],
+    "gate": {
+     "overall_ok": true,
+     "per_archetype_ok": true,
+     "false_absent_ok": true,
+     "PASS": true
+    },
+    "veto_eligibility": "HARD VETO"
+   },
+   "pred_all_dual_tokcov": {
+    "n_app": 416,
+    "n_na": 0,
+    "n_unmeas": 116,
+    "agree": 416,
+    "disagree": 0,
+    "missing": 0,
+    "all_rows": 1.0,
+    "present_only": 1.0,
+    "worst_archetype": 1.0,
+    "per_archetype": {
+     "conditional_write": {
+      "n_app": 61,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "two_row_transfer": {
+      "n_app": 40,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "aggregate_gate": {
+      "n_app": 128,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     },
+     "delete_after_capture": {
+      "n_app": 187,
+      "all_rows": 1.0,
+      "false_absent": 0.0
+     }
+    },
+    "false_absent": 0.0,
+    "n_disagree_missing": {
+     "contradiction": 0,
+     "missing": 0
+    },
+    "disagree_examples_keys": [],
+    "missing_examples_keys": [],
+    "gate": {
+     "overall_ok": true,
+     "per_archetype_ok": true,
+     "false_absent_ok": true,
+     "PASS": true
+    },
+    "veto_eligibility": "HARD VETO"
+   }
+  }
+ },
+ "pair_coverage_640": {
+  "overall": {
+   "n": 640,
+   "both_present": 1.0,
+   "both_valid": 1.0,
+   "instr_branch": 1.0,
+   "mem_branch": 1.0,
+   "instr_bsj": 1.0,
+   "mem_bsj": 1.0,
+   "pair_both_side_joint": 1.0
+  },
+  "per_archetype": {
+   "aggregate_gate": {
+    "n": 160,
+    "both_present": 1.0,
+    "both_valid": 1.0,
+    "instr_branch": 1.0,
+    "mem_branch": 1.0,
+    "instr_bsj": 1.0,
+    "mem_bsj": 1.0,
+    "pair_both_side_joint": 1.0
+   },
+   "conditional_write": {
+    "n": 160,
+    "both_present": 1.0,
+    "both_valid": 1.0,
+    "instr_branch": 1.0,
+    "mem_branch": 1.0,
+    "instr_bsj": 1.0,
+    "mem_bsj": 1.0,
+    "pair_both_side_joint": 1.0
+   },
+   "delete_after_capture": {
+    "n": 160,
+    "both_present": 1.0,
+    "both_valid": 1.0,
+    "instr_branch": 1.0,
+    "mem_branch": 1.0,
+    "instr_bsj": 1.0,
+    "mem_bsj": 1.0,
+    "pair_both_side_joint": 1.0
+   },
+   "two_row_transfer": {
+    "n": 160,
+    "both_present": 1.0,
+    "both_valid": 1.0,
+    "instr_branch": 1.0,
+    "mem_branch": 1.0,
+    "instr_bsj": 1.0,
+    "mem_bsj": 1.0,
+    "pair_both_side_joint": 1.0
+   }
+  },
+  "definitions": {
+   "both_side_joint": "branch node carrying predicate + non-empty then_effects + else_effects (frozen, sft2/audit_sft2.py)",
+   "pair_both_side_joint": "instruction IR valid AND memory IR valid AND both sides both-side-JOINT"
+  }
+ },
+ "base_era_comparison": {
+  "pred_attribute": {
+   "base_all_rows": 0.35526315789473684,
+   "base_worst_archetype": 0.09375,
+   "base_false_absent": 0.007518796992481203,
+   "base_present_only": 0.564179104477612,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 0.7650375939849624,
+   "sft_worst_archetype": 0.1875,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 0.7650375939849624,
+   "sft_veto": "excluded from veto fields"
+  },
+  "pred_op": {
+   "base_all_rows": 0.5582706766917294,
+   "base_worst_archetype": 0.3984375,
+   "base_false_absent": 0.011278195488721804,
+   "base_present_only": 0.908256880733945,
+   "base_veto": "positive-only veto / soft evidence (unknown-if-absent)",
+   "sft_all_rows": 1.0,
+   "sft_worst_archetype": 1.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 1.0,
+   "sft_veto": "HARD VETO"
+  },
+  "pred_value": {
+   "base_all_rows": 0.4792626728110599,
+   "base_worst_archetype": 0.3203125,
+   "base_false_absent": 0.013824884792626729,
+   "base_present_only": 0.8455284552845529,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 1.0,
+   "sft_worst_archetype": 1.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 1.0,
+   "sft_veto": "HARD VETO"
+  },
+  "pred_polarity": {
+   "base_all_rows": 0.4774436090225564,
+   "base_worst_archetype": 0.0703125,
+   "base_false_absent": 0.011278195488721804,
+   "base_present_only": 0.7767584097859327,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 1.0,
+   "sft_worst_archetype": 1.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 1.0,
+   "sft_veto": "HARD VETO"
+  },
+  "pred_all": {
+   "base_all_rows": 0.2690677966101695,
+   "base_worst_archetype": 0.020833333333333332,
+   "base_false_absent": 0.0,
+   "base_present_only": 0.4349315068493151,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 0.7368421052631579,
+   "sft_worst_archetype": 0.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 0.7368421052631579,
+   "sft_veto": "excluded from veto fields"
+  },
+  "branch_effects": {
+   "base_all_rows": 0.32706766917293234,
+   "base_worst_archetype": 0.046875,
+   "base_false_absent": 0.0,
+   "base_present_only": 0.3486973947895792,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 1.0,
+   "sft_worst_archetype": 1.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 1.0,
+   "sft_veto": "HARD VETO"
+  },
+  "direction": {
+   "base_all_rows": 0.265625,
+   "base_worst_archetype": 0.265625,
+   "base_false_absent": 0.0,
+   "base_present_only": 0.288135593220339,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 1.0,
+   "sft_worst_archetype": 1.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 1.0,
+   "sft_veto": "HARD VETO"
+  },
+  "scope": {
+   "base_all_rows": 0.4967105263157895,
+   "base_worst_archetype": 0.1452991452991453,
+   "base_false_absent": 0.0,
+   "base_present_only": 0.6508620689655172,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 0.756578947368421,
+   "sft_worst_archetype": 0.36752136752136755,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 0.756578947368421,
+   "sft_veto": "excluded from veto fields"
+  },
+  "archive_capture": {
+   "base_all_rows": 0.5170068027210885,
+   "base_worst_archetype": 0.5170068027210885,
+   "base_false_absent": 0.0,
+   "base_present_only": 0.5170068027210885,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 1.0,
+   "sft_worst_archetype": 1.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 1.0,
+   "sft_veto": "HARD VETO"
+  },
+  "roles_required": {
+   "base_all_rows": 0.31954887218045114,
+   "base_worst_archetype": 0.0481283422459893,
+   "base_false_absent": 0.32706766917293234,
+   "base_present_only": 0.31954887218045114,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 1.0,
+   "sft_worst_archetype": 1.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 1.0,
+   "sft_veto": "HARD VETO"
+  },
+  "termination": {
+   "base_all_rows": 0.4680451127819549,
+   "base_worst_archetype": 0.265625,
+   "base_false_absent": 0.0018796992481203006,
+   "base_present_only": 0.7238372093023255,
+   "base_veto": "excluded from veto fields",
+   "sft_all_rows": 1.0,
+   "sft_worst_archetype": 1.0,
+   "sft_false_absent": 0.0,
+   "sft_present_only": 1.0,
+   "sft_veto": "HARD VETO"
+  }
+ }
+}
