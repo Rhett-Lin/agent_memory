@@ -1,0 +1,1763 @@
+{
+  "chosen_design_change": {
+    "attempts_per_source": 3,
+    "pool_per_role": 360,
+    "q_star_full_fill_95pct": 0.6,
+    "worst_case_harvest_episodes": 2160
+  },
+  "coarse": {
+    "C320_A2": {
+      "0.1": {
+        "R_episodes_p95": 616.0,
+        "R_fill_p5": 49.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 617.0,
+        "X_fill_p5": 49.0,
+        "X_full_fill": 0.0
+      },
+      "0.15": {
+        "R_episodes_p95": 602.0,
+        "R_fill_p5": 75.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 602.0,
+        "X_fill_p5": 76.0,
+        "X_full_fill": 0.0
+      },
+      "0.2": {
+        "R_episodes_p95": 587.0,
+        "R_fill_p5": 101.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 588.0,
+        "X_fill_p5": 100.0,
+        "X_full_fill": 0.0
+      },
+      "0.25": {
+        "R_episodes_p95": 571.0,
+        "R_fill_p5": 127.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 572.0,
+        "X_fill_p5": 127.0,
+        "X_full_fill": 0.0
+      },
+      "0.3": {
+        "R_episodes_p95": 556.0,
+        "R_fill_p5": 148.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 558.0,
+        "X_fill_p5": 151.0,
+        "X_full_fill": 0.0
+      },
+      "0.35": {
+        "R_episodes_p95": 542.0,
+        "R_fill_p5": 169.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 542.0,
+        "X_fill_p5": 170.0,
+        "X_full_fill": 0.0
+      },
+      "0.4": {
+        "R_episodes_p95": 525.0,
+        "R_fill_p5": 193.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 528.0,
+        "X_fill_p5": 190.0,
+        "X_full_fill": 0.0
+      },
+      "0.45": {
+        "R_episodes_p95": 510.0,
+        "R_fill_p5": 210.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 512.0,
+        "X_fill_p5": 208.0,
+        "X_full_fill": 0.0
+      },
+      "0.5": {
+        "R_episodes_p95": 495.0,
+        "R_fill_p5": 227.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 495.0,
+        "X_fill_p5": 227.0,
+        "X_full_fill": 0.0
+      },
+      "0.6": {
+        "R_episodes_p95": 462.0,
+        "R_fill_p5": 258.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 463.0,
+        "X_fill_p5": 258.0,
+        "X_full_fill": 0.0625
+      },
+      "0.7": {
+        "R_episodes_p95": 429.0,
+        "R_fill_p5": 283.0,
+        "R_full_fill": 0.0525,
+        "X_episodes_p95": 422.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 0.9825
+      },
+      "0.8": {
+        "R_episodes_p95": 392.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 0.9825,
+        "X_episodes_p95": 370.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.9": {
+        "R_episodes_p95": 344.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 321.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      }
+    },
+    "C320_A3": {
+      "0.1": {
+        "R_episodes_p95": 884.0,
+        "R_fill_p5": 73.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 887.0,
+        "X_fill_p5": 74.0,
+        "X_full_fill": 0.0
+      },
+      "0.15": {
+        "R_episodes_p95": 843.0,
+        "R_fill_p5": 109.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 845.0,
+        "X_fill_p5": 109.0,
+        "X_full_fill": 0.0
+      },
+      "0.2": {
+        "R_episodes_p95": 803.0,
+        "R_fill_p5": 142.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 807.0,
+        "X_fill_p5": 141.0,
+        "X_full_fill": 0.0
+      },
+      "0.25": {
+        "R_episodes_p95": 765.0,
+        "R_fill_p5": 172.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 765.0,
+        "X_fill_p5": 171.0,
+        "X_full_fill": 0.0
+      },
+      "0.3": {
+        "R_episodes_p95": 725.0,
+        "R_fill_p5": 195.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 726.0,
+        "X_fill_p5": 196.0,
+        "X_full_fill": 0.0
+      },
+      "0.35": {
+        "R_episodes_p95": 690.0,
+        "R_fill_p5": 218.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 688.0,
+        "X_fill_p5": 219.0,
+        "X_full_fill": 0.0
+      },
+      "0.4": {
+        "R_episodes_p95": 652.0,
+        "R_fill_p5": 239.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 654.0,
+        "X_fill_p5": 238.0,
+        "X_full_fill": 0.0
+      },
+      "0.45": {
+        "R_episodes_p95": 618.0,
+        "R_fill_p5": 254.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 619.0,
+        "X_fill_p5": 254.0,
+        "X_full_fill": 0.025
+      },
+      "0.5": {
+        "R_episodes_p95": 583.0,
+        "R_fill_p5": 270.0,
+        "R_full_fill": 0.0025,
+        "X_episodes_p95": 584.0,
+        "X_fill_p5": 270.0,
+        "X_full_fill": 0.5025
+      },
+      "0.6": {
+        "R_episodes_p95": 522.0,
+        "R_fill_p5": 291.0,
+        "R_full_fill": 0.5225,
+        "X_episodes_p95": 495.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 0.995
+      },
+      "0.7": {
+        "R_episodes_p95": 451.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 422.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.8": {
+        "R_episodes_p95": 392.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 365.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.9": {
+        "R_episodes_p95": 344.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 322.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      }
+    },
+    "C360_A2": {
+      "0.1": {
+        "R_episodes_p95": 694.0,
+        "R_fill_p5": 57.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 694.0,
+        "X_fill_p5": 57.0,
+        "X_full_fill": 0.0
+      },
+      "0.15": {
+        "R_episodes_p95": 676.0,
+        "R_fill_p5": 86.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 677.0,
+        "X_fill_p5": 86.0,
+        "X_full_fill": 0.0
+      },
+      "0.2": {
+        "R_episodes_p95": 662.0,
+        "R_fill_p5": 115.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 661.0,
+        "X_fill_p5": 116.0,
+        "X_full_fill": 0.0
+      },
+      "0.25": {
+        "R_episodes_p95": 643.0,
+        "R_fill_p5": 141.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 642.0,
+        "X_fill_p5": 142.0,
+        "X_full_fill": 0.0
+      },
+      "0.3": {
+        "R_episodes_p95": 625.0,
+        "R_fill_p5": 169.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 627.0,
+        "X_fill_p5": 169.0,
+        "X_full_fill": 0.0
+      },
+      "0.35": {
+        "R_episodes_p95": 608.0,
+        "R_fill_p5": 192.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 608.0,
+        "X_fill_p5": 193.0,
+        "X_full_fill": 0.0
+      },
+      "0.4": {
+        "R_episodes_p95": 593.0,
+        "R_fill_p5": 214.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 592.0,
+        "X_fill_p5": 215.0,
+        "X_full_fill": 0.0
+      },
+      "0.45": {
+        "R_episodes_p95": 573.0,
+        "R_fill_p5": 236.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 572.0,
+        "X_fill_p5": 237.0,
+        "X_full_fill": 0.0
+      },
+      "0.5": {
+        "R_episodes_p95": 558.0,
+        "R_fill_p5": 256.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 555.0,
+        "X_fill_p5": 257.0,
+        "X_full_fill": 0.07
+      },
+      "0.6": {
+        "R_episodes_p95": 518.0,
+        "R_fill_p5": 291.0,
+        "R_full_fill": 0.53,
+        "X_episodes_p95": 498.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.855
+      },
+      "0.7": {
+        "R_episodes_p95": 452.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 0.98,
+        "X_episodes_p95": 420.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 0.9875
+      },
+      "0.8": {
+        "R_episodes_p95": 392.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 364.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 0.9975
+      },
+      "0.9": {
+        "R_episodes_p95": 344.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 321.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      }
+    },
+    "C360_A3": {
+      "0.1": {
+        "R_episodes_p95": 995.0,
+        "R_fill_p5": 83.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 996.0,
+        "X_fill_p5": 84.0,
+        "X_full_fill": 0.0
+      },
+      "0.15": {
+        "R_episodes_p95": 949.0,
+        "R_fill_p5": 123.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 946.0,
+        "X_fill_p5": 125.0,
+        "X_full_fill": 0.0
+      },
+      "0.2": {
+        "R_episodes_p95": 901.0,
+        "R_fill_p5": 162.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 905.0,
+        "X_fill_p5": 160.0,
+        "X_full_fill": 0.0
+      },
+      "0.25": {
+        "R_episodes_p95": 862.0,
+        "R_fill_p5": 192.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 859.0,
+        "X_fill_p5": 191.0,
+        "X_full_fill": 0.0
+      },
+      "0.3": {
+        "R_episodes_p95": 816.0,
+        "R_fill_p5": 221.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 817.0,
+        "X_fill_p5": 221.0,
+        "X_full_fill": 0.0
+      },
+      "0.35": {
+        "R_episodes_p95": 775.0,
+        "R_fill_p5": 247.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 773.0,
+        "X_fill_p5": 248.0,
+        "X_full_fill": 0.01
+      },
+      "0.4": {
+        "R_episodes_p95": 734.0,
+        "R_fill_p5": 270.0,
+        "R_full_fill": 0.01,
+        "X_episodes_p95": 732.0,
+        "X_fill_p5": 269.0,
+        "X_full_fill": 0.415
+      },
+      "0.45": {
+        "R_episodes_p95": 693.0,
+        "R_fill_p5": 287.0,
+        "R_full_fill": 0.505,
+        "X_episodes_p95": 666.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.8125
+      },
+      "0.5": {
+        "R_episodes_p95": 640.0,
+        "R_fill_p5": 299.0,
+        "R_full_fill": 0.92,
+        "X_episodes_p95": 597.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.9125
+      },
+      "0.6": {
+        "R_episodes_p95": 529.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 0.995,
+        "X_episodes_p95": 498.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 0.99
+      },
+      "0.7": {
+        "R_episodes_p95": 451.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 422.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.8": {
+        "R_episodes_p95": 392.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 367.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.9": {
+        "R_episodes_p95": 344.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 321.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      }
+    },
+    "C440_A2": {
+      "0.1": {
+        "R_episodes_p95": 845.0,
+        "R_fill_p5": 72.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 847.0,
+        "X_fill_p5": 69.0,
+        "X_full_fill": 0.0
+      },
+      "0.15": {
+        "R_episodes_p95": 827.0,
+        "R_fill_p5": 107.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 827.0,
+        "X_fill_p5": 106.0,
+        "X_full_fill": 0.0
+      },
+      "0.2": {
+        "R_episodes_p95": 807.0,
+        "R_fill_p5": 140.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 805.0,
+        "X_fill_p5": 142.0,
+        "X_full_fill": 0.0
+      },
+      "0.25": {
+        "R_episodes_p95": 785.0,
+        "R_fill_p5": 176.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 785.0,
+        "X_fill_p5": 176.0,
+        "X_full_fill": 0.0
+      },
+      "0.3": {
+        "R_episodes_p95": 765.0,
+        "R_fill_p5": 209.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 763.0,
+        "X_fill_p5": 207.0,
+        "X_full_fill": 0.0
+      },
+      "0.35": {
+        "R_episodes_p95": 743.0,
+        "R_fill_p5": 237.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 742.0,
+        "X_fill_p5": 237.0,
+        "X_full_fill": 0.0
+      },
+      "0.4": {
+        "R_episodes_p95": 723.0,
+        "R_fill_p5": 266.0,
+        "R_full_fill": 0.0025,
+        "X_episodes_p95": 718.0,
+        "X_fill_p5": 264.0,
+        "X_full_fill": 0.0125
+      },
+      "0.45": {
+        "R_episodes_p95": 696.0,
+        "R_fill_p5": 292.0,
+        "R_full_fill": 0.07,
+        "X_episodes_p95": 661.0,
+        "X_fill_p5": 275.0,
+        "X_full_fill": 0.065
+      },
+      "0.5": {
+        "R_episodes_p95": 636.0,
+        "R_fill_p5": 297.0,
+        "R_full_fill": 0.28,
+        "X_episodes_p95": 595.0,
+        "X_fill_p5": 277.0,
+        "X_full_fill": 0.2925
+      },
+      "0.6": {
+        "R_episodes_p95": 532.0,
+        "R_fill_p5": 299.0,
+        "R_full_fill": 0.825,
+        "X_episodes_p95": 493.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.8625
+      },
+      "0.7": {
+        "R_episodes_p95": 455.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 0.96,
+        "X_episodes_p95": 423.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 0.9775
+      },
+      "0.8": {
+        "R_episodes_p95": 391.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 366.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.9": {
+        "R_episodes_p95": 344.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 319.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      }
+    },
+    "C440_A3": {
+      "0.1": {
+        "R_episodes_p95": 1215.0,
+        "R_fill_p5": 102.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1215.0,
+        "X_fill_p5": 104.0,
+        "X_full_fill": 0.0
+      },
+      "0.15": {
+        "R_episodes_p95": 1159.0,
+        "R_fill_p5": 152.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1155.0,
+        "X_fill_p5": 154.0,
+        "X_full_fill": 0.0
+      },
+      "0.2": {
+        "R_episodes_p95": 1102.0,
+        "R_fill_p5": 198.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1102.0,
+        "X_fill_p5": 195.0,
+        "X_full_fill": 0.0
+      },
+      "0.25": {
+        "R_episodes_p95": 1044.0,
+        "R_fill_p5": 236.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1047.0,
+        "X_fill_p5": 238.0,
+        "X_full_fill": 0.0
+      },
+      "0.3": {
+        "R_episodes_p95": 991.0,
+        "R_fill_p5": 274.0,
+        "R_full_fill": 0.0125,
+        "X_episodes_p95": 989.0,
+        "X_fill_p5": 272.0,
+        "X_full_fill": 0.025
+      },
+      "0.35": {
+        "R_episodes_p95": 919.0,
+        "R_fill_p5": 296.0,
+        "R_full_fill": 0.165,
+        "X_episodes_p95": 856.0,
+        "X_fill_p5": 276.0,
+        "X_full_fill": 0.225
+      },
+      "0.4": {
+        "R_episodes_p95": 797.0,
+        "R_fill_p5": 298.0,
+        "R_full_fill": 0.5225,
+        "X_episodes_p95": 749.0,
+        "X_fill_p5": 278.0,
+        "X_full_fill": 0.5425
+      },
+      "0.45": {
+        "R_episodes_p95": 715.0,
+        "R_fill_p5": 299.0,
+        "R_full_fill": 0.7675,
+        "X_episodes_p95": 671.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.8225
+      },
+      "0.5": {
+        "R_episodes_p95": 641.0,
+        "R_fill_p5": 299.0,
+        "R_full_fill": 0.9375,
+        "X_episodes_p95": 603.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.945
+      },
+      "0.6": {
+        "R_episodes_p95": 529.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 0.995,
+        "X_episodes_p95": 496.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 0.9875
+      },
+      "0.7": {
+        "R_episodes_p95": 451.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 422.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.8": {
+        "R_episodes_p95": 390.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 365.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.9": {
+        "R_episodes_p95": 344.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 323.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      }
+    },
+    "C560_A2": {
+      "0.1": {
+        "R_episodes_p95": 1075.0,
+        "R_fill_p5": 91.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1075.0,
+        "X_fill_p5": 92.0,
+        "X_full_fill": 0.0
+      },
+      "0.15": {
+        "R_episodes_p95": 1051.0,
+        "R_fill_p5": 136.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1048.0,
+        "X_fill_p5": 139.0,
+        "X_full_fill": 0.0
+      },
+      "0.2": {
+        "R_episodes_p95": 1023.0,
+        "R_fill_p5": 185.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1023.0,
+        "X_fill_p5": 182.0,
+        "X_full_fill": 0.0
+      },
+      "0.25": {
+        "R_episodes_p95": 996.0,
+        "R_fill_p5": 227.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 996.0,
+        "X_fill_p5": 226.0,
+        "X_full_fill": 0.0
+      },
+      "0.3": {
+        "R_episodes_p95": 969.0,
+        "R_fill_p5": 268.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 938.0,
+        "X_fill_p5": 257.0,
+        "X_full_fill": 0.0
+      },
+      "0.35": {
+        "R_episodes_p95": 881.0,
+        "R_fill_p5": 286.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 825.0,
+        "X_fill_p5": 266.0,
+        "X_full_fill": 0.0
+      },
+      "0.4": {
+        "R_episodes_p95": 787.0,
+        "R_fill_p5": 291.0,
+        "R_full_fill": 0.0025,
+        "X_episodes_p95": 746.0,
+        "X_fill_p5": 271.0,
+        "X_full_fill": 0.0075
+      },
+      "0.45": {
+        "R_episodes_p95": 706.0,
+        "R_fill_p5": 295.0,
+        "R_full_fill": 0.08,
+        "X_episodes_p95": 661.0,
+        "X_fill_p5": 275.0,
+        "X_full_fill": 0.09
+      },
+      "0.5": {
+        "R_episodes_p95": 637.0,
+        "R_fill_p5": 297.0,
+        "R_full_fill": 0.27,
+        "X_episodes_p95": 593.0,
+        "X_fill_p5": 277.0,
+        "X_full_fill": 0.355
+      },
+      "0.6": {
+        "R_episodes_p95": 530.0,
+        "R_fill_p5": 299.0,
+        "R_full_fill": 0.8225,
+        "X_episodes_p95": 496.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.84
+      },
+      "0.7": {
+        "R_episodes_p95": 452.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 0.9825,
+        "X_episodes_p95": 423.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 0.985
+      },
+      "0.8": {
+        "R_episodes_p95": 392.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 0.995,
+        "X_episodes_p95": 366.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.9": {
+        "R_episodes_p95": 344.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 322.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      }
+    },
+    "C560_A3": {
+      "0.1": {
+        "R_episodes_p95": 1541.0,
+        "R_fill_p5": 135.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1543.0,
+        "X_fill_p5": 137.0,
+        "X_full_fill": 0.0
+      },
+      "0.15": {
+        "R_episodes_p95": 1468.0,
+        "R_fill_p5": 199.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1468.0,
+        "X_fill_p5": 197.0,
+        "X_full_fill": 0.0
+      },
+      "0.2": {
+        "R_episodes_p95": 1399.0,
+        "R_fill_p5": 252.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1388.0,
+        "X_fill_p5": 252.0,
+        "X_full_fill": 0.0
+      },
+      "0.25": {
+        "R_episodes_p95": 1252.0,
+        "R_fill_p5": 285.0,
+        "R_full_fill": 0.0,
+        "X_episodes_p95": 1168.0,
+        "X_fill_p5": 266.0,
+        "X_full_fill": 0.0
+      },
+      "0.3": {
+        "R_episodes_p95": 1063.0,
+        "R_fill_p5": 292.0,
+        "R_full_fill": 0.0225,
+        "X_episodes_p95": 991.0,
+        "X_fill_p5": 273.0,
+        "X_full_fill": 0.0225
+      },
+      "0.35": {
+        "R_episodes_p95": 916.0,
+        "R_fill_p5": 296.0,
+        "R_full_fill": 0.16,
+        "X_episodes_p95": 867.0,
+        "X_fill_p5": 276.0,
+        "X_full_fill": 0.2225
+      },
+      "0.4": {
+        "R_episodes_p95": 806.0,
+        "R_fill_p5": 298.0,
+        "R_full_fill": 0.5,
+        "X_episodes_p95": 753.0,
+        "X_fill_p5": 278.0,
+        "X_full_fill": 0.5825
+      },
+      "0.45": {
+        "R_episodes_p95": 720.0,
+        "R_fill_p5": 299.0,
+        "R_full_fill": 0.785,
+        "X_episodes_p95": 669.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.82
+      },
+      "0.5": {
+        "R_episodes_p95": 639.0,
+        "R_fill_p5": 299.0,
+        "R_full_fill": 0.9275,
+        "X_episodes_p95": 602.0,
+        "X_fill_p5": 279.0,
+        "X_full_fill": 0.9375
+      },
+      "0.6": {
+        "R_episodes_p95": 528.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 0.9975,
+        "X_episodes_p95": 493.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.7": {
+        "R_episodes_p95": 453.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 422.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.8": {
+        "R_episodes_p95": 391.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 367.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      },
+      "0.9": {
+        "R_episodes_p95": 346.0,
+        "R_fill_p5": 300.0,
+        "R_full_fill": 1.0,
+        "X_episodes_p95": 321.0,
+        "X_fill_p5": 280.0,
+        "X_full_fill": 1.0
+      }
+    }
+  },
+  "coarse_replicates": 400,
+  "configs_tested": [
+    "C320_A2",
+    "C360_A2",
+    "C440_A2",
+    "C560_A2",
+    "C320_A3",
+    "C360_A3",
+    "C440_A3",
+    "C560_A3"
+  ],
+  "contract": {
+    "cache_consistent_attempts": true,
+    "exhaustion_rule": "bank fill short of required counts => NOT_ESTIMATED; no pool substitution, ever",
+    "max_candidates_per_target": 4,
+    "need": {
+      "R": 300,
+      "X": 280
+    },
+    "seed_namespace": "tau6|feasibility",
+    "targets_order": {
+      "R": [
+        "cal",
+        300
+      ],
+      "X": [
+        "hr",
+        280
+      ]
+    }
+  },
+  "final": {
+    "C320_A2|0.1": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 625,
+        "episodes_p50": 608.0,
+        "episodes_p95": 617.0,
+        "fill_mean": 60.8765,
+        "fill_p5": 49.0,
+        "fill_p50": 61.0,
+        "fill_p95": 73.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.1,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 627,
+        "episodes_p50": 608.0,
+        "episodes_p95": 617.0,
+        "fill_mean": 60.93025,
+        "fill_p5": 50.0,
+        "fill_p50": 61.0,
+        "fill_p95": 73.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.1,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.15": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 618,
+        "episodes_p50": 592.0,
+        "episodes_p95": 602.0,
+        "fill_mean": 88.64375,
+        "fill_p5": 76.0,
+        "fill_p50": 89.0,
+        "fill_p95": 102.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.15,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 612,
+        "episodes_p50": 592.0,
+        "episodes_p95": 602.0,
+        "fill_mean": 88.93725,
+        "fill_p5": 76.0,
+        "fill_p50": 89.0,
+        "fill_p95": 102.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.15,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.2": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 600,
+        "episodes_p50": 576.0,
+        "episodes_p95": 588.0,
+        "fill_mean": 115.1755,
+        "fill_p5": 101.0,
+        "fill_p50": 115.0,
+        "fill_p95": 129.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.2,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 606,
+        "episodes_p50": 576.0,
+        "episodes_p95": 588.0,
+        "fill_mean": 115.05025,
+        "fill_p5": 101.0,
+        "fill_p50": 115.0,
+        "fill_p95": 129.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.2,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.25": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 590,
+        "episodes_p50": 560.0,
+        "episodes_p95": 573.0,
+        "fill_mean": 139.9415,
+        "fill_p5": 126.0,
+        "fill_p50": 140.0,
+        "fill_p95": 155.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.25,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 586,
+        "episodes_p50": 560.0,
+        "episodes_p95": 573.0,
+        "fill_mean": 139.93,
+        "fill_p5": 125.0,
+        "fill_p50": 140.0,
+        "fill_p95": 155.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.25,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.3": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 572,
+        "episodes_p50": 544.0,
+        "episodes_p95": 557.0,
+        "fill_mean": 163.22425,
+        "fill_p5": 148.0,
+        "fill_p50": 163.0,
+        "fill_p95": 178.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.3,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 571,
+        "episodes_p50": 544.0,
+        "episodes_p95": 558.0,
+        "fill_mean": 163.30425,
+        "fill_p5": 149.0,
+        "fill_p50": 163.0,
+        "fill_p95": 178.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.3,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.35": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 558,
+        "episodes_p50": 528.0,
+        "episodes_p95": 542.0,
+        "fill_mean": 184.843,
+        "fill_p5": 170.0,
+        "fill_p50": 185.0,
+        "fill_p95": 199.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.35,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 554,
+        "episodes_p50": 528.0,
+        "episodes_p95": 542.0,
+        "fill_mean": 184.65875,
+        "fill_p5": 170.0,
+        "fill_p50": 185.0,
+        "fill_p95": 199.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.35,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.4": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 545,
+        "episodes_p50": 512.0,
+        "episodes_p95": 526.0,
+        "fill_mean": 204.79725,
+        "fill_p5": 191.0,
+        "fill_p50": 205.0,
+        "fill_p95": 219.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.4,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 541,
+        "episodes_p50": 512.0,
+        "episodes_p95": 526.0,
+        "fill_mean": 204.89625,
+        "fill_p5": 191.0,
+        "fill_p50": 205.0,
+        "fill_p95": 219.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.4,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.45": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 528,
+        "episodes_p50": 496.0,
+        "episodes_p95": 511.0,
+        "fill_mean": 223.14525,
+        "fill_p5": 210.0,
+        "fill_p50": 223.0,
+        "fill_p95": 236.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.45,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 525,
+        "episodes_p50": 496.0,
+        "episodes_p95": 511.0,
+        "fill_mean": 223.39775,
+        "fill_p5": 210.0,
+        "fill_p50": 223.0,
+        "fill_p95": 237.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.45,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.5": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 511,
+        "episodes_p50": 480.0,
+        "episodes_p95": 494.0,
+        "fill_mean": 240.1885,
+        "fill_p5": 228.0,
+        "fill_p50": 240.0,
+        "fill_p95": 253.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.5,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 510,
+        "episodes_p50": 480.0,
+        "episodes_p95": 495.0,
+        "fill_mean": 240.1335,
+        "fill_p5": 228.0,
+        "fill_p50": 240.0,
+        "fill_p95": 253.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.5,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.6": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 477,
+        "episodes_p50": 448.0,
+        "episodes_p95": 462.0,
+        "fill_mean": 268.70675,
+        "fill_p5": 258.0,
+        "fill_p50": 269.0,
+        "fill_p95": 279.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.6,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 478,
+        "episodes_p50": 448.0,
+        "episodes_p95": 462.0,
+        "fill_mean": 268.55625,
+        "fill_p5": 258.0,
+        "fill_p50": 269.0,
+        "fill_p95": 279.0,
+        "full_fill_prob": 0.04175,
+        "need": 280,
+        "q": 0.6,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.7": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 451,
+        "episodes_p50": 416.0,
+        "episodes_p95": 430.0,
+        "fill_mean": 291.012,
+        "fill_p5": 283.0,
+        "fill_p50": 291.0,
+        "fill_p95": 299.0,
+        "full_fill_prob": 0.046,
+        "need": 300,
+        "q": 0.7,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 443,
+        "episodes_p50": 400.0,
+        "episodes_p95": 422.0,
+        "fill_mean": 279.94025,
+        "fill_p5": 280.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 0.965,
+        "need": 280,
+        "q": 0.7,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.8": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 417,
+        "episodes_p50": 375.0,
+        "episodes_p95": 392.0,
+        "fill_mean": 299.951,
+        "fill_p5": 300.0,
+        "fill_p50": 300.0,
+        "fill_p95": 300.0,
+        "full_fill_prob": 0.978,
+        "need": 300,
+        "q": 0.8,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 386,
+        "episodes_p50": 350.0,
+        "episodes_p95": 366.0,
+        "fill_mean": 279.99925,
+        "fill_p5": 280.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 0.99925,
+        "need": 280,
+        "q": 0.8,
+        "replicates": 4000
+      }
+    },
+    "C320_A2|0.9": {
+      "R": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 356,
+        "episodes_p50": 333.0,
+        "episodes_p95": 344.0,
+        "fill_mean": 300.0,
+        "fill_p5": 300.0,
+        "fill_p50": 300.0,
+        "fill_p95": 300.0,
+        "full_fill_prob": 1.0,
+        "need": 300,
+        "q": 0.9,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 2,
+        "candid_pool": 320,
+        "episodes_max": 334,
+        "episodes_p50": 311.0,
+        "episodes_p95": 321.0,
+        "fill_mean": 280.0,
+        "fill_p5": 280.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 1.0,
+        "need": 280,
+        "q": 0.9,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.1": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 1012,
+        "episodes_p50": 975.0,
+        "episodes_p95": 995.0,
+        "fill_mean": 97.5685,
+        "fill_p5": 84.0,
+        "fill_p50": 97.0,
+        "fill_p95": 111.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.1,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 1019,
+        "episodes_p50": 976.0,
+        "episodes_p95": 996.0,
+        "fill_mean": 97.47025,
+        "fill_p5": 84.0,
+        "fill_p50": 98.0,
+        "fill_p95": 112.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.1,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.15": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 968,
+        "episodes_p50": 926.0,
+        "episodes_p95": 950.0,
+        "fill_mean": 138.65525,
+        "fill_p5": 123.0,
+        "fill_p50": 139.0,
+        "fill_p95": 154.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.15,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 976,
+        "episodes_p50": 926.0,
+        "episodes_p95": 949.0,
+        "fill_mean": 138.919,
+        "fill_p5": 124.0,
+        "fill_p50": 139.0,
+        "fill_p95": 154.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.15,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.2": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 934,
+        "episodes_p50": 879.0,
+        "episodes_p95": 904.0,
+        "fill_mean": 175.54275,
+        "fill_p5": 160.0,
+        "fill_p50": 176.0,
+        "fill_p95": 191.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.2,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 928,
+        "episodes_p50": 879.0,
+        "episodes_p95": 903.0,
+        "fill_mean": 175.5275,
+        "fill_p5": 160.0,
+        "fill_p50": 175.0,
+        "fill_p95": 191.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.2,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.25": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 887,
+        "episodes_p50": 833.0,
+        "episodes_p95": 859.0,
+        "fill_mean": 208.0795,
+        "fill_p5": 192.0,
+        "fill_p50": 208.0,
+        "fill_p95": 224.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.25,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 895,
+        "episodes_p50": 833.0,
+        "episodes_p95": 858.0,
+        "fill_mean": 208.09975,
+        "fill_p5": 192.0,
+        "fill_p50": 208.0,
+        "fill_p95": 224.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.25,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.3": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 842,
+        "episodes_p50": 789.0,
+        "episodes_p95": 815.0,
+        "fill_mean": 236.2905,
+        "fill_p5": 221.0,
+        "fill_p50": 236.0,
+        "fill_p95": 251.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.3,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 845,
+        "episodes_p50": 789.0,
+        "episodes_p95": 816.0,
+        "fill_mean": 236.38925,
+        "fill_p5": 221.0,
+        "fill_p50": 237.0,
+        "fill_p95": 251.0,
+        "full_fill_prob": 0.0,
+        "need": 280,
+        "q": 0.3,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.35": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 803,
+        "episodes_p50": 747.0,
+        "episodes_p95": 774.0,
+        "fill_mean": 261.00575,
+        "fill_p5": 246.0,
+        "fill_p50": 261.0,
+        "fill_p95": 275.0,
+        "full_fill_prob": 0.0,
+        "need": 300,
+        "q": 0.35,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 825,
+        "episodes_p50": 746.0,
+        "episodes_p95": 773.0,
+        "fill_mean": 260.9305,
+        "fill_p5": 247.0,
+        "fill_p50": 261.0,
+        "fill_p95": 275.0,
+        "full_fill_prob": 0.0075,
+        "need": 280,
+        "q": 0.35,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.4": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 770,
+        "episodes_p50": 706.0,
+        "episodes_p95": 733.0,
+        "fill_mean": 282.10725,
+        "fill_p5": 269.0,
+        "fill_p50": 282.0,
+        "fill_p95": 295.0,
+        "full_fill_prob": 0.01025,
+        "need": 300,
+        "q": 0.4,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 766,
+        "episodes_p50": 696.0,
+        "episodes_p95": 731.0,
+        "fill_mean": 277.5545,
+        "fill_p5": 269.0,
+        "fill_p50": 279.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 0.40475,
+        "need": 280,
+        "q": 0.4,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.45": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 721,
+        "episodes_p50": 662.0,
+        "episodes_p95": 693.0,
+        "fill_mean": 297.26375,
+        "fill_p5": 288.0,
+        "fill_p50": 299.0,
+        "fill_p95": 300.0,
+        "full_fill_prob": 0.47675,
+        "need": 300,
+        "q": 0.45,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 716,
+        "episodes_p50": 621.0,
+        "episodes_p95": 667.0,
+        "fill_mean": 279.77675,
+        "fill_p5": 279.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 0.798,
+        "need": 280,
+        "q": 0.45,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.5": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 682,
+        "episodes_p50": 600.0,
+        "episodes_p95": 641.0,
+        "fill_mean": 299.90475,
+        "fill_p5": 299.0,
+        "fill_p50": 300.0,
+        "fill_p95": 300.0,
+        "full_fill_prob": 0.9235,
+        "need": 300,
+        "q": 0.5,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 649,
+        "episodes_p50": 559.0,
+        "episodes_p95": 599.0,
+        "fill_mean": 279.928,
+        "fill_p5": 279.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 0.93125,
+        "need": 280,
+        "q": 0.5,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.6": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 568,
+        "episodes_p50": 499.0,
+        "episodes_p95": 531.0,
+        "fill_mean": 299.995,
+        "fill_p5": 300.0,
+        "fill_p50": 300.0,
+        "fill_p95": 300.0,
+        "full_fill_prob": 0.995,
+        "need": 300,
+        "q": 0.6,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 538,
+        "episodes_p50": 467.0,
+        "episodes_p95": 496.0,
+        "fill_mean": 279.996,
+        "fill_p5": 280.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 0.996,
+        "need": 280,
+        "q": 0.6,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.7": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 483,
+        "episodes_p50": 428.0,
+        "episodes_p95": 453.0,
+        "fill_mean": 300.0,
+        "fill_p5": 300.0,
+        "fill_p50": 300.0,
+        "fill_p95": 300.0,
+        "full_fill_prob": 1.0,
+        "need": 300,
+        "q": 0.7,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 447,
+        "episodes_p50": 400.0,
+        "episodes_p95": 422.0,
+        "fill_mean": 279.99975,
+        "fill_p5": 280.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 0.99975,
+        "need": 280,
+        "q": 0.7,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.8": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 414,
+        "episodes_p50": 375.0,
+        "episodes_p95": 391.0,
+        "fill_mean": 300.0,
+        "fill_p5": 300.0,
+        "fill_p50": 300.0,
+        "fill_p95": 300.0,
+        "full_fill_prob": 1.0,
+        "need": 300,
+        "q": 0.8,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 385,
+        "episodes_p50": 349.0,
+        "episodes_p95": 366.0,
+        "fill_mean": 280.0,
+        "fill_p5": 280.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 1.0,
+        "need": 280,
+        "q": 0.8,
+        "replicates": 4000
+      }
+    },
+    "C360_A3|0.9": {
+      "R": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 363,
+        "episodes_p50": 333.0,
+        "episodes_p95": 344.0,
+        "fill_mean": 300.0,
+        "fill_p5": 300.0,
+        "fill_p50": 300.0,
+        "fill_p95": 300.0,
+        "full_fill_prob": 1.0,
+        "need": 300,
+        "q": 0.9,
+        "replicates": 4000
+      },
+      "X": {
+        "attempts_per_source": 3,
+        "candid_pool": 360,
+        "episodes_max": 333,
+        "episodes_p50": 311.0,
+        "episodes_p95": 321.0,
+        "fill_mean": 280.0,
+        "fill_p5": 280.0,
+        "fill_p50": 280.0,
+        "fill_p95": 280.0,
+        "full_fill_prob": 1.0,
+        "need": 280,
+        "q": 0.9,
+        "replicates": 4000
+      }
+    }
+  },
+  "final_replicates": 4000,
+  "icc_sensitivity": {
+    "R_full_fill_icc": {
+      "fill_p5": 286.0,
+      "full_fill_prob": 0.32875,
+      "icc": 0.35,
+      "need": 300,
+      "q": 0.6
+    },
+    "X_full_fill_icc": {
+      "fill_p5": 279.0,
+      "full_fill_prob": 0.77825,
+      "icc": 0.35,
+      "need": 280,
+      "q": 0.6
+    },
+    "attempts": 3,
+    "icc": 0.35,
+    "label": "all q* and full-fill numbers in this artifact are independence-conditional planning figures",
+    "model": "beta-binomial per-source latent pass propensity p_i ~ Beta(a,b), E[p_i]=q, ICC rho = 1/(a+b+1); attempts within one source are correlated through p_i",
+    "q": 0.6,
+    "sole_gate": "full bank cardinality (280 X + 300 R accepted, balanced main pairs) else NOT_ESTIMATED; no post-harvest pool adjustment under EITHER hypothesis",
+    "source_success_icc": 0.8264888888888888,
+    "source_success_independence": 0.9359999999999999
+  },
+  "q_grid": [
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ]
+}

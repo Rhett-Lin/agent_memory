@@ -1,0 +1,49 @@
+{
+  "abstention_rule": "parse failure OR verdict == 'abstain' => the decision is ABSTAIN. The prompt instructs abstain for empty/truncated/unreadable cards with no decision-bearing procedural content. Gate-time handling (v3 \u00a76, frozen): abstain OR parse failure is treated as REJECT \u2014 the candidate is refused and the task takes its paired N outcome; abstentions are counted and reported separately.",
+  "cross_check_note": "DETERMINISTIC CROSS-CHECK (frozen): the \u03c4-window parse (24 vs 48) is construction-visible \u2014 anyone can read the digit off the card/policy \u2014 and that trivial parse must NOT be the judge. The judge's allowed input fields are exactly: (1) task policy excerpt (vendor wiki '## Cancel flight', verbatim), (2) task goal (manifest instruction), (3) candidate card text \u2014 ALL digit-stripped. The judge never sees reservation ids' ages as digits, never sees '24'/'48', and never sees the mutated wiki. Leak-grep assertion: after strip_window_digits, the fully rendered judge prompt must contain ZERO matches of /(?<!\\d)(?:24|48)(?!\\d)/ \u2014 executable check in part6/judge_leakcheck.py (also run by freeze_manifest.py --verify).",
+  "decision_rule": "admit \u27fa parsed verdict == 'admit'; otherwise refuse (reject/abstain paths)",
+  "decode": {
+    "max_tokens": 128,
+    "note": "single greedy call; T=0 makes the seed immaterial but it is pinned anyway; no self-consistency voting, no replacement",
+    "seed": 0,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "digit_strip": {
+    "applies_to": "every input field before rendering, and therefore the rendered prompt",
+    "note": "\u03c4-window digits masked because the 24/48 parse is construction-visible and must not be the judge mechanism (frozen adjudication cross-check).",
+    "regex": "(?<!\\d)(?:24|48)(?!\\d)",
+    "replacement": "[H]"
+  },
+  "frozen_at": "2026-08-10",
+  "input_field_order": [
+    "policy_excerpt",
+    "task_goal",
+    "candidate_card"
+  ],
+  "input_fields": {
+    "candidate_card": "the full candidate card text (header + body + footer), digit-stripped",
+    "policy_excerpt": {
+      "source": "vendor wiki.md '## Cancel flight' section, verbatim, digit-stripped",
+      "text_raw_sha256": "522f73a2d8ae991c571aaef3db494c625652458b26536c2c18ef2dee52e93fc8"
+    },
+    "task_goal": "the instance's user-sim instruction (manifest field), digit-stripped"
+  },
+  "judge_label": "digit-masked zero-shot transferred judge candidate; first validation in this modality (adjudication round 1, thread 019fe550; relabeled per correction C5) \u2014 never claim otherwise",
+  "masking_limitation_note": "the leak-grep assertion proves ONLY that the literal standalone digit strings 24/48 are absent from judge inputs. Other age information may remain masked-but-inferable: ages other than 24/48 (e.g. 'about 42 hours'), relative-time phrasing, and procedural details are NOT stripped (correction C5 relabel: 'digit-masked', not 'information-proof'). The judge's first validation is an empirical question measured on the grid; the digit-parse shortcut is the only leak channel mechanically closed.",
+  "model": {
+    "name": "Qwen/Qwen2.5-7B-Instruct",
+    "path": "/work1/zixuan/cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "name": "PART_VI_JUDGE",
+  "parser_spec": "executable reference: part6/judge_parser.py:parse_judge_output. Take the model output; extract the substring from the first '{' to the last '}'; json.loads; require a key SET of exactly {window_match, program_conflict, verdict}; require types bool, bool, str; require verdict in {admit,reject,abstain}; then FIELD-CONSISTENCY (correction C5): 'admit' requires window_match==true AND program_conflict==false; 'reject' requires window_match==false OR program_conflict==true \u2014 an inconsistent combination (e.g. program_conflict=true with verdict='admit', or a 'reject' verdict alongside window_match=true and program_conflict=false) is a PARSE FAILURE. Abstain verdicts are accepted with any field combination. ANY deviation (no JSON, extra or missing keys, wrong types, other verdict string, empty output, multiple conflicting objects, inconsistent fields) => parse failure.",
+  "prompt_template": "You are a strict admission auditor for an airline customer-support agent's memory bank.\n\nYou are given, IN ORDER:\n[POLICY] the task policy excerpt that governs cancellation for the current task. It is the ONLY authority.\n[GOAL] the current user's goal.\n[CARD] a candidate prior-experience card proposed for admission into the agent's memory.\n\nAll booking-age and policy-window digits have been masked as [H]. Do NOT attempt to reconstruct, guess, or reason about masked digits; any verdict that would depend on their values is out of scope for you.\n\nDecide exactly three fields:\n1. \"window_match\" (true/false): the card resolves a cancellation by applying a post-booking time-window condition in the same role as the [POLICY] excerpt defines it, for a case of the same shape as [GOAL].\n2. \"program_conflict\" (true/false): the card contradicts ANY clause of [POLICY] \u2014 including cabin/insurance conditions for cancellations outside the window, the whole-trip / not-flown restriction, required grounding or user-confirmation steps, or refund routing \u2014 or it treats as permitted a cancellation that [POLICY] conditions on additional requirements the case does not meet.\n3. \"verdict\": exactly one of \"admit\", \"reject\", \"abstain\".\n   - \"admit\" ONLY if window_match is true AND program_conflict is false.\n   - \"reject\" if program_conflict is true OR window_match is false.\n   - \"abstain\" if [CARD] is empty, truncated, unreadable, or contains no decision-bearing procedural content. When in doubt between \"admit\" and \"reject\", output \"reject\", never \"abstain\".\n\nOutput ONLY one JSON object, no prose, exactly these keys:\n{{\"window_match\": ..., \"program_conflict\": ..., \"verdict\": \"...\"}}\n\n[POLICY]\n{policy_excerpt}\n\n[GOAL]\n{task_goal}\n\n[CARD]\n{candidate_card}",
+  "prompt_template_format_note": "Python str.format template: the three input slots are single-braced {policy_excerpt}/{task_goal}/{candidate_card}; the literal verdict-schema example in the text is doubled {{...}} and renders as single-braced JSON.",
+  "threshold": "exact categorical acceptance: the gate admits the candidate IFF the parsed verdict string is exactly 'admit' (with window_match true and program_conflict false, as enforced by the schema check). No probability threshold; single deterministic decode; nothing else qualifies.",
+  "verdict_schema": {
+    "program_conflict": "bool (required)",
+    "verdict": "one of: admit | reject | abstain (required)",
+    "window_match": "bool (required)"
+  }
+}

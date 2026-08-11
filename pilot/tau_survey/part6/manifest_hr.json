@@ -1,0 +1,5512 @@
+{
+  "entries": [
+    {
+      "age_hours": 34.0,
+      "canonical_id": "hr/tau6-hr-0000",
+      "instance_id": "tau6-hr-0000",
+      "instruction": "You are Raj Johnson (user id is raj_johnson_6495). You want to cancel reservation MP0UI8. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 2040,
+        "base_reservation_id": "X3UE1S",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-17"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT090",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "1b6ab202e63c586d62672cc7df7e8328b80691c273aae32558607f9cdbb257a8",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "dd6fc67ce8c069534b2cf0e139d843defcad7b2abade718ff467d13ece1404d7",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 34.0h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T05:00:00",
+        "destination": "ORD",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-17",
+            "destination": "ORD",
+            "flight_number": "HAT090",
+            "origin": "LAX",
+            "price": 192
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LAX",
+        "passengers": [
+          {
+            "dob": "1991-06-17",
+            "first_name": "Raj",
+            "last_name": "Johnson"
+          },
+          {
+            "dob": "1986-10-03",
+            "first_name": "Sofia",
+            "last_name": "Jackson"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 384,
+            "payment_id": "gift_card_3613186"
+          }
+        ],
+        "reservation_id": "MP0UI8",
+        "total_baggages": 1,
+        "user_id": "raj_johnson_6495"
+      },
+      "role": "target",
+      "slot_global": 720,
+      "user": {
+        "first_name": "Raj",
+        "last_name": "Johnson",
+        "user_id": "raj_johnson_6495"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 44.55,
+      "canonical_id": "hr/tau6-hr-0001",
+      "instance_id": "tau6-hr-0001",
+      "instruction": "Your user id is mason_smith_9673. You want to cancel your flights in reservation ID 1IUCXT and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2673,
+        "base_reservation_id": "6OL44J",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-21"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT075",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT175",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "14ce1121cc9ae4d28cbf77697211eaca867fd1ad81d31cc07d919a2648209213",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "c28854dbe53c6dfc1a83c23f1e1cab208d828f428452c2e0f839ad3bb9b38e1a",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 44.5h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T18:27:00",
+        "destination": "IAH",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-21",
+            "destination": "LAS",
+            "flight_number": "HAT075",
+            "origin": "MCO",
+            "price": 124
+          },
+          {
+            "date": "2024-05-21",
+            "destination": "IAH",
+            "flight_number": "HAT175",
+            "origin": "LAS",
+            "price": 137
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "MCO",
+        "passengers": [
+          {
+            "dob": "1988-12-15",
+            "first_name": "Mason",
+            "last_name": "Smith"
+          },
+          {
+            "dob": "1992-10-07",
+            "first_name": "Lei",
+            "last_name": "Santos"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 522,
+            "payment_id": "credit_card_3008313"
+          }
+        ],
+        "reservation_id": "1IUCXT",
+        "total_baggages": 0,
+        "user_id": "mason_smith_9673"
+      },
+      "role": "target",
+      "slot_global": 721,
+      "user": {
+        "first_name": "Mason",
+        "last_name": "Smith",
+        "user_id": "mason_smith_9673"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 43.5333,
+      "canonical_id": "hr/tau6-hr-0002",
+      "instance_id": "tau6-hr-0002",
+      "instruction": "Your user id is harper_wilson_8866. You want to cancel your flights in reservation ID RX6KPT and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2612,
+        "base_reservation_id": "GQ8WB2",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-26"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-26",
+              "flight_number": "HAT002",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT032",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-30",
+              "flight_number": "HAT134",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-30",
+              "flight_number": "HAT256",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "189c8e17b1c29af12cc08f85c952a1917ea5a42f41b58a47ebeadbf0527662e1",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "941ad12ccb800fa38f4e763d41215637416771245db504982f4e4f0563396866",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 43.5h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T19:28:00",
+        "destination": "SFO",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-26",
+            "destination": "PHX",
+            "flight_number": "HAT002",
+            "origin": "LGA",
+            "price": 70
+          },
+          {
+            "date": "2024-05-27",
+            "destination": "SFO",
+            "flight_number": "HAT032",
+            "origin": "PHX",
+            "price": 61
+          },
+          {
+            "date": "2024-05-30",
+            "destination": "PHX",
+            "flight_number": "HAT134",
+            "origin": "SFO",
+            "price": 50
+          },
+          {
+            "date": "2024-05-30",
+            "destination": "LGA",
+            "flight_number": "HAT256",
+            "origin": "PHX",
+            "price": 65
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LGA",
+        "passengers": [
+          {
+            "dob": "1971-01-02",
+            "first_name": "Harper",
+            "last_name": "Wilson"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 276,
+            "payment_id": "gift_card_4157915"
+          }
+        ],
+        "reservation_id": "RX6KPT",
+        "total_baggages": 0,
+        "user_id": "harper_wilson_8866"
+      },
+      "role": "target",
+      "slot_global": 722,
+      "user": {
+        "first_name": "Harper",
+        "last_name": "Wilson",
+        "user_id": "harper_wilson_8866"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 45.2167,
+      "canonical_id": "hr/tau6-hr-0003",
+      "instance_id": "tau6-hr-0003",
+      "instruction": "You booked reservation W9WXWM (from SEA to DFW) under user id lucas_lee_1916. You need to cancel it as soon as possible due to a change of plans. Ask what the refund timeline is.",
+      "instruction_template_id": "T4",
+      "perturbation": {
+        "age_minutes_draw": 2713,
+        "base_reservation_id": "M82TEX",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-22"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-22",
+              "flight_number": "HAT037",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "83a3865ee426bc9604d59daacee4dd03e48b7a95b0f185fef3b5ca64255fb3f3",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "ce748c985b1dc65535415ba6b1089fd009d2a6cff90c3b28509384538081a161",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 45.2h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T17:47:00",
+        "destination": "DFW",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-22",
+            "destination": "DFW",
+            "flight_number": "HAT037",
+            "origin": "SEA",
+            "price": 186
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "SEA",
+        "passengers": [
+          {
+            "dob": "1958-06-25",
+            "first_name": "Lucas",
+            "last_name": "Lee"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 216,
+            "payment_id": "credit_card_3681125"
+          }
+        ],
+        "reservation_id": "W9WXWM",
+        "total_baggages": 1,
+        "user_id": "lucas_lee_1916"
+      },
+      "role": "target",
+      "slot_global": 723,
+      "user": {
+        "first_name": "Lucas",
+        "last_name": "Lee",
+        "user_id": "lucas_lee_1916"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 29.0333,
+      "canonical_id": "hr/tau6-hr-0004",
+      "instance_id": "tau6-hr-0004",
+      "instruction": "Your user id is mohamed_hernandez_5188. Please cancel reservation 46DLA0 for you \u2014 your trip from DEN to BOS is no longer needed. You want the full refund to the original payment method.",
+      "instruction_template_id": "T3",
+      "perturbation": {
+        "age_minutes_draw": 1742,
+        "base_reservation_id": "9HBUV8",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-25"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-25",
+              "flight_number": "HAT130",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-25",
+              "flight_number": "HAT184",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "4547e1353c81477731d149c8325652f926a7c6c5f6371067fe6eb2dd3bae6d70",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "97597fb3ef31762440c0ff721dd28acd4862af048acb49bc803848a48dab0609",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 29.0h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T09:58:00",
+        "destination": "BOS",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-25",
+            "destination": "MIA",
+            "flight_number": "HAT130",
+            "origin": "DEN",
+            "price": 57
+          },
+          {
+            "date": "2024-05-25",
+            "destination": "BOS",
+            "flight_number": "HAT184",
+            "origin": "MIA",
+            "price": 72
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "DEN",
+        "passengers": [
+          {
+            "dob": "1996-10-16",
+            "first_name": "Mohamed",
+            "last_name": "Hernandez"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 159,
+            "payment_id": "credit_card_5417084"
+          }
+        ],
+        "reservation_id": "46DLA0",
+        "total_baggages": 0,
+        "user_id": "mohamed_hernandez_5188"
+      },
+      "role": "target",
+      "slot_global": 724,
+      "user": {
+        "first_name": "Mohamed",
+        "last_name": "Hernandez",
+        "user_id": "mohamed_hernandez_5188"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 34.5333,
+      "canonical_id": "hr/tau6-hr-0005",
+      "instance_id": "tau6-hr-0005",
+      "instruction": "You booked reservation 9HWR3X (from SEA to MCO) under user id sophia_wilson_1550. You need to cancel it as soon as possible due to a change of plans. Ask what the refund timeline is.",
+      "instruction_template_id": "T4",
+      "perturbation": {
+        "age_minutes_draw": 2072,
+        "base_reservation_id": "ADY1RZ",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-20"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-20",
+              "flight_number": "HAT194",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT235",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "6ee64a67ccd89b242f251943b39008abccc08a19183f5905018153951112e0f0",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "43ad6f88ae98f5b3282face7cf179b8ff2ae06ffc89be005b3a12abeb7f593ad",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 34.5h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T04:28:00",
+        "destination": "MCO",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-20",
+            "destination": "BOS",
+            "flight_number": "HAT194",
+            "origin": "SEA",
+            "price": 838
+          },
+          {
+            "date": "2024-05-21",
+            "destination": "MCO",
+            "flight_number": "HAT235",
+            "origin": "BOS",
+            "price": 703
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "SEA",
+        "passengers": [
+          {
+            "dob": "1993-07-22",
+            "first_name": "Sophia",
+            "last_name": "Wilson"
+          },
+          {
+            "dob": "1969-04-17",
+            "first_name": "Isabella",
+            "last_name": "Silva"
+          },
+          {
+            "dob": "1964-01-14",
+            "first_name": "Mei",
+            "last_name": "Garcia"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 4623,
+            "payment_id": "gift_card_5914430"
+          }
+        ],
+        "reservation_id": "9HWR3X",
+        "total_baggages": 2,
+        "user_id": "sophia_wilson_1550"
+      },
+      "role": "target",
+      "slot_global": 725,
+      "user": {
+        "first_name": "Sophia",
+        "last_name": "Wilson",
+        "user_id": "sophia_wilson_1550"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 34.2667,
+      "canonical_id": "hr/tau6-hr-0006",
+      "instance_id": "tau6-hr-0006",
+      "instruction": "You are Juan Li (user id is juan_li_9671). You want to cancel reservation N24QV1. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 2056,
+        "base_reservation_id": "ITSLB7",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-18"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-18",
+              "flight_number": "HAT133",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-23",
+              "flight_number": "HAT220",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "e6660f7381131c5b64ed5ce5b9765cb530bf50cab806a30b0b599883cc826dac",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "2a6852f6ce228a108ad7f785db5d9da49f54a09c2a2c23cda4f2cb8fe4c1ad0e",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 34.3h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T04:44:00",
+        "destination": "SEA",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-18",
+            "destination": "SEA",
+            "flight_number": "HAT133",
+            "origin": "ATL",
+            "price": 893
+          },
+          {
+            "date": "2024-05-23",
+            "destination": "ATL",
+            "flight_number": "HAT220",
+            "origin": "SEA",
+            "price": 660
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "ATL",
+        "passengers": [
+          {
+            "dob": "1998-07-17",
+            "first_name": "Juan",
+            "last_name": "Li"
+          },
+          {
+            "dob": "1973-07-19",
+            "first_name": "Daiki",
+            "last_name": "Garcia"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 3106,
+            "payment_id": "credit_card_3086580"
+          }
+        ],
+        "reservation_id": "N24QV1",
+        "total_baggages": 2,
+        "user_id": "juan_li_9671"
+      },
+      "role": "target",
+      "slot_global": 726,
+      "user": {
+        "first_name": "Juan",
+        "last_name": "Li",
+        "user_id": "juan_li_9671"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 39.3167,
+      "canonical_id": "hr/tau6-hr-0007",
+      "instance_id": "tau6-hr-0007",
+      "instruction": "You are Evelyn Garcia (user id is evelyn_garcia_6211). You want to cancel reservation HJEOL7. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 2359,
+        "base_reservation_id": "WMH8DI",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-25"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-25",
+              "flight_number": "HAT292",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-25",
+              "flight_number": "HAT088",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "71bddee9cf5f0a5d0ddbb297793b4d4e05c1cc56b0700c7189d7f977f874aff1",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "d235e981e1207f9158fba3dcd9dd9b43b945a840ebe8e01d2806a1c7604676be",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 39.3h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T23:41:00",
+        "destination": "DTW",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-25",
+            "destination": "JFK",
+            "flight_number": "HAT292",
+            "origin": "MIA",
+            "price": 200
+          },
+          {
+            "date": "2024-05-25",
+            "destination": "DTW",
+            "flight_number": "HAT088",
+            "origin": "JFK",
+            "price": 197
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "MIA",
+        "passengers": [
+          {
+            "dob": "1967-04-08",
+            "first_name": "Evelyn",
+            "last_name": "Garcia"
+          },
+          {
+            "dob": "1996-02-20",
+            "first_name": "Ethan",
+            "last_name": "Brown"
+          },
+          {
+            "dob": "1957-10-07",
+            "first_name": "James",
+            "last_name": "Gonzalez"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 1191,
+            "payment_id": "gift_card_5057569"
+          }
+        ],
+        "reservation_id": "HJEOL7",
+        "total_baggages": 2,
+        "user_id": "evelyn_garcia_6211"
+      },
+      "role": "target",
+      "slot_global": 727,
+      "user": {
+        "first_name": "Evelyn",
+        "last_name": "Garcia",
+        "user_id": "evelyn_garcia_6211"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 32.8833,
+      "canonical_id": "hr/tau6-hr-0008",
+      "instance_id": "tau6-hr-0008",
+      "instruction": "Your user id is olivia_moore_2080. You want to cancel your flights in reservation ID BW74DD and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 1973,
+        "base_reservation_id": "05KW3F",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-17"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT283",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT273",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-24",
+              "flight_number": "HAT094",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-24",
+              "flight_number": "HAT134",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "af97b2313477c468f6d9d77c5d98bc14ff211d5918a971c004defeeee3217d61",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "1bf87e33fd5f8512393835fc10c0ab3e4cae655d48b02da0f41fb729f7ffc7ac",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 32.9h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T06:07:00",
+        "destination": "LAX",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-17",
+            "destination": "SFO",
+            "flight_number": "HAT283",
+            "origin": "PHX",
+            "price": 991
+          },
+          {
+            "date": "2024-05-17",
+            "destination": "LAX",
+            "flight_number": "HAT273",
+            "origin": "SFO",
+            "price": 615
+          },
+          {
+            "date": "2024-05-24",
+            "destination": "SFO",
+            "flight_number": "HAT094",
+            "origin": "LAX",
+            "price": 1571
+          },
+          {
+            "date": "2024-05-24",
+            "destination": "PHX",
+            "flight_number": "HAT134",
+            "origin": "SFO",
+            "price": 538
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "PHX",
+        "passengers": [
+          {
+            "dob": "1956-11-17",
+            "first_name": "Olivia",
+            "last_name": "Moore"
+          },
+          {
+            "dob": "1951-12-22",
+            "first_name": "Harper",
+            "last_name": "Ito"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 7490,
+            "payment_id": "gift_card_7002574"
+          }
+        ],
+        "reservation_id": "BW74DD",
+        "total_baggages": 4,
+        "user_id": "olivia_moore_2080"
+      },
+      "role": "target",
+      "slot_global": 728,
+      "user": {
+        "first_name": "Olivia",
+        "last_name": "Moore",
+        "user_id": "olivia_moore_2080"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 41.7167,
+      "canonical_id": "hr/tau6-hr-0009",
+      "instance_id": "tau6-hr-0009",
+      "instruction": "Your user id is ivan_muller_7015. Please cancel reservation S4ETBE for you \u2014 your trip from DTW to SEA is no longer needed. You want the full refund to the original payment method.",
+      "instruction_template_id": "T3",
+      "perturbation": {
+        "age_minutes_draw": 2503,
+        "base_reservation_id": "G72NSF",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-17"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT097",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT251",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "bd6af03583f8beffbde8646692fc2689fee310f674cad909a6a4a0ab0036b833",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "e31bc4d0b5bc6f577878d26e75311cf81c84c31fb3a9263d3d56a228736fcd88",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 41.7h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T21:17:00",
+        "destination": "SEA",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-17",
+            "destination": "PHX",
+            "flight_number": "HAT097",
+            "origin": "DTW",
+            "price": 158
+          },
+          {
+            "date": "2024-05-17",
+            "destination": "SEA",
+            "flight_number": "HAT251",
+            "origin": "PHX",
+            "price": 141
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "DTW",
+        "passengers": [
+          {
+            "dob": "1968-04-25",
+            "first_name": "Ivan",
+            "last_name": "Muller"
+          },
+          {
+            "dob": "1952-01-28",
+            "first_name": "Isabella",
+            "last_name": "Moore"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 658,
+            "payment_id": "gift_card_8516878"
+          }
+        ],
+        "reservation_id": "S4ETBE",
+        "total_baggages": 2,
+        "user_id": "ivan_muller_7015"
+      },
+      "role": "target",
+      "slot_global": 729,
+      "user": {
+        "first_name": "Ivan",
+        "last_name": "Muller",
+        "user_id": "ivan_muller_7015"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 30.35,
+      "canonical_id": "hr/tau6-hr-0010",
+      "instance_id": "tau6-hr-0010",
+      "instruction": "You are Liam Ito (user id is liam_ito_4473). You want to cancel reservation R0MXOJ. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 1821,
+        "base_reservation_id": "LWTEDF",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-27"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT002",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "1193b85761055a8a8eeb420e8c4eb6108bed9f98ac42eef41ee97042465c98d0",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "0eb391155c35690c74f2c424d1e08f77ed573cfef7b236853e130f0819390491",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 30.4h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T08:39:00",
+        "destination": "PHX",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-27",
+            "destination": "PHX",
+            "flight_number": "HAT002",
+            "origin": "LGA",
+            "price": 118
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LGA",
+        "passengers": [
+          {
+            "dob": "1977-10-05",
+            "first_name": "Liam",
+            "last_name": "Silva"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 148,
+            "payment_id": "credit_card_5260935"
+          }
+        ],
+        "reservation_id": "R0MXOJ",
+        "total_baggages": 0,
+        "user_id": "liam_ito_4473"
+      },
+      "role": "target",
+      "slot_global": 730,
+      "user": {
+        "first_name": "Liam",
+        "last_name": "Ito",
+        "user_id": "liam_ito_4473"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 37.2667,
+      "canonical_id": "hr/tau6-hr-0011",
+      "instance_id": "tau6-hr-0011",
+      "instruction": "Your user id is amelia_hernandez_8403. Please cancel reservation VV9BG9 for you \u2014 your trip from JFK to ATL is no longer needed. You want the full refund to the original payment method.",
+      "instruction_template_id": "T3",
+      "perturbation": {
+        "age_minutes_draw": 2236,
+        "base_reservation_id": "IL3IE4",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-19"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-19",
+              "flight_number": "HAT057",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-29",
+              "flight_number": "HAT239",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-29",
+              "flight_number": "HAT100",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "46d3322fdaddaa0cc44a8dc00d659e66be6fcb2a802ea939bca4f9a9ae638bf4",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "50ea9ae32310af26513a3128a3a0f54a94692e6c5a1f1a3a53c20bae22a6c552",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 37.3h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T01:44:00",
+        "destination": "ATL",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-19",
+            "destination": "ATL",
+            "flight_number": "HAT057",
+            "origin": "JFK",
+            "price": 82
+          },
+          {
+            "date": "2024-05-29",
+            "destination": "SEA",
+            "flight_number": "HAT239",
+            "origin": "ATL",
+            "price": 64
+          },
+          {
+            "date": "2024-05-29",
+            "destination": "JFK",
+            "flight_number": "HAT100",
+            "origin": "SEA",
+            "price": 53
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "JFK",
+        "passengers": [
+          {
+            "dob": "1968-11-28",
+            "first_name": "Amelia",
+            "last_name": "Hernandez"
+          },
+          {
+            "dob": "1968-01-27",
+            "first_name": "Lei",
+            "last_name": "Kovacs"
+          },
+          {
+            "dob": "1963-03-26",
+            "first_name": "Aarav",
+            "last_name": "Anderson"
+          },
+          {
+            "dob": "1963-09-13",
+            "first_name": "Raj",
+            "last_name": "Lopez"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 916,
+            "payment_id": "credit_card_2756027"
+          }
+        ],
+        "reservation_id": "VV9BG9",
+        "total_baggages": 0,
+        "user_id": "amelia_hernandez_8403"
+      },
+      "role": "target",
+      "slot_global": 731,
+      "user": {
+        "first_name": "Amelia",
+        "last_name": "Hernandez",
+        "user_id": "amelia_hernandez_8403"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 43.75,
+      "canonical_id": "hr/tau6-hr-0012",
+      "instance_id": "tau6-hr-0012",
+      "instruction": "You are Yusuf Martin (user id is yusuf_martin_3470). You want to cancel reservation YGFH16. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 2625,
+        "base_reservation_id": "FATBVC",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-28"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-28",
+              "flight_number": "HAT260",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-28",
+              "flight_number": "HAT205",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "e9ceea89cbb279dd1b7ef2a2e41c1042ca647f4bc5d0d3657271abeebd92960a",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "cc290e11955bf60a7991092fe45f72d3c440f4b678edad9181032655352c4eb9",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 43.8h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T19:15:00",
+        "destination": "PHL",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-28",
+            "destination": "CLT",
+            "flight_number": "HAT260",
+            "origin": "BOS",
+            "price": 79
+          },
+          {
+            "date": "2024-05-28",
+            "destination": "PHL",
+            "flight_number": "HAT205",
+            "origin": "CLT",
+            "price": 65
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "BOS",
+        "passengers": [
+          {
+            "dob": "1964-02-24",
+            "first_name": "Yusuf",
+            "last_name": "Martin"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 144,
+            "payment_id": "credit_card_9067289"
+          }
+        ],
+        "reservation_id": "YGFH16",
+        "total_baggages": 0,
+        "user_id": "yusuf_martin_3470"
+      },
+      "role": "target",
+      "slot_global": 732,
+      "user": {
+        "first_name": "Yusuf",
+        "last_name": "Martin",
+        "user_id": "yusuf_martin_3470"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 24.9667,
+      "canonical_id": "hr/tau6-hr-0013",
+      "instance_id": "tau6-hr-0013",
+      "instruction": "Your user id is mei_kovacs_2340. Please cancel reservation 70FTTK for you \u2014 your trip from EWR to DEN is no longer needed. You want the full refund to the original payment method.",
+      "instruction_template_id": "T3",
+      "perturbation": {
+        "age_minutes_draw": 1498,
+        "base_reservation_id": "XLPP2L",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-17"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT215",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT262",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "01f06be074b52b1355399ebd6a699a4170ab30d2631a82adefe54cd9a77cce85",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "8791c0b69a0a48f46dfd4da5443b629d722983e5519c9b985f4f78bb2d9a6382",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 25.0h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T14:02:00",
+        "destination": "DEN",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-17",
+            "destination": "CLT",
+            "flight_number": "HAT215",
+            "origin": "EWR",
+            "price": 72
+          },
+          {
+            "date": "2024-05-17",
+            "destination": "DEN",
+            "flight_number": "HAT262",
+            "origin": "CLT",
+            "price": 82
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "EWR",
+        "passengers": [
+          {
+            "dob": "1985-04-05",
+            "first_name": "Mei",
+            "last_name": "Kovacs"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 184,
+            "payment_id": "credit_card_9794500"
+          }
+        ],
+        "reservation_id": "70FTTK",
+        "total_baggages": 0,
+        "user_id": "mei_kovacs_2340"
+      },
+      "role": "target",
+      "slot_global": 733,
+      "user": {
+        "first_name": "Mei",
+        "last_name": "Kovacs",
+        "user_id": "mei_kovacs_2340"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 24.7,
+      "canonical_id": "hr/tau6-hr-0014",
+      "instance_id": "tau6-hr-0014",
+      "instruction": "Your user id is mia_garcia_3833. You want to cancel your flights in reservation ID SDXZ6X and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 1482,
+        "base_reservation_id": "TNNWN9",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-22"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-22",
+              "flight_number": "HAT022",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-22",
+              "flight_number": "HAT177",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "545cc93b8670548bb5dfefa8d01b68f883e0a10eb4aef8219171b2ddc869d9c2",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "f06133bb68e35973ceb765ba23e31dd82db4fc6875efc37e6c82c828121940a7",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 24.7h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T14:18:00",
+        "destination": "ATL",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-22",
+            "destination": "DFW",
+            "flight_number": "HAT022",
+            "origin": "LAX",
+            "price": 79
+          },
+          {
+            "date": "2024-05-22",
+            "destination": "ATL",
+            "flight_number": "HAT177",
+            "origin": "DFW",
+            "price": 85
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LAX",
+        "passengers": [
+          {
+            "dob": "1980-07-11",
+            "first_name": "Mia",
+            "last_name": "Garcia"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 194,
+            "payment_id": "credit_card_1296952"
+          }
+        ],
+        "reservation_id": "SDXZ6X",
+        "total_baggages": 0,
+        "user_id": "mia_garcia_3833"
+      },
+      "role": "target",
+      "slot_global": 734,
+      "user": {
+        "first_name": "Mia",
+        "last_name": "Garcia",
+        "user_id": "mia_garcia_3833"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 38.4833,
+      "canonical_id": "hr/tau6-hr-0015",
+      "instance_id": "tau6-hr-0015",
+      "instruction": "Your user id is mia_jackson_2156. You want to cancel your flights in reservation ID G4NYO8 and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2309,
+        "base_reservation_id": "JBYKQ0",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-21"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT228",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-22",
+              "flight_number": "HAT270",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "ba982cbc26ce93e5c0f9e508cb52623ca50db28cd3e09397123aabd5e832f01c",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "94c3c21d51bebf6c5f83a45afa9b412176defc20fd90c19e8bbfc4ce406e1118",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 38.5h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T00:31:00",
+        "destination": "CLT",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-21",
+            "destination": "EWR",
+            "flight_number": "HAT228",
+            "origin": "LAX",
+            "price": 52
+          },
+          {
+            "date": "2024-05-22",
+            "destination": "CLT",
+            "flight_number": "HAT270",
+            "origin": "EWR",
+            "price": 77
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LAX",
+        "passengers": [
+          {
+            "dob": "1957-01-15",
+            "first_name": "Mia",
+            "last_name": "Jackson"
+          },
+          {
+            "dob": "1970-10-27",
+            "first_name": "James",
+            "last_name": "Moore"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 258,
+            "payment_id": "gift_card_4636647"
+          }
+        ],
+        "reservation_id": "G4NYO8",
+        "total_baggages": 0,
+        "user_id": "mia_jackson_2156"
+      },
+      "role": "target",
+      "slot_global": 735,
+      "user": {
+        "first_name": "Mia",
+        "last_name": "Jackson",
+        "user_id": "mia_jackson_2156"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 31.3333,
+      "canonical_id": "hr/tau6-hr-0016",
+      "instance_id": "tau6-hr-0016",
+      "instruction": "You are Raj Kovacs (user id is raj_kovacs_4682). You want to cancel reservation KD2VMP. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 1880,
+        "base_reservation_id": "HFNWM0",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-24"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-24",
+              "flight_number": "HAT027",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-24",
+              "flight_number": "HAT162",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT290",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT095",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "73f05623fcfcf749a734bddcacfc9dded209a41be8ecd188de640a583387f435",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "68815415464649f38d5420b0a9adbc0e0cda215dedad8563145ca4a8b50f6896",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 31.3h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T07:40:00",
+        "destination": "DEN",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-24",
+            "destination": "LAS",
+            "flight_number": "HAT027",
+            "origin": "PHX",
+            "price": 171
+          },
+          {
+            "date": "2024-05-24",
+            "destination": "DEN",
+            "flight_number": "HAT162",
+            "origin": "LAS",
+            "price": 150
+          },
+          {
+            "date": "2024-05-27",
+            "destination": "LAS",
+            "flight_number": "HAT290",
+            "origin": "DEN",
+            "price": 196
+          },
+          {
+            "date": "2024-05-27",
+            "destination": "PHX",
+            "flight_number": "HAT095",
+            "origin": "LAS",
+            "price": 173
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "PHX",
+        "passengers": [
+          {
+            "dob": "1976-10-03",
+            "first_name": "Raj",
+            "last_name": "Kovacs"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 690,
+            "payment_id": "credit_card_3662517"
+          }
+        ],
+        "reservation_id": "KD2VMP",
+        "total_baggages": 1,
+        "user_id": "raj_kovacs_4682"
+      },
+      "role": "target",
+      "slot_global": 736,
+      "user": {
+        "first_name": "Raj",
+        "last_name": "Kovacs",
+        "user_id": "raj_kovacs_4682"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 46.6167,
+      "canonical_id": "hr/tau6-hr-0017",
+      "instance_id": "tau6-hr-0017",
+      "instruction": "Your user id is yara_anderson_2080. You want to cancel your flights in reservation ID 4FAXGL and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2797,
+        "base_reservation_id": "N62ITV",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-30"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-30",
+              "flight_number": "HAT170",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "a4121387986cbda1609775a78dbde160f11c2c20821a032ab18d3f6814439c9a",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "b2392651aeca9e0ef106cf5a31d9816c3541092056db40ce20bfea1ef7e3d717",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 46.6h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T16:23:00",
+        "destination": "LAX",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-30",
+            "destination": "LAX",
+            "flight_number": "HAT170",
+            "origin": "DFW",
+            "price": 108
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "DFW",
+        "passengers": [
+          {
+            "dob": "1968-06-25",
+            "first_name": "Yara",
+            "last_name": "Anderson"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 108,
+            "payment_id": "credit_card_9551009"
+          }
+        ],
+        "reservation_id": "4FAXGL",
+        "total_baggages": 0,
+        "user_id": "yara_anderson_2080"
+      },
+      "role": "target",
+      "slot_global": 737,
+      "user": {
+        "first_name": "Yara",
+        "last_name": "Anderson",
+        "user_id": "yara_anderson_2080"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 42.75,
+      "canonical_id": "hr/tau6-hr-0018",
+      "instance_id": "tau6-hr-0018",
+      "instruction": "Your user id is sophia_silva_7557. Please cancel reservation ZECDTJ for you \u2014 your trip from ORD to PHL is no longer needed. You want the full refund to the original payment method.",
+      "instruction_template_id": "T3",
+      "perturbation": {
+        "age_minutes_draw": 2565,
+        "base_reservation_id": "WUNA5K",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-17"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT271",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-18",
+              "flight_number": "HAT197",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "fec8e0dda484a16400e7a00a82a2cb4fd48750d4b28ca99e942962a8586cac6d",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "185afb4212ea521c99e05975ffcb68c280b9f2b810b35117207da02290226f97",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 42.8h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T20:15:00",
+        "destination": "PHL",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-17",
+            "destination": "PHL",
+            "flight_number": "HAT271",
+            "origin": "ORD",
+            "price": 160
+          },
+          {
+            "date": "2024-05-18",
+            "destination": "ORD",
+            "flight_number": "HAT197",
+            "origin": "PHL",
+            "price": 100
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "ORD",
+        "passengers": [
+          {
+            "dob": "1957-10-05",
+            "first_name": "Sophia",
+            "last_name": "Silva"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 260,
+            "payment_id": "gift_card_5094406"
+          }
+        ],
+        "reservation_id": "ZECDTJ",
+        "total_baggages": 1,
+        "user_id": "sophia_silva_7557"
+      },
+      "role": "target",
+      "slot_global": 738,
+      "user": {
+        "first_name": "Sophia",
+        "last_name": "Silva",
+        "user_id": "sophia_silva_7557"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 41.4167,
+      "canonical_id": "hr/tau6-hr-0019",
+      "instance_id": "tau6-hr-0019",
+      "instruction": "You booked reservation 3KHKND (from LGA to MCO) under user id ethan_kovacs_5869. You need to cancel it as soon as possible due to a change of plans. Ask what the refund timeline is.",
+      "instruction_template_id": "T4",
+      "perturbation": {
+        "age_minutes_draw": 2485,
+        "base_reservation_id": "2N6PRK",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-23"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-23",
+              "flight_number": "HAT219",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-23",
+              "flight_number": "HAT181",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-24",
+              "flight_number": "HAT214",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-25",
+              "flight_number": "HAT256",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "0de032a65a38d2e1630565bbf50b79da4c8446e9e76eb1149aa3275c583db25f",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "cdd2acca23ba11fcf81c6ebacf2ca55d1ca54440d12f4b303ae39b920187ac1b",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 41.4h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T21:35:00",
+        "destination": "MCO",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-23",
+            "destination": "PHX",
+            "flight_number": "HAT219",
+            "origin": "LGA",
+            "price": 95
+          },
+          {
+            "date": "2024-05-23",
+            "destination": "MCO",
+            "flight_number": "HAT181",
+            "origin": "PHX",
+            "price": 70
+          },
+          {
+            "date": "2024-05-24",
+            "destination": "PHX",
+            "flight_number": "HAT214",
+            "origin": "MCO",
+            "price": 53
+          },
+          {
+            "date": "2024-05-25",
+            "destination": "LGA",
+            "flight_number": "HAT256",
+            "origin": "PHX",
+            "price": 94
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LGA",
+        "passengers": [
+          {
+            "dob": "1981-03-14",
+            "first_name": "Ethan",
+            "last_name": "Kovacs"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 342,
+            "payment_id": "gift_card_9604369"
+          }
+        ],
+        "reservation_id": "3KHKND",
+        "total_baggages": 0,
+        "user_id": "ethan_kovacs_5869"
+      },
+      "role": "target",
+      "slot_global": 739,
+      "user": {
+        "first_name": "Ethan",
+        "last_name": "Kovacs",
+        "user_id": "ethan_kovacs_5869"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 43.1167,
+      "canonical_id": "hr/tau6-hr-0020",
+      "instance_id": "tau6-hr-0020",
+      "instruction": "Your user id is mason_lee_7450. You want to cancel your flights in reservation ID 5NO43N and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2587,
+        "base_reservation_id": "E45F95",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-24"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-24",
+              "flight_number": "HAT260",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-24",
+              "flight_number": "HAT087",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "9f1e05b2a583c8651e581bccf86a1d9550ee7abae0279a58ca0ad423cef5495f",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "838d573954b91088689d806254e637811dd46959bda68bfe12b925fe83e4f07f",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 43.1h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T19:53:00",
+        "destination": "LGA",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-24",
+            "destination": "CLT",
+            "flight_number": "HAT260",
+            "origin": "BOS",
+            "price": 87
+          },
+          {
+            "date": "2024-05-24",
+            "destination": "LGA",
+            "flight_number": "HAT087",
+            "origin": "CLT",
+            "price": 77
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "BOS",
+        "passengers": [
+          {
+            "dob": "1965-11-06",
+            "first_name": "Mason",
+            "last_name": "Lee"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 194,
+            "payment_id": "credit_card_9861856"
+          }
+        ],
+        "reservation_id": "5NO43N",
+        "total_baggages": 0,
+        "user_id": "mason_lee_7450"
+      },
+      "role": "target",
+      "slot_global": 740,
+      "user": {
+        "first_name": "Mason",
+        "last_name": "Lee",
+        "user_id": "mason_lee_7450"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 29.3667,
+      "canonical_id": "hr/tau6-hr-0021",
+      "instance_id": "tau6-hr-0021",
+      "instruction": "You are Anya Khan (user id is anya_khan_1074). You want to cancel reservation II02YK. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 1762,
+        "base_reservation_id": "77VWO5",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-23"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-23",
+              "flight_number": "HAT080",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-23",
+              "flight_number": "HAT135",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "d7c514d80c8b194821b26ff2632413ea2b58d282b7468716d721ae1155e94fd7",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "289d2579aaa97c714cc7ccbeef8a1a6e13d50aa102d79f5c0a36b1efe7f165cb",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 29.4h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T09:38:00",
+        "destination": "LGA",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-23",
+            "destination": "PHL",
+            "flight_number": "HAT080",
+            "origin": "DEN",
+            "price": 151
+          },
+          {
+            "date": "2024-05-23",
+            "destination": "LGA",
+            "flight_number": "HAT135",
+            "origin": "PHL",
+            "price": 197
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "DEN",
+        "passengers": [
+          {
+            "dob": "1983-10-13",
+            "first_name": "Raj",
+            "last_name": "Smith"
+          },
+          {
+            "dob": "1999-07-25",
+            "first_name": "Sofia",
+            "last_name": "Patel"
+          },
+          {
+            "dob": "1987-04-21",
+            "first_name": "Noah",
+            "last_name": "Muller"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 1134,
+            "payment_id": "gift_card_9637418"
+          }
+        ],
+        "reservation_id": "II02YK",
+        "total_baggages": 0,
+        "user_id": "anya_khan_1074"
+      },
+      "role": "target",
+      "slot_global": 741,
+      "user": {
+        "first_name": "Anya",
+        "last_name": "Khan",
+        "user_id": "anya_khan_1074"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 30.0667,
+      "canonical_id": "hr/tau6-hr-0022",
+      "instance_id": "tau6-hr-0022",
+      "instruction": "You are Fatima Moore (user id is fatima_moore_5020). You want to cancel reservation VDSA6H. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 1804,
+        "base_reservation_id": "E8RY3O",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-27"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT220",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT281",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-29",
+              "flight_number": "HAT040",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "ae308eaedb2e716e23b297614feb16cf9099e4ac7d340c2b28eafce6684502d3",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "6adc0d2a4c84350500e33b2fa23cf678682f8b28d77e1893df85ce6d6e43a030",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 30.1h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T08:56:00",
+        "destination": "LAS",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-27",
+            "destination": "ATL",
+            "flight_number": "HAT220",
+            "origin": "SEA",
+            "price": 1369
+          },
+          {
+            "date": "2024-05-27",
+            "destination": "LAS",
+            "flight_number": "HAT281",
+            "origin": "ATL",
+            "price": 1995
+          },
+          {
+            "date": "2024-05-29",
+            "destination": "SEA",
+            "flight_number": "HAT040",
+            "origin": "LAS",
+            "price": 1579
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "SEA",
+        "passengers": [
+          {
+            "dob": "1970-06-16",
+            "first_name": "Fatima",
+            "last_name": "Moore"
+          },
+          {
+            "dob": "1991-03-20",
+            "first_name": "Liam",
+            "last_name": "Gonzalez"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 9886,
+            "payment_id": "gift_card_7113914"
+          }
+        ],
+        "reservation_id": "VDSA6H",
+        "total_baggages": 4,
+        "user_id": "fatima_moore_5020"
+      },
+      "role": "target",
+      "slot_global": 742,
+      "user": {
+        "first_name": "Fatima",
+        "last_name": "Moore",
+        "user_id": "fatima_moore_5020"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 40.7833,
+      "canonical_id": "hr/tau6-hr-0023",
+      "instance_id": "tau6-hr-0023",
+      "instruction": "Your user id is noah_khan_8166. You want to cancel your flights in reservation ID RA5A7Z and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2447,
+        "base_reservation_id": "JU4FIC",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-23"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-23",
+              "flight_number": "HAT144",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-23",
+              "flight_number": "HAT181",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "7bba7af9ecb7423c32a1eca0553a403a76d0b9bbcefe866af29b149cd4dfc9df",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "4801e8906a1891e5817ea4013c7b86485fe0803067411eaca1ad82909c7ec8ba",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 40.8h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T22:13:00",
+        "destination": "MCO",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-23",
+            "destination": "PHX",
+            "flight_number": "HAT144",
+            "origin": "SFO",
+            "price": 133
+          },
+          {
+            "date": "2024-05-23",
+            "destination": "MCO",
+            "flight_number": "HAT181",
+            "origin": "PHX",
+            "price": 200
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "SFO",
+        "passengers": [
+          {
+            "dob": "1982-01-02",
+            "first_name": "Noah",
+            "last_name": "Khan"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 363,
+            "payment_id": "gift_card_6576226"
+          }
+        ],
+        "reservation_id": "RA5A7Z",
+        "total_baggages": 0,
+        "user_id": "noah_khan_8166"
+      },
+      "role": "target",
+      "slot_global": 743,
+      "user": {
+        "first_name": "Noah",
+        "last_name": "Khan",
+        "user_id": "noah_khan_8166"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 34.55,
+      "canonical_id": "hr/tau6-hr-0024",
+      "instance_id": "tau6-hr-0024",
+      "instruction": "Your user id is omar_johnson_8493. Please cancel reservation VSF5JU for you \u2014 your trip from DTW to IAH is no longer needed. You want the full refund to the original payment method.",
+      "instruction_template_id": "T3",
+      "perturbation": {
+        "age_minutes_draw": 2073,
+        "base_reservation_id": "JD5SGA",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-28"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-28",
+              "flight_number": "HAT169",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-28",
+              "flight_number": "HAT279",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "8ea334cb0a221df159b4d725714a27568cd1ecf76616fde5239c6388c413232a",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "f2cb76c5b31daddd44362cb89f3e082f30d622ff1b5bbe3d2d5ca1e8f3e27574",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 34.5h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T04:27:00",
+        "destination": "IAH",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-28",
+            "destination": "JFK",
+            "flight_number": "HAT169",
+            "origin": "DTW",
+            "price": 557
+          },
+          {
+            "date": "2024-05-28",
+            "destination": "IAH",
+            "flight_number": "HAT279",
+            "origin": "JFK",
+            "price": 1410
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "DTW",
+        "passengers": [
+          {
+            "dob": "1998-09-21",
+            "first_name": "Omar",
+            "last_name": "Johnson"
+          },
+          {
+            "dob": "1990-10-27",
+            "first_name": "Omar",
+            "last_name": "Sanchez"
+          },
+          {
+            "dob": "1987-05-16",
+            "first_name": "Fatima",
+            "last_name": "Jackson"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 5901,
+            "payment_id": "credit_card_3032518"
+          }
+        ],
+        "reservation_id": "VSF5JU",
+        "total_baggages": 1,
+        "user_id": "omar_johnson_8493"
+      },
+      "role": "target",
+      "slot_global": 744,
+      "user": {
+        "first_name": "Omar",
+        "last_name": "Johnson",
+        "user_id": "omar_johnson_8493"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 45.3667,
+      "canonical_id": "hr/tau6-hr-0025",
+      "instance_id": "tau6-hr-0025",
+      "instruction": "You booked reservation A528XK (from BOS to LGA) under user id isabella_khan_3247. You need to cancel it as soon as possible due to a change of plans. Ask what the refund timeline is.",
+      "instruction_template_id": "T4",
+      "perturbation": {
+        "age_minutes_draw": 2722,
+        "base_reservation_id": "OI2XRY",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-22"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-22",
+              "flight_number": "HAT260",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-22",
+              "flight_number": "HAT087",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "f8d1e93cde57ff59552c4d6c25f3d6a69ef91a0d8cf04e4ef207daa364fd9c06",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "235dc296d2d5af00e763002ea879023c45c21f9b690cdd574de87ebd31a29781",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 45.4h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T17:38:00",
+        "destination": "LGA",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-22",
+            "destination": "CLT",
+            "flight_number": "HAT260",
+            "origin": "BOS",
+            "price": 1012
+          },
+          {
+            "date": "2024-05-22",
+            "destination": "LGA",
+            "flight_number": "HAT087",
+            "origin": "CLT",
+            "price": 579
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "BOS",
+        "passengers": [
+          {
+            "dob": "1970-11-26",
+            "first_name": "Isabella",
+            "last_name": "Khan"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 1591,
+            "payment_id": "credit_card_2364106"
+          }
+        ],
+        "reservation_id": "A528XK",
+        "total_baggages": 2,
+        "user_id": "isabella_khan_3247"
+      },
+      "role": "target",
+      "slot_global": 745,
+      "user": {
+        "first_name": "Isabella",
+        "last_name": "Khan",
+        "user_id": "isabella_khan_3247"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 40.2833,
+      "canonical_id": "hr/tau6-hr-0026",
+      "instance_id": "tau6-hr-0026",
+      "instruction": "Your user id is amelia_davis_7067. You want to cancel your flights in reservation ID ALYU4T and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2417,
+        "base_reservation_id": "DV0WUJ",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-24"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-24",
+              "flight_number": "HAT255",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-26",
+              "flight_number": "HAT193",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "bbe7be7bc1be6401a5a29c95a2ac18b747ad036f4b7f424467f9b10c3a55a52e",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "34087b12d266f574ed2642e95a287d9c5a4910aa5b252478b4524dbf42983482",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 40.3h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T22:43:00",
+        "destination": "MIA",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-24",
+            "destination": "MIA",
+            "flight_number": "HAT255",
+            "origin": "DEN",
+            "price": 54
+          },
+          {
+            "date": "2024-05-26",
+            "destination": "DEN",
+            "flight_number": "HAT193",
+            "origin": "MIA",
+            "price": 86
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "DEN",
+        "passengers": [
+          {
+            "dob": "1964-07-22",
+            "first_name": "Amelia",
+            "last_name": "Davis"
+          },
+          {
+            "dob": "1989-01-27",
+            "first_name": "Raj",
+            "last_name": "Li"
+          },
+          {
+            "dob": "1969-12-04",
+            "first_name": "Lei",
+            "last_name": "Lee"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 420,
+            "payment_id": "gift_card_7549059"
+          }
+        ],
+        "reservation_id": "ALYU4T",
+        "total_baggages": 0,
+        "user_id": "amelia_davis_7067"
+      },
+      "role": "target",
+      "slot_global": 746,
+      "user": {
+        "first_name": "Amelia",
+        "last_name": "Davis",
+        "user_id": "amelia_davis_7067"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 34.4,
+      "canonical_id": "hr/tau6-hr-0027",
+      "instance_id": "tau6-hr-0027",
+      "instruction": "You are Harper Garcia (user id is harper_garcia_8677). You want to cancel reservation 2G12GR. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 2064,
+        "base_reservation_id": "V1B1WU",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-18"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-18",
+              "flight_number": "HAT072",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-18",
+              "flight_number": "HAT026",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "cc721b1aa20c6058e835859d5af182d87d020e4e047dc8e10ffd446c189ea276",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "c62e266531971a8639117238e84c6d9fa370df87684d19e217df526451de06e3",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 34.4h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T04:36:00",
+        "destination": "BOS",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-18",
+            "destination": "SFO",
+            "flight_number": "HAT072",
+            "origin": "IAH",
+            "price": 92
+          },
+          {
+            "date": "2024-05-18",
+            "destination": "BOS",
+            "flight_number": "HAT026",
+            "origin": "SFO",
+            "price": 79
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "IAH",
+        "passengers": [
+          {
+            "dob": "1998-02-27",
+            "first_name": "Harper",
+            "last_name": "Garcia"
+          },
+          {
+            "dob": "1986-06-17",
+            "first_name": "Anya",
+            "last_name": "Sanchez"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 402,
+            "payment_id": "gift_card_6460395"
+          }
+        ],
+        "reservation_id": "2G12GR",
+        "total_baggages": 0,
+        "user_id": "harper_garcia_8677"
+      },
+      "role": "target",
+      "slot_global": 747,
+      "user": {
+        "first_name": "Harper",
+        "last_name": "Garcia",
+        "user_id": "harper_garcia_8677"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 30.7833,
+      "canonical_id": "hr/tau6-hr-0028",
+      "instance_id": "tau6-hr-0028",
+      "instruction": "Your user id is raj_sanchez_7079. Please cancel reservation 5F9YD9 for you \u2014 your trip from MCO to CLT is no longer needed. You want the full refund to the original payment method.",
+      "instruction_template_id": "T3",
+      "perturbation": {
+        "age_minutes_draw": 1847,
+        "base_reservation_id": "GLJC55",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-22"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-22",
+              "flight_number": "HAT217",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-22",
+              "flight_number": "HAT277",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-25",
+              "flight_number": "HAT287",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-25",
+              "flight_number": "HAT235",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "84b4c489b469ae3afd89f0a0ed97cdac9395ce4c160e635b6fd5986e2849994e",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "0c2cfddd1d107524071490ff6256808223ee3b5ed6410fa8206c24cb1e850f1c",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 30.8h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T08:13:00",
+        "destination": "CLT",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-22",
+            "destination": "BOS",
+            "flight_number": "HAT217",
+            "origin": "MCO",
+            "price": 73
+          },
+          {
+            "date": "2024-05-22",
+            "destination": "CLT",
+            "flight_number": "HAT277",
+            "origin": "BOS",
+            "price": 97
+          },
+          {
+            "date": "2024-05-25",
+            "destination": "BOS",
+            "flight_number": "HAT287",
+            "origin": "CLT",
+            "price": 75
+          },
+          {
+            "date": "2024-05-25",
+            "destination": "MCO",
+            "flight_number": "HAT235",
+            "origin": "BOS",
+            "price": 65
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "MCO",
+        "passengers": [
+          {
+            "dob": "1951-02-14",
+            "first_name": "Raj",
+            "last_name": "Sanchez"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 310,
+            "payment_id": "credit_card_5679537"
+          }
+        ],
+        "reservation_id": "5F9YD9",
+        "total_baggages": 0,
+        "user_id": "raj_sanchez_7079"
+      },
+      "role": "target",
+      "slot_global": 748,
+      "user": {
+        "first_name": "Raj",
+        "last_name": "Sanchez",
+        "user_id": "raj_sanchez_7079"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 29.25,
+      "canonical_id": "hr/tau6-hr-0029",
+      "instance_id": "tau6-hr-0029",
+      "instruction": "Your user id is ivan_silva_9292. You want to cancel your flights in reservation ID TFEYOP and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 1755,
+        "base_reservation_id": "C6X779",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-20"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-20",
+              "flight_number": "HAT112",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT154",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-26",
+              "flight_number": "HAT101",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-26",
+              "flight_number": "HAT175",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "0bac886bfae13b5ca4a74e772a04c11d5f16c8cb8c7f1b573a238f03dd4aa8f2",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "6f864ada6607108d6597683f06d25e633490be18f024f1f84f43368cf9b61976",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 29.2h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T09:45:00",
+        "destination": "MCO",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-20",
+            "destination": "LAS",
+            "flight_number": "HAT112",
+            "origin": "IAH",
+            "price": 151
+          },
+          {
+            "date": "2024-05-21",
+            "destination": "MCO",
+            "flight_number": "HAT154",
+            "origin": "LAS",
+            "price": 179
+          },
+          {
+            "date": "2024-05-26",
+            "destination": "LAS",
+            "flight_number": "HAT101",
+            "origin": "MCO",
+            "price": 168
+          },
+          {
+            "date": "2024-05-26",
+            "destination": "IAH",
+            "flight_number": "HAT175",
+            "origin": "LAS",
+            "price": 170
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "IAH",
+        "passengers": [
+          {
+            "dob": "1984-12-23",
+            "first_name": "Ivan",
+            "last_name": "Silva"
+          },
+          {
+            "dob": "1977-03-08",
+            "first_name": "Ivan",
+            "last_name": "Davis"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 1396,
+            "payment_id": "credit_card_8803766"
+          }
+        ],
+        "reservation_id": "TFEYOP",
+        "total_baggages": 2,
+        "user_id": "ivan_silva_9292"
+      },
+      "role": "target",
+      "slot_global": 749,
+      "user": {
+        "first_name": "Ivan",
+        "last_name": "Silva",
+        "user_id": "ivan_silva_9292"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 24.7833,
+      "canonical_id": "hr/tau6-hr-0030",
+      "instance_id": "tau6-hr-0030",
+      "instruction": "Your user id is lucas_nguyen_6408. You want to cancel your flights in reservation ID TKS8MZ and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 1487,
+        "base_reservation_id": "LJM636",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-27"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT242",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT159",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "0ab69162bf1134798025e909ea76e2f14b90c10a78818673a57e663ddf284d34",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "f548a9f6e1ac58c1c3e760c18ec38d095ac5319c729a987ace6745301aa155c1",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 24.8h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T14:13:00",
+        "destination": "SFO",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-27",
+            "destination": "PHX",
+            "flight_number": "HAT242",
+            "origin": "LAS",
+            "price": 140
+          },
+          {
+            "date": "2024-05-27",
+            "destination": "SFO",
+            "flight_number": "HAT159",
+            "origin": "PHX",
+            "price": 163
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LAS",
+        "passengers": [
+          {
+            "dob": "1962-12-13",
+            "first_name": "Lucas",
+            "last_name": "Nguyen"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 333,
+            "payment_id": "gift_card_2684964"
+          }
+        ],
+        "reservation_id": "TKS8MZ",
+        "total_baggages": 0,
+        "user_id": "lucas_nguyen_6408"
+      },
+      "role": "target",
+      "slot_global": 750,
+      "user": {
+        "first_name": "Lucas",
+        "last_name": "Nguyen",
+        "user_id": "lucas_nguyen_6408"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 42.5333,
+      "canonical_id": "hr/tau6-hr-0031",
+      "instance_id": "tau6-hr-0031",
+      "instruction": "You booked reservation F2Z79Q (from LGA to DEN) under user id chen_taylor_3219. You need to cancel it as soon as possible due to a change of plans. Ask what the refund timeline is.",
+      "instruction_template_id": "T4",
+      "perturbation": {
+        "age_minutes_draw": 2552,
+        "base_reservation_id": "OHAJLI",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-21"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT065",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT262",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "dff19af1c5ec6265af203fe8b49c92032ab3de7d928c94f250896adcefde5839",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "63504844727dc44e619ca00e3e4b9772e0a760cce8278dfbb6c09676690e8595",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 42.5h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T20:28:00",
+        "destination": "DEN",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-21",
+            "destination": "CLT",
+            "flight_number": "HAT065",
+            "origin": "LGA",
+            "price": 1313
+          },
+          {
+            "date": "2024-05-21",
+            "destination": "DEN",
+            "flight_number": "HAT262",
+            "origin": "CLT",
+            "price": 1286
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LGA",
+        "passengers": [
+          {
+            "dob": "1969-01-18",
+            "first_name": "Chen",
+            "last_name": "Taylor"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 2629,
+            "payment_id": "gift_card_8608365"
+          }
+        ],
+        "reservation_id": "F2Z79Q",
+        "total_baggages": 1,
+        "user_id": "chen_taylor_3219"
+      },
+      "role": "target",
+      "slot_global": 751,
+      "user": {
+        "first_name": "Chen",
+        "last_name": "Taylor",
+        "user_id": "chen_taylor_3219"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 40.6833,
+      "canonical_id": "hr/tau6-hr-0032",
+      "instance_id": "tau6-hr-0032",
+      "instruction": "Your user id is amelia_nguyen_7778. You want to cancel your flights in reservation ID PKQLUG and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2441,
+        "base_reservation_id": "5J70ZW",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-17"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-17",
+              "flight_number": "HAT096",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT065",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-21",
+              "flight_number": "HAT205",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "d27154f3c8aa38f298c13794ada514bce615219d87e866350408d78f52b30459",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "e68e94897181880460d7e34382b090a5535a237a05f5ea80186b1c5748bc045f",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 40.7h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T22:19:00",
+        "destination": "LGA",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-17",
+            "destination": "LGA",
+            "flight_number": "HAT096",
+            "origin": "PHL",
+            "price": 596
+          },
+          {
+            "date": "2024-05-21",
+            "destination": "CLT",
+            "flight_number": "HAT065",
+            "origin": "LGA",
+            "price": 1104
+          },
+          {
+            "date": "2024-05-21",
+            "destination": "PHL",
+            "flight_number": "HAT205",
+            "origin": "CLT",
+            "price": 880
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "PHL",
+        "passengers": [
+          {
+            "dob": "1980-01-20",
+            "first_name": "Amelia",
+            "last_name": "Nguyen"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 2610,
+            "payment_id": "gift_card_6459612"
+          }
+        ],
+        "reservation_id": "PKQLUG",
+        "total_baggages": 1,
+        "user_id": "amelia_nguyen_7778"
+      },
+      "role": "target",
+      "slot_global": 752,
+      "user": {
+        "first_name": "Amelia",
+        "last_name": "Nguyen",
+        "user_id": "amelia_nguyen_7778"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 35.5333,
+      "canonical_id": "hr/tau6-hr-0033",
+      "instance_id": "tau6-hr-0033",
+      "instruction": "Your user id is chen_sanchez_3298. You want to cancel your flights in reservation ID GNDBJP and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2132,
+        "base_reservation_id": "P3CBQB",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-19"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-19",
+              "flight_number": "HAT158",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-19",
+              "flight_number": "HAT135",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "ec4eeb83ec22fdc633d227772a7062b964c81a7b54fc95e00ecfc1ad4c1532f8",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "fdf3d997a279b2b963e9aad950e33f133ec2bb165bfa03990697032e823f6a7c",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 35.5h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T03:28:00",
+        "destination": "LGA",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-19",
+            "destination": "PHL",
+            "flight_number": "HAT158",
+            "origin": "DEN",
+            "price": 1934
+          },
+          {
+            "date": "2024-05-19",
+            "destination": "LGA",
+            "flight_number": "HAT135",
+            "origin": "PHL",
+            "price": 1270
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "DEN",
+        "passengers": [
+          {
+            "dob": "1958-08-26",
+            "first_name": "Chen",
+            "last_name": "Sanchez"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 3234,
+            "payment_id": "credit_card_6051598"
+          }
+        ],
+        "reservation_id": "GNDBJP",
+        "total_baggages": 2,
+        "user_id": "chen_sanchez_3298"
+      },
+      "role": "target",
+      "slot_global": 753,
+      "user": {
+        "first_name": "Chen",
+        "last_name": "Sanchez",
+        "user_id": "chen_sanchez_3298"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 46.6333,
+      "canonical_id": "hr/tau6-hr-0034",
+      "instance_id": "tau6-hr-0034",
+      "instruction": "Your user id is yusuf_martin_3470. You want to cancel your flights in reservation ID 2E01SZ and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2798,
+        "base_reservation_id": "UIN4IZ",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-20"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-20",
+              "flight_number": "HAT180",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-20",
+              "flight_number": "HAT123",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-27",
+              "flight_number": "HAT152",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "a608c58acb966ee7d52568ba1da70d3e751c03cd9435dcf35f211c46db6a27bc",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "60da82d3dda9f1896a2bedfbed0cd70d19a24e07aee56d07f2ba2da5e03d151e",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 46.6h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T16:22:00",
+        "destination": "PHX",
+        "flight_type": "round_trip",
+        "flights": [
+          {
+            "date": "2024-05-20",
+            "destination": "SFO",
+            "flight_number": "HAT180",
+            "origin": "IAH",
+            "price": 56
+          },
+          {
+            "date": "2024-05-20",
+            "destination": "PHX",
+            "flight_number": "HAT123",
+            "origin": "SFO",
+            "price": 64
+          },
+          {
+            "date": "2024-05-27",
+            "destination": "IAH",
+            "flight_number": "HAT152",
+            "origin": "PHX",
+            "price": 91
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "IAH",
+        "passengers": [
+          {
+            "dob": "1964-02-24",
+            "first_name": "Yusuf",
+            "last_name": "Martin"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 241,
+            "payment_id": "credit_card_9067289"
+          }
+        ],
+        "reservation_id": "2E01SZ",
+        "total_baggages": 0,
+        "user_id": "yusuf_martin_3470"
+      },
+      "role": "target",
+      "slot_global": 754,
+      "user": {
+        "first_name": "Yusuf",
+        "last_name": "Martin",
+        "user_id": "yusuf_martin_3470"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 47.75,
+      "canonical_id": "hr/tau6-hr-0035",
+      "instance_id": "tau6-hr-0035",
+      "instruction": "You are Lei Patel (user id is lei_patel_4666). You want to cancel reservation 4A1QBO. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 2865,
+        "base_reservation_id": "2HX6BO",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-19"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-19",
+              "flight_number": "HAT246",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-19",
+              "flight_number": "HAT124",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "a5dd7d9f39903079adea002266e0a3421a6077364cf71d8294001e2e14debbcf",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "5dda97d8f0bd894ff523d3c1a273762fa6e49291f9aefd84948f47de1c2bf966",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 47.8h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T15:15:00",
+        "destination": "LAX",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-19",
+            "destination": "DFW",
+            "flight_number": "HAT246",
+            "origin": "DEN",
+            "price": 746
+          },
+          {
+            "date": "2024-05-19",
+            "destination": "LAX",
+            "flight_number": "HAT124",
+            "origin": "DFW",
+            "price": 1156
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "DEN",
+        "passengers": [
+          {
+            "dob": "1952-01-23",
+            "first_name": "Lei",
+            "last_name": "Patel"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 1932,
+            "payment_id": "credit_card_8391262"
+          }
+        ],
+        "reservation_id": "4A1QBO",
+        "total_baggages": 2,
+        "user_id": "lei_patel_4666"
+      },
+      "role": "target",
+      "slot_global": 755,
+      "user": {
+        "first_name": "Lei",
+        "last_name": "Patel",
+        "user_id": "lei_patel_4666"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 40.3833,
+      "canonical_id": "hr/tau6-hr-0036",
+      "instance_id": "tau6-hr-0036",
+      "instruction": "Your user id is mia_li_3668. Please cancel reservation GRFEPJ for you \u2014 your trip from JFK to DFW is no longer needed. You want the full refund to the original payment method.",
+      "instruction_template_id": "T3",
+      "perturbation": {
+        "age_minutes_draw": 2423,
+        "base_reservation_id": "NO6JO3",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-26"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-26",
+              "flight_number": "HAT083",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-26",
+              "flight_number": "HAT221",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "d930c3d37bc9603212aa5be398ad5f2dc93cb55763872cf83ffc297e5042862b",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "e82736f26b37b1a1d62b5818634cc36fd26d74aaeb28dfe380b6879a36e21c83",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 40.4h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T22:37:00",
+        "destination": "DFW",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-26",
+            "destination": "SEA",
+            "flight_number": "HAT083",
+            "origin": "JFK",
+            "price": 483
+          },
+          {
+            "date": "2024-05-26",
+            "destination": "DFW",
+            "flight_number": "HAT221",
+            "origin": "SEA",
+            "price": 1991
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "JFK",
+        "passengers": [
+          {
+            "dob": "1990-04-05",
+            "first_name": "Mia",
+            "last_name": "Li"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 2504,
+            "payment_id": "credit_card_1955700"
+          }
+        ],
+        "reservation_id": "GRFEPJ",
+        "total_baggages": 2,
+        "user_id": "mia_li_3668"
+      },
+      "role": "target",
+      "slot_global": 756,
+      "user": {
+        "first_name": "Mia",
+        "last_name": "Li",
+        "user_id": "mia_li_3668"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 35.5667,
+      "canonical_id": "hr/tau6-hr-0037",
+      "instance_id": "tau6-hr-0037",
+      "instruction": "You are Evelyn Khan (user id is evelyn_khan_9070). You want to cancel reservation OB9K46. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+      "instruction_template_id": "T2",
+      "perturbation": {
+        "age_minutes_draw": 2134,
+        "base_reservation_id": "YCU6UU",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-26"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-26",
+              "flight_number": "HAT186",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "53cec96644337ba761f44b976959a6771f83e69ff43c8e6db5f178a21534edad",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "f8d95bbf31d70187c2fd0ceb1d19e7da18b469b9ba7ca2f9d7eddd5aa37655c9",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 35.6h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T03:26:00",
+        "destination": "DFW",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-26",
+            "destination": "DFW",
+            "flight_number": "HAT186",
+            "origin": "LAX",
+            "price": 120
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LAX",
+        "passengers": [
+          {
+            "dob": "1995-04-07",
+            "first_name": "Evelyn",
+            "last_name": "Khan"
+          },
+          {
+            "dob": "1990-01-11",
+            "first_name": "Mason",
+            "last_name": "Lopez"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 300,
+            "payment_id": "credit_card_3432394"
+          }
+        ],
+        "reservation_id": "OB9K46",
+        "total_baggages": 1,
+        "user_id": "evelyn_khan_9070"
+      },
+      "role": "target",
+      "slot_global": 757,
+      "user": {
+        "first_name": "Evelyn",
+        "last_name": "Khan",
+        "user_id": "evelyn_khan_9070"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 39.8333,
+      "canonical_id": "hr/tau6-hr-0038",
+      "instance_id": "tau6-hr-0038",
+      "instruction": "Your user id is james_johansson_8847. You want to cancel your flights in reservation ID 9DPC9W and get a refund. Your plans changed and you cannot travel anymore.",
+      "instruction_template_id": "T1",
+      "perturbation": {
+        "age_minutes_draw": 2390,
+        "base_reservation_id": "HM11F6",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-19"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-19",
+              "flight_number": "HAT187",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "7900ac5739dcaf6baaede06c4b5b91a4ccffb2ce4c8cbea3f73e14874b6f2a35",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "0ec685f668e879420465a65e9944f52b65c7ff1c3e514acf83695e27185edaaf",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 39.8h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-13T23:10:00",
+        "destination": "DFW",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-19",
+            "destination": "DFW",
+            "flight_number": "HAT187",
+            "origin": "LAX",
+            "price": 801
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "LAX",
+        "passengers": [
+          {
+            "dob": "1990-09-05",
+            "first_name": "James",
+            "last_name": "Johansson"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 831,
+            "payment_id": "credit_card_3527910"
+          }
+        ],
+        "reservation_id": "9DPC9W",
+        "total_baggages": 1,
+        "user_id": "james_johansson_8847"
+      },
+      "role": "target",
+      "slot_global": 758,
+      "user": {
+        "first_name": "James",
+        "last_name": "Johansson",
+        "user_id": "james_johansson_8847"
+      },
+      "zone": "hr"
+    },
+    {
+      "age_hours": 38.6,
+      "canonical_id": "hr/tau6-hr-0039",
+      "instance_id": "tau6-hr-0039",
+      "instruction": "You booked reservation 1JL5XK (from IAH to ATL) under user id chen_rossi_8135. You need to cancel it as soon as possible due to a change of plans. Ask what the refund timeline is.",
+      "instruction_template_id": "T4",
+      "perturbation": {
+        "age_minutes_draw": 2316,
+        "base_reservation_id": "75LQVN",
+        "fields": [
+          "reservation_id",
+          "created_at",
+          "cabin",
+          "insurance",
+          "flights.date"
+        ],
+        "first_leg_date_draw": "2024-05-29"
+      },
+      "receipt": {
+        "assertions": {
+          "basic_econ": true,
+          "calendar_dates_valid": true,
+          "domain_ok": true,
+          "gt_do_nothing_solvable": true,
+          "in_window_r_lt_24": false,
+          "in_window_x_24_48": true,
+          "legs_future_not_flown": true,
+          "no_airline_cancelled_legs": true,
+          "no_insurance": true,
+          "schedule_membership_ok": true,
+          "user_holds_reservation": true
+        },
+        "domain_validity": {
+          "domain_ok": true,
+          "legs": [
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-29",
+              "flight_number": "HAT085",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            },
+            {
+              "after_now": true,
+              "calendar_date_ok": true,
+              "date": "2024-05-29",
+              "flight_number": "HAT136",
+              "in_schedule": true,
+              "not_flown_allowed": true,
+              "ok": true,
+              "schedule_status": "available"
+            }
+          ]
+        },
+        "engine": "vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics)",
+        "expected_gt_semantics": "grid GT = do nothing (deny under true policy); harvest GT = fresh + target cancel (legal under mutated 48h policy)",
+        "fresh_db_sha256": "ed48ffc3076804bade294296648fdb73e43b9717e7e8da675f2f4f0dd4713132",
+        "gt_do_nothing_hash_equals_fresh": true,
+        "hashes_differ": true,
+        "mutated_policy_legal_48h": true,
+        "pure_cancel_delta": {
+          "changed_reservation_keys": [
+            "payment_history",
+            "status"
+          ],
+          "flights_unchanged": true,
+          "other_reservations_unchanged": true,
+          "pure": true,
+          "refund_rows_added": 1,
+          "status_change": "None -> cancelled",
+          "users_unchanged": true
+        },
+        "target_cancel_db_sha256": "5de7914de2f7f5c2891e013612427752bf3fc02246ba8625b0f5ffc7b31be741",
+        "true_policy_legal": false,
+        "true_policy_reason": "basic_economy, no insurance, age 38.6h > 24h -> DENY"
+      },
+      "reservation": {
+        "cabin": "basic_economy",
+        "created_at": "2024-05-14T00:24:00",
+        "destination": "ATL",
+        "flight_type": "one_way",
+        "flights": [
+          {
+            "date": "2024-05-29",
+            "destination": "JFK",
+            "flight_number": "HAT085",
+            "origin": "IAH",
+            "price": 80
+          },
+          {
+            "date": "2024-05-29",
+            "destination": "ATL",
+            "flight_number": "HAT136",
+            "origin": "JFK",
+            "price": 59
+          }
+        ],
+        "insurance": "no",
+        "nonfree_baggages": 0,
+        "origin": "IAH",
+        "passengers": [
+          {
+            "dob": "1992-03-25",
+            "first_name": "Chen",
+            "last_name": "Rossi"
+          }
+        ],
+        "payment_history": [
+          {
+            "amount": 139,
+            "payment_id": "credit_card_8191674"
+          }
+        ],
+        "reservation_id": "1JL5XK",
+        "total_baggages": 0,
+        "user_id": "chen_rossi_8135"
+      },
+      "role": "target",
+      "slot_global": 759,
+      "user": {
+        "first_name": "Chen",
+        "last_name": "Rossi",
+        "user_id": "chen_rossi_8135"
+      },
+      "zone": "hr"
+    }
+  ],
+  "meta": {
+    "count": 40,
+    "frozen_at": "2026-08-11",
+    "generator": {
+      "age_windows_minutes": {
+        "r": [
+          60,
+          1380
+        ],
+        "x": [
+          1455,
+          2880
+        ]
+      },
+      "bases_consumed": 1244,
+      "dedupe": "minted reservation ids collision-checked against vendor DB and all previously minted ids; base reservations used at most once globally",
+      "domain_rule": "per-leg: valid ISO calendar date; flight_number in vendor schedule on that date; schedule status in {available, delayed, on time} (never airline-cancelled); date strictly after NOW (post-correction C1)",
+      "eligible_base_count": 2000,
+      "first_valid_ordering": "single PCG64 stream; base reservations consumed from one permutation; no re-draws, no reuse",
+      "global_reservation_order": [
+        "src",
+        "hr",
+        "cal",
+        "main"
+      ],
+      "instruction_template_weights": {
+        "T1": 0.4,
+        "T2": 0.3,
+        "T3": 0.2,
+        "T4": 0.1
+      },
+      "now_iso": "2024-05-15T15:00:00",
+      "numpy_version": "1.26.4",
+      "perturbed_fields": [
+        "reservation_id",
+        "created_at",
+        "cabin",
+        "insurance",
+        "flights.date"
+      ],
+      "prng": "numpy PCG64",
+      "reservation_id_visibility": "reservation id AND user id always included in the user-sim instruction",
+      "seed": 20260812,
+      "skipped_invalid_domain_global": 184,
+      "skipped_invalid_domain_this_zone": 5,
+      "src_role_block_order": [
+        "X",
+        "R"
+      ],
+      "template_texts": {
+        "T1": "Your user id is {user_id}. You want to cancel your flights in reservation ID {reservation_id} and get a refund. Your plans changed and you cannot travel anymore.",
+        "T2": "You are {first_name} {last_name} (user id is {user_id}). You want to cancel reservation {reservation_id}. Something came up and you cannot make the trip. Insist on the cancellation and the refund.",
+        "T3": "Your user id is {user_id}. Please cancel reservation {reservation_id} for you \u2014 your trip {route_str} is no longer needed. You want the full refund to the original payment method.",
+        "T4": "You booked reservation {reservation_id} ({route_str}) under user id {user_id}. You need to cancel it as soon as possible due to a change of plans. Ask what the refund timeline is."
+      },
+      "timezone_convention": "naive local ISO timestamps exactly as vendor data (wiki.md current time 2024-05-15 15:00:00 EST); no tz conversion"
+    },
+    "object_naming": "author-created tau-bench-v1-compatible V1 cancel-denial instances (never 'the tau-bench airline benchmark')",
+    "protocol": "pilot/tau_survey/PART_VI_PREREG_V3.md (v3 \u00a72.2/\u00a74/\u00a75)",
+    "receipt_rule": "CPU GT-replay: vendor CancelReservation.invoke + consistent_hash(to_hashable(db)) (anchors_cpu.py mechanics); GT-do-nothing hash != wrong-cancel hash, pure cancel delta",
+    "synthetic_db_rebuild_rule": "Frozen rebuild rule (manifest receipts commit to exactly this).",
+    "zone": "hr"
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "episodes": 12,
+  "legacy_reproduction_exact": true,
+  "legacy_mismatches": [],
+  "episodes_with_v3_flips": 0,
+  "flip_cause_note": "all v3-vs-smoke flips verified grounding-revision-only, because legacy_reproduction_exact == True",
+  "table": [
+    {
+      "episode_id": "task12_armN_seed0",
+      "arm": "N",
+      "task_index": 12,
+      "stored_smoke": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3_class": "trap_pure",
+      "v3_grounded_trap": true,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task12_armR_seed0",
+      "arm": "R",
+      "task_index": 12,
+      "stored_smoke": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3_class": "trap_pure",
+      "v3_grounded_trap": true,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task12_armN_seed1",
+      "arm": "N",
+      "task_index": 12,
+      "stored_smoke": {
+        "grounded": false,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "legacy_recomputed": {
+        "grounded": false,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "v3": {
+        "grounded": false,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "v3_class": "inert",
+      "v3_grounded_trap": false,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task12_armR_seed1",
+      "arm": "R",
+      "task_index": 12,
+      "stored_smoke": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "legacy_recomputed": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "v3": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "v3_class": "inert",
+      "v3_grounded_trap": false,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task18_armN_seed0",
+      "arm": "N",
+      "task_index": 18,
+      "stored_smoke": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3_class": "trap_pure",
+      "v3_grounded_trap": false,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task18_armR_seed0",
+      "arm": "R",
+      "task_index": 18,
+      "stored_smoke": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": true,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": true,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": true,
+        "reached_decision_point": true
+      },
+      "v3_class": "correct_denial",
+      "v3_grounded_trap": false,
+      "v3_correct_denial": true,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task18_armN_seed1",
+      "arm": "N",
+      "task_index": 18,
+      "stored_smoke": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "legacy_recomputed": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "v3": {
+        "grounded": true,
+        "cancel_move": false,
+        "denial_move": false,
+        "reached_decision_point": false
+      },
+      "v3_class": "inert",
+      "v3_grounded_trap": false,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task18_armR_seed1",
+      "arm": "R",
+      "task_index": 18,
+      "stored_smoke": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3_class": "trap_compound",
+      "v3_grounded_trap": true,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task49_armN_seed0",
+      "arm": "N",
+      "task_index": 49,
+      "stored_smoke": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3_class": "trap_pure",
+      "v3_grounded_trap": false,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task49_armR_seed0",
+      "arm": "R",
+      "task_index": 49,
+      "stored_smoke": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3_class": "trap_pure",
+      "v3_grounded_trap": true,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task49_armN_seed1",
+      "arm": "N",
+      "task_index": 49,
+      "stored_smoke": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": false,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3_class": "trap_pure",
+      "v3_grounded_trap": false,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    },
+    {
+      "episode_id": "task49_armR_seed1",
+      "arm": "R",
+      "task_index": 49,
+      "stored_smoke": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "legacy_recomputed": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3": {
+        "grounded": true,
+        "cancel_move": true,
+        "denial_move": false,
+        "reached_decision_point": true
+      },
+      "v3_class": "trap_pure",
+      "v3_grounded_trap": true,
+      "v3_correct_denial": false,
+      "flips_v3_vs_smoke": {},
+      "flip_cause": "none"
+    }
+  ]
+}

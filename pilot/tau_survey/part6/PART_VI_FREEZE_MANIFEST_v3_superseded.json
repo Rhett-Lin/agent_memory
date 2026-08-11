@@ -1,0 +1,251 @@
+{
+  "artifacts": {
+    "pilot/tau_survey/PART_VI_PREREG_V3.md": {
+      "bytes": 9722,
+      "sha256": "43e90c18ffadcd934174adcbfdc0da7ab7af4b20631418f92fc50adf9fa0afce"
+    },
+    "pilot/tau_survey/PART_VI_PREREG_V4.md": {
+      "bytes": 10635,
+      "sha256": "e3dbd25b2184875b211078fd1db73a2bd25a566a4800dbc4747e8a1d9796cc18"
+    },
+    "pilot/tau_survey/part6/DETECTOR_SMOKE_DIFF.md": {
+      "bytes": 1723,
+      "sha256": "60f5dec4538225a8bac175065419e02b869c9b64edc5ba48896f9710c43b2be0"
+    },
+    "pilot/tau_survey/part6/FEASIBILITY_BANK.md": {
+      "bytes": 5092,
+      "sha256": "880b452ec81d0f47666a2a1954bf0da514a06d2189d68eabf0d75afc70a53054"
+    },
+    "pilot/tau_survey/part6/PART_VI_DETECTOR.md": {
+      "bytes": 8823,
+      "sha256": "ecc204c2e7edcfadb5948708a91fe42f949232a7dbc8cd563b8f2e919b98d01b"
+    },
+    "pilot/tau_survey/part6/PART_VI_FREEZE_DECISIONS.md": {
+      "bytes": 14435,
+      "sha256": "a0cf9d0d6af8f3747e781b4cba1c83204e1b1d2e8f8d074b75dd93cc332b071b"
+    },
+    "pilot/tau_survey/part6/PART_VI_FREEZE_MANIFEST_v0_superseded.json": {
+      "bytes": 5562,
+      "sha256": "e2036b31cca7b264437efc5de197f514c3553539c5d319c6c61b4a91f2f3ff58"
+    },
+    "pilot/tau_survey/part6/PART_VI_FREEZE_MANIFEST_v1_superseded.json": {
+      "bytes": 7788,
+      "sha256": "740cbbefb5003ec2dacfbf5ff7862b5326da9d55c05e3fcd25f69c7d17219512"
+    },
+    "pilot/tau_survey/part6/PART_VI_FREEZE_MANIFEST_v2_superseded.json": {
+      "bytes": 10046,
+      "sha256": "f198de26ca90090cffdb711a9da943a8d072e7227b89c37de5ff4357408c658a"
+    },
+    "pilot/tau_survey/part6/PART_VI_POWER.md": {
+      "bytes": 4813,
+      "sha256": "693218e8e081fbbd4d72ad35c2f9e6cdd6e8926caa4d4ad1eac4dd3997a1b0ba"
+    },
+    "pilot/tau_survey/part6/PART_VI_PROMPTS.json": {
+      "bytes": 30354,
+      "sha256": "8b679837d37a7e9ea025c22553f5ca77fba239faa4923b8e61fc6bc4b8368ce0"
+    },
+    "pilot/tau_survey/part6/analyze_tau.py": {
+      "bytes": 21390,
+      "sha256": "b2164fdef75e480a13154b65bd54aca941090a873d126f66d695952e905940c0"
+    },
+    "pilot/tau_survey/part6/analyze_tau_fixtures.py": {
+      "bytes": 25451,
+      "sha256": "5672d0ce38295d44a077bad70da84e884d426394e9af6bb0cefffec053afd37f"
+    },
+    "pilot/tau_survey/part6/anchors_legacy_archived.json": {
+      "bytes": 8282,
+      "sha256": "1a21fa7649c675a9ab4821383491202ed1c8a254798e76b8ef891044688f1b23"
+    },
+    "pilot/tau_survey/part6/build_judge.py": {
+      "bytes": 10336,
+      "sha256": "e9c9637d039b46177e623a33469dcbcc07f023a87086746dcbcf68603c76e6d1"
+    },
+    "pilot/tau_survey/part6/build_manifest.py": {
+      "bytes": 10021,
+      "sha256": "1d7ac2c05bae9b9c45cd7418e369e7da5e75a1a8e4db9483075ffa93aeccf38a"
+    },
+    "pilot/tau_survey/part6/build_prompts.py": {
+      "bytes": 8393,
+      "sha256": "9e3820c5d5f52d7ea313c24c70e57d27a7e99e080ff17ace7b21cd647129a174"
+    },
+    "pilot/tau_survey/part6/card_builder.py": {
+      "bytes": 13329,
+      "sha256": "e2a95e989e541bad44fca4c879a1b923f3c101f4d6b8cac9a2e3972a147b6e96"
+    },
+    "pilot/tau_survey/part6/chain_fixture.py": {
+      "bytes": 12840,
+      "sha256": "1c6906a74cfb36c76199a3d929bab90405944aca42da2a04fcd07e311f4f251f"
+    },
+    "pilot/tau_survey/part6/detector.py": {
+      "bytes": 22810,
+      "sha256": "6f64ed53ac63d9da33c8961f1e7b30f228c035df5d2b541c24570dec9c90b43c"
+    },
+    "pilot/tau_survey/part6/detector_selftest.py": {
+      "bytes": 6680,
+      "sha256": "0614bd81fec6db11c179136fd1c8c37dee176e5c4cf92cc0bd4b76b9ea17ff6b"
+    },
+    "pilot/tau_survey/part6/detector_smoke_diff.json": {
+      "bytes": 8892,
+      "sha256": "3d4f4938e1ed2c81b562d56e276436639f3218cbfc40738ebf7fa82a566f407c"
+    },
+    "pilot/tau_survey/part6/feasibility_bank.py": {
+      "bytes": 18204,
+      "sha256": "6a99ff017788271fba655774126aa09f670e501e5cc2756860b4020597961777"
+    },
+    "pilot/tau_survey/part6/feasibility_bank_results.json": {
+      "bytes": 43809,
+      "sha256": "24f9bc2a49086d77fda5ffa4b93c8a60d61761e4b31006d6d5331d428ab1a5b2"
+    },
+    "pilot/tau_survey/part6/freeze_manifest.py": {
+      "bytes": 13491,
+      "sha256": "b2753f70a2497748acc6c3eee68df3b4f4c6fb53a609d5b084d40d1b6e25d826"
+    },
+    "pilot/tau_survey/part6/generator.py": {
+      "bytes": 14294,
+      "sha256": "89fd2a0a49dde79bc98b9bde82e63779e7c31cc0f622104ba25d49ff30fbc856"
+    },
+    "pilot/tau_survey/part6/grid_runner.py": {
+      "bytes": 14711,
+      "sha256": "93ebc78e50e280cd34174aa518402b8734ad7bc7d0349206febeabee3bd95a25"
+    },
+    "pilot/tau_survey/part6/gs_calibrate.py": {
+      "bytes": 5647,
+      "sha256": "c94f593e46c5b6570a0752591929684344ce051725d38a027d2bead9434f4fdb"
+    },
+    "pilot/tau_survey/part6/harvest_runner.py": {
+      "bytes": 22767,
+      "sha256": "034060d127641f4b5933190be38a6c2571a4c31b64264f93ab3ea77d31f50dd0"
+    },
+    "pilot/tau_survey/part6/headroom_validator.py": {
+      "bytes": 11610,
+      "sha256": "8d57ae2859bd069e88ef841566301a0a2144d7ead5b2342007eb24b54b5e9cd4"
+    },
+    "pilot/tau_survey/part6/headroom_validator_fixtures.py": {
+      "bytes": 7960,
+      "sha256": "7f51bb864e76188683215933c8d7b8b8d7af3f00cbaa39097d73104fa205b9ca"
+    },
+    "pilot/tau_survey/part6/judge_leakcheck.py": {
+      "bytes": 5825,
+      "sha256": "8ff7d45617ec9b6fc98784fa41cd52c7e9958732ebe5ffb23149c442a3f8d189"
+    },
+    "pilot/tau_survey/part6/judge_package.json": {
+      "bytes": 6865,
+      "sha256": "28d7eb57f97d059daffb6f3623180465383d6a6f2024ce5f0eb301bdc4f0faab"
+    },
+    "pilot/tau_survey/part6/judge_parser.py": {
+      "bytes": 3284,
+      "sha256": "48a72adaa12676124af04ec2bbe86f4a28cf638e40140785fccba308a5e46c21"
+    },
+    "pilot/tau_survey/part6/manifest_cal.json": {
+      "bytes": 270365,
+      "sha256": "a640115382e7856f9e5c02d10a1834bc28777afc33a088f27ed88312785c385c"
+    },
+    "pilot/tau_survey/part6/manifest_hr.json": {
+      "bytes": 180139,
+      "sha256": "e3d5b5c522fce41601574376b293ebc05755ca524398dae22bca6118a7f1c372"
+    },
+    "pilot/tau_survey/part6/manifest_main.json": {
+      "bytes": 1091999,
+      "sha256": "d7e1096168f33f5b04e9065a56e136607ab9ec23cf0acc6c1dd9c896fa8197c0"
+    },
+    "pilot/tau_survey/part6/manifest_src.json": {
+      "bytes": 3253105,
+      "sha256": "ee9be0e1870716801ed3e0dbbee0106dc6c304f79786b21d5ccc338ef65d41fa"
+    },
+    "pilot/tau_survey/part6/power_check.py": {
+      "bytes": 3928,
+      "sha256": "b6e4ea913b28ef8dcf70904c4e3762019d3bd39e6681ffe7dfda617bea5897fc"
+    },
+    "pilot/tau_survey/part6/power_table.json": {
+      "bytes": 1420,
+      "sha256": "a2575466dad8a9d97b1719847874b7069423f1fe62af9ee8887cd6186af7a4ab"
+    },
+    "pilot/tau_survey/part6/rollout_engine.py": {
+      "bytes": 9184,
+      "sha256": "d9a5ebad01a0742dac8ef2a3f3d21567b6b8d8cccf580816f3f4a42d826c0980"
+    },
+    "pilot/tau_survey/part6/runner_fixtures.py": {
+      "bytes": 22516,
+      "sha256": "82654ed26d9f49f8c28a9c9bd9f978ff80aa90580dc4688b8ac6ee6fae69118a"
+    },
+    "pilot/tau_survey/smoke/anchors.json": {
+      "bytes": 8282,
+      "sha256": "1a21fa7649c675a9ab4821383491202ed1c8a254798e76b8ef891044688f1b23"
+    },
+    "pilot/tau_survey/smoke/anchors_cpu.py": {
+      "bytes": 8263,
+      "sha256": "440f6b8d62f70c0aad00e18a58e7067d2895c858e8a8fdb77a081c53646cbe16"
+    },
+    "pilot/tau_survey/smoke/common.py": {
+      "bytes": 753,
+      "sha256": "1a554b7faea97acc777f5a17ee551dce4387a10cb342340b26039ad1606bff28"
+    },
+    "pilot/tau_survey/smoke/harness.py": {
+      "bytes": 13177,
+      "sha256": "5b92948270576005f74719b57ff23494960de2baf03aa27cf03898edf2be3c9c"
+    }
+  },
+  "frozen_at": "2026-08-11",
+  "functional_checks_at_freeze": {
+    "analyzer_selftest": "21/21 pinned fixtures pass (exit 0)",
+    "chain_fixture": "merged harvest->cards->prompts->cells->judge->validator->analyzer contract chain (exit 0)",
+    "detector_selftest --check": "read-only byte-exactness of the smoke agreement artifacts (exit 0)",
+    "gs_selftest": "pinned bge-small-en-v1.5@5c38ec7c CPU pipeline (exit 0)",
+    "headroom_validator_selftest": "headroom recompute + 6 audit cases pinned (exit 0)",
+    "judge_leakcheck": "zero 24/48 in rendered judge inputs; parser inconsistency rule pinned on 12 cases (exit 0)",
+    "manifest_determinism": "two consecutive build_manifest.py runs byte-identical",
+    "runner_fixtures": "15/15 state-machine fixtures on scripted engines driving the real vendor env (exit 0)"
+  },
+  "name": "PART_VI_FREEZE_MANIFEST",
+  "runtime": {
+    "numpy_pinned_by_generator": "1.26.4",
+    "python": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]"
+  },
+  "runtime_deps": {
+    "litellm": {
+      "init_sha256": "f6576130ad3e99605b6d96181e4ce6cdbf3ccdd4a09a8e0999331bcb8be63fe5",
+      "version": "1.96.0"
+    },
+    "numpy": {
+      "init_sha256": "22cd1535fa14d74ef6f457cca149ffdc80875f460be313b8f895273f78bc402e",
+      "version": "1.26.4"
+    },
+    "sentence-transformers": {
+      "init_sha256": "40c88fa85852753191227cad65adb4e3791501aa3d4419be76a1914bfb826f4c",
+      "version": "5.7.0"
+    },
+    "torch": {
+      "init_sha256": "e1b5bf4151bd246a21e3ac5318f6edfcf2e6ef0fd4f233bfb77a264698ec1319",
+      "version": "2.5.1"
+    },
+    "transformers": {
+      "init_sha256": "aa8cb54da488cf43ba37b9955bb6c0d84d2000db0306f6a5f1c20b6842482d04",
+      "version": "4.57.6"
+    },
+    "vllm": {
+      "init_sha256": "06e1909eddd9540d2aecbca933a7b8a62b84524c6cd25d84a520074a939b8950",
+      "version": "0.6.6.post1"
+    }
+  },
+  "scope": "hash-only freeze of the Part VI gatekeeper freeze package (PART_VI_PREREG_V4.md = THE operative protocol; corrections C1\u2013C7 + B1\u2013B5 applied): detector, prompts, judge (+parser), generator + 4 manifests, power, analyzer + fixtures, REAL gatekeeper runners + state-machine fixtures, headroom validator, bank feasibility, decisions, protocols (V4 operative, V3 superseded), archived legacy anchors, vendor commits",
+  "supersedes": "PART_VI_FREEZE_MANIFEST_v0_superseded.json (v0) and PART_VI_FREEZE_MANIFEST_v1_superseded.json (v1), halted by thread 019fe550 'STOP\u2014pre-freeze correction' rounds 1/2; kept as evidence, never verified against",
+  "vendor_commits": {
+    "tau-bench": {
+      "live_at_freeze": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+      "matches_pin": true,
+      "path": "pilot/tau_survey/vendor/tau-bench",
+      "pinned": "59a200c6d575d595120f1cb70fea53cef0632f6b"
+    },
+    "tau2-bench": {
+      "live_at_freeze": "668d3bcd135c02aa3438f987ef45735b7c163ee3",
+      "matches_pin": true,
+      "path": "pilot/tau_survey/vendor/tau2-bench",
+      "pinned": "668d3bcd135c02aa3438f987ef45735b7c163ee3"
+    }
+  },
+  "verifier_contract": {
+    "command": "python freeze_manifest.py --verify",
+    "mutating_command": "python freeze_manifest.py --write (regenerates deterministic artifacts; NOT part of adjudication)",
+    "stop_rule": "exit 1 immediately on any hash mismatch, artifact drift, vendor-commit drift, or failed read-only functional check; no partial verdicts; the verifier never writes"
+  }
+}

@@ -1,5 +1,6 @@
-# Part VI(v3,冻结定稿候选) — τ-bench-style 主动 near-miss 危害 + admission gate 外部验证
+# Part VI(v3,SUPERSEDED) — τ-bench-style 主动 near-miss 危害 + admission gate 外部验证
 
+> **SUPERSEDED BY `PART_VI_PREREG_V4.md`(2026-08-11,thread 019fe550 两轮 "STOP—pre-freeze correction" 后的唯一有效协议)。本文件仅作历史证据保留,hash 入冻结清单,不再可执行。**
 > **状态:v3,按 GPT-5.6 三轮裁决(thread 019fe550)文本修正落入;治理顺序(三轮强制):冻结包(gatekeeper §3)实化+hash → **hash-only** 冻结裁决 → 冻结入 GATE_PROTOCOL Part VI → harvest。**
 > 命名纪律:工作对象 = **"作者生成的 τ-bench-v1-兼容 V1 取消费用-拒绝实例"**,严禁称 "the τ-bench airline benchmark"。
 

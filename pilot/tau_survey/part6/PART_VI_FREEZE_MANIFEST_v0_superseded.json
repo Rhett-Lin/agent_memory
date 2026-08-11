@@ -1,0 +1,135 @@
+{
+  "artifacts": {
+    "pilot/tau_survey/PART_VI_PREREG_V3.md": {
+      "bytes": 9520,
+      "sha256": "3875ad14b48560cb05ac7ae5c8ad3998dced11a8509f5e07c91eebf0c069a95f"
+    },
+    "pilot/tau_survey/part6/DETECTOR_SMOKE_DIFF.md": {
+      "bytes": 1723,
+      "sha256": "60f5dec4538225a8bac175065419e02b869c9b64edc5ba48896f9710c43b2be0"
+    },
+    "pilot/tau_survey/part6/PART_VI_DETECTOR.md": {
+      "bytes": 7680,
+      "sha256": "0a555f67b83de27ae515fc19953dc48bed25e8f775729f1a3bef5b9d43100031"
+    },
+    "pilot/tau_survey/part6/PART_VI_POWER.md": {
+      "bytes": 4315,
+      "sha256": "ec0ed542658405ad0f327bd5f0601322f759d59afcd7d3039b3bcf73d5b7fe87"
+    },
+    "pilot/tau_survey/part6/PART_VI_PROMPTS.json": {
+      "bytes": 30287,
+      "sha256": "a76d891ea873b98ff4c1a83900dfd32625375dbf2bfd018d28eeefbbae513de5"
+    },
+    "pilot/tau_survey/part6/analyze_tau.py": {
+      "bytes": 17627,
+      "sha256": "f1a9293a5cd7058ad61000a1d8fbd967904e023f515d862d7c60a08271004546"
+    },
+    "pilot/tau_survey/part6/analyze_tau_fixtures.py": {
+      "bytes": 16489,
+      "sha256": "14acea6b47b2c7f74d95b4286d8ef500698ddc172f248ffa8fcdb2ca44ed429f"
+    },
+    "pilot/tau_survey/part6/anchors_legacy_archived.json": {
+      "bytes": 8282,
+      "sha256": "1a21fa7649c675a9ab4821383491202ed1c8a254798e76b8ef891044688f1b23"
+    },
+    "pilot/tau_survey/part6/build_judge.py": {
+      "bytes": 9088,
+      "sha256": "f9971eea786ac5041e46098b4c32c77e540b0193f415c67afae7346e8cbaa8f8"
+    },
+    "pilot/tau_survey/part6/build_manifest.py": {
+      "bytes": 8628,
+      "sha256": "7e5597380b5a62a8d6282643a91bec0955e19912a8903a16060325ad0a4ebc7c"
+    },
+    "pilot/tau_survey/part6/build_prompts.py": {
+      "bytes": 8291,
+      "sha256": "4f457aae93fe69afef6c779fe7031863f41e04c4b2c7dd1f7dfc47864568a178"
+    },
+    "pilot/tau_survey/part6/detector.py": {
+      "bytes": 16955,
+      "sha256": "14a60ed968736493f486e8bfc28f68d38e4db0ec21cd1aaf586883d6f2795345"
+    },
+    "pilot/tau_survey/part6/detector_selftest.py": {
+      "bytes": 5669,
+      "sha256": "1c04f70e605899dde1e61e179132071e36bcb1ce92895a92e3397636db67960d"
+    },
+    "pilot/tau_survey/part6/detector_smoke_diff.json": {
+      "bytes": 8892,
+      "sha256": "3d4f4938e1ed2c81b562d56e276436639f3218cbfc40738ebf7fa82a566f407c"
+    },
+    "pilot/tau_survey/part6/freeze_manifest.py": {
+      "bytes": 9046,
+      "sha256": "bf1bba417dce1584dfad28b5fbc61ebb3dc62c4e00017bdcec89c3c806ac7b4f"
+    },
+    "pilot/tau_survey/part6/generator.py": {
+      "bytes": 11630,
+      "sha256": "08c553b8d30505a9b93580c35c7a361b1342eaa90ae85f5b36557ff6d493cf76"
+    },
+    "pilot/tau_survey/part6/judge_leakcheck.py": {
+      "bytes": 3780,
+      "sha256": "8a0e468d38a3b7916a8b5b71d8e7ec76878bfa8e044075f04a0b448e92c61890"
+    },
+    "pilot/tau_survey/part6/judge_package.json": {
+      "bytes": 5830,
+      "sha256": "a61c8cdce5b95f9962c3c963698dbd30a6601d55b33b11e296f3482c1bbdf882"
+    },
+    "pilot/tau_survey/part6/manifest_cal.json": {
+      "bytes": 206413,
+      "sha256": "48ae042c2ebca4f3afb5d9d677ce15a710ca1c62f0dac534a9e3951cb139fa5a"
+    },
+    "pilot/tau_survey/part6/manifest_hr.json": {
+      "bytes": 141302,
+      "sha256": "9bd6021df8c4d43a71253bede7724bc5e58338c8659d9f083a2cb5721670a5b4"
+    },
+    "pilot/tau_survey/part6/manifest_main.json": {
+      "bytes": 828936,
+      "sha256": "51c37f7b9901bc500a69d2706fe76aad8738a60f687fdca6723e59b5d7c16259"
+    },
+    "pilot/tau_survey/part6/manifest_src.json": {
+      "bytes": 2227175,
+      "sha256": "0b12c85d9cb3005c30da39a004e94797e7d366c4b2e014808377b74b73c76c66"
+    },
+    "pilot/tau_survey/part6/power_check.py": {
+      "bytes": 3874,
+      "sha256": "ac022be1db84192043d123be655a2884d6a5c0ff2723b613fad67645850ed7e2"
+    },
+    "pilot/tau_survey/part6/power_table.json": {
+      "bytes": 1420,
+      "sha256": "a2575466dad8a9d97b1719847874b7069423f1fe62af9ee8887cd6186af7a4ab"
+    },
+    "pilot/tau_survey/smoke/anchors.json": {
+      "bytes": 8282,
+      "sha256": "1a21fa7649c675a9ab4821383491202ed1c8a254798e76b8ef891044688f1b23"
+    }
+  },
+  "frozen_at": "2026-08-11",
+  "functional_checks_at_freeze": {
+    "analyzer_selftest": "14/14 pinned fixtures pass",
+    "detector_selftest": "12/12 smoke episodes legacy-exact; v3 flips 0 (agreement 100%)",
+    "judge_leakcheck": "probe-rendered judge inputs contain zero 24/48 digits (exit 0)",
+    "manifest_determinism": "two consecutive build_manifest.py runs byte-identical (2026-08-11)"
+  },
+  "name": "PART_VI_FREEZE_MANIFEST",
+  "runtime": {
+    "numpy_pinned_by_generator": "1.26.4",
+    "python": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]"
+  },
+  "scope": "hash-only freeze of the Part VI gatekeeper freeze package (v3 \u00a73): detector, prompts, judge, generator + manifests, power artifact, analyzer, protocol, archived legacy anchors, vendor commits",
+  "vendor_commits": {
+    "tau-bench": {
+      "live_at_freeze": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+      "matches_pin": true,
+      "path": "pilot/tau_survey/vendor/tau-bench",
+      "pinned": "59a200c6d575d595120f1cb70fea53cef0632f6b"
+    },
+    "tau2-bench": {
+      "live_at_freeze": "668d3bcd135c02aa3438f987ef45735b7c163ee3",
+      "matches_pin": true,
+      "path": "pilot/tau_survey/vendor/tau2-bench",
+      "pinned": "668d3bcd135c02aa3438f987ef45735b7c163ee3"
+    }
+  },
+  "verifier_contract": {
+    "command": "python freeze_manifest.py --verify [--deep]",
+    "stop_rule": "exit 1 immediately on any hash mismatch, vendor-commit drift, or failed functional check; no partial verdicts"
+  }
+}
