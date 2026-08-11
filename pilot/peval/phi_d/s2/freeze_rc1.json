@@ -1,0 +1,62 @@
+{
+ "release": "s2-rc1",
+ "rule_version": "s2-rc1",
+ "generated_by": "pilot/peval/phi_d/s2/freeze_s2.py (deterministic content)",
+ "discipline": {
+  "execution": "NO 640-pair execution at rc1 (Codex adversarial review round 3 comes first; score_s2.py --640 path is locked by the RULE_VERSION pin)",
+  "label_hygiene": "comparator inputs are two IRs + two texts only; P/cell/family labels never enter s2_comparator",
+  "frozen_before_outcomes": "all rules in S2_SPEC.md were frozen before any corpus verdict was observed",
+  "cpu_only": true,
+  "stdlib_only": true
+ },
+ "files": {
+  "S2_SPEC.md": {
+   "sha256": "181ce999a2b31e2d3dd1938d3970383f9c0f936eba96ad3ac2c7dc591f72c3d2",
+   "sha16": "181ce999a2b31e2d",
+   "bytes": 31931
+  },
+  "s2_comparator.py": {
+   "sha256": "5f45819a59695e6e79db9e3d5c8b8cbff62bfe32adbb51588b5519f319f93eb9",
+   "sha16": "5f45819a59695e6e",
+   "bytes": 29224
+  },
+  "test_s2.py": {
+   "sha256": "8fa50fcefac97a6ad4927e8972363cdb51d04b0a54ba222aeb297aaaf5c3320d",
+   "sha16": "8fa50fcefac97a6a",
+   "bytes": 25947
+  },
+  "score_s2.py": {
+   "sha256": "ac520e77cb18c89c51929356b4359e4df5a925c0df96d37cc7475077c6344c7a",
+   "sha16": "ac520e77cb18c89c",
+   "bytes": 11372
+  }
+ },
+ "spec_text_sha256": "181ce999a2b31e2d3dd1938d3970383f9c0f936eba96ad3ac2c7dc591f72c3d2",
+ "spec_text_sha16": "181ce999a2b31e2d",
+ "import_dependencies": {
+  "common.py": {
+   "sha256": "3fb08925b2c2375263115b45931001eff9d4779725de32dfe9d1e2a779247e95",
+   "sha16": "3fb08925b2c23752",
+   "bytes": 15187
+  },
+  "audit_expanded.py": {
+   "sha256": "c80f481c964449bba0466b69788216c1ba7a517668b8d8215f460654076d23b7",
+   "sha16": "c80f481c964449bb",
+   "bytes": 63591
+  },
+  "comparator_v0/comparator.py": {
+   "sha256": "f9961194ed57a0ac14c69e31a1312cfe11dfd069f15eede351f0e93b9560a90c",
+   "sha16": "f9961194ed57a0ac",
+   "bytes": 36232
+  }
+ },
+ "fixture_suite": {
+  "tests_run": 29,
+  "failures": 0,
+  "errors": 0,
+  "ok": true
+ },
+ "composite_sha_source": "sorted(name:sha256) over files[] then sorted('dep:'name:sha256) over import_dependencies[]",
+ "rc1_hash": "96901e3dfc8346073dfc936ec27a795bde6cfa6fababdd93918a2dfd1184c416",
+ "rc1_hash16": "96901e3dfc834607"
+}
